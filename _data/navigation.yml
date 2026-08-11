@@ -8,5 +8,17 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
-  - title: "About"
-    url: /
+  - title: "Services"
+    url: /services/
+  - title: "Ecommerce"
+    url: /ecommerce/
+  - title: "Automation & AI"
+    url: /automation/
+  - title: "Business Sites"
+    url: /business-sites/
+  - title: "Work"
+    url: /portfolio/
+  - title: "Blog"
+    url: /blog/
+  - title: "Contact"
+    url: /contact/
