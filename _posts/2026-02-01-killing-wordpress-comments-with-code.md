@@ -2,7 +2,7 @@
 title: "How to Stop Spam Comments in WordPress Without a Plugin"
 date: "2026-02-01 10:37:10 +0000"
 permalink: "/blog/killing-wordpress-comments-with-code/"
-excerpt: "Spam comments are one of those small WordPress problems that quickly become annoying. A few fake comments turn into hundreds of bot submissions, random links, pingbacks, moderation emails, and dashboard clutter. For a normal business website, portfolio, landing page, or service site, comments usuall"
+excerpt: "Spam comments are one of those small WordPress problems that quickly become annoying. A few fake comments turn into hundreds of bot submissions, random links, pingbacks, moderation emails, and dashboard clutter. For a..."
 layout: post
 author_profile: false
 read_time: true

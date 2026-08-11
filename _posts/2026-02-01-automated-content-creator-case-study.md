@@ -2,7 +2,7 @@
 title: "Video Automation Engine That Posts Instagram Reels While You Sleep"
 date: "2026-02-01 06:14:45 +0000"
 permalink: "/blog/automated-content-creator-case-study/"
-excerpt: "I built this Python automation engine because creating short videos every day manually was taking too much time. The process was always the same: choose a topic, write a script, create visuals, generate voiceover, add captions, render the video, upload it, and then save the publishing details somewh"
+excerpt: "I built this Python automation engine because creating short videos every day manually was taking too much time. The process was always the same: choose a topic, write a script, create visuals, generate voiceover, add..."
 layout: post
 author_profile: false
 read_time: true

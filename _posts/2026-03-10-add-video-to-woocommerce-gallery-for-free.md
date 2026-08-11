@@ -2,7 +2,7 @@
 title: "Add video to WooCommerce gallery for free"
 date: "2026-03-10 18:18:32 +0000"
 permalink: "/blog/add-video-to-woocommerce-gallery-for-free/"
-excerpt: "The problem with paid plugins I was working on a project last week for a client who wanted a simple video in their WooCommerce product gallery. It sounds like a basic feature, right? But when I started looking for solutions, everything was behind a paywall. People are charging seventy or eighty doll"
+excerpt: "The problem with paid plugins I was working on a project last week for a client who wanted a simple video in their WooCommerce product gallery. It sounds like a basic feature, right? But when I started looking for..."
 layout: post
 author_profile: false
 read_time: true

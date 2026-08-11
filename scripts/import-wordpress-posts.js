@@ -40,6 +40,14 @@ const stripTags = (value) => decodeEntities(value
   .replace(/\s+/g, " ")
   .trim());
 
+const cardExcerpt = (value, limit = 220) => {
+  const text = stripTags(value);
+  if (text.length <= limit) return text;
+
+  const shortened = text.slice(0, limit + 1).replace(/\s+\S*$/, "").trim();
+  return `${shortened}...`;
+};
+
 const cleanHtml = (value) => value
   .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "")
   .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
@@ -81,7 +89,7 @@ for (const post of posts) {
 
   const title = decodeEntities((post.title && post.title.rendered) || post.slug);
   const content = cleanHtml((post.content && post.content.rendered) || "");
-  const excerpt = stripTags(content).slice(0, 300);
+  const excerpt = cardExcerpt(content);
   const date = (post.date_gmt || post.date || "").replace("T", " ");
   const normalizedDate = date ? `${date} +0000` : "2026-01-01 00:00:00 +0000";
   const image = localImagePath(featuredMedia(post));
