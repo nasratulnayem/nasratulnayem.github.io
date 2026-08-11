@@ -14,11 +14,7 @@ main:
     url: /ecommerce/
   - title: "Automation & AI"
     url: /automation/
-  - title: "Business Sites"
-    url: /business-sites/
   - title: "Work"
     url: /portfolio/
-  - title: "Blog"
-    url: /blog/
   - title: "Contact"
     url: /contact/

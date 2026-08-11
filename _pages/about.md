@@ -36,7 +36,7 @@ Whether you need a focused local-business site, a stronger ecommerce store, or a
 - [WordPress and custom PHP](/services/) — themes, plugins, performance fixes, content workflows, and custom features that fit the existing site.
 - [Shopify and WooCommerce](/ecommerce/) — storefront improvements, product pages, carts, checkout-adjacent work, catalog imports, and integrations.
 - [Automation and AI](/automation/) — Python tools, API workflows, internal bots, AI-assisted processes, reporting, and scheduled tasks.
-- [Business websites](/business-sites/) — clear, mobile-friendly sites for restaurants, clinics, dentists, schools, professional services, and online businesses.
+- [Custom business websites](/services/) — clear, mobile-friendly sites for restaurants, clinics, dentists, schools, professional services, and online businesses.
 
 ## Selected build notes
 

@@ -1,11 +1,11 @@
 ---
 layout: archive
-title: "Selected work"
+title: "From bottleneck to build"
 permalink: /portfolio/
 author_profile: false
 ---
 
-These are real build notes from my WordPress site. They show the technical decisions behind WordPress plugins, WooCommerce improvements, product-import tooling, and automation systems.
+Real notes from the systems I build: stronger storefronts, smarter WordPress tools, and automations that give teams their time back.
 
 <div class="work-grid">
 {% for post in site.posts %}
