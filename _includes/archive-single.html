@@ -6,13 +6,12 @@
   {% assign teaser = site.teaser %}
 {% endif %}
 
-{% if post.id %}
-  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
-{% else %}
-  {% assign title = post.title %}
-{% endif %}
+{% assign title = post.title | strip_html %}
 
 <div class="{{ include.type | default: "list" }}__item">
+  {% if include.type == "grid" and post.url %}
+    <a class="archive__item-card-link" href="{{ base_path }}{{ post.url }}" aria-label="Explore {{ title | strip_html | escape_once }}">
+  {% endif %}
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" %}
       <div class="archive__item-date-rail">
@@ -55,9 +54,6 @@
         </span>
       </div>
 
-      {% if post.url %}
-        <a class="archive__item-card-link" href="{{ base_path }}{{ post.url }}" aria-label="Explore {{ title | strip_html | escape_once }}"></a>
-      {% endif %}
     {% else %}
       <h2 class="archive__item-title" itemprop="headline">
         {% if post.link %}
@@ -115,4 +111,7 @@
 
     {% endif %}
   </article>
+  {% if include.type == "grid" and post.url %}
+    </a>
+  {% endif %}
 </div>
