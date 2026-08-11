@@ -3,7 +3,8 @@ title: "Building a simple tool to move content to WordPress"
 date: "2026-02-04 18:03:25 +0000"
 permalink: "/blog/wordpress-content-importer-case-study/"
 excerpt: "Why I started this project I was helping a friend move a bunch of articles from an old site to a new WordPress setup. If you have ever done this, you know it is a total pain. You either spend hours copying and pasting or you install a shady plugin that might break your site or charge you fifty dolla"
-author_profile: true
+layout: post
+author_profile: false
 read_time: true
 comments: false
 share: false

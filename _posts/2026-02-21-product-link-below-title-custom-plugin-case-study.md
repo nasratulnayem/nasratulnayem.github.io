@@ -3,7 +3,8 @@ title: "Watch Product Video’ Option Can Be Added from the Product Edit Page | 
 date: "2026-02-21 12:50:37 +0000"
 permalink: "/blog/product-link-below-title-custom-plugin-case-study/"
 excerpt: "The problem with default layouts I was looking at the WooCommerce edit screen a few weeks ago and it really started to get on my nerves. If you want to add any extra data to a product, the default way is to create a meta box. Usually, these meta boxes end up at the very bottom of the page, or you ha"
-author_profile: true
+layout: post
+author_profile: false
 read_time: true
 comments: false
 share: false

@@ -3,7 +3,8 @@ title: "A faster way to edit WooCommerce products"
 date: "2026-02-05 20:12:27 +0000"
 permalink: "/blog/a-faster-way-to-edit-woocommerce-products/"
 excerpt: "The problem with bulk editing I spent most of last Tuesday staring at the spinning loading icon in the WooCommerce dashboard. I had about sixty products that needed price updates and category shifts. If you have ever used the default bulk edit tool in WordPress, you know how clunky it feels. You sel"
-author_profile: true
+layout: post
+author_profile: false
 read_time: true
 comments: false
 share: false
