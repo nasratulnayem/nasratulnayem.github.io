@@ -72,7 +72,7 @@ categories:
       </div>
 <div class="codex-codebox-title">PHP · WooCommerce product gallery video snippet</div>
 </p></div>
-<p>    
+<p>
   </div>
 <pre><code>&lt;?php
 /**

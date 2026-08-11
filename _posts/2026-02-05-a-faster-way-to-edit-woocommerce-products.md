@@ -65,7 +65,7 @@ categories:
         <div class="codex-codebox-title">PHP · WooCommerce inline bulk product editor</div>
       </div>
 
-      
+
     </div>
 
     <pre><code>&lt;?php

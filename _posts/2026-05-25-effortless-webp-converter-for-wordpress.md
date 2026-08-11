@@ -66,7 +66,7 @@ categories:
       <div class="codex-codebox-title">PHP · Batch conversion handler</div>
     </div>
 
-    
+
   </div>
 
   <pre><code>public function ajax_convert_batch(): void {
@@ -108,7 +108,7 @@ categories:
       <div class="codex-codebox-title">PHP · Safe WebP URL fallback</div>
     </div>
 
-    
+
   </div>
 
   <pre><code>public function filter_attachment_url($url, $post_id) {

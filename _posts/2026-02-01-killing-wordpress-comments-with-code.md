@@ -46,7 +46,7 @@ categories:
         <div class="codex-codebox-title">PHP · Stop WordPress spam comments</div>
       </div>
 
-      
+
     </div>
 
     <pre><code>add_filter('comments_open', '__return_false', 20, 2);

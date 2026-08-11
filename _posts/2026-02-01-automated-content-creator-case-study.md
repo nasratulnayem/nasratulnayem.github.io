@@ -73,7 +73,7 @@ categories:
   <h2>It posts Instagram Reels automatically</h2>
   <p>The Instagram side is already part of the workflow. The automation creates the Reel, uploads it, and logs the result. That means the video does not just sit inside a folder waiting for me to upload it manually.</p>
 
-  
+
 
   <p>The feed above shows the daily Instagram Reels output created by this automation while I am offline or sleeping.</p>
 </section>
@@ -179,7 +179,7 @@ categories:
     </div>
   </div>
 
-  
+
 </section>
 
 <section class="codex-block">

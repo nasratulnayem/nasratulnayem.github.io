@@ -80,7 +80,7 @@ categories:
         <div class="codex-codebox-title">REST API · Importon Bridge endpoints</div>
       </div>
 
-      
+
     </div>
 
     <pre><code>POST  /wp-json/importonbridge/v1/import      Create or update a WooCommerce product
@@ -167,7 +167,7 @@ POST  /wp-json/importonbridge/v1/connect     Return connection details for the b
         <div class="codex-codebox-title">Project structure · Importon Bridge</div>
       </div>
 
-      
+
     </div>
 
     <pre><code>importon-bridge/

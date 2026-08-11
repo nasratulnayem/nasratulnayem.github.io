@@ -38,7 +38,7 @@ categories:
         <div class="codex-codebox-title">JSON · package dependencies</div>
       </div>
 
-      
+
     </div>
 
     <pre><code>// From package.json
@@ -68,7 +68,7 @@ categories:
         <div class="codex-codebox-title">TypeScript · import progress handler</div>
       </div>
 
-      
+
     </div>
 
     <pre><code>const handleImport = async () =&gt; {
@@ -114,7 +114,7 @@ categories:
         <div class="codex-codebox-title">TypeScript · XML download handler</div>
       </div>
 
-      
+
     </div>
 
     <pre><code>const handleDownload = () =&gt; {

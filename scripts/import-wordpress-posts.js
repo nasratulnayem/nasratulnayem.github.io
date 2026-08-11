@@ -50,6 +50,7 @@ const cleanHtml = (value) => value
   .replace(/<button\b[^>]*\bdata-codex-copy\b[^>]*><\/button>/gi, "")
   .replace(/<div\b[^>]*\binavii-social-feed\b[^>]*>\s*<\/div>/gi, "")
   .replace(/<p class="wp-block-paragraph"><\/p>/gi, "")
+  .replace(/[ \t]+$/gm, "")
   .trim();
 
 const featuredMedia = (post) => {

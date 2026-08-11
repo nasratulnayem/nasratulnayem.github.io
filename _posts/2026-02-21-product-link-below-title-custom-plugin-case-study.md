@@ -49,7 +49,7 @@ categories:
         <div class="codex-codebox-title">PHP · Plugin hook initialization</div>
       </div>
 
-      
+
     </div>
 
     <pre><code>public static function init(): void {
@@ -81,7 +81,7 @@ categories:
         <div class="codex-codebox-title">PHP · Elementor title filter</div>
       </div>
 
-      
+
     </div>
 
     <pre><code>public static function filter_elementor_widget_render_content( $content, $widget ) {
