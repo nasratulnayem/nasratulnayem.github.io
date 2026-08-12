@@ -40,13 +40,19 @@
 
 /* Compact, responsive masthead identity */
 :root {
-  --site-content-max-width: 1120px;
+  --site-content-max-width: 1280px;
+  --post-content-max-width: 1120px;
 }
 
 .masthead__inner-wrap,
-#main.post-main,
 .page__footer footer {
   max-width: var(--site-content-max-width);
+}
+
+#main.post-main,
+.masthead--post .masthead__inner-wrap,
+.page__footer--post footer {
+  max-width: var(--post-content-max-width);
 }
 
 .masthead__menu-item--lg {
@@ -55,7 +61,7 @@
 
 .masthead__menu-item--lg .masthead__greeting-link {
   display: flex;
-  width: 8rem;
+  width: 12rem;
   margin: 0;
   padding: 0.25rem 0;
   flex-direction: column;
