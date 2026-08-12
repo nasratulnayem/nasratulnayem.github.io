@@ -5,85 +5,90 @@ title: "Websites, ecommerce, and automation that reduce manual work"
 author_profile: true
 ---
 
-<section class="home-hero" aria-labelledby="home-intro-title">
-  <div class="home-hero__copy">
-    <p class="home-eyebrow">Nasratul Nayem · Web developer &amp; automation expert</p>
-    <h1 id="home-intro-title">When work gets stuck, I help turn it into a <span>system that moves.</span></h1>
-    <p class="home-hero__lead">I’m Nayem, a web developer based in Bangladesh and working remotely with business owners and teams. I build websites, ecommerce experiences, custom tools, and automations that make everyday work clearer, faster, and easier to manage.</p>
-    <div class="home-hero__actions">
+<section class="home-introduction" aria-labelledby="home-intro-title">
+  <div class="home-introduction__portrait">
+    <img src="{{ '/images/profile.png' | relative_url }}" alt="Nasratul Nayem, web developer and automation expert">
+    <p class="home-introduction__location"><span>Bangladesh</span><span aria-hidden="true">•</span><span>Working remotely</span></p>
+  </div>
+
+  <div class="home-introduction__copy">
+    <p class="home-kicker">Hi, I’m Nayem</p>
+    <h1 id="home-intro-title">I build websites and automations that make <span>business work feel lighter.</span></h1>
+    <p class="home-introduction__lead">I’m a web developer from Bangladesh, working remotely with people who care about their business. I create useful websites, ecommerce experiences, custom tools, and automations that help a team move with more clarity and less manual work.</p>
+    <p class="home-introduction__thought">I do not start with a stack of tools. I start by understanding what is slow, confusing, or getting in the way—then I turn that into something practical your business can keep using.</p>
+    <div class="home-introduction__actions">
       <a class="home-button home-button--primary" href="{{ '/contact/' | relative_url }}">Tell me what you need <span aria-hidden="true">→</span></a>
-      <a class="home-button home-button--secondary" href="{{ '/portfolio/' | relative_url }}">See selected work</a>
+      <a class="home-text-link" href="{{ '/portfolio/' | relative_url }}">See selected work <span aria-hidden="true">→</span></a>
+    </div>
+    <ul class="home-introduction__skills" aria-label="Core skills">
+      <li>WordPress</li>
+      <li>Shopify &amp; WooCommerce</li>
+      <li>Custom code</li>
+      <li>Automation &amp; AI</li>
+    </ul>
+  </div>
+</section>
+
+<section class="home-statement" aria-labelledby="home-statement-title">
+  <p class="home-kicker">What matters to me</p>
+  <div class="home-statement__grid">
+    <h2 id="home-statement-title">A website should not only look professional. It should make the next step easier.</h2>
+    <div>
+      <p>That can mean a clearer service page, a product flow that customers understand, a checkout that stops losing sales, or an internal task that no longer takes hours every week.</p>
+      <p>My job is to listen closely, understand the business behind the request, and make the technical side feel simpler—not heavier.</p>
     </div>
   </div>
-
 </section>
 
-<section class="home-section home-services" aria-labelledby="home-services-title">
-  <div class="home-section__heading">
-    <p class="home-eyebrow">What I can do for your business</p>
-    <h2 id="home-services-title">Useful systems, not just a good-looking page.</h2>
-    <p>Whether you need a new website, a stronger online store, a custom feature, or a task automated, I focus on the work behind the screen: customers finding what they need, teams updating content, and processes that should not need repeating by hand.</p>
+<section class="home-capabilities" aria-labelledby="home-capabilities-title">
+  <div class="home-editorial-heading">
+    <p class="home-kicker">How I can help</p>
+    <h2 id="home-capabilities-title">One person for the website, the store, and the work behind it.</h2>
   </div>
 
-  <div class="home-service-grid">
-    <a class="home-service-card" href="{{ '/services/' | relative_url }}">
-      <span class="home-service-card__number">01</span>
-      <h3>WordPress &amp; custom PHP</h3>
-      <p>Custom features, plugins, site fixes, admin improvements, and content workflows that fit the way the business already works.</p>
-      <span class="home-service-card__link">Explore services <span aria-hidden="true">→</span></span>
+  <div class="home-capability-grid">
+    <a class="home-capability-card" href="{{ '/services/' | relative_url }}">
+      <span class="home-capability-card__index">01</span>
+      <h3>Websites that feel clear</h3>
+      <p>Business sites, landing pages, contact flows, WordPress themes, custom PHP, CSS, JavaScript, and features shaped around the people using them.</p>
+      <span>Explore web development <b aria-hidden="true">→</b></span>
     </a>
-    <a class="home-service-card" href="{{ '/ecommerce/' | relative_url }}">
-      <span class="home-service-card__number">02</span>
-      <h3>Shopify &amp; WooCommerce</h3>
-      <p>Storefronts, product pages, carts, checkout journeys, catalog imports, and the tools that keep ecommerce moving.</p>
-      <span class="home-service-card__link">Explore ecommerce <span aria-hidden="true">→</span></span>
+    <a class="home-capability-card" href="{{ '/ecommerce/' | relative_url }}">
+      <span class="home-capability-card__index">02</span>
+      <h3>Stores that do more work</h3>
+      <p>Shopify and WooCommerce product pages, cart journeys, product imports, custom functionality, and store improvements that support sales and operations.</p>
+      <span>Explore ecommerce <b aria-hidden="true">→</b></span>
     </a>
-    <a class="home-service-card" href="{{ '/automation/' | relative_url }}">
-      <span class="home-service-card__number">03</span>
-      <h3>Automation &amp; AI</h3>
-      <p>Python tools, APIs, reporting, product-import workflows, internal bots, and practical AI connected to real business tasks.</p>
-      <span class="home-service-card__link">Explore automation <span aria-hidden="true">→</span></span>
-    </a>
-    <a class="home-service-card" href="{{ '/services/' | relative_url }}">
-      <span class="home-service-card__number">04</span>
-      <h3>Business websites &amp; web apps</h3>
-      <p>Clear, mobile-friendly websites and focused web tools for local services, teams, restaurants, clinics, schools, and growing businesses.</p>
-      <span class="home-service-card__link">See what fits <span aria-hidden="true">→</span></span>
+    <a class="home-capability-card" href="{{ '/automation/' | relative_url }}">
+      <span class="home-capability-card__index">03</span>
+      <h3>Automation that returns time</h3>
+      <p>Python tools, APIs, AI-assisted workflows, reporting, content helpers, and practical automations connected to the real work your team already does.</p>
+      <span>Explore automation <b aria-hidden="true">→</b></span>
     </a>
   </div>
 </section>
 
-<section class="home-process" aria-labelledby="home-process-title">
-  <div class="home-process__intro">
-    <p class="home-eyebrow">From first message to useful result</p>
-    <h2 id="home-process-title">You bring the business knowledge. I bring the technical path.</h2>
-    <p>I work best when a project starts with the real problem—not a list of tools. That keeps the solution focused, understandable, and useful long after launch.</p>
+<section class="home-partner" aria-labelledby="home-partner-title">
+  <div class="home-partner__quote">
+    <p class="home-kicker">A practical partnership</p>
+    <h2 id="home-partner-title">You know your business. I bring the web and automation side into focus.</h2>
   </div>
-  <ol class="home-process__steps">
-    <li><span>01</span><div><h3>Listen and understand</h3><p>You show me the current site, workflow, or goal. I learn what is happening now and what needs to change.</p></div></li>
-    <li><span>02</span><div><h3>Choose the right approach</h3><p>We use the simplest reliable mix of WordPress, Shopify, PHP, JavaScript, Python, APIs, or AI—only where it helps.</p></div></li>
-    <li><span>03</span><div><h3>Build something you can run</h3><p>The result is clear, maintainable, and shaped around the people who will use it every day.</p></div></li>
-  </ol>
-</section>
-
-<section class="home-fit" aria-labelledby="home-fit-title">
-  <div class="home-fit__copy">
-    <p class="home-eyebrow">Where I can help</p>
-    <h2 id="home-fit-title">A practical web partner for growing businesses.</h2>
-    <p>I can support local services, online stores, restaurants, clinics, dentists, schools, professional services, and teams that need their website or daily workflow to do more useful work.</p>
+  <div class="home-partner__details">
+    <p>You do not need to know the perfect technical words before you get in touch. Show me the current website, explain the awkward process, or tell me what customers keep struggling with.</p>
+    <ul>
+      <li>Local businesses and professional services</li>
+      <li>Restaurants, clinics, schools, and growing teams</li>
+      <li>Online stores that need a stronger customer journey</li>
+      <li>Teams ready to reduce repeated manual work</li>
+    </ul>
   </div>
-  <ul class="home-fit__list">
-    <li><strong>Website</strong><span>Clear pages, contact flows, content, and custom features.</span></li>
-    <li><strong>Ecommerce</strong><span>Shopify and WooCommerce storefronts, products, cart journeys, and imports.</span></li>
-    <li><strong>Automation</strong><span>Python tools, APIs, AI-assisted tasks, data workflows, and internal helpers.</span></li>
-  </ul>
 </section>
 
 <section class="home-section home-work" aria-labelledby="home-work-title">
-  <div class="home-section__heading home-section__heading--work">
+  <div class="home-editorial-heading home-editorial-heading--work">
     <div>
-      <p class="home-eyebrow">Selected build notes</p>
-      <h2 id="home-work-title">Real projects. Clear technical choices.</h2>
+      <p class="home-kicker">Selected build notes</p>
+      <h2 id="home-work-title">Real work, with the thinking behind it.</h2>
     </div>
     <p>These are practical builds and write-ups—not mock portfolio screenshots. Open a note to see how I think through a problem and turn it into something useful.</p>
   </div>
@@ -106,11 +111,11 @@ author_profile: true
   </div>
 </section>
 
-<section class="home-closing" aria-labelledby="home-closing-title">
+<section class="home-closing home-closing--new" aria-labelledby="home-closing-title">
   <div>
-    <p class="home-eyebrow">Start with the bottleneck</p>
-    <h2 id="home-closing-title">Tell me what is getting in the way.</h2>
-    <p>A checkout issue, manual product import, slow WordPress feature, unreliable contact flow, or daily task that should be automated is enough to start. Tell me what is happening; I’ll listen carefully and help you find the best next move.</p>
+    <p class="home-kicker">Let’s make the next step clearer</p>
+    <h2 id="home-closing-title">Tell me what your business needs to work better.</h2>
+    <p>A slow website, a difficult product workflow, a missing feature, or a repeated daily task is enough to begin. I’ll listen, understand the situation, and help you choose a useful next step.</p>
   </div>
   <a class="home-button home-button--light" href="{{ '/contact/' | relative_url }}">Start a conversation <span aria-hidden="true">→</span></a>
 </section>

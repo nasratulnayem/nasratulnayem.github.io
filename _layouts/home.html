@@ -5,8 +5,6 @@ layout: default
 {% include base_path %}
 
 <main id="main" class="home-main" role="main">
-  {% include sidebar.html %}
-
   <article class="page home-page" itemscope itemtype="https://schema.org/WebPage">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | strip_html | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | strip_html | escape_once }}">{% endif %}
