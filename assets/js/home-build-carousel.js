@@ -8,8 +8,7 @@
     const cards = Array.from(carousel.querySelectorAll(".grid__item"));
     const previous = carousel.querySelector("[data-carousel-previous]");
     const next = carousel.querySelector("[data-carousel-next]");
-    const status = carousel.querySelector("[data-carousel-status]");
-    if (!cards.length || !previous || !next || !status) return;
+    if (!cards.length || !previous || !next) return;
 
     let firstVisible = 0;
     let visibleCount = window.innerWidth >= DESKTOP_BREAKPOINT ? 2 : 1;
@@ -21,8 +20,6 @@
         card.hidden = index < firstVisible || index >= firstVisible + visibleCount;
       });
 
-      const lastVisible = Math.min(firstVisible + visibleCount, cards.length);
-      status.textContent = `${firstVisible + 1}–${lastVisible} of ${cards.length}`;
     };
 
     previous.addEventListener("click", () => {
@@ -47,5 +44,9 @@
     render();
   };
 
-  window.addEventListener("load", setup, { once: true });
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setup, { once: true });
+  } else {
+    setup();
+  }
 })();

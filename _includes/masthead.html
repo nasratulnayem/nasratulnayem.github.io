@@ -6,8 +6,9 @@
         <button><span class="navicon"></span></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a class="masthead__greeting-link" href="{{ base_path }}/" aria-label="Hello, let's build">
-              <span class="typewriter">Hello, let's build</span>
+            <a class="masthead__greeting-link" href="{{ base_path }}/" aria-label="Hi, I’m Nayem — Full-stack developer">
+              <span class="typewriter">Hi, I’m Nayem</span>
+              <span class="masthead__greeting-tag">Full-stack developer</span>
             </a>
           </li>
           {% for link in site.data.navigation.main %}

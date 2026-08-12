@@ -25,23 +25,20 @@ The examples below are real projects and technical write-ups. They show how I ap
 
 <section class="home-build-carousel" data-post-carousel aria-label="Browse build notes">
   <div class="work-grid home-build-grid">
-  {% for post in site.posts %}
-    {% include archive-single.html type="grid" %}
-  {% endfor %}
+    {% for post in site.posts %}
+      {% include archive-single.html type="grid" %}
+    {% endfor %}
   </div>
 
   <div class="home-build-carousel__controls">
     <button class="home-build-carousel__button" type="button" data-carousel-previous aria-label="Show previous build notes">
       <i class="fa fa-arrow-left" aria-hidden="true"></i>
     </button>
-    <span class="home-build-carousel__status" data-carousel-status aria-live="polite"></span>
     <button class="home-build-carousel__button" type="button" data-carousel-next aria-label="Show next build notes">
       <i class="fa fa-arrow-right" aria-hidden="true"></i>
     </button>
   </div>
 </section>
-{% endfor %}
-</div>
 
 ## Start with the bottleneck
 
