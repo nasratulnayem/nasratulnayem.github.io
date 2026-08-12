@@ -877,25 +877,33 @@ body {
 /* Home page */
 #main.home-main {
   float: none;
-  width: 100%;
+  width: auto;
   max-width: var(--site-content-max-width);
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: 2em auto 0;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
 .home-page {
-  float: none;
-  width: 100%;
   margin: 0;
+}
+
+.home-page__content > :first-child {
+  margin-top: 0;
+}
+
+.home-page__content h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .home-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
   align-items: center;
-  gap: clamp(2.5rem, 7vw, 7rem);
-  min-height: min(43rem, calc(100vh - 4rem));
-  padding: clamp(3.8rem, 8vw, 7rem) 0;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  min-height: 0;
+  padding: 0 0 clamp(3.5rem, 7vw, 5rem);
 }
 
 .home-eyebrow {
@@ -922,7 +930,8 @@ body {
 .home-hero h1,
 .home-section h2,
 .home-process h2,
-.home-closing h2 {
+.home-closing h2,
+.home-fit h2 {
   color: var(--global-text-color);
   font-family: $sans-serif;
   font-weight: 750;
@@ -932,8 +941,8 @@ body {
 .home-hero h1 {
   max-width: 53rem;
   margin: 0;
-  font-size: clamp(2.55rem, 5.3vw, 5.35rem);
-  line-height: 0.99;
+  font-size: clamp(2rem, 3.4vw, 3.1rem);
+  line-height: 1.02;
 }
 
 .home-hero h1 span {
@@ -1008,38 +1017,8 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.055);
 }
 
-.home-hero__profile {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.home-hero__profile img {
-  flex: 0 0 4rem;
-  width: 4rem;
-  height: 4rem;
-  padding: 2px;
-  object-fit: cover;
-  border: 1px solid var(--global-border-color);
-  border-radius: 50%;
-}
-
-.home-hero__profile strong,
-.home-hero__profile span {
-  display: block;
-  font-family: $sans-serif;
-}
-
-.home-hero__profile strong {
-  color: var(--global-text-color);
-  font-size: 0.95rem;
-}
-
-.home-hero__profile span {
-  margin-top: 0.18rem;
-  color: var(--global-text-color-light);
-  font-size: 0.7rem;
-  line-height: 1.35;
+.home-hero__panel .home-eyebrow {
+  margin-bottom: 0.75rem;
 }
 
 .home-hero__rule {
@@ -1052,8 +1031,15 @@ body {
   margin: 0;
   color: var(--global-text-color);
   font-family: $sans-serif;
-  font-size: 0.84rem;
+  font-size: 1.04rem;
   font-weight: 750;
+  line-height: 1.25;
+}
+
+.home-hero__panel-copy {
+  margin: 0.7rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.58;
 }
 
 .home-hero__specialties {
@@ -1092,9 +1078,10 @@ body {
 
 .home-section__heading h2,
 .home-process h2,
-.home-closing h2 {
+.home-closing h2,
+.home-fit h2 {
   margin: 0;
-  font-size: clamp(1.8rem, 3.3vw, 3.05rem);
+  font-size: clamp(1.72rem, 3vw, 2.45rem);
   line-height: 1.08;
 }
 
@@ -1107,7 +1094,7 @@ body {
 
 .home-service-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 2.2rem;
 }
@@ -1222,6 +1209,49 @@ body {
   line-height: 1.55;
 }
 
+.home-fit {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-top: clamp(4.75rem, 9vw, 8rem);
+}
+
+.home-fit__copy > p:last-child {
+  max-width: 31rem;
+  margin: 1rem 0 0;
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.home-fit__list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--global-border-color);
+}
+
+.home-fit__list li {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 0.38fr) minmax(0, 1fr);
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.home-fit__list strong {
+  color: var(--global-text-color);
+  font-family: $sans-serif;
+  font-size: 0.82rem;
+}
+
+.home-fit__list span {
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
 .home-section__heading--work {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.65fr);
@@ -1290,16 +1320,13 @@ body {
     grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.65fr);
     gap: 3rem;
   }
-
-  .home-service-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 800px) {
   .home-hero,
   .home-process,
-  .home-section__heading--work {
+  .home-section__heading--work,
+  .home-fit {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -1324,6 +1351,7 @@ body {
 
 @media (max-width: 600px) {
   #main.home-main {
+    margin-top: 1.25rem;
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -1333,7 +1361,7 @@ body {
   }
 
   .home-hero h1 {
-    font-size: clamp(2.15rem, 11vw, 3.15rem);
+    font-size: clamp(2rem, 10.5vw, 2.6rem);
   }
 
   .home-hero__lead {
@@ -1366,7 +1394,8 @@ body {
 
   .home-section__heading h2,
   .home-process h2,
-  .home-closing h2 {
+  .home-closing h2,
+  .home-fit h2 {
     font-size: clamp(1.62rem, 8vw, 2.1rem);
   }
 
@@ -1376,5 +1405,206 @@ body {
 
   .home-closing .home-button {
     width: 100%;
+  }
+
+  .home-fit__list li {
+    grid-template-columns: minmax(5.5rem, 0.36fr) minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+}
+
+/* WhatsApp contact chat */
+.whatsapp-chat__toggle {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.whatsapp-chat__launcher {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  overflow: hidden;
+  background: #25d366;
+  border-radius: 999px;
+  box-shadow: 0 0.55rem 1.5rem rgba(15, 108, 57, 0.28);
+  z-index: 50;
+}
+
+.whatsapp-chat__launcher label {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  place-items: center;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-chat__launcher:hover label,
+.whatsapp-chat__toggle:focus-visible + .whatsapp-chat__launcher label {
+  transform: scale(1.06);
+}
+
+.whatsapp-chat__launcher svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #fff;
+}
+
+.whatsapp-chat__launcher .whatsapp-chat__close {
+  display: none;
+}
+
+.whatsapp-chat {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 5.5rem;
+  width: min(20rem, calc(100vw - 2rem));
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.8rem) scale(0.98);
+  transform-origin: right bottom;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  visibility: hidden;
+  z-index: 49;
+}
+
+.whatsapp-chat__content,
+.whatsapp-chat__action {
+  overflow: hidden;
+  border: 1px solid var(--global-border-color);
+  border-radius: 0.65rem;
+  background: var(--global-bg-color);
+  box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.16);
+}
+
+.whatsapp-chat__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.95rem 1rem;
+  color: #fff;
+  background: #25d366;
+}
+
+.whatsapp-chat__header > svg {
+  flex: 0 0 auto;
+  width: 1.85rem;
+  height: 1.85rem;
+  fill: #fff;
+}
+
+.whatsapp-chat__header strong,
+.whatsapp-chat__header span {
+  display: block;
+  font-family: $sans-serif;
+}
+
+.whatsapp-chat__header strong {
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+.whatsapp-chat__header span {
+  margin-top: 0.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.whatsapp-chat__message {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.15rem 1rem 1.2rem;
+}
+
+.whatsapp-chat__message span {
+  max-width: 15.5rem;
+  padding: 0.65rem 0.75rem;
+  color: var(--global-text-color);
+  background: var(--global-code-background-color);
+  border-radius: 0 0.7rem 0.7rem;
+  font-size: 0.76rem;
+  line-height: 1.48;
+}
+
+.whatsapp-chat__message small {
+  color: var(--global-text-color-light);
+  font-family: $sans-serif;
+  font-size: 0.61rem;
+}
+
+.whatsapp-chat__action {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.6rem;
+  padding: 0.78rem 0.95rem;
+  color: var(--global-text-color);
+  font-family: $sans-serif;
+  font-size: 0.76rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.whatsapp-chat__action:hover,
+.whatsapp-chat__action:focus {
+  color: #168c43;
+  border-color: #25d366;
+  text-decoration: none;
+  transform: translateY(-0.1rem);
+}
+
+.whatsapp-chat__action svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-left: auto;
+  fill: currentColor;
+}
+
+.whatsapp-chat__toggle:checked + .whatsapp-chat__launcher .whatsapp-chat__icon {
+  display: none;
+}
+
+.whatsapp-chat__toggle:checked + .whatsapp-chat__launcher .whatsapp-chat__close {
+  display: block;
+}
+
+.whatsapp-chat__toggle:checked ~ .whatsapp-chat {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+}
+
+@media (max-width: 600px) {
+  .whatsapp-chat__launcher {
+    right: 1rem;
+    bottom: 1rem;
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .whatsapp-chat {
+    right: 1rem;
+    bottom: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-chat,
+  .whatsapp-chat__launcher label,
+  .whatsapp-chat__action {
+    transition: none;
   }
 }

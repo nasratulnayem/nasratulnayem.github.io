@@ -5,9 +5,15 @@ layout: default
 {% include base_path %}
 
 <main id="main" class="home-main" role="main">
-  <article class="home-page" itemscope itemtype="https://schema.org/WebPage">
+  {% include sidebar.html %}
+
+  <article class="page home-page" itemscope itemtype="https://schema.org/WebPage">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | strip_html | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | strip_html | escape_once }}">{% endif %}
-    {{ content }}
+    <div class="page__inner-wrap">
+      <section class="page__content home-page__content" itemprop="text">
+        {{ content }}
+      </section>
+    </div>
   </article>
 </main>
