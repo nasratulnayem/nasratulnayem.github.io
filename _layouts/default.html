@@ -16,13 +16,15 @@ layout: compress
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
-    {{ content }}
+    <div class="site-shell">
+      {{ content }}
 
-    <div class="page__footer{% if page.layout == 'post' %} page__footer--post{% endif %}">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
+      <div class="page__footer{% if page.layout == 'post' %} page__footer--post{% endif %}">
+        <footer>
+          {% include footer/custom.html %}
+          {% include footer.html %}
+        </footer>
+      </div>
     </div>
 
     {% include whatsapp-chat.html %}

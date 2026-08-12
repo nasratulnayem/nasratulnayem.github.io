@@ -656,14 +656,18 @@ html {
 }
 
 body {
-  display: flex;
-  min-height: 100vh;
-  min-height: 100dvh;
   padding-bottom: 0;
+}
+
+.site-shell {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  min-height: calc(100dvh - 70px);
   flex-direction: column;
 }
 
-body > #main {
+.site-shell > #main {
   flex: 1 0 auto;
 }
 
