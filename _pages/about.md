@@ -4,7 +4,7 @@ title: "Websites, ecommerce, and automation that reduce manual work"
 author_profile: true
 ---
 
-I’m Nasratul Nayem, a web developer who builds business websites, ecommerce features, custom web tools, and automations. I work with WordPress, Shopify, PHP, CSS, JavaScript, Python, APIs, and practical AI systems.
+I’m Nasratul Nayem, a web developer and automation expert who builds business websites, ecommerce features, custom web tools, and automations. I work with WordPress, Shopify, PHP, CSS, JavaScript, Python, APIs, and practical AI systems.
 
 ## Built for work that has to run
 

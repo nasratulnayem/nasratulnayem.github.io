@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Nasratul Nayem"
 title_separator          : "-"
 name                     : &name "Nasratul Nayem"
-description              : &description "Web Developer for WordPress, Shopify, ecommerce, automation, and AI workflows."
+description              : &description "Web developer & automation expert for WordPress, Shopify, ecommerce, and AI workflows."
 url                      : https://nasratulnayem.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,7 +26,7 @@ author:
   avatar           : "profile.png"
   name             : "Nasratul Nayem"
   pronouns         : # example: "she/her"  
-  bio              : "Web Developer"
+  bio              : "Web developer & automation expert"
   location         : "Remote"
   employer         :
   uri              : "https://nasratulnayem.github.io"
