@@ -963,7 +963,7 @@ body {
   margin-top: 2rem;
 }
 
-.home-button {
+.home-page__content a.home-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -980,8 +980,8 @@ body {
   transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
-.home-button:hover,
-.home-button:focus {
+.home-page__content a.home-button:hover,
+.home-page__content a.home-button:focus {
   text-decoration: none;
   transform: translateY(-0.12rem);
 }
@@ -1099,7 +1099,7 @@ body {
   margin-top: 2.2rem;
 }
 
-.home-service-card {
+.home-page__content a.home-service-card {
   display: flex;
   min-height: 18.5rem;
   padding: 1.35rem;
@@ -1112,8 +1112,8 @@ body {
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.home-service-card:hover,
-.home-service-card:focus {
+.home-page__content a.home-service-card:hover,
+.home-page__content a.home-service-card:focus {
   color: var(--global-text-color);
   border-color: var(--global-link-color);
   box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.08);
@@ -1150,8 +1150,8 @@ body {
   transition: transform 0.18s ease;
 }
 
-.home-service-card:hover .home-service-card__link span,
-.home-service-card:focus .home-service-card__link span {
+.home-page__content a.home-service-card:hover .home-service-card__link span,
+.home-page__content a.home-service-card:focus .home-service-card__link span {
   transform: translateX(0.2rem);
 }
 
