@@ -651,18 +651,32 @@
 }
 
 /* Professional site footer */
+html {
+  min-height: 100%;
+}
+
 body {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
   padding-bottom: 0;
+  flex-direction: column;
+}
+
+body > #main {
+  flex: 1 0 auto;
 }
 
 .page__footer {
   position: relative;
   bottom: auto;
   float: none;
-  margin-top: 4.5rem;
+  width: 100%;
+  margin-top: 3rem;
   color: var(--global-text-color);
   background: var(--global-footer-bg-color);
   border-top: 1px solid var(--global-border-color);
+  flex: 0 0 auto;
 }
 
 .page__footer footer {
@@ -676,14 +690,14 @@ body {
 }
 
 .site-footer {
-  padding-top: 2.75rem;
+  padding-top: 2rem;
 }
 
 .site-footer__primary {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(9rem, 0.6fr) minmax(15rem, 0.9fr);
-  gap: 2rem 3rem;
-  padding-bottom: 2.15rem;
+  gap: 1.75rem 2.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .site-footer__brand {
@@ -841,7 +855,7 @@ body {
 
 @media (max-width: 600px) {
   .page__footer {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
   }
 
   .page__footer footer {
@@ -850,7 +864,7 @@ body {
   }
 
   .site-footer {
-    padding-top: 2.25rem;
+    padding-top: 1.8rem;
   }
 
   .site-footer__primary {
@@ -937,6 +951,7 @@ body {
   font-family: $sans-serif;
   font-weight: 750;
   letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
 .home-hero h1 {
@@ -1020,7 +1035,7 @@ body {
 }
 
 .home-section {
-  margin-top: clamp(3.5rem, 5vw, 4.5rem);
+  margin-top: clamp(3rem, 4.5vw, 4.5rem);
 }
 
 .home-section__heading {
@@ -1110,8 +1125,8 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
   gap: clamp(2rem, 6vw, 6rem);
-  margin-top: clamp(4.75rem, 9vw, 8rem);
-  padding: clamp(2rem, 5vw, 4.25rem);
+  margin-top: clamp(3rem, 4.5vw, 4.5rem);
+  padding: clamp(1.65rem, 3.5vw, 2.75rem);
   background: var(--global-footer-bg-color);
   border: 1px solid var(--global-border-color);
   border-radius: 0.7rem;
@@ -1164,7 +1179,7 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(2rem, 5vw, 4rem);
-  margin-top: clamp(4.75rem, 9vw, 8rem);
+  margin-top: clamp(3rem, 4.5vw, 4.5rem);
 }
 
 .home-fit__copy > p:last-child {
@@ -1231,8 +1246,8 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: clamp(4.75rem, 9vw, 8rem);
-  padding: clamp(2rem, 5vw, 4.25rem);
+  margin-top: clamp(3rem, 4.5vw, 4.5rem);
+  padding: clamp(1.65rem, 3.5vw, 2.75rem);
   color: #fff;
   background: var(--global-base-color);
   border-radius: 0.7rem;
