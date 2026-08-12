@@ -40,12 +40,12 @@
 
 /* Compact, responsive typewriter greeting in the masthead */
 .masthead__menu-item--lg {
-  padding-right: 0.9rem;
+  padding-right: 0.55rem;
 }
 
 .masthead__menu-item--lg .masthead__greeting-link {
   display: block;
-  width: 10.8rem;
+  width: 7.8rem;
   margin: 0;
   color: var(--global-masthead-link-color);
   font-family: $sans-serif;
@@ -60,6 +60,8 @@
   max-width: 0;
   overflow: hidden;
   border-right: 0.12em solid var(--global-link-color);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.18rem;
   color: inherit;
   font: inherit;
   line-height: 1.25;
@@ -70,21 +72,21 @@
 
 @keyframes masthead-typing {
   from { max-width: 0; }
-  to { max-width: 10.8rem; }
+  to { max-width: 7.8rem; }
 }
 
 @keyframes masthead-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: var(--global-link-color); }
+  from, to { border-right-color: transparent; }
+  50% { border-right-color: var(--global-link-color); }
 }
 
 @media (max-width: 480px) {
   .masthead__menu-item--lg {
-    padding-right: 0.35rem;
+    padding-right: 0.25rem;
   }
 
   .masthead__menu-item--lg .masthead__greeting-link {
-    width: 8.9rem;
+    width: 7.2rem;
     font-size: 0.78rem;
   }
 
@@ -94,7 +96,7 @@
 
   @keyframes masthead-typing-mobile {
     from { max-width: 0; }
-    to { max-width: 8.9rem; }
+    to { max-width: 7.2rem; }
   }
 }
 
@@ -106,6 +108,15 @@
   }
 }
 
+.masthead__menu-item--lg.selected .masthead__greeting-link,
+.masthead__menu-item--lg.selected .masthead__greeting-link:hover {
+  border-bottom: 0;
+}
+
+.greedy-nav .visible-links .masthead__greeting-link::before {
+  display: none;
+}
+
 /* Portfolio case-study cards */
 .work-grid {
   display: grid;
@@ -113,6 +124,10 @@
   gap: 1.6rem;
   clear: both;
   margin: 2rem 0 3rem;
+}
+
+.home-build-grid {
+  margin-top: 1.25rem;
 }
 
 .work-grid .grid__item {

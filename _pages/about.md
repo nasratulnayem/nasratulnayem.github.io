@@ -2,25 +2,6 @@
 permalink: /
 title: "Websites, ecommerce, and automation that reduce manual work"
 author_profile: true
-feature_row:
-  - image_path: "work/webp-converter.png"
-    alt: "WebP converter plugin interface"
-    title: "WordPress WebP Converter"
-    excerpt: "A lightweight WordPress plugin for converting image uploads to WebP without adding a heavy image-optimization subscription."
-    url: "/blog/effortless-webp-converter-for-wordpress/"
-    btn_label: "Read the build note"
-  - image_path: "work/importon-bridge-by-nasratul-nayem.webp"
-    alt: "WooCommerce product import tool"
-    title: "Product import workflow"
-    excerpt: "A browser-to-WooCommerce workflow for collecting permitted product data and importing it into a store with less manual entry."
-    url: "/blog/alibaba-woocommerce-extension-alibaba-woocommerce-importer-custom-plugin-case-study/"
-    btn_label: "Read the build note"
-  - image_path: "work/create-and-post-reels-while-you-sleep.webp"
-    alt: "Video automation workflow"
-    title: "Scheduled video automation"
-    excerpt: "A Python-based workflow that turns planned topics into short-form videos, publishes them on schedule, and records the results."
-    url: "/blog/automated-content-creator-case-study/"
-    btn_label: "Read the build note"
 ---
 
 I’m Nasratul Nayem, a full-stack developer who builds business websites, ecommerce features, custom web tools, and automations. I work with WordPress, Shopify, PHP, CSS, JavaScript, Python, APIs, and practical AI systems.
@@ -42,7 +23,16 @@ Whether you need a focused local-business site, a stronger ecommerce store, or a
 
 The examples below are real projects and technical write-ups. They show how I approach useful features, not mock portfolio screenshots.
 
-{% include feature_row %}
+{% assign selected_build_slugs = "effortless-webp-converter-for-wordpress,alibaba-woocommerce-extension-alibaba-woocommerce-importer-custom-plugin-case-study,automated-content-creator-case-study" | split: "," %}
+<div class="work-grid home-build-grid">
+{% for selected_slug in selected_build_slugs %}
+  {% for post in site.posts %}
+    {% if post.slug == selected_slug %}
+      {% include archive-single.html type="grid" %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+</div>
 
 ## Start with the bottleneck
 
