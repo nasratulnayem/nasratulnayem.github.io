@@ -76,8 +76,11 @@
   gap: 0.08rem;
 }
 
-.masthead__mobile-profile,
-.masthead__mobile-follow {
+.masthead__mobile-profile {
+  display: none;
+}
+
+.greedy-nav .masthead__mobile-follow {
   display: none;
 }
 
