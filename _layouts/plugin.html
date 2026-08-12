@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<main id="main" class="plugin-main" role="main">
+  <article class="plugin-page" itemscope itemtype="https://schema.org/WebPage">
+    {% if page.product_name %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": {{ page.product_name | jsonify }},
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "WordPress {{ page.wordpress_requirement | default: '6.0 or later' }}, Chrome or Chromium browser",
+        "softwareVersion": {{ page.software_version | default: '0.2.1' | jsonify }},
+        "description": {{ page.description | strip_html | jsonify }},
+        "image": {{ page.product_image | absolute_url | jsonify }},
+        "offers": {
+          "@type": "Offer",
+          "price": {{ page.product_price | default: '49' | jsonify }},
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": {{ page.freemius_checkout_url | jsonify }}
+        }
+      }
+    </script>
+    {% endif %}
+
+    <div class="plugin-page__inner">{{ content }}</div>
+  </article>
+</main>

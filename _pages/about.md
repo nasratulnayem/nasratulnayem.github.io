@@ -68,6 +68,21 @@ author_profile: true
   </div>
 </section>
 
+<section class="home-product-spotlight" aria-labelledby="home-product-title">
+  <div class="home-product-spotlight__intro">
+    <p class="home-kicker">A tool you can use now</p>
+    <h2 id="home-product-title">When the same ecommerce task keeps repeating, a focused tool can be the better answer.</h2>
+    <p>Importon Bridge is the first product I am releasing from the workflows I build: a browser-assisted route for moving supported product details into a WooCommerce store.</p>
+    <a class="home-text-link" href="{{ '/plugins/' | relative_url }}">Browse plugins <span aria-hidden="true">→</span></a>
+  </div>
+  <a class="home-product-spotlight__card" href="{{ '/plugins/importon-bridge/' | relative_url }}">
+    <img src="{{ '/images/work/importon-bridge-by-nasratul-nayem.webp' | relative_url }}" alt="Importon Bridge workflow preview" loading="lazy">
+    <span class="home-product-spotlight__card-meta">WooCommerce product workflow · Pro</span>
+    <strong>Importon Bridge</strong>
+    <span>See the product <b aria-hidden="true">→</b></span>
+  </a>
+</section>
+
 <section class="home-partner" aria-labelledby="home-partner-title">
   <div class="home-partner__quote">
     <p class="home-kicker">A practical partnership</p>

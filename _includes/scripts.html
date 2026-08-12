@@ -3,6 +3,10 @@
 <script defer src="{{ base_path }}/assets/js/masthead-mobile.js"></script>
 <script defer src="{{ base_path }}/assets/js/home-build-carousel.js"></script>
 <script defer src="{{ base_path }}/assets/js/whatsapp-chat.js"></script>
+{% if page.freemius_checkout %}
+<script defer src="https://checkout.freemius.com/js/v1/"></script>
+<script defer src="{{ base_path }}/assets/js/freemius-checkout.js"></script>
+{% endif %}
 
 {% include analytics.html %}
 
