@@ -9,24 +9,13 @@ author_profile: true
   <div class="home-hero__copy">
     <p class="home-eyebrow">Nasratul Nayem · Web developer &amp; automation expert</p>
     <h1 id="home-intro-title">When work gets stuck, I help turn it into a <span>system that moves.</span></h1>
-    <p class="home-hero__lead">I’m Nayem, a web developer working remotely with business owners and teams. I build websites, ecommerce experiences, custom tools, and automations that make everyday work clearer, faster, and easier to manage.</p>
+    <p class="home-hero__lead">I’m Nayem, a web developer based in Bangladesh and working remotely with business owners and teams. I build websites, ecommerce experiences, custom tools, and automations that make everyday work clearer, faster, and easier to manage.</p>
     <div class="home-hero__actions">
       <a class="home-button home-button--primary" href="{{ '/contact/' | relative_url }}">Tell me what you need <span aria-hidden="true">→</span></a>
       <a class="home-button home-button--secondary" href="{{ '/portfolio/' | relative_url }}">See selected work</a>
     </div>
   </div>
 
-  <aside class="home-hero__panel" aria-label="How I work with clients">
-    <p class="home-eyebrow">How I work</p>
-    <p class="home-hero__panel-title">I listen before I build.</p>
-    <p class="home-hero__panel-copy">You do not need perfect technical words. Show me what is slow, confusing, manual, or not working as it should. I’ll ask the right questions, understand the goal, and turn it into a practical next step.</p>
-    <div class="home-hero__rule"></div>
-    <ul class="home-hero__specialties">
-      <li><span>01</span> You explain the business need</li>
-      <li><span>02</span> We define the right outcome</li>
-      <li><span>03</span> I build a maintainable solution</li>
-    </ul>
-  </aside>
 </section>
 
 <section class="home-section home-services" aria-labelledby="home-services-title">

@@ -898,12 +898,13 @@ body {
 }
 
 .home-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
-  align-items: center;
-  gap: clamp(1.75rem, 4vw, 3rem);
+  display: block;
   min-height: 0;
   padding: 0 0 clamp(3.5rem, 7vw, 5rem);
+}
+
+.home-hero__copy {
+  max-width: 47rem;
 }
 
 .home-eyebrow {
@@ -1009,56 +1010,6 @@ body {
   border-color: var(--global-link-color);
 }
 
-.home-hero__panel {
-  padding: clamp(1.35rem, 2.5vw, 2.1rem);
-  background: var(--global-footer-bg-color);
-  border: 1px solid var(--global-border-color);
-  border-radius: 0.7rem;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.055);
-}
-
-.home-hero__panel .home-eyebrow {
-  margin-bottom: 0.75rem;
-}
-
-.home-hero__rule {
-  height: 1px;
-  margin: 1.55rem 0;
-  background: var(--global-border-color);
-}
-
-.home-hero__panel-title {
-  margin: 0;
-  color: var(--global-text-color);
-  font-family: $sans-serif;
-  font-size: 1.04rem;
-  font-weight: 750;
-  line-height: 1.25;
-}
-
-.home-hero__panel-copy {
-  margin: 0.7rem 0 0;
-  font-size: 0.82rem;
-  line-height: 1.58;
-}
-
-.home-hero__specialties {
-  display: grid;
-  gap: 0.68rem;
-  margin: 1rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.home-hero__specialties li {
-  display: flex;
-  align-items: baseline;
-  gap: 0.65rem;
-  margin: 0;
-  font-size: 0.82rem;
-}
-
-.home-hero__specialties span,
 .home-process__steps > li > span,
 .home-service-card__number {
   color: var(--global-link-color);
@@ -1315,28 +1266,11 @@ body {
   background: rgba(255, 255, 255, 0.9);
 }
 
-@media (max-width: 1100px) {
-  .home-hero {
-    grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.65fr);
-    gap: 3rem;
-  }
-}
-
 @media (max-width: 800px) {
-  .home-hero,
   .home-process,
   .home-section__heading--work,
   .home-fit {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .home-hero {
-    min-height: 0;
-    gap: 2.5rem;
-  }
-
-  .home-hero__panel {
-    max-width: 34rem;
   }
 
   .home-section__heading--work > p:last-child {
@@ -1357,7 +1291,7 @@ body {
   }
 
   .home-hero {
-    padding: 3.25rem 0 2.75rem;
+    padding: 0 0 3rem;
   }
 
   .home-hero h1 {
