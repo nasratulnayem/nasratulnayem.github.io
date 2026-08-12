@@ -7,9 +7,25 @@
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
             <a class="masthead__greeting-link" href="{{ base_path }}/" aria-label="Nasratul Nayem — Web developer">
-              <span class="masthead__identity-name">Nasratul Nayem</span>
-              <span class="masthead__greeting-tag">Web developer</span>
+              <span class="masthead__desktop-identity">
+                <span class="masthead__identity-name">Nasratul Nayem</span>
+                <span class="masthead__greeting-tag">Web developer</span>
+              </span>
+              <span class="masthead__mobile-profile">
+                {% if site.author.avatar contains "://" %}
+                  <img class="masthead__mobile-avatar" src="{{ site.author.avatar }}" alt="{{ site.author.name }}">
+                {% else %}
+                  <img class="masthead__mobile-avatar" src="{{ site.author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ site.author.name }}">
+                {% endif %}
+                <span class="masthead__mobile-profile-copy">
+                  <span class="masthead__mobile-profile-name">{{ site.author.name }}</span>
+                  {% if site.author.bio %}<span class="masthead__mobile-profile-bio">{{ site.author.bio }}</span>{% endif %}
+                </span>
+              </span>
             </a>
+            {% if site.author.github %}
+              <a class="masthead__mobile-follow" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer" aria-label="Follow {{ site.author.name }} on GitHub">Follow</a>
+            {% endif %}
           </li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
