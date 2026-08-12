@@ -900,7 +900,7 @@ body {
 .home-hero {
   display: block;
   min-height: 0;
-  padding: 0 0 clamp(3.5rem, 7vw, 5rem);
+  padding: 0 0 clamp(2rem, 3.5vw, 3rem);
 }
 
 .home-hero__copy {
@@ -1020,7 +1020,7 @@ body {
 }
 
 .home-section {
-  margin-top: clamp(4.75rem, 9vw, 8rem);
+  margin-top: clamp(3.5rem, 5vw, 4.5rem);
 }
 
 .home-section__heading {
@@ -1515,6 +1515,13 @@ body {
 }
 
 .whatsapp-chat__toggle:checked ~ .whatsapp-chat {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+}
+
+.whatsapp-chat.is-open {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0) scale(1);
