@@ -38,7 +38,7 @@
             <span><i class="fa fa-clock" aria-hidden="true"></i>{% include read-time.html %}</span>
           {% endif %}
           {% if post.date %}
-            <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}"><i class="fa fa-calendar" aria-hidden="true"></i>{{ post.date | default: "1900-01-01" | date: "%b %d, %Y" }}</time>
+            <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}"><i class="fa fa-calendar" aria-hidden="true"></i>Published: {{ post.date | default: "1900-01-01" | date: "%b %d, %Y" }}</time>
           {% endif %}
         </div>
 
