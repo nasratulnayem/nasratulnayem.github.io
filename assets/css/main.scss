@@ -39,6 +39,16 @@
 ;
 
 /* Compact, responsive masthead identity */
+:root {
+  --site-content-max-width: 1120px;
+}
+
+.masthead__inner-wrap,
+#main.post-main,
+.page__footer footer {
+  max-width: var(--site-content-max-width);
+}
+
 .masthead__menu-item--lg {
   padding-right: 0.35rem;
 }
@@ -348,10 +358,6 @@
 }
 
 /* Full-width article layout with compact author and publication metadata */
-#main.post-main {
-  max-width: 1120px;
-}
-
 .post-page {
   float: none;
   width: 100%;
