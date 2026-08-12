@@ -38,6 +38,74 @@
     "layout/json_cv"
 ;
 
+/* Compact, responsive typewriter greeting in the masthead */
+.masthead__menu-item--lg {
+  padding-right: 0.9rem;
+}
+
+.masthead__menu-item--lg .masthead__greeting-link {
+  display: block;
+  width: 10.8rem;
+  margin: 0;
+  color: var(--global-masthead-link-color);
+  font-family: $sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+.masthead__menu-item--lg .typewriter {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  border-right: 0.12em solid var(--global-link-color);
+  color: inherit;
+  font: inherit;
+  line-height: 1.25;
+  white-space: nowrap;
+  animation: masthead-typing 2.1s steps(18, end) 0.25s forwards,
+    masthead-caret 0.7s step-end infinite;
+}
+
+@keyframes masthead-typing {
+  from { max-width: 0; }
+  to { max-width: 10.8rem; }
+}
+
+@keyframes masthead-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--global-link-color); }
+}
+
+@media (max-width: 480px) {
+  .masthead__menu-item--lg {
+    padding-right: 0.35rem;
+  }
+
+  .masthead__menu-item--lg .masthead__greeting-link {
+    width: 8.9rem;
+    font-size: 0.78rem;
+  }
+
+  .masthead__menu-item--lg .typewriter {
+    animation-name: masthead-typing-mobile, masthead-caret;
+  }
+
+  @keyframes masthead-typing-mobile {
+    from { max-width: 0; }
+    to { max-width: 8.9rem; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead__menu-item--lg .typewriter {
+    max-width: none;
+    border-right: 0;
+    animation: none;
+  }
+}
+
 /* Portfolio case-study cards */
 .work-grid {
   display: grid;
