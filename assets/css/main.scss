@@ -111,7 +111,16 @@
 
   .greedy-nav button {
     display: block !important;
+    top: 50%;
+    width: 3rem;
     height: 3rem;
+    padding: 0;
+    background: transparent;
+    transform: translateY(-50%);
+  }
+
+  .greedy-nav button .navicon {
+    margin: 0;
   }
 }
 
@@ -382,7 +391,7 @@
 
 .post-feature {
   display: block;
-  margin: 1.5rem 0 2.25rem;
+  margin: 1.25rem 0 1rem;
 }
 
 .post-feature img {
@@ -399,6 +408,14 @@
 }
 
 .post-page .page__content > :first-child {
+  margin-top: 0;
+}
+
+.post-page .page__content > p:empty {
+  display: none;
+}
+
+.post-page .page__content > .codex-block:first-of-type > h2:first-child {
   margin-top: 0;
 }
 
@@ -440,6 +457,6 @@
   }
 
   .post-feature {
-    margin-top: 1.25rem;
+    margin-top: 1rem;
   }
 }
