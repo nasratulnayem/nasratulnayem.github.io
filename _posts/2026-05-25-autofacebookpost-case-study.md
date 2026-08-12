@@ -2,7 +2,7 @@
 title: "I got tired of Canva so I built a thumbnail engine with Playwright"
 date: "2026-05-25 10:19:44 +0000"
 permalink: "/blog/autofacebookpost-case-study/"
-excerpt: "The manual design grind was killing me I spend way too much time staring at blank canvases in Canva or Photoshop. It starts with one post, then ten, then twenty, and suddenly I have spent four hours moving text layers..."
+excerpt: "The manual design grind was killing me I spend way too much time staring at blank canvases in Canva or Photoshop. It starts with one..."
 layout: post
 author_profile: false
 read_time: true

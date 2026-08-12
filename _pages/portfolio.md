@@ -2,7 +2,7 @@
 layout: archive
 title: "From bottleneck to build"
 permalink: /portfolio/
-author_profile: false
+author_profile: true
 ---
 
 Real notes from the systems I build: stronger storefronts, smarter WordPress tools, and automations that give teams their time back.

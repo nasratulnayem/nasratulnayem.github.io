@@ -40,7 +40,7 @@ const stripTags = (value) => decodeEntities(value
   .replace(/\s+/g, " ")
   .trim());
 
-const cardExcerpt = (value, limit = 220) => {
+const cardExcerpt = (value, limit = 135) => {
   const text = stripTags(value);
   if (text.length <= limit) return text;
 

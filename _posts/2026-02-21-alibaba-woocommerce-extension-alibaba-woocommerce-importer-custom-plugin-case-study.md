@@ -2,7 +2,7 @@
 title: "Import Products from Browser Pages to WooCommerce"
 date: "2026-02-21 12:28:01 +0000"
 permalink: "/blog/alibaba-woocommerce-extension-alibaba-woocommerce-importer-custom-plugin-case-study/"
-excerpt: "Importon Bridge is a lightweight WordPress plugin that connects a browser companion with WooCommerce. It lets you capture product data from Alibaba-style product pages and send it directly into your WordPress store..."
+excerpt: "Importon Bridge is a lightweight WordPress plugin that connects a browser companion with WooCommerce. It lets you capture product data..."
 layout: post
 author_profile: false
 read_time: true
@@ -10,8 +10,8 @@ comments: false
 share: false
 related: false
 header:
-  teaser: "work/Importon-bridge-by-nasratul-nayem.webp"
-  image: "work/Importon-bridge-by-nasratul-nayem.webp"
+  teaser: "work/importon-bridge-by-nasratul-nayem.webp"
+  image: "work/importon-bridge-by-nasratul-nayem.webp"
 categories:
   - "Custom Plugins"
 ---

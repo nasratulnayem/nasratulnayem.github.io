@@ -2,7 +2,7 @@
 title: "How I Built a Lightweight WebP Converter for WordPress Images"
 date: "2026-05-25 09:22:21 +0000"
 permalink: "/blog/effortless-webp-converter-for-wordpress/"
-excerpt: "Why I built this instead of relying on another plugin A while ago, I was working on a WordPress site with more than 4,000 images in the media library. Most of them were old JPEG and PNG files, and many were much heavier..."
+excerpt: "Why I built this instead of relying on another plugin A while ago, I was working on a WordPress site with more than 4,000 images in the..."
 layout: post
 author_profile: false
 read_time: true

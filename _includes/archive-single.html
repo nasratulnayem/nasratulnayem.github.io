@@ -14,44 +14,39 @@
   {% endif %}
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" %}
-      <div class="archive__item-date-rail">
-        <time class="archive__item-date" datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">
-          <span>{{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
-          <span class="archive__item-date-separator" aria-hidden="true"></span>
-          <span>{{ post.date | default: "1900-01-01" | date: "%b %d" }}</span>
-        </time>
-      </div>
+      {% if teaser %}
+        <div class="archive__item-teaser">
+          <img src=
+            {% if teaser contains "://" %}
+              "{{ teaser }}"
+            {% else %}
+              "{{ teaser | prepend: "/images/" | prepend: base_path }}"
+            {% endif %}
+            alt="{{ title | strip_html | escape_once }}">
+        </div>
+      {% else %}
+        <div class="archive__item-teaser archive__item-teaser--placeholder" aria-hidden="true">
+          <span>Build note</span>
+        </div>
+      {% endif %}
 
-      <div class="archive__item-content">
-        {% if teaser %}
-          <div class="archive__item-teaser">
-            <img src=
-              {% if teaser contains "://" %}
-                "{{ teaser }}"
-              {% else %}
-                "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-              {% endif %}
-              alt="{{ title | strip_html | escape_once }}">
-          </div>
-        {% else %}
-          <div class="archive__item-teaser archive__item-teaser--placeholder" aria-hidden="true">
-            <span>Build note</span>
-          </div>
-        {% endif %}
+      <div class="archive__item-body">
+        <h2 class="archive__item-title" itemprop="headline">{{ title }}</h2>
 
-        <div class="archive__item-infos">
-          <h2 class="archive__item-title" itemprop="headline">{{ title }}</h2>
-          {% if post.excerpt and site.read_more != 'enabled' %}
-            <div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | strip_html }}</div>
-          {% elsif post.excerpt and site.read_more == 'enabled' %}
-            <div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | strip_html }}</div>
+        <div class="archive__item-meta">
+          {% if post.read_time %}
+            <span><i class="fa fa-clock" aria-hidden="true"></i>{% include read-time.html %}</span>
+          {% endif %}
+          {% if post.date %}
+            <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}"><i class="fa fa-calendar" aria-hidden="true"></i>{{ post.date | default: "1900-01-01" | date: "%b %d, %Y" }}</time>
           {% endif %}
         </div>
 
-        <span class="archive__item-action" aria-hidden="true">
-          <span>See the solution</span>
-          <span class="archive__item-action-arrow">&rarr;</span>
-        </span>
+        {% if post.excerpt and site.read_more != 'enabled' %}
+          <div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | strip_html }}</div>
+        {% elsif post.excerpt and site.read_more == 'enabled' %}
+          <div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | strip_html }}</div>
+        {% endif %}
       </div>
 
     {% else %}
