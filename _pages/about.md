@@ -23,14 +23,23 @@ Whether you need a focused local-business site, a stronger ecommerce store, or a
 
 The examples below are real projects and technical write-ups. They show how I approach useful features, not mock portfolio screenshots.
 
-{% assign selected_build_slugs = "effortless-webp-converter-for-wordpress,alibaba-woocommerce-extension-alibaba-woocommerce-importer-custom-plugin-case-study,automated-content-creator-case-study" | split: "," %}
-<div class="work-grid home-build-grid">
-{% for selected_slug in selected_build_slugs %}
+<section class="home-build-carousel" data-post-carousel aria-label="Browse build notes">
+  <div class="work-grid home-build-grid">
   {% for post in site.posts %}
-    {% if post.slug == selected_slug %}
-      {% include archive-single.html type="grid" %}
-    {% endif %}
+    {% include archive-single.html type="grid" %}
   {% endfor %}
+  </div>
+
+  <div class="home-build-carousel__controls">
+    <button class="home-build-carousel__button" type="button" data-carousel-previous aria-label="Show previous build notes">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </button>
+    <span class="home-build-carousel__status" data-carousel-status aria-live="polite"></span>
+    <button class="home-build-carousel__button" type="button" data-carousel-next aria-label="Show next build notes">
+      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    </button>
+  </div>
+</section>
 {% endfor %}
 </div>
 
