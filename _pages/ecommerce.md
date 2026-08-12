@@ -26,7 +26,7 @@ An ecommerce site has to do more than look good. Customers need to find the righ
 
 ## Relevant build notes
 
-- [Import products from browser pages to WooCommerce](/blog/alibaba-woocommerce-extension-alibaba-woocommerce-importer-custom-plugin-case-study/)
+- [Import products from browser pages to WooCommerce](/blog/importon-bridge-product-import-workflow/)
 - [Add video to a WooCommerce gallery](/blog/add-video-to-woocommerce-gallery-for-free/)
 - [A faster way to edit WooCommerce products](/blog/a-faster-way-to-edit-woocommerce-products/)
 

@@ -1,7 +1,7 @@
 ---
 title: "Import Products from Browser Pages to WooCommerce"
 date: "2026-02-21 12:28:01 +0000"
-permalink: "/blog/alibaba-woocommerce-extension-alibaba-woocommerce-importer-custom-plugin-case-study/"
+permalink: "/blog/importon-bridge-product-import-workflow/"
 excerpt: "Importon Bridge is a lightweight WordPress plugin that connects a browser companion with WooCommerce. It lets you capture product data..."
 layout: post
 author_profile: false
@@ -18,7 +18,7 @@ categories:
 
 {% raw %}
 <section class="codex-block">
-  <p>Importon Bridge is a lightweight WordPress plugin that connects a browser companion with WooCommerce. It lets you capture product data from Alibaba-style product pages and send it directly into your WordPress store through a clean, authenticated workflow.</p>
+  <p>Importon Bridge is a lightweight WordPress plugin that connects a browser companion with WooCommerce. It captures permitted product data from supported supplier pages and sends it directly into your WordPress store through a clean, authenticated workflow.</p>
 
   <p>The goal is simple. Instead of copying product titles, descriptions, prices, images, attributes, and variations by hand, Importon Bridge gives you a faster way to move product data from the browser into WooCommerce.</p>
 
@@ -41,12 +41,12 @@ categories:
     <li>Supports optional AI rewriting through OpenAI or Google Gemini.</li>
   </ul>
 
-  <p>Alibaba is only referenced as a supported product-page source. Importon Bridge is not affiliated with Alibaba Group.</p>
+  <p>Importon Bridge is an independent browser-assisted product workflow. Store owners are responsible for importing only data they are permitted to use.</p>
 </section>
 
 <section class="codex-block">
   <h2>Why I rebuilt it as Importon Bridge</h2>
-  <p>The original idea was only about importing Alibaba products into WooCommerce. But the plugin grew into something broader. It now works more like a bridge between a browser-based product capture flow and a WordPress-powered store.</p>
+  <p>The original idea was narrowly focused on importing supplier product data into WooCommerce. But the plugin grew into something broader. It now works more like a bridge between a browser-based product capture flow and a WordPress-powered store.</p>
 
   <p>That is why the new name makes more sense. Importon Bridge describes the actual purpose of the tool better. It connects the browser companion, the WooCommerce product system, the REST API, import monitoring, batch URLs, and optional AI rewriting in one focused workflow.</p>
 

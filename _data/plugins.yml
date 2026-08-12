@@ -1,7 +1,7 @@
 products:
   - slug: importon-bridge
     name: Importon Bridge
-    short_name: Alibaba Importer
+    short_name: Importon Bridge
     status: Available now
     category: WooCommerce product workflow
     url: /plugins/importon-bridge/
