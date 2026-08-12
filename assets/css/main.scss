@@ -634,11 +634,26 @@
 
 @media (max-width: 700px) {
   #main.post-main {
+    width: 100%;
+    max-width: 100%;
     margin-top: 1.25rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .post-page,
+  .post-page .page__inner-wrap,
+  .post-page .page__content,
+  .post-header {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
   }
 
   .post-page .page__title {
-    font-size: 1.7rem;
+    font-size: clamp(1.7rem, 7vw, 2rem);
+    line-height: 1.14;
+    overflow-wrap: anywhere;
   }
 
   .post-published-date {
@@ -646,7 +661,56 @@
   }
 
   .post-feature {
-    margin-top: 1rem;
+    width: 100%;
+    margin: 1rem 0 1.25rem;
+  }
+
+  .post-feature img {
+    width: 100%;
+    max-height: none;
+    height: auto;
+  }
+
+  .post-page .page__content {
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .post-page .page__content h2 {
+    font-size: clamp(1.35rem, 6vw, 1.65rem);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .post-page .page__content img,
+  .post-page .page__content video,
+  .post-page .page__content iframe,
+  .post-page .page__content table {
+    max-width: 100%;
+  }
+
+  .post-page .page__content pre {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0.85rem;
+    font-size: 0.76rem;
+    line-height: 1.45;
+    overflow-x: auto;
+  }
+
+  .post-page .pagination {
+    display: grid;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .post-page .pagination--pager {
+    width: 100%;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border-radius: 0.3rem;
+    font-size: 0.82rem;
   }
 }
 
@@ -672,6 +736,12 @@ body {
 
 .site-shell > #main {
   flex: 1 0 auto;
+  /* A flex item with auto horizontal margins can use its content's desktop
+     width on narrow screens. Fill the available column first, then let the
+     page's own max-width control desktop reading width. */
+  width: 100%;
+  min-width: 0;
+  align-self: stretch;
 }
 
 .page__footer {
