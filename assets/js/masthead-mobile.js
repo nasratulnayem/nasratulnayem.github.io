@@ -52,9 +52,5 @@
     window.addEventListener("orientationchange", sync);
   };
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setup, { once: true });
-  } else {
-    setup();
-  }
+  window.addEventListener("load", setup, { once: true });
 })();
