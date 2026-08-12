@@ -656,6 +656,9 @@ html {
 }
 
 body {
+  /* A legacy bundle may still set this inline during a cached deploy. Keep the
+     document in normal flow; the footer must never create a second scroll area. */
+  margin-bottom: 0 !important;
   padding-bottom: 0;
 }
 
