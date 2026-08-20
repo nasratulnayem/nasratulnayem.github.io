@@ -1,4 +1,5 @@
 <script type="module" src="{{ base_path }}/assets/js/main.min.js"></script>
+<script defer src="{{ base_path }}/assets/js/hightech-interactive.js?v={{ site.time | date: '%s' }}"></script>
 <script defer src="{{ base_path }}/assets/js/home-build-carousel.js"></script>
 <script defer src="{{ base_path }}/assets/js/whatsapp-chat.js"></script>
 {% if page.freemius_checkout %}
@@ -9,3 +10,4 @@
 {% include analytics.html %}
 
 {% include comments-providers/scripts.html %}
+

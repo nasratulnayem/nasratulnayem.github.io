@@ -11,7 +11,9 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body>
+  <body class="ht-app-body">
+    <div id="reading-progress-bar" class="reading-progress-bar" aria-hidden="true"></div>
+    <canvas id="bg-mesh-canvas" class="bg-mesh-canvas" aria-hidden="true"></canvas>
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}
@@ -26,7 +28,79 @@ layout: compress
 
     {% include whatsapp-chat.html %}
 
+    <!-- Global High-Tech Command Palette (Ctrl+K) -->
+    <div id="ht-command-palette" class="ht-palette" role="dialog" aria-modal="true" aria-label="Command Palette">
+      <div class="ht-palette__dialog">
+        <div class="ht-palette__header">
+          <svg class="ht-palette__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" class="ht-palette__input" placeholder="Type a command or search pages... (ESC to exit)" autocomplete="off" spellcheck="false">
+          <span class="ht-palette__badge">ESC</span>
+        </div>
+        <div class="ht-palette__results">
+          <div class="ht-palette__group-title">Navigation</div>
+          <button type="button" class="ht-palette__item" data-href="{{ base_path }}/" data-keywords="home hero about start">
+            <span class="ht-palette__item-icon">⚡</span>
+            <span class="ht-palette__item-label">Home</span>
+            <span class="ht-palette__item-sub">Go to main overview</span>
+          </button>
+          <button type="button" class="ht-palette__item" data-href="{{ base_path }}/services/" data-keywords="services wordpress php custom web development design">
+            <span class="ht-palette__item-icon">🛠</span>
+            <span class="ht-palette__item-label">Web Development Services</span>
+            <span class="ht-palette__item-sub">WordPress, PHP, JavaScript & Web Apps</span>
+          </button>
+          <button type="button" class="ht-palette__item" data-href="{{ base_path }}/ecommerce/" data-keywords="ecommerce shopify woocommerce stores store products checkout">
+            <span class="ht-palette__item-icon">🛍</span>
+            <span class="ht-palette__item-label">Ecommerce Engineering</span>
+            <span class="ht-palette__item-sub">Shopify Liquid, WooCommerce & Growth</span>
+          </button>
+          <button type="button" class="ht-palette__item" data-href="{{ base_path }}/automation/" data-keywords="automation python ai workflows llm agents scrapers api">
+            <span class="ht-palette__item-icon">🤖</span>
+            <span class="ht-palette__item-label">Automation & AI Workflows</span>
+            <span class="ht-palette__item-sub">Python bots, APIs & AI pipelines</span>
+          </button>
+          <button type="button" class="ht-palette__item" data-href="{{ base_path }}/plugins/" data-keywords="plugins woocommerce importon bridge tools freemius">
+            <span class="ht-palette__item-icon">📦</span>
+            <span class="ht-palette__item-label">Plugins & Products</span>
+            <span class="ht-palette__item-sub">Browse software tools & Importon Bridge</span>
+          </button>
+          <button type="button" class="ht-palette__item" data-href="{{ base_path }}/portfolio/" data-keywords="portfolio work build notes case studies projects code">
+            <span class="ht-palette__item-icon">🚀</span>
+            <span class="ht-palette__item-label">Portfolio & Build Notes</span>
+            <span class="ht-palette__item-sub">Real engineering case studies</span>
+          </button>
+          <button type="button" class="ht-palette__item" data-href="{{ base_path }}/contact/" data-keywords="contact email talk hire message estimate">
+            <span class="ht-palette__item-icon">📬</span>
+            <span class="ht-palette__item-label">Contact / Start Project</span>
+            <span class="ht-palette__item-sub">Send project inquiry</span>
+          </button>
+
+          <div class="ht-palette__group-title">Quick Actions</div>
+          <button type="button" class="ht-palette__item" data-action="copy-email" data-keywords="email copy clipboard address">
+            <span class="ht-palette__item-icon">📋</span>
+            <span class="ht-palette__item-label">Copy Developer Email</span>
+            <span class="ht-palette__item-sub">devnayem30@gmail.com</span>
+          </button>
+          <button type="button" class="ht-palette__item" data-action="toggle-theme" data-keywords="theme dark light mode toggle switch color">
+            <span class="ht-palette__item-icon">🌓</span>
+            <span class="ht-palette__item-label">Toggle Dark / Light Theme</span>
+            <span class="ht-palette__item-sub">Switch visual appearance</span>
+          </button>
+          <button type="button" class="ht-palette__item" data-href="https://github.com/nasratulnayem" data-keywords="github code repos open source git">
+            <span class="ht-palette__item-icon">🐙</span>
+            <span class="ht-palette__item-label">Open GitHub Profile</span>
+            <span class="ht-palette__item-sub">@nasratulnayem</span>
+          </button>
+        </div>
+        <div class="ht-palette__footer">
+          <span>Navigate with <kbd>↑</kbd> <kbd>↓</kbd></span>
+          <span>Select with <kbd>↵</kbd></span>
+          <span>Close with <kbd>ESC</kbd></span>
+        </div>
+      </div>
+    </div>
+
     {% include scripts.html %}
 
   </body>
 </html>
+

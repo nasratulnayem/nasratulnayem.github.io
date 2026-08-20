@@ -2,135 +2,418 @@
 layout: home
 permalink: /
 title: "Websites, ecommerce, and automation that reduce manual work"
-author_profile: true
+author_profile: false
 ---
 
-<section class="home-introduction" aria-labelledby="home-intro-title">
-  <div class="home-introduction__portrait">
-    <img src="{{ '/images/profile.png' | relative_url }}" alt="Nasratul Nayem, web developer and automation expert">
-    <p class="home-introduction__location"><span>Bangladesh</span><span aria-hidden="true">•</span><span>Working remotely</span></p>
-  </div>
-
-  <div class="home-introduction__copy">
-    <p class="home-kicker">Hi, I’m Nayem</p>
-    <h1 id="home-intro-title">I build websites and automations that make <span>business work feel lighter.</span></h1>
-    <p class="home-introduction__lead">I’m a web developer from Bangladesh, working remotely with people who care about their business. I create useful websites, ecommerce experiences, custom tools, and automations that help a team move with more clarity and less manual work.</p>
-    <p class="home-introduction__thought">I do not start with a stack of tools. I start by understanding what is slow, confusing, or getting in the way—then I turn that into something practical your business can keep using.</p>
-    <div class="home-introduction__actions">
-      <a class="home-button home-button--primary" href="{{ '/contact/' | relative_url }}">Tell me what you need <span aria-hidden="true">→</span></a>
-      <a class="home-text-link" href="{{ '/portfolio/' | relative_url }}">See selected work <span aria-hidden="true">→</span></a>
-    </div>
-    <ul class="home-introduction__skills" aria-label="Core skills">
-      <li>WordPress</li>
-      <li>Shopify &amp; WooCommerce</li>
-      <li>Custom code</li>
-      <li>Automation &amp; AI</li>
-    </ul>
-  </div>
-</section>
-
-<section class="home-statement" aria-labelledby="home-statement-title">
-  <p class="home-kicker">What matters to me</p>
-  <div class="home-statement__grid">
-    <h2 id="home-statement-title">A website should not only look professional. It should make the next step easier.</h2>
-    <div>
-      <p>That can mean a clearer service page, a product flow that customers understand, a checkout that stops losing sales, or an internal task that no longer takes hours every week.</p>
-      <p>My job is to listen closely, understand the business behind the request, and make the technical side feel simpler—not heavier.</p>
-    </div>
-  </div>
-</section>
-
-<section class="home-capabilities" aria-labelledby="home-capabilities-title">
-  <div class="home-editorial-heading">
-    <p class="home-kicker">How I can help</p>
-    <h2 id="home-capabilities-title">One person for the website, the store, and the work behind it.</h2>
-  </div>
-
-  <div class="home-capability-grid">
-    <a class="home-capability-card" href="{{ '/services/' | relative_url }}">
-      <span class="home-capability-card__index">01</span>
-      <h3>Websites that feel clear</h3>
-      <p>Business sites, landing pages, contact flows, WordPress themes, custom PHP, CSS, JavaScript, and features shaped around the people using them.</p>
-      <span>Explore web development <b aria-hidden="true">→</b></span>
-    </a>
-    <a class="home-capability-card" href="{{ '/ecommerce/' | relative_url }}">
-      <span class="home-capability-card__index">02</span>
-      <h3>Stores that do more work</h3>
-      <p>Shopify and WooCommerce product pages, cart journeys, product imports, custom functionality, and store improvements that support sales and operations.</p>
-      <span>Explore ecommerce <b aria-hidden="true">→</b></span>
-    </a>
-    <a class="home-capability-card" href="{{ '/automation/' | relative_url }}">
-      <span class="home-capability-card__index">03</span>
-      <h3>Automation that returns time</h3>
-      <p>Python tools, APIs, AI-assisted workflows, reporting, content helpers, and practical automations connected to the real work your team already does.</p>
-      <span>Explore automation <b aria-hidden="true">→</b></span>
-    </a>
-  </div>
-</section>
-
-<section class="home-product-spotlight" aria-labelledby="home-product-title">
-  <div class="home-product-spotlight__intro">
-    <p class="home-kicker">A tool you can use now</p>
-    <h2 id="home-product-title">When the same ecommerce task keeps repeating, a focused tool can be the better answer.</h2>
-    <p>Importon Bridge is the first product I am releasing from the workflows I build: a browser-assisted route for moving supported product details into a WooCommerce store.</p>
-    <a class="home-text-link" href="{{ '/plugins/' | relative_url }}">Browse plugins <span aria-hidden="true">→</span></a>
-  </div>
-  <a class="home-product-spotlight__card" href="{{ '/plugins/importon-bridge/' | relative_url }}">
-    <img src="{{ '/images/work/importon-bridge-by-nasratul-nayem.webp' | relative_url }}" alt="Importon Bridge workflow preview" loading="lazy">
-    <span class="home-product-spotlight__card-meta">WooCommerce product workflow · Pro</span>
-    <strong>Importon Bridge</strong>
-    <span>See the product <b aria-hidden="true">→</b></span>
-  </a>
-</section>
-
-<section class="home-partner" aria-labelledby="home-partner-title">
-  <div class="home-partner__quote">
-    <p class="home-kicker">A practical partnership</p>
-    <h2 id="home-partner-title">You know your business. I bring the web and automation side into focus.</h2>
-  </div>
-  <div class="home-partner__details">
-    <p>You do not need to know the perfect technical words before you get in touch. Show me the current website, explain the awkward process, or tell me what customers keep struggling with.</p>
-    <ul>
-      <li>Local businesses and professional services</li>
-      <li>Restaurants, clinics, schools, and growing teams</li>
-      <li>Online stores that need a stronger customer journey</li>
-      <li>Teams ready to reduce repeated manual work</li>
-    </ul>
-  </div>
-</section>
-
-<section class="home-section home-work" aria-labelledby="home-work-title">
-  <div class="home-editorial-heading home-editorial-heading--work">
-    <div>
-      <p class="home-kicker">Selected build notes</p>
-      <h2 id="home-work-title">Real work, with the thinking behind it.</h2>
-    </div>
-    <p>These are practical builds and write-ups—not mock portfolio screenshots. Open a note to see how I think through a problem and turn it into something useful.</p>
-  </div>
-
-  <div class="home-build-carousel" data-post-carousel aria-label="Browse build notes">
-    <div class="work-grid home-build-grid">
-      {% for post in site.posts %}
-        {% include archive-single.html type="grid" %}
-      {% endfor %}
+<!-- Hero Section with Dual-Pane High-Tech Console -->
+<section class="ht-hero" aria-labelledby="ht-hero-title">
+  <div class="ht-hero__content">
+    <div class="ht-hero__status-badge">
+      <span class="ht-status-pulse"></span>
+      <span class="ht-hero__status-text">AVAILABLE FOR WEB &amp; AUTOMATION CONTRACTS · REMOTE WORLDWIDE</span>
     </div>
 
-    <div class="home-build-carousel__controls" aria-label="Build note carousel controls">
-      <button class="home-build-carousel__button" type="button" data-carousel-previous aria-label="Show previous build notes">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-      </button>
-      <button class="home-build-carousel__button" type="button" data-carousel-next aria-label="Show next build notes">
-        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    <h1 id="ht-hero-title" class="ht-hero__headline">
+      Architecting Fast Websites, Ecommerce Engines &amp; <span class="ht-text-gradient">Intelligent Automations.</span>
+    </h1>
+
+    <p class="ht-hero__lead">
+      Hi, I’m <strong>Nasratul Nayem</strong>—a web developer and automation engineer from Bangladesh. I build high-performance WordPress systems, conversion-driven Shopify &amp; WooCommerce stores, and autonomous Python/AI pipelines that eliminate manual business bottlenecks.
+    </p>
+
+    <div class="ht-hero__actions">
+      <a class="ht-btn-primary ht-btn--glow" href="{{ '/contact/' | relative_url }}">
+        <span>Start a Project</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <a class="ht-btn-secondary" href="{{ '/portfolio/' | relative_url }}">
+        <span>Explore Build Notes</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 12 12 14 14"></polyline></svg>
+      </a>
+      <button class="ht-btn-tertiary" type="button" data-copy-email title="1-Click Copy Email">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        <span>Copy Email</span>
       </button>
     </div>
+
+    <div class="ht-hero__metrics-ribbon">
+      <div class="ht-metric-item">
+        <strong>&lt; 24h</strong>
+        <span>Response SLA</span>
+      </div>
+      <div class="ht-metric-separator">/</div>
+      <div class="ht-metric-item">
+        <strong>100%</strong>
+        <span>Remote Delivery</span>
+      </div>
+      <div class="ht-metric-separator">/</div>
+      <div class="ht-metric-item">
+        <strong>Direct</strong>
+        <span>Founder-to-Dev Access</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Terminal Simulator -->
+  <div class="ht-hero__terminal-wrap">
+    <div class="hero-terminal glow-card">
+      <div class="hero-terminal__topbar">
+        <div class="hero-terminal__dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <div class="hero-terminal__title">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+          <span>nayem-runtime-v2.6.sh</span>
+        </div>
+        <div class="hero-terminal__status">
+          <span class="ht-status-pulse"></span>
+          <span>ONLINE</span>
+        </div>
+      </div>
+
+      <div class="hero-terminal__tabs">
+        <button class="hero-terminal__tab-btn is-active" data-view="stack" type="button">Stack</button>
+        <button class="hero-terminal__tab-btn" data-view="services" type="button">Services</button>
+        <button class="hero-terminal__tab-btn" data-view="flagship" type="button">Flagship</button>
+        <button class="hero-terminal__tab-btn" data-view="status" type="button">Status</button>
+        <button class="hero-terminal__tab-btn" data-view="contact" type="button">Contact</button>
+      </div>
+
+      <div class="hero-terminal__body" aria-live="polite">
+        <div class="hero-terminal__welcome">
+          <span class="ht-term-cyan">// Nasratul Nayem Developer Shell [Version 2.6.0]</span><br>
+          <span class="ht-term-muted">// Type commands below or click quick shortcuts:</span>
+        </div>
+        <div class="hero-terminal__line">
+          <span class="hero-terminal__prompt">nayem@dev:~$</span>
+          <span class="hero-terminal__cmd">status</span>
+        </div>
+        <div class="hero-terminal__response">
+          <span class="ht-term-green">● SYSTEM STATUS: ONLINE &amp; ACCEPTING PROJECTS</span><br>
+          &nbsp;&nbsp;• <span class="ht-term-yellow">Core Skills:</span> WordPress, Shopify, WooCommerce, Python, AI<br>
+          &nbsp;&nbsp;• <span class="ht-term-yellow">Flagship:</span> Importon Bridge Pro (WooCommerce Importer)<br>
+          &nbsp;&nbsp;• <span class="ht-term-yellow">Direct Contact:</span> devnayem30@gmail.com
+        </div>
+      </div>
+
+      <div class="hero-terminal__chips">
+        <span class="ht-term-chips-label">Quick run:</span>
+        <button type="button" class="hero-terminal__chip" data-cmd="stack">stack</button>
+        <button type="button" class="hero-terminal__chip" data-cmd="services">services</button>
+        <button type="button" class="hero-terminal__chip" data-cmd="flagship">flagship</button>
+        <button type="button" class="hero-terminal__chip" data-cmd="contact">contact</button>
+        <button type="button" class="hero-terminal__chip" data-cmd="clear">clear</button>
+      </div>
+
+      <div class="hero-terminal__input-row">
+        <span class="hero-terminal__input-prompt">nayem@dev:~$</span>
+        <input type="text" class="hero-terminal__input" placeholder="Type command (e.g. help, stack, contact)..." spellcheck="false" autocomplete="off">
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="home-closing home-closing--new" aria-labelledby="home-closing-title">
-  <div>
-    <p class="home-kicker">Let’s make the next step clearer</p>
-    <h2 id="home-closing-title">Tell me what your business needs to work better.</h2>
-    <p>A slow website, a difficult product workflow, a missing feature, or a repeated daily task is enough to begin. I’ll listen, understand the situation, and help you choose a useful next step.</p>
+<!-- High-Tech Tech Stack Pill Grid -->
+<section class="ht-stack-ribbon" aria-label="Key Technologies">
+  <div class="ht-stack-ribbon__inner">
+    <span class="ht-stack-pill"><i class="fab fa-wordpress" aria-hidden="true"></i> WordPress Core &amp; Custom Plugins</span>
+    <span class="ht-stack-pill"><i class="fab fa-shopify" aria-hidden="true"></i> Shopify Liquid &amp; Storefronts</span>
+    <span class="ht-stack-pill"><i class="fas fa-shopping-bag" aria-hidden="true"></i> WooCommerce Architecture</span>
+    <span class="ht-stack-pill"><i class="fab fa-python" aria-hidden="true"></i> Python Bots &amp; Scraping</span>
+    <span class="ht-stack-pill"><i class="fas fa-brain" aria-hidden="true"></i> AI &amp; LLM Automation Pipelines</span>
+    <span class="ht-stack-pill"><i class="fab fa-js" aria-hidden="true"></i> Vanilla JS / ES6+ &amp; REST APIs</span>
+    <span class="ht-stack-pill"><i class="fas fa-shield-alt" aria-hidden="true"></i> Freemius Software Monetization</span>
   </div>
-  <a class="home-button home-button--light" href="{{ '/contact/' | relative_url }}">Start a conversation <span aria-hidden="true">→</span></a>
 </section>
+
+<!-- High-Tech Bento Grid: Flagship Product & Core Capabilities -->
+<section class="ht-bento-section" aria-labelledby="bento-title">
+  <div class="ht-section-header">
+    <div class="ht-eyebrow">
+      <span class="ht-eyebrow-dot"></span>
+      <span>ENGINEERING CAPABILITIES &amp; PRODUCTS</span>
+    </div>
+    <h2 id="bento-title" class="ht-section-title">Built with precision. Engineered for business impact.</h2>
+    <p class="ht-section-subtitle">No bloated page builders. No unnecessary complexity. Just clean code, fast interfaces, and automations that return hours to your week.</p>
+  </div>
+
+  <div class="ht-bento-grid">
+    <!-- Bento 1: Flagship SaaS Product (Importon Bridge) -->
+    <article class="bento-card bento-card--featured glow-card">
+      <div class="bento-card__badge-row">
+        <span class="ht-badge ht-badge--cyan">FLAGSHIP PRODUCT</span>
+        <span class="ht-badge ht-badge--green">v0.1.0 Pro Available</span>
+      </div>
+      <div class="bento-card__header">
+        <h3 class="bento-card__title">Importon Bridge</h3>
+        <p class="bento-card__desc">A browser-assisted workflow engine that moves product data from supported web pages into WooCommerce without repetitive manual copy-pasting.</p>
+      </div>
+
+      <div class="bento-card__visual-bridge">
+        <div class="ht-bridge-step">
+          <div class="ht-bridge-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
+          <span>Browser Page</span>
+        </div>
+        <div class="ht-bridge-arrow">
+          <span class="ht-bridge-pulse"></span>
+          <span class="ht-bridge-label">Secure REST</span>
+        </div>
+        <div class="ht-bridge-step">
+          <div class="ht-bridge-icon"><i class="fab fa-wordpress" aria-hidden="true"></i></div>
+          <span>WooCommerce Draft</span>
+        </div>
+      </div>
+
+      <div class="bento-card__highlights">
+        <span><i class="fas fa-check" aria-hidden="true"></i> Chrome companion included</span>
+        <span><i class="fas fa-check" aria-hidden="true"></i> Freemius licensed updates</span>
+        <span><i class="fas fa-check" aria-hidden="true"></i> 14-day refund window</span>
+      </div>
+
+      <div class="bento-card__actions">
+        <a class="ht-btn-primary" href="{{ '/plugins/importon-bridge/' | relative_url }}">
+          <span>See Product Tour</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="ht-btn-secondary" href="https://checkout.freemius.com/product/28475/plan/46909/?licenses=1&billing_cycle=annual&currency=auto&language=auto&title=Importon%20Bridge%20Pro" target="_blank" rel="nofollow noopener noreferrer">
+          <span>Get Pro for $49/yr</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Bento 2: High-Speed Web & WordPress -->
+    <article class="bento-card glow-card">
+      <div class="bento-card__badge-row">
+        <span class="ht-badge">WEB ENGINEERING</span>
+      </div>
+      <div class="bento-card__icon-box">
+        <i class="fab fa-wordpress-simple" aria-hidden="true"></i>
+      </div>
+      <h3 class="bento-card__title">Websites That Feel Instant</h3>
+      <p class="bento-card__desc">Custom WordPress themes, clean PHP 8+ plugins, responsive frontend code, and high Core Web Vitals optimization.</p>
+      <ul class="bento-card__list">
+        <li>Custom plugin development &amp; hooks</li>
+        <li>Theme customizations &amp; PHP fixes</li>
+        <li>Speed &amp; Core Web Vitals tune-up</li>
+      </ul>
+      <a class="bento-card__link" href="{{ '/services/' | relative_url }}">Explore web services <span aria-hidden="true">→</span></a>
+    </article>
+
+    <!-- Bento 3: Ecommerce Growth -->
+    <article class="bento-card glow-card">
+      <div class="bento-card__badge-row">
+        <span class="ht-badge">ECOMMERCE</span>
+      </div>
+      <div class="bento-card__icon-box">
+        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+      </div>
+      <h3 class="bento-card__title">Stores That Convert</h3>
+      <p class="bento-card__desc">Shopify Liquid section engineering and WooCommerce checkout optimization designed to reduce drop-offs and manage large catalogs.</p>
+      <ul class="bento-card__list">
+        <li>Shopify Liquid custom sections</li>
+        <li>WooCommerce product page galleries</li>
+        <li>Catalog import &amp; synchronization</li>
+      </ul>
+      <a class="bento-card__link" href="{{ '/ecommerce/' | relative_url }}">Explore ecommerce <span aria-hidden="true">→</span></a>
+    </article>
+
+    <!-- Bento 4: Autonomous Python & AI Automations -->
+    <article class="bento-card glow-card">
+      <div class="bento-card__badge-row">
+        <span class="ht-badge">AUTOMATION &amp; AI</span>
+      </div>
+      <div class="bento-card__icon-box">
+        <i class="fas fa-robot" aria-hidden="true"></i>
+      </div>
+      <h3 class="bento-card__title">Automations That Return Time</h3>
+      <p class="bento-card__desc">Custom Python bots, Playwright scrapers, scheduled syncs, and AI LLM integrations that do the repetitive heavy lifting.</p>
+      <ul class="bento-card__list">
+        <li>Data scraping &amp; structured cleanup</li>
+        <li>AI content generation &amp; categorization</li>
+        <li>CRM, Google Sheets &amp; Webhook pipelines</li>
+      </ul>
+      <a class="bento-card__link" href="{{ '/automation/' | relative_url }}">Explore automations <span aria-hidden="true">→</span></a>
+    </article>
+
+    <!-- Bento 5: Engineering SLA & Communication -->
+    <article class="bento-card glow-card">
+      <div class="bento-card__badge-row">
+        <span class="ht-badge ht-badge--green">DIRECT ACCESS</span>
+      </div>
+      <div class="bento-card__icon-box">
+        <i class="fas fa-bolt" aria-hidden="true"></i>
+      </div>
+      <h3 class="bento-card__title">Clear Engineering Partnership</h3>
+      <p class="bento-card__desc">Work directly with the builder. No bloated agency retainers, no account manager delays, and clear transparent scoping before any line of code is written.</p>
+      <div class="ht-sla-chip">
+        <span class="ht-status-pulse"></span>
+        <span>Guaranteed &lt; 24h Response SLA</span>
+      </div>
+      <a class="bento-card__link" href="{{ '/contact/' | relative_url }}">Discuss your project <span aria-hidden="true">→</span></a>
+    </article>
+  </div>
+</section>
+
+<!-- Filterable Engineering Case Studies & Build Notes -->
+<section class="ht-work-section" aria-labelledby="work-title">
+  <div class="ht-section-header ht-section-header--split">
+    <div>
+      <div class="ht-eyebrow">
+        <span class="ht-eyebrow-dot"></span>
+        <span>ENGINEERING LOGS &amp; BUILDS</span>
+      </div>
+      <h2 id="work-title" class="ht-section-title">Real work, with the thinking behind it.</h2>
+    </div>
+    <div class="ht-work-controls">
+      <div class="portfolio-filter-hud" role="tablist" aria-label="Filter case studies">
+        <button type="button" class="filter-chip is-active" data-category="all">All Systems</button>
+        <button type="button" class="filter-chip" data-category="wordpress">WordPress</button>
+        <button type="button" class="filter-chip" data-category="ecommerce">Ecommerce</button>
+        <button type="button" class="filter-chip" data-category="automation">Automation &amp; AI</button>
+      </div>
+      <div class="ht-search-wrap">
+        <input type="text" class="portfolio-search-input" placeholder="Search builds..." aria-label="Search build notes">
+      </div>
+    </div>
+  </div>
+
+  <div class="work-grid home-build-grid">
+    {% for post in site.posts limit:6 %}
+      {% include archive-single.html type="grid" %}
+    {% endfor %}
+  </div>
+
+  <div class="ht-work-footer">
+    <a class="ht-btn-secondary" href="{{ '/portfolio/' | relative_url }}">
+      <span>View All Case Studies &amp; Open Source Repositories ({{ site.posts.size }})</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- Interactive Project Scope & ROI Estimator -->
+<section class="ht-estimator-section" aria-labelledby="estimator-title">
+  <div class="ht-section-header">
+    <div class="ht-eyebrow">
+      <span class="ht-eyebrow-dot"></span>
+      <span>PROJECT ESTIMATOR &amp; SCOPE BUILDER</span>
+    </div>
+    <h2 id="estimator-title" class="ht-section-title">Configure your build requirements.</h2>
+    <p class="ht-section-subtitle">Select the capabilities you need to generate an instant scope estimate and pre-filled project brief.</p>
+  </div>
+
+  <div id="project-scope-estimator" class="ht-estimator-card glow-card">
+    <div class="ht-estimator__grid">
+      <div class="ht-estimator__features">
+        <span class="ht-estimator__label">1. SELECT REQUIRED DELIVERABLES</span>
+        
+        <label class="ht-check-card">
+          <input type="checkbox" data-hours="20" data-name="WordPress Custom Plugin" checked>
+          <div class="ht-check-card__content">
+            <strong>Custom WordPress Plugin / Feature</strong>
+            <span>Tailored PHP functionality, custom REST endpoints, or admin workflows.</span>
+          </div>
+          <span class="ht-check-card__tag">~20 hrs</span>
+        </label>
+
+        <label class="ht-check-card">
+          <input type="checkbox" data-hours="15" data-name="WooCommerce / Shopify Optimization" checked>
+          <div class="ht-check-card__content">
+            <strong>Ecommerce Store &amp; Checkout Optimization</strong>
+            <span>Product pages, custom variation UX, speed &amp; conversion tweaks.</span>
+          </div>
+          <span class="ht-check-card__tag">~15 hrs</span>
+        </label>
+
+        <label class="ht-check-card">
+          <input type="checkbox" data-hours="25" data-name="Python Data Automation Bot">
+          <div class="ht-check-card__content">
+            <strong>Python Automation &amp; Scraping Engine</strong>
+            <span>Automated data ingestion, CSV/API pipeline, or scheduled bot.</span>
+          </div>
+          <span class="ht-check-card__tag">~25 hrs</span>
+        </label>
+
+        <label class="ht-check-card">
+          <input type="checkbox" data-hours="20" data-name="AI & LLM Workflow Integration">
+          <div class="ht-check-card__content">
+            <strong>AI &amp; LLM Pipeline Integration</strong>
+            <span>Automated content generation, tagging, categorization, and prompt flows.</span>
+          </div>
+          <span class="ht-check-card__tag">~20 hrs</span>
+        </label>
+      </div>
+
+      <div class="ht-estimator__summary">
+        <span class="ht-estimator__label">2. ESTIMATED TIMELINE &amp; SCOPE</span>
+
+        <div class="ht-summary-box">
+          <div class="ht-summary-row">
+            <span>Estimated Engineering:</span>
+            <strong class="estimator-hours">35 hrs</strong>
+          </div>
+          <div class="ht-summary-row">
+            <span>Target Turnaround:</span>
+            <strong class="estimator-timeline">2-3 Weeks</strong>
+          </div>
+          <div class="ht-summary-divider"></div>
+          <div class="ht-summary-meta">
+            <span><i class="fas fa-check-circle" aria-hidden="true"></i> Clean, documented code</span>
+            <span><i class="fas fa-check-circle" aria-hidden="true"></i> Git repository &amp; milestones</span>
+            <span><i class="fas fa-check-circle" aria-hidden="true"></i> Post-launch support included</span>
+          </div>
+        </div>
+
+        <div class="ht-estimator__timeline-picker">
+          <span class="ht-picker-label">Pace Preference:</span>
+          <label class="ht-radio-label">
+            <input type="radio" name="timeline" data-multiplier="1" data-label="2-3 Weeks" checked>
+            <span>Standard (2-3 Weeks)</span>
+          </label>
+          <label class="ht-radio-label">
+            <input type="radio" name="timeline" data-multiplier="1.2" data-label="Fast-Track (1 Week)">
+            <span>Fast-Track Sprint (1 Week)</span>
+          </label>
+        </div>
+
+        <a class="estimator-submit-btn ht-btn-primary ht-btn--block" href="mailto:devnayem30@gmail.com">
+          <span>Send Configured Scope to Nayem</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- High-Tech Closing Call-to-Action -->
+<section class="ht-closing-section" aria-labelledby="closing-title">
+  <div class="ht-closing-card glow-card">
+    <div class="ht-closing-content">
+      <div class="ht-eyebrow">
+        <span class="ht-eyebrow-dot"></span>
+        <span>LET’S GET STARTED</span>
+      </div>
+      <h2 id="closing-title" class="ht-closing-title">Tell me what your business needs to work better.</h2>
+      <p class="ht-closing-desc">A slow storefront, a repetitive manual daily task, a missing WordPress feature, or an automation concept is enough to begin. I’ll listen closely, understand your system, and deliver a practical roadmap.</p>
+      
+      <div class="ht-closing-actions">
+        <a class="ht-btn-primary ht-btn--glow" href="{{ '/contact/' | relative_url }}">
+          <span>Start a Project Inquiry</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="ht-btn-secondary" href="https://wa.me/8801831862142" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <span>Chat on WhatsApp</span>
+        </a>
+        <button class="ht-btn-tertiary" type="button" data-copy-email>
+          <i class="fas fa-copy" aria-hidden="true"></i>
+          <span>devnayem30@gmail.com</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+

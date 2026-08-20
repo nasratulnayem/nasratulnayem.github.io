@@ -1,49 +1,89 @@
 {% include base_path %}
-<div class="site-footer">
-  <div class="site-footer__topline">
-    <p>Have a useful problem to solve?</p>
-    <a href="{{ base_path }}/contact/">Start a conversation <span aria-hidden="true">→</span></a>
+<div class="site-footer ht-footer">
+  <div class="ht-footer__cta-band">
+    <div class="ht-footer__cta-content">
+      <div class="ht-footer__status-badge">
+        <span class="ht-status-pulse"></span>
+        <span>SYSTEM STATUS: READY FOR NEW CONTRACTS &amp; BUILDS</span>
+      </div>
+      <h2 class="ht-footer__cta-title">Have a bottleneck or project ready to build?</h2>
+      <p class="ht-footer__cta-desc">Let’s turn slow manual workflows, messy stores, or custom feature requests into high-performance, automated systems.</p>
+    </div>
+    <div class="ht-footer__cta-actions">
+      <a class="ht-btn-glow" href="{{ base_path }}/contact/">
+        <span>Start a Conversation</span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <button class="ht-btn-copy-mail" type="button" data-copy-email>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        <span>Copy Email</span>
+      </button>
+    </div>
   </div>
 
-  <div class="site-footer__grid">
-    <div class="site-footer__intro">
-      <a class="site-footer__brand" href="{{ base_path }}/">{{ site.author.name }}</a>
-      <p class="site-footer__role">{{ site.author.bio }}</p>
-      <p>Websites, ecommerce systems, and automations built to make useful work easier.</p>
+  <div class="ht-footer__grid">
+    <div class="ht-footer__col ht-footer__col--brand">
+      <a class="ht-footer__brand" href="{{ base_path }}/">
+        <span class="ht-footer__brand-dot"></span>
+        <strong>{{ site.author.name }}</strong>
+      </a>
+      <p class="ht-footer__tagline">Engineering high-performance WordPress systems, Shopify experiences, and autonomous Python &amp; AI automations.</p>
+      <div class="ht-footer__stack-tags">
+        <span>WordPress Pro</span>
+        <span>WooCommerce</span>
+        <span>Shopify Liquid</span>
+        <span>Python Automations</span>
+        <span>AI Pipelines</span>
+      </div>
     </div>
 
-    <nav class="site-footer__nav" aria-label="Explore the site">
-      <span class="site-footer__label">Explore</span>
-      {% for link in site.data.navigation.main %}
-        {% if link.url contains 'http' %}
-          {% assign footer_domain = '' %}
-        {% else %}
-          {% assign footer_domain = base_path %}
+    <div class="ht-footer__col">
+      <span class="ht-footer__heading">Navigation</span>
+      <nav class="ht-footer__links" aria-label="Footer Navigation">
+        {% for link in site.data.navigation.main %}
+          {% if link.url contains 'http' %}
+            {% assign footer_domain = '' %}
+          {% else %}
+            {% assign footer_domain = base_path %}
+          {% endif %}
+          <a href="{{ footer_domain }}{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+
+    <div class="ht-footer__col">
+      <span class="ht-footer__heading">Software &amp; Tools</span>
+      <nav class="ht-footer__links" aria-label="Software links">
+        <a href="{{ base_path }}/plugins/">Browse Plugins Hub</a>
+        <a href="{{ base_path }}/plugins/importon-bridge/">Importon Bridge (WooCommerce)</a>
+        <a href="{{ base_path }}/plugin-support/">Product Support &amp; SLA</a>
+        <a href="{{ base_path }}/refund-policy/">14-Day Refund Policy</a>
+      </nav>
+    </div>
+
+    <div class="ht-footer__col">
+      <span class="ht-footer__heading">Connect</span>
+      <div class="ht-footer__links">
+        {% if site.author.email %}
+          <a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> {{ site.author.email }}</a>
         {% endif %}
-        <a href="{{ footer_domain }}{{ link.url }}">{{ link.title }}</a>
-      {% endfor %}
-    </nav>
-
-    <nav class="site-footer__nav" aria-label="Importon Bridge links">
-      <span class="site-footer__label">Importon Bridge</span>
-      <a href="{{ base_path }}/plugins/">Browse plugins</a>
-      <a href="{{ base_path }}/plugins/importon-bridge/">See the workflow</a>
-      <a href="{{ base_path }}/plugin-support/">Product support</a>
-      <a href="{{ base_path }}/refund-policy/">Refund policy</a>
-    </nav>
-
-    <div class="site-footer__contact">
-      <span class="site-footer__label">Get in touch</span>
-      <p>Tell me what is slow, unclear, or taking too much manual work. I’ll help find the right next step.</p>
-      <div class="site-footer__links">
-        {% if site.author.email %}<a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> {{ site.author.email }}</a>{% endif %}
-        {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>{% endif %}
+        {% if site.author.github %}
+          <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> github.com/{{ site.author.github }}</a>
+        {% endif %}
+        <a href="https://wa.me/8801831862142" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Direct</a>
       </div>
     </div>
   </div>
 
-  <div class="site-footer__bottom">
-    <span>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Built with care in Bangladesh.</span>
-    <span class="site-footer__legal-links"><a href="{{ base_path }}/privacy/">Privacy</a><a href="{{ base_path }}/terms/">Terms</a><a href="{{ base_path }}/sitemap/">Site map</a></span>
+  <div class="ht-footer__bottom">
+    <div class="ht-footer__bottom-copy">
+      &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Designed &amp; engineered for maximum speed and clarity.
+    </div>
+    <div class="ht-footer__legal-links">
+      <a href="{{ base_path }}/privacy/">Privacy</a>
+      <a href="{{ base_path }}/terms/">Terms</a>
+      <a href="{{ base_path }}/sitemap/">Sitemap</a>
+    </div>
   </div>
 </div>
+

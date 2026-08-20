@@ -1,21 +1,22 @@
 {% include base_path %}
-<header class="site-header masthead" role="banner">
-  <div class="site-header__inner">
-    <a class="site-header__brand" href="{{ base_path }}/" aria-label="{{ site.author.name }} home">
-      <span class="site-header__portrait" aria-hidden="true">
+<header class="site-header masthead ht-masthead" role="banner">
+  <div class="site-header__inner ht-masthead__inner">
+    <a class="site-header__brand ht-brand" href="{{ base_path }}/" aria-label="{{ site.author.name }} Home">
+      <div class="ht-brand__avatar-wrap">
         {% if site.author.avatar contains "://" %}
-          <img src="{{ site.author.avatar }}" alt="">
+          <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}" class="ht-brand__avatar">
         {% else %}
-          <img src="{{ site.author.avatar | prepend: '/images/' | prepend: base_path }}" alt="">
+          <img src="{{ site.author.avatar | prepend: '/images/' | prepend: base_path }}" alt="{{ site.author.name }}" class="ht-brand__avatar">
         {% endif %}
-      </span>
-      <span class="site-header__brand-copy">
-        <strong>{{ site.author.name }}</strong>
-        <span>{{ site.author.bio }}</span>
-      </span>
+        <span class="ht-brand__status-dot" title="Available for projects" aria-label="Available for projects"></span>
+      </div>
+      <div class="ht-brand__text">
+        <span class="ht-brand__name">{{ site.author.name }}</span>
+        <span class="ht-brand__title">Web &amp; Automation Architect</span>
+      </div>
     </a>
 
-    <nav class="site-header__nav" aria-label="Primary navigation">
+    <nav class="site-header__nav ht-nav" aria-label="Primary navigation">
       {% for link in site.data.navigation.main %}
         {% if link.url contains 'http' %}
           {% assign domain = '' %}
@@ -26,32 +27,64 @@
         {% if page.url == link.url or link.url != '/' and page.url contains link.url %}
           {% assign active_link = true %}
         {% endif %}
-        <a class="site-header__nav-link{% if active_link %} is-active{% endif %}" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+        <a class="ht-nav__link{% if active_link %} is-active{% endif %}" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
       {% endfor %}
     </nav>
 
-    <div class="site-header__actions">
-      <a class="site-header__contact-link" href="{{ base_path }}/contact/">Let’s talk <span aria-hidden="true">↗</span></a>
-      <button id="theme-toggle" class="site-header__theme" type="button" aria-label="Toggle color theme"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i></button>
-      <details class="site-header__mobile-menu">
-        <summary aria-label="Open navigation"><span></span><span></span><span></span></summary>
-        <div class="site-header__mobile-panel">
-          <span class="site-header__mobile-label">Navigate</span>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign mobile_domain = '' %}
-            {% else %}
-              {% assign mobile_domain = base_path %}
-            {% endif %}
-            {% assign mobile_active = false %}
-            {% if page.url == link.url or link.url != '/' and page.url contains link.url %}
-              {% assign mobile_active = true %}
-            {% endif %}
-            <a class="site-header__mobile-link{% if mobile_active %} is-active{% endif %}" href="{{ mobile_domain }}{{ link.url }}">{{ link.title }} <span aria-hidden="true">→</span></a>
-          {% endfor %}
-          <a class="site-header__mobile-cta" href="{{ base_path }}/contact/">Start a project <span aria-hidden="true">→</span></a>
+    <div class="site-header__actions ht-actions">
+      <button class="ht-btn-palette" type="button" data-open-palette aria-label="Open Command Palette" title="Command Palette (Ctrl+K)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span class="ht-btn-palette__text">Search</span>
+        <kbd class="ht-btn-palette__kbd">⌘K</kbd>
+      </button>
+
+      <button id="theme-toggle" class="ht-btn-theme" type="button" aria-label="Toggle Color Theme" title="Toggle Theme">
+        <i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i>
+      </button>
+
+      <a class="ht-btn-cta" href="{{ base_path }}/contact/">
+        <span>Start Project</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+
+      <details class="site-header__mobile-menu ht-mobile-menu">
+        <summary aria-label="Open navigation menu">
+          <span class="ht-hamburger-bar"></span>
+          <span class="ht-hamburger-bar"></span>
+          <span class="ht-hamburger-bar"></span>
+        </summary>
+        <div class="site-header__mobile-panel ht-mobile-panel">
+          <div class="ht-mobile-panel__top">
+            <span class="ht-mobile-label">NAVIGATION</span>
+            <button type="button" class="ht-mobile-palette-btn" data-open-palette>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Command Palette (Ctrl+K)</span>
+            </button>
+          </div>
+          <div class="ht-mobile-links">
+            {% for link in site.data.navigation.main %}
+              {% if link.url contains 'http' %}
+                {% assign mobile_domain = '' %}
+              {% else %}
+                {% assign mobile_domain = base_path %}
+              {% endif %}
+              {% assign mobile_active = false %}
+              {% if page.url == link.url or link.url != '/' and page.url contains link.url %}
+                {% assign mobile_active = true %}
+              {% endif %}
+              <a class="ht-mobile-link{% if mobile_active %} is-active{% endif %}" href="{{ mobile_domain }}{{ link.url }}">
+                <span>{{ link.title }}</span>
+                <span class="ht-mobile-arrow">→</span>
+              </a>
+            {% endfor %}
+          </div>
+          <div class="ht-mobile-footer">
+            <a class="ht-mobile-cta-btn" href="{{ base_path }}/contact/">Start a Project →</a>
+            <button class="ht-mobile-email-btn" type="button" data-copy-email>Copy devnayem30@gmail.com</button>
+          </div>
         </div>
       </details>
     </div>
   </div>
 </header>
+

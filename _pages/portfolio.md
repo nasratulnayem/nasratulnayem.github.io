@@ -1,19 +1,68 @@
 ---
 layout: archive
-title: "From bottleneck to build"
+title: "Engineering Portfolio & Build Notes"
 permalink: /portfolio/
-author_profile: true
+author_profile: false
 ---
 
-Real notes from the systems I build: stronger storefronts, smarter WordPress tools, and automations that give teams their time back.
-
-<div class="work-grid">
-{% for post in site.posts %}
-  {% include archive-single.html type="grid" %}
-{% endfor %}
+<div class="ht-page-hero">
+  <div class="ht-eyebrow">
+    <span class="ht-eyebrow-dot"></span>
+    <span>ENGINEERING BUILDS &amp; CASE STUDIES</span>
+  </div>
+  <h1 class="ht-page-hero__title">From business bottleneck to shipped production software.</h1>
+  <p class="ht-page-hero__desc">Real build notes from the systems I design: high-conversion storefronts, custom WordPress tools, and Python automations that give teams their time back.</p>
 </div>
 
-## Open-source work
+<div class="ht-work-controls ht-work-controls--page">
+  <div class="portfolio-filter-hud" role="tablist" aria-label="Filter case studies">
+    <button type="button" class="filter-chip is-active" data-category="all">All Systems ({{ site.posts.size }})</button>
+    <button type="button" class="filter-chip" data-category="wordpress">WordPress</button>
+    <button type="button" class="filter-chip" data-category="ecommerce">Ecommerce</button>
+    <button type="button" class="filter-chip" data-category="automation">Automation &amp; AI</button>
+    <button type="button" class="filter-chip" data-category="case study">Case Studies</button>
+  </div>
+  <div class="ht-search-wrap">
+    <input type="text" class="portfolio-search-input" placeholder="Search case studies &amp; tools..." aria-label="Search build notes">
+  </div>
+</div>
 
-- [Effortless WebP Converter for WordPress](https://github.com/nasratulnayem/effortless-webp-converter)
-- [Video Automation](https://github.com/nasratulnayem/VideoAutomation)
+<div class="work-grid portfolio-grid">
+  {% for post in site.posts %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
+
+<!-- Open Source Repositories Section -->
+<section class="ht-oss-section">
+  <div class="ht-section-header">
+    <div class="ht-eyebrow">
+      <span class="ht-eyebrow-dot"></span>
+      <span>OPEN SOURCE SOFTWARE</span>
+    </div>
+    <h2 class="ht-section-title">Open-Source Repositories &amp; Utilities</h2>
+  </div>
+
+  <div class="ht-oss-grid">
+    <a class="bento-card glow-card ht-oss-card" href="https://github.com/nasratulnayem/effortless-webp-converter" target="_blank" rel="noopener noreferrer">
+      <div class="bento-card__badge-row">
+        <span class="ht-badge ht-badge--cyan">WordPress Plugin</span>
+        <span class="ht-badge"><i class="fab fa-github"></i> Open Source</span>
+      </div>
+      <h3 class="bento-card__title">Effortless WebP Converter</h3>
+      <p class="bento-card__desc">Automatic lightweight converter converting uploaded media to modern WebP format in WordPress on the fly without external cloud API dependencies.</p>
+      <span class="ht-oss-link">View on GitHub ↗</span>
+    </a>
+
+    <a class="bento-card glow-card ht-oss-card" href="https://github.com/nasratulnayem/VideoAutomation" target="_blank" rel="noopener noreferrer">
+      <div class="bento-card__badge-row">
+        <span class="ht-badge ht-badge--green">Python Engine</span>
+        <span class="ht-badge"><i class="fab fa-github"></i> Open Source</span>
+      </div>
+      <h3 class="bento-card__title">VideoAutomation Pipeline</h3>
+      <p class="bento-card__desc">Automated video compilation, subtitle rendering, and scheduled publishing pipeline built in Python.</p>
+      <span class="ht-oss-link">View on GitHub ↗</span>
+    </a>
+  </div>
+</section>
+

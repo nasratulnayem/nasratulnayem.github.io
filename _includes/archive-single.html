@@ -8,49 +8,47 @@
 
 {% assign title = post.title | strip_html %}
 
-<div class="{{ include.type | default: "list" }}__item">
+<div class="{{ include.type | default: "list" }}__item ht-card-item" data-category="{{ post.category | default: post.tags | join: ' ' | default: 'Engineering' }}">
   {% if include.type == "grid" and post.url %}
-    <a class="archive__item-card-link" href="{{ base_path }}{{ post.url }}" aria-label="Explore {{ title | strip_html | escape_once }}">
+    <a class="archive__item-card-link ht-project-card glow-card" href="{{ base_path }}{{ post.url }}" aria-label="Explore {{ title | strip_html | escape_once }}">
   {% endif %}
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item ht-archive-card" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" %}
-      {% if teaser %}
-        <div class="archive__item-teaser">
-          <img src=
-            {% if teaser contains "://" %}
-              "{{ teaser }}"
-            {% else %}
-              "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-            {% endif %}
-            alt="{{ title | strip_html | escape_once }}">
-        </div>
-      {% else %}
-        <div class="archive__item-teaser archive__item-teaser--placeholder" aria-hidden="true">
-          <span>Build note</span>
-        </div>
-      {% endif %}
-
-      <div class="archive__item-body">
-        <h2 class="archive__item-title" itemprop="headline">{{ title }}</h2>
-
-        <div class="archive__item-meta">
-          {% if post.read_time %}
-            <span><i class="fa fa-clock" aria-hidden="true"></i>{% include read-time.html %}</span>
-          {% endif %}
-          {% if post.date %}
-            <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}"><i class="fa fa-calendar" aria-hidden="true"></i>Published: {{ post.date | default: "1900-01-01" | date: "%b %d, %Y" }}</time>
-          {% endif %}
-        </div>
-
-        {% if post.excerpt and site.read_more != 'enabled' %}
-          <div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | strip_html }}</div>
-        {% elsif post.excerpt and site.read_more == 'enabled' %}
-          <div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | strip_html }}</div>
+      <div class="ht-archive-card__visual">
+        {% if teaser %}
+          <img src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | prepend: base_path }}{% endif %}" alt="{{ title | strip_html | escape_once }}" loading="lazy">
+        {% else %}
+          <div class="ht-archive-card__placeholder">
+            <span class="ht-tech-badge">BUILD NOTE</span>
+            <div class="ht-code-dots"><i></i><i></i><i></i></div>
+          </div>
         {% endif %}
+        <span class="ht-archive-card__tag">Case Study</span>
+      </div>
+
+      <div class="archive__item-body ht-archive-card__body">
+        <div class="ht-archive-card__meta">
+          {% if post.date %}
+            <time datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%b %d, %Y" }}</time>
+          {% endif %}
+          {% if post.read_time %}
+            <span><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</span>
+          {% endif %}
+        </div>
+
+        <h3 class="archive__item-title ht-archive-card__title" itemprop="headline">{{ title }}</h3>
+
+        {% if post.excerpt %}
+          <div class="archive__item-excerpt ht-archive-card__excerpt" itemprop="description">{{ post.excerpt | strip_html | truncate: 140 }}</div>
+        {% endif %}
+
+        <div class="ht-archive-card__footer">
+          <span class="ht-archive-card__cta">Read build note <b aria-hidden="true">→</b></span>
+        </div>
       </div>
 
     {% else %}
-      <h2 class="archive__item-title" itemprop="headline">
+      <h2 class="archive__item-title ht-archive-card__title" itemprop="headline">
         {% if post.link %}
           <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
         {% else %}
@@ -58,55 +56,22 @@
         {% endif %}
       </h2>
 
-      {% if post.read_time %}
-        <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-      {% endif %}
+      <div class="ht-archive-card__meta">
+        {% if post.date %}
+          <time datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%B %d, %Y" }}</time>
+        {% endif %}
+        {% if post.read_time %}
+          <span><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</span>
+        {% endif %}
+      </div>
 
-      {% if post.collection == 'teaching' %}
-        <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-      {% elsif post.collection == 'publications' %}
-        <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-      {% elsif post.date %}
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+      {% if post.excerpt %}
+        <div class="archive__item-excerpt ht-archive-card__excerpt" itemprop="description">{{ post.excerpt | strip_html }}</div>
       {% endif %}
-
-      {% if post.excerpt and site.read_more != 'enabled' %}
-      <div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | strip_html }}</div>
-      {% elsif post.excerpt and site.read_more == 'enabled' %}
-      <div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | strip_html }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></div>
-      {% endif %}
-    
-    {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.paperurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.citation and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl}}">Download Bibtex</a></p>
-    {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation %}
-      <p>Recommended citation: {{ post.citation }}</p>
-    {% elsif post.paperurl and post.bibtexurl %}
-      <p><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.paperurl %}
-      <p><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.slidesurl and post.bibtexurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.bibtexurl %}
-      <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% endif %}
-
     {% endif %}
   </article>
   {% if include.type == "grid" and post.url %}
     </a>
   {% endif %}
 </div>
+
