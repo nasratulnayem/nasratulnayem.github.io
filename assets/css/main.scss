@@ -4003,6 +4003,139 @@ body {
   aspect-ratio: 16 / 9;
 }
 
+/* Importon Bridge's hero shows the actual workflow as two honest states:
+   a supported browser product page and the WooCommerce review destination. */
+.plugin-hero__visual.importon-comparison {
+  max-width: none;
+  margin-top: 0.25rem;
+  padding: 0.6rem;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-border-color);
+  border-radius: 0.3rem;
+  box-shadow: none;
+}
+
+.importon-comparison__lane {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 2.7rem minmax(0, 1fr);
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.importon-comparison__card {
+  min-width: 0;
+  overflow: hidden;
+  margin: 0;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-border-color);
+  border-radius: 0.25rem;
+}
+
+.importon-comparison__bar {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.45rem 0.55rem;
+  color: var(--global-text-color-light);
+  background: var(--global-footer-bg-color);
+  border-bottom: 1px solid var(--global-border-color);
+  font-family: $sans-serif;
+  font-size: 0.61rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.importon-comparison__bar > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.importon-comparison__dots {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 0.18rem;
+}
+
+.importon-comparison__dots i {
+  display: block;
+  width: 0.32rem;
+  height: 0.32rem;
+  background: var(--global-text-color-light);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.importon-comparison__card img {
+  display: block;
+  width: 100%;
+  height: 9.35rem;
+  background: var(--global-footer-bg-color);
+  object-fit: cover;
+}
+
+.importon-comparison__card--source img {
+  object-position: 16% center;
+}
+
+.importon-comparison__card--store img {
+  object-position: 84% center;
+}
+
+.importon-comparison__card-copy {
+  display: grid;
+  gap: 0.28rem;
+  padding: 0.7rem;
+}
+
+.importon-comparison__card-copy strong {
+  color: var(--global-text-color);
+  font-family: $sans-serif;
+  font-size: 0.72rem;
+  font-weight: 750;
+  line-height: 1.28;
+}
+
+.importon-comparison__card-copy span {
+  color: var(--global-text-color-light);
+  font-size: 0.64rem;
+  line-height: 1.45;
+}
+
+.importon-comparison__bridge {
+  display: grid;
+  gap: 0.22rem;
+  place-items: center;
+  color: var(--global-link-color);
+}
+
+.importon-comparison__mark {
+  display: inline-grid;
+  width: 1.65rem;
+  height: 1.65rem;
+  place-items: center;
+  color: #fff;
+  background: var(--global-link-color);
+  border-radius: 50%;
+  font-family: $sans-serif;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.importon-comparison__arrow {
+  font-family: $sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.plugin-hero__visual.importon-comparison .plugin-hero__visual-caption {
+  padding: 0.65rem 0.15rem 0.05rem;
+  font-size: 0.61rem;
+}
+
 .plugin-feature-grid,
 .plugin-confidence dl {
   max-width: none;
@@ -4066,6 +4199,24 @@ body {
 }
 
 @media (max-width: 600px) {
+  .importon-comparison__lane {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.55rem;
+  }
+
+  .importon-comparison__bridge {
+    grid-template-columns: auto auto;
+    gap: 0.4rem;
+  }
+
+  .importon-comparison__arrow {
+    transform: rotate(90deg);
+  }
+
+  .importon-comparison__card img {
+    height: 10rem;
+  }
+
   .home-introduction__portrait {
     width: min(100%, 22rem);
   }

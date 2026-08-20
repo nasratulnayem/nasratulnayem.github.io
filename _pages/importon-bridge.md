@@ -19,8 +19,8 @@ freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?
   <div class="plugin-hero__copy">
     <p class="plugin-eyebrow">WooCommerce product workflow</p>
     <div class="plugin-hero__product-line"><span class="plugin-hero__mark" aria-hidden="true">IB</span><span>Importon Bridge</span></div>
-    <h1 id="product-title">Move product details into WooCommerce without rebuilding every product by hand.</h1>
-    <p class="plugin-hero__lead">Use the included Chrome companion to capture product details from supported supplier pages, then send them through a secure connection to the WooCommerce store you manage.</p>
+    <h1 id="product-title">Capture a product page in the browser. Review it in WooCommerce.</h1>
+    <p class="plugin-hero__lead">Use the included Chrome companion to capture available product details from a supported page, then send them through a secure connection to the WooCommerce store you manage.</p>
     <div class="plugin-hero__actions">
       <a class="plugin-button plugin-button--primary" href="{{ page.freemius_checkout_url }}" data-freemius-checkout data-freemius-product-id="{{ page.freemius_product_id }}" data-freemius-plan-id="{{ page.freemius_plan_id }}" data-freemius-public-key="{{ page.freemius_public_key }}" data-freemius-title="Importon Bridge — Pro" data-freemius-licenses="1" data-freemius-billing-cycle="annual">Get Pro for $49/year <span aria-hidden="true">→</span></a>
       <a class="plugin-button plugin-button--quiet" href="#how-it-works">See how it works</a>
@@ -31,9 +31,32 @@ freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?
       <li>14-day refund window</li>
     </ul>
   </div>
-  <div class="plugin-hero__visual">
-    <img src="{{ page.product_image | relative_url }}" alt="Browser product page flowing into WooCommerce with Importon Bridge" fetchpriority="high">
-    <div class="plugin-hero__visual-caption"><span>Browser product page</span><b aria-hidden="true">→</b><span>Your WooCommerce store</span></div>
+  <div class="plugin-hero__visual importon-comparison" aria-label="Importon Bridge moves product information from a browser page into WooCommerce">
+    <div class="importon-comparison__lane">
+      <article class="importon-comparison__card importon-comparison__card--source">
+        <div class="importon-comparison__bar"><span class="importon-comparison__dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Browser product page</span></div>
+        <img src="{{ page.product_image | relative_url }}" alt="Product details on a supported browser page" fetchpriority="high">
+        <div class="importon-comparison__card-copy">
+          <strong>Capture the details you need</strong>
+          <span>Available title, images, price, and attributes.</span>
+        </div>
+      </article>
+
+      <div class="importon-comparison__bridge" aria-hidden="true">
+        <span class="importon-comparison__mark">IB</span>
+        <span class="importon-comparison__arrow">→</span>
+      </div>
+
+      <article class="importon-comparison__card importon-comparison__card--store">
+        <div class="importon-comparison__bar"><span class="importon-comparison__dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Your WooCommerce store</span></div>
+        <img src="{{ page.product_image | relative_url }}" alt="Imported product information visible in WooCommerce" fetchpriority="high">
+        <div class="importon-comparison__card-copy">
+          <strong>Review before you publish</strong>
+          <span>Use import history and store-side controls to continue.</span>
+        </div>
+      </article>
+    </div>
+    <div class="plugin-hero__visual-caption"><span>Capture in the browser</span><b aria-hidden="true">→</b><span>Review in WooCommerce</span></div>
   </div>
 </section>
 
