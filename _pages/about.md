@@ -288,7 +288,8 @@ author_profile: false
 
   <div class="ht-work-footer">
     <a class="ht-btn-secondary" href="{{ '/portfolio/' | relative_url }}">
-      <span>View All Case Studies &amp; Open Source Repositories ({{ site.posts.size }})</span>
+      <span class="ht-work-footer__label ht-work-footer__label--full">View all case studies &amp; repositories ({{ site.posts.size }})</span>
+      <span class="ht-work-footer__label ht-work-footer__label--compact">View all build notes</span>
       <span aria-hidden="true">→</span>
     </a>
   </div>
@@ -404,7 +405,7 @@ author_profile: false
           <span>Start a Project Inquiry</span>
           <span aria-hidden="true">→</span>
         </a>
-        <a class="ht-btn-secondary" href="https://wa.me/8801831862142" target="_blank" rel="noopener noreferrer">
+        <a class="ht-btn-secondary" href="https://wa.me/8801962351470" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-whatsapp" aria-hidden="true"></i>
           <span>Chat on WhatsApp</span>
         </a>
@@ -416,4 +417,3 @@ author_profile: false
     </div>
   </div>
 </section>
-

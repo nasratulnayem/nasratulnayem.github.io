@@ -42,9 +42,9 @@ author_profile: false
         <div class="ht-contact-option__icon ht-icon--wa"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
         <div class="ht-contact-option__content">
           <span class="ht-contact-option__label">Instant WhatsApp Chat</span>
-          <a class="ht-contact-option__val" href="https://wa.me/8801831862142" target="_blank" rel="noopener noreferrer">+880 1831-862142</a>
+          <a class="ht-contact-option__val" href="https://wa.me/8801962351470" target="_blank" rel="noopener noreferrer">+880 1962-351470</a>
         </div>
-        <a class="ht-btn-link-sm" href="https://wa.me/8801831862142" target="_blank" rel="noopener noreferrer">Chat ↗</a>
+        <a class="ht-btn-link-sm" href="https://wa.me/8801962351470" target="_blank" rel="noopener noreferrer">Chat ↗</a>
       </div>
 
       <!-- GitHub Option -->
@@ -103,4 +103,3 @@ author_profile: false
     </a>
   </div>
 </div>
-
