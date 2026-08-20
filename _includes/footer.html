@@ -1,14 +1,18 @@
 {% include base_path %}
-
 <div class="site-footer">
-  <div class="site-footer__primary">
+  <div class="site-footer__topline">
+    <p>Have a useful problem to solve?</p>
+    <a href="{{ base_path }}/contact/">Start a conversation <span aria-hidden="true">→</span></a>
+  </div>
+
+  <div class="site-footer__grid">
     <div class="site-footer__intro">
       <a class="site-footer__brand" href="{{ base_path }}/">{{ site.author.name }}</a>
       <p class="site-footer__role">{{ site.author.bio }}</p>
-      <p class="site-footer__statement">Websites, ecommerce, and automations built to make useful work easier.</p>
+      <p>Websites, ecommerce systems, and automations built to make useful work easier.</p>
     </div>
 
-    <nav class="site-footer__nav" aria-label="Footer navigation">
+    <nav class="site-footer__nav" aria-label="Explore the site">
       <span class="site-footer__label">Explore</span>
       {% for link in site.data.navigation.main %}
         {% if link.url contains 'http' %}
@@ -20,30 +24,26 @@
       {% endfor %}
     </nav>
 
-    <nav class="site-footer__nav site-footer__product-nav" aria-label="Plugin support">
-      <span class="site-footer__label">Plugin customers</span>
+    <nav class="site-footer__nav" aria-label="Importon Bridge links">
+      <span class="site-footer__label">Importon Bridge</span>
       <a href="{{ base_path }}/plugins/">Browse plugins</a>
-      <a href="{{ base_path }}/plugin-support/">Get product support</a>
+      <a href="{{ base_path }}/plugins/importon-bridge/">See the workflow</a>
+      <a href="{{ base_path }}/plugin-support/">Product support</a>
       <a href="{{ base_path }}/refund-policy/">Refund policy</a>
     </nav>
 
     <div class="site-footer__contact">
-      <span class="site-footer__label">Have a project?</span>
-      <p>Tell me what is slowing the business down. I’ll help turn it into a practical build plan.</p>
-      <a class="site-footer__cta" href="{{ base_path }}/contact/">Start a conversation <span aria-hidden="true">→</span></a>
+      <span class="site-footer__label">Get in touch</span>
+      <p>Tell me what is slow, unclear, or taking too much manual work. I’ll help find the right next step.</p>
       <div class="site-footer__links">
-        {% if site.author.email %}<a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>{% endif %}
+        {% if site.author.email %}<a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> {{ site.author.email }}</a>{% endif %}
         {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>{% endif %}
       </div>
     </div>
   </div>
 
   <div class="site-footer__bottom">
-    <span>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Built for useful work.</span>
-    <span class="site-footer__legal-links">
-      <a href="{{ base_path }}/privacy/">Privacy</a>
-      <a href="{{ base_path }}/terms/">Terms</a>
-      <a href="{{ base_path }}/sitemap/">Site map</a>
-    </span>
+    <span>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Built with care in Bangladesh.</span>
+    <span class="site-footer__legal-links"><a href="{{ base_path }}/privacy/">Privacy</a><a href="{{ base_path }}/terms/">Terms</a><a href="{{ base_path }}/sitemap/">Site map</a></span>
   </div>
 </div>

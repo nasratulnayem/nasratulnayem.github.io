@@ -4,10 +4,8 @@ layout: default
 
 {% include base_path %}
 
-<main id="main" class="plugin-main" role="main">
-  {% include sidebar.html %}
-
-  <article class="page plugin-page" itemscope itemtype="https://schema.org/WebPage">
+<main id="main" class="marketing-main marketing-main--plugin" role="main">
+  <article class="marketing-page marketing-plugin plugin-page" itemscope itemtype="https://schema.org/WebPage">
     {% if page.product_name %}
     <script type="application/ld+json">
       {
@@ -30,10 +28,6 @@ layout: default
     </script>
     {% endif %}
 
-    <div class="page__inner-wrap">
-      <section class="page__content plugin-page__inner" itemprop="text">
-        {{ content }}
-      </section>
-    </div>
+    <section class="marketing-page__content plugin-page__inner" itemprop="text">{{ content }}</section>
   </article>
 </main>

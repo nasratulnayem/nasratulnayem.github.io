@@ -18,14 +18,11 @@ layout: compress
 
     <div class="site-shell">
       {{ content }}
-
-      <div class="page__footer{% if page.layout == 'post' %} page__footer--post{% endif %}">
-        <footer>
-          {% include footer/custom.html %}
-          {% include footer.html %}
-        </footer>
-      </div>
     </div>
+
+    <footer class="page__footer site-footer-wrap">
+      {% include footer.html %}
+    </footer>
 
     {% include whatsapp-chat.html %}
 

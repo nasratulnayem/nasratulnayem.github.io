@@ -1,48 +1,57 @@
 {% include base_path %}
-<div class="masthead{% if page.layout == 'post' %} masthead--post{% endif %}">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><span class="navicon"></span></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a class="masthead__greeting-link" href="{{ base_path }}/" aria-label="Nasratul Nayem — {{ site.author.bio }}">
-              <span class="masthead__desktop-identity">
-                <span class="masthead__identity-name">Nasratul Nayem</span>
-                <span class="masthead__greeting-tag">{{ site.author.bio }}</span>
-              </span>
-              <span class="masthead__mobile-profile">
-                {% if site.author.avatar contains "://" %}
-                  <img class="masthead__mobile-avatar" src="{{ site.author.avatar }}" alt="{{ site.author.name }}">
-                {% else %}
-                  <img class="masthead__mobile-avatar" src="{{ site.author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ site.author.name }}">
-                {% endif %}
-                <span class="masthead__mobile-profile-copy">
-                  <span class="masthead__mobile-profile-name">{{ site.author.name }}</span>
-                  {% if site.author.bio %}<span class="masthead__mobile-profile-bio">{{ site.author.bio }}</span>{% endif %}
-                </span>
-              </span>
-            </a>
-            {% if site.author.github %}
-              <a class="masthead__mobile-follow" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer" aria-label="Follow {{ site.author.name }} on GitHub">Follow</a>
-            {% endif %}
-          </li>
+<header class="site-header masthead" role="banner">
+  <div class="site-header__inner">
+    <a class="site-header__brand" href="{{ base_path }}/" aria-label="{{ site.author.name }} home">
+      <span class="site-header__portrait" aria-hidden="true">
+        {% if site.author.avatar contains "://" %}
+          <img src="{{ site.author.avatar }}" alt="">
+        {% else %}
+          <img src="{{ site.author.avatar | prepend: '/images/' | prepend: base_path }}" alt="">
+        {% endif %}
+      </span>
+      <span class="site-header__brand-copy">
+        <strong>{{ site.author.name }}</strong>
+        <span>{{ site.author.bio }}</span>
+      </span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Primary navigation">
+      {% for link in site.data.navigation.main %}
+        {% if link.url contains 'http' %}
+          {% assign domain = '' %}
+        {% else %}
+          {% assign domain = base_path %}
+        {% endif %}
+        {% assign active_link = false %}
+        {% if page.url == link.url or link.url != '/' and page.url contains link.url %}
+          {% assign active_link = true %}
+        {% endif %}
+        <a class="site-header__nav-link{% if active_link %} is-active{% endif %}" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="site-header__contact-link" href="{{ base_path }}/contact/">Let’s talk <span aria-hidden="true">↗</span></a>
+      <button id="theme-toggle" class="site-header__theme" type="button" aria-label="Toggle color theme"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i></button>
+      <details class="site-header__mobile-menu">
+        <summary aria-label="Open navigation"><span></span><span></span><span></span></summary>
+        <div class="site-header__mobile-panel">
+          <span class="site-header__mobile-label">Navigate</span>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
-              {% assign domain = '' %}
+              {% assign mobile_domain = '' %}
             {% else %}
-              {% assign domain = base_path %}
+              {% assign mobile_domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
-              <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
-            </li>
+            {% assign mobile_active = false %}
+            {% if page.url == link.url or link.url != '/' and page.url contains link.url %}
+              {% assign mobile_active = true %}
+            {% endif %}
+            <a class="site-header__mobile-link{% if mobile_active %} is-active{% endif %}" href="{{ mobile_domain }}{{ link.url }}">{{ link.title }} <span aria-hidden="true">→</span></a>
           {% endfor %}
-          <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
-          </li>
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
+          <a class="site-header__mobile-cta" href="{{ base_path }}/contact/">Start a project <span aria-hidden="true">→</span></a>
+        </div>
+      </details>
     </div>
   </div>
-</div>
+</header>

@@ -10,36 +10,30 @@ layout: default
   {% capture featured_image %}{{ page.header.image | prepend: "/images/" | prepend: base_path }}{% endcapture %}
 {% endif %}
 
-<div id="main" class="post-main" role="main">
-  <article class="page post-page" itemscope itemtype="https://schema.org/BlogPosting">
+<main id="main" class="marketing-main marketing-main--post" role="main">
+  <article class="marketing-page marketing-post" itemscope itemtype="https://schema.org/BlogPosting">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
 
-    <div class="page__inner-wrap">
-      <header class="post-header">
-        {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | strip_html | escape }}</h1>{% endif %}
+    <header class="marketing-post__header">
+      <p class="marketing-page__eyebrow">Build note · WordPress, ecommerce &amp; automation</p>
+      {% if page.title %}<h1 itemprop="headline">{{ page.title | strip_html | escape }}</h1>{% endif %}
+      <div class="marketing-post__meta">
+        {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}"><i class="fa fa-calendar" aria-hidden="true"></i> Published {{ page.date | date: "%B %d, %Y" }}</time>{% endif %}
+        {% if page.read_time %}<span><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</span>{% endif %}
+      </div>
+    </header>
 
-        {% if page.date %}
-          <time class="post-published-date" datetime="{{ page.date | date_to_xmlschema }}"><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published {{ page.date | date: "%B %d, %Y" }}</time>
-        {% endif %}
-      </header>
+    {% if featured_image %}
+      <figure class="marketing-post__feature">
+        <img src="{{ featured_image }}" alt="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}" itemprop="image">
+      </figure>
+    {% endif %}
 
-      {% if featured_image %}
-        <figure class="post-feature">
-          <img src="{{ featured_image }}" alt="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}" itemprop="image">
-        </figure>
-      {% endif %}
+    <section class="marketing-post__content" itemprop="articleBody">{{ content }}</section>
 
-      <section class="page__content" itemprop="articleBody">
-        {{ content }}
-      </section>
-
-      <footer class="page__meta">
-        {% include page__taxonomy.html %}
-      </footer>
-
-      {% include post_pagination.html %}
-    </div>
+    <footer class="marketing-post__footer">{% include page__taxonomy.html %}</footer>
+    {% include post_pagination.html %}
   </article>
-</div>
+</main>
