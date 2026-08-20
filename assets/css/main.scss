@@ -35,8 +35,7 @@
     "layout/page",
     "layout/archive",
     "layout/sidebar",
-    "layout/json_cv"
-;
+    "layout/json_cv";
 
 /* Compact, responsive masthead identity */
 :root {
@@ -3680,5 +3679,401 @@ body {
 
   .home-product-spotlight__intro h2 {
     font-size: clamp(1.8rem, 8.5vw, 2.35rem);
+  }
+}
+
+/* ========================================================================
+   Shared page language
+
+   Home and product pages use the same restrained visual language as Services:
+   one reading column beside the profile, a white canvas, small type hierarchy,
+   hairline dividers, and muted cards.  Different content is welcome; a second
+   competing design system is not.
+   ======================================================================== */
+
+#main.home-main,
+#main.plugin-main {
+  float: none;
+  width: auto;
+  max-width: $x-large;
+  margin: 2em auto 0;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.home-page,
+.plugin-page,
+.plugin-page__inner {
+  min-width: 0;
+}
+
+.plugin-page,
+.plugin-page__inner {
+  width: auto;
+}
+
+/* Match the Services page's quiet editorial typography. */
+.home-page .page__content h1,
+.plugin-page .page__content h1 {
+  margin: 0;
+  color: var(--global-text-color);
+  font-family: $sans-serif;
+  font-size: clamp(1.85rem, 3vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+.home-page .page__content h2,
+.plugin-page .page__content h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.45em;
+  color: var(--global-text-color);
+  border-bottom: 1px solid var(--global-border-color);
+  font-family: $sans-serif;
+  font-size: 1.28rem;
+  font-weight: 700;
+  letter-spacing: -0.012em;
+  line-height: 1.25;
+}
+
+.home-page .page__content h3,
+.plugin-page .page__content h3 {
+  color: var(--global-text-color);
+  font-family: $sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.home-page .page__content p,
+.plugin-page .page__content p,
+.home-page .page__content li,
+.plugin-page .page__content li {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.home-kicker,
+.plugin-eyebrow {
+  margin-bottom: 0.65rem;
+  color: var(--global-text-color-light);
+  font-size: 0.67rem;
+  letter-spacing: 0.07em;
+}
+
+.home-kicker::before,
+.plugin-eyebrow::before {
+  display: none;
+}
+
+/* Let content sections breathe like a standard Services article. */
+.home-introduction,
+.home-statement,
+.home-capabilities,
+.home-product-spotlight,
+.home-partner,
+.home-work,
+.home-closing--new,
+.plugin-hero,
+.plugin-catalog-hero,
+.plugin-catalog,
+.plugin-catalog-note,
+.plugin-story,
+.plugin-workflow,
+.plugin-features,
+.plugin-pricing,
+.plugin-confidence,
+.plugin-faq,
+.plugin-final-cta,
+.plugin-utility-contact {
+  margin: 0;
+  padding: 0 0 2.5rem;
+  color: var(--global-text-color);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--global-border-color);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.home-introduction,
+.plugin-hero,
+.plugin-catalog-hero,
+.plugin-utility-hero,
+.plugin-policy {
+  padding-top: 0;
+}
+
+.home-introduction__copy,
+.plugin-hero__copy,
+.plugin-catalog-hero__grid > div,
+.plugin-story__heading,
+.plugin-features__intro,
+.plugin-pricing__intro {
+  max-width: none;
+}
+
+.home-introduction h1 span {
+  color: inherit;
+}
+
+.home-introduction__lead,
+.home-introduction__thought,
+.plugin-hero__lead,
+.plugin-catalog-hero__grid > div > p:last-child,
+.plugin-story__copy p,
+.plugin-features__intro > p:last-child,
+.plugin-pricing__intro > p:last-child {
+  max-width: none;
+  color: var(--global-text-color);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.home-introduction__thought {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.home-introduction__actions,
+.plugin-hero__actions {
+  margin-top: 1.25rem;
+}
+
+.home-page__content a.home-button,
+.plugin-button {
+  min-height: 0;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.2rem;
+  box-shadow: none;
+  font-size: 0.78rem;
+}
+
+.home-page__content a.home-button--primary,
+.plugin-button--primary {
+  color: #fff;
+  background: var(--global-link-color);
+}
+
+.home-page__content a.home-button--primary:hover,
+.home-page__content a.home-button--primary:focus,
+.plugin-button--primary:hover,
+.plugin-button--primary:focus {
+  color: #fff;
+  background: var(--global-link-color-hover);
+  transform: none;
+}
+
+.home-introduction__skills,
+.plugin-hero__trust {
+  margin-top: 1.35rem;
+}
+
+.home-statement__grid,
+.home-product-spotlight,
+.home-partner,
+.home-editorial-heading--work,
+.home-closing--new,
+.plugin-hero,
+.plugin-catalog-hero__grid,
+.plugin-section-heading,
+.plugin-story,
+.plugin-features,
+.plugin-pricing,
+.plugin-confidence,
+.plugin-catalog-note,
+.plugin-final-cta {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.home-statement h2,
+.home-editorial-heading h2,
+.home-product-spotlight__intro h2,
+.home-partner h2,
+.home-closing--new h2,
+.plugin-page h2,
+.plugin-pricing h2,
+.plugin-final-cta h2 {
+  color: var(--global-text-color);
+}
+
+/* Cards remain useful for scanning, but use the restrained Services palette. */
+.home-capability-grid,
+.home-build-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.home-capability-card:last-child {
+  grid-column: 1 / -1;
+}
+
+.home-page__content a.home-capability-card,
+.home-page__content a.home-product-spotlight__card,
+.plugin-product-card,
+.plugin-catalog-hero__promise,
+.plugin-pricing-card,
+.plugin-support-grid article,
+.plugin-policy__rules article {
+  min-height: 0;
+  color: var(--global-text-color);
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-border-color);
+  border-radius: 0.3rem;
+  box-shadow: none;
+}
+
+.home-page__content a.home-capability-card::before {
+  display: none;
+}
+
+.home-page__content a.home-capability-card:hover,
+.home-page__content a.home-capability-card:focus,
+.home-page__content a.home-product-spotlight__card:hover,
+.home-page__content a.home-product-spotlight__card:focus,
+.plugin-product-card:hover,
+.plugin-product-card:focus-within {
+  color: var(--global-text-color);
+  border-color: var(--global-link-color);
+  box-shadow: none;
+  transform: none;
+}
+
+.home-partner,
+.home-closing--new,
+.plugin-pricing,
+.plugin-final-cta,
+.plugin-utility-contact {
+  color: var(--global-text-color);
+  background: var(--global-footer-bg-color);
+  border: 1px solid var(--global-border-color);
+  border-radius: 0.3rem;
+}
+
+.home-partner .home-kicker,
+.home-closing--new .home-kicker,
+.plugin-pricing .plugin-eyebrow,
+.plugin-final-cta .plugin-eyebrow,
+.plugin-utility-contact .plugin-eyebrow,
+.home-partner__details > p,
+.home-partner__details li,
+.home-closing--new p:last-child,
+.plugin-pricing__intro > p:last-child,
+.plugin-utility-contact p:not(.plugin-eyebrow) {
+  color: var(--global-text-color);
+}
+
+.home-closing--new .home-button--light,
+.plugin-button--light {
+  color: #fff;
+  background: var(--global-link-color);
+}
+
+.plugin-proof-strip,
+.plugin-product-card,
+.plugin-steps,
+.plugin-feature-grid,
+.plugin-confidence dl,
+.plugin-support-grid,
+.plugin-policy__rules {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.plugin-proof-strip {
+  margin-top: 1.25rem;
+  border: 1px solid var(--global-border-color);
+  border-radius: 0.3rem;
+}
+
+.plugin-proof-strip > div,
+.plugin-proof-strip > div:last-child {
+  border-right: 0;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.plugin-proof-strip > div:last-child {
+  border-bottom: 0;
+}
+
+.plugin-product-card__visual img {
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+}
+
+.plugin-feature-grid,
+.plugin-confidence dl {
+  max-width: none;
+}
+
+.plugin-steps li,
+.plugin-feature-grid article,
+.plugin-confidence dl > div {
+  min-height: 0;
+}
+
+.plugin-steps li:nth-child(2)::after,
+.plugin-steps li:not(:last-child)::after {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  #main.home-main > .home-page,
+  #main.plugin-main > .plugin-page {
+    float: right;
+    width: 83.333333%;
+    margin: 0;
+    padding-right: 16.666667%;
+    padding-left: 4.166667%;
+  }
+
+  /* The desktop sidebar is the one already used by Services. Avoid showing
+     the same portrait a second time inside the home article. */
+  .home-introduction {
+    display: block;
+  }
+
+  .home-introduction__portrait {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  /* The compact masthead already identifies Nayem on mobile/tablet. */
+  #main.home-main > .sidebar,
+  #main.plugin-main > .sidebar {
+    display: none;
+  }
+
+  #main.home-main,
+  #main.plugin-main {
+    width: 100%;
+    max-width: none;
+    margin-top: 1.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  #main.home-main > .home-page,
+  #main.plugin-main > .plugin-page {
+    float: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-introduction__portrait {
+    width: min(100%, 22rem);
+  }
+
+  .home-capability-grid,
+  .home-build-grid,
+  .plugin-feature-grid,
+  .plugin-confidence dl {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

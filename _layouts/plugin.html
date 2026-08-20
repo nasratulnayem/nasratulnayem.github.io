@@ -5,7 +5,9 @@ layout: default
 {% include base_path %}
 
 <main id="main" class="plugin-main" role="main">
-  <article class="plugin-page" itemscope itemtype="https://schema.org/WebPage">
+  {% include sidebar.html %}
+
+  <article class="page plugin-page" itemscope itemtype="https://schema.org/WebPage">
     {% if page.product_name %}
     <script type="application/ld+json">
       {
@@ -28,6 +30,10 @@ layout: default
     </script>
     {% endif %}
 
-    <div class="plugin-page__inner">{{ content }}</div>
+    <div class="page__inner-wrap">
+      <section class="page__content plugin-page__inner" itemprop="text">
+        {{ content }}
+      </section>
+    </div>
   </article>
 </main>
