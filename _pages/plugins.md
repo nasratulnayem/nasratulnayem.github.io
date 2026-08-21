@@ -20,7 +20,6 @@ description: "Focused WordPress & WooCommerce software tools by Nasratul Nayem b
       <div class="ht-product-showcase__grid">
         <div class="ht-product-showcase__visual">
           <img src="{{ product.image | relative_url }}" alt="{{ product.name }} workflow" loading="lazy">
-          <span class="ht-badge ht-badge--green ht-product-status">{{ product.status }}</span>
         </div>
         <div class="ht-product-showcase__info">
           <div class="bento-card__badge-row">

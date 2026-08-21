@@ -57,8 +57,20 @@
   --ht-shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
   --ht-shadow-glow: 0 0 40px rgba(0, 210, 255, 0.15);
 
-  --ht-container: min(1280px, calc(100% - 48px));
+  --ht-container: min(1280px, calc(100% - 24px));
   --ht-reading: min(840px, 100%);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --ht-container: min(1280px, calc(100% - 32px));
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --ht-container: min(1280px, calc(100% - 48px));
+  }
 }
 
 /* Light Theme Overrides */
@@ -4839,11 +4851,12 @@ html:not([data-theme="dark"]) .marketing-main--post .pagination--pager.disabled 
 @media (min-width: 769px) {
   #main.marketing-main--standard > .marketing-standard,
   #main.marketing-main--post > .marketing-post,
-  #main.marketing-main--archive > .marketing-archive {
+  #main.marketing-main--archive > .marketing-archive,
+  #main.marketing-main--plugin > .marketing-plugin {
     width: 100% !important;
     max-width: none !important;
-    margin-inline: auto !important;
-    padding: clamp(2rem, 4vw, 3.5rem) !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
   }
 
   #main.marketing-main--standard .ht-page-hero {
