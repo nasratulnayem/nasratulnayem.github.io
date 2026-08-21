@@ -51,17 +51,5 @@ description: "Focused WordPress & WooCommerce software tools by Nasratul Nayem b
   {% endfor %}
 </div>
 
-<div class="ht-closing-card glow-card">
-  <div class="ht-closing-content">
-    <div class="ht-eyebrow">
-      <span class="ht-eyebrow-dot"></span>
-      <span>CUSTOM SOFTWARE WORKFLOW</span>
-    </div>
-    <h2 class="ht-closing-title">Need a bespoke plugin or specialized importer?</h2>
-    <p class="ht-closing-desc">If your business requirements do not fit an off-the-shelf tool, I can build a dedicated WordPress plugin or automation engine tailored to your exact data structures.</p>
-    <div class="ht-closing-actions">
-      <a class="ht-btn-primary ht-btn--glow" href="{{ '/contact/' | relative_url }}">Request Custom Software →</a>
-    </div>
-  </div>
-</div>
+
 

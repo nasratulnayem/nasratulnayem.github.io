@@ -412,31 +412,4 @@ author_profile: false
   </div>
 </section>
 
-<!-- High-Tech Closing Call-to-Action -->
-<section class="ht-closing-section" aria-labelledby="closing-title">
-  <div class="ht-closing-card glow-card">
-    <div class="ht-closing-content">
-      <div class="ht-eyebrow">
-        <span class="ht-eyebrow-dot"></span>
-        <span>LET’S GET STARTED</span>
-      </div>
-      <h2 id="closing-title" class="ht-closing-title">Tell me what your business needs to work better.</h2>
-      <p class="ht-closing-desc">A slow storefront, a repetitive manual daily task, a missing WordPress feature, or an automation concept is enough to begin. I’ll listen closely, understand your system, and deliver a practical roadmap.</p>
-      
-      <div class="ht-closing-actions">
-        <a class="ht-btn-primary ht-btn--glow" href="{{ '/contact/' | relative_url }}">
-          <span>Start a Project Inquiry</span>
-          <span aria-hidden="true">→</span>
-        </a>
-        <a class="ht-btn-secondary" href="https://wa.me/8801962351470" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          <span>Chat on WhatsApp</span>
-        </a>
-        <button class="ht-btn-tertiary" type="button" data-copy-email>
-          <i class="fas fa-copy" aria-hidden="true"></i>
-          <span>devnayem30@gmail.com</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+

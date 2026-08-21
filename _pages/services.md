@@ -117,15 +117,5 @@ author_profile: false
   </div>
 </section>
 
-<!-- Action Section -->
-<div class="ht-closing-card glow-card">
-  <div class="ht-closing-content">
-    <h2 class="ht-closing-title">Have a specific project in mind?</h2>
-    <p class="ht-closing-desc">Email me your goals or current system link. I’ll review it and propose a clear, actionable roadmap.</p>
-    <div class="ht-closing-actions">
-      <a class="ht-btn-primary ht-btn--glow" href="{{ '/contact/' | relative_url }}">Start a Project Conversation →</a>
-      <button class="ht-btn-tertiary" type="button" data-copy-email>devnayem30@gmail.com</button>
-    </div>
-  </div>
-</div>
+
 

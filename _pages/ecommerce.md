@@ -95,13 +95,5 @@ author_profile: false
   </div>
 </section>
 
-<div class="ht-closing-card glow-card">
-  <div class="ht-closing-content">
-    <h2 class="ht-closing-title">Ready to improve your store?</h2>
-    <p class="ht-closing-desc">Send the link to your Shopify or WooCommerce store. Let’s identify and fix the bottlenecks holding back sales or team efficiency.</p>
-    <div class="ht-closing-actions">
-      <a class="ht-btn-primary ht-btn--glow" href="{{ '/contact/' | relative_url }}">Discuss Your Store →</a>
-    </div>
-  </div>
-</div>
+
 

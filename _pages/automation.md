@@ -117,13 +117,5 @@ author_profile: false
   </div>
 </section>
 
-<div class="ht-closing-card glow-card">
-  <div class="ht-closing-content">
-    <h2 class="ht-closing-title">Have a repetitive process costing your team hours?</h2>
-    <p class="ht-closing-desc">Describe what you do repeatedly each day or week. I will design a practical script or bot to take it over.</p>
-    <div class="ht-closing-actions">
-      <a class="ht-btn-primary ht-btn--glow" href="{{ '/contact/' | relative_url }}">Start an Automation Inquiry →</a>
-    </div>
-  </div>
-</div>
+
 
