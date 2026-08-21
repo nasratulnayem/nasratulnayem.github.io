@@ -16,10 +16,7 @@
 
 <div class="{{ include.type | default: "list" }}__item ht-card-item" data-category="{{ card_categories | escape }}">
   {% if include.type == "grid" and post.url %}
-    <a class="archive__item-card-link ht-project-card glow-card" href="{{ base_path }}{{ post.url }}" aria-label="Explore {{ title | strip_html | escape_once }}">
-  {% endif %}
-  <article class="archive__item ht-archive-card" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if include.type == "grid" %}
+    <a class="ht-project-card" href="{{ base_path }}{{ post.url }}" aria-label="Explore {{ title | strip_html | escape_once }}">
       <div class="ht-archive-card__visual">
         {% if teaser %}
           <img src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | prepend: base_path }}{% endif %}" alt="{{ title | strip_html | escape_once }}" loading="lazy">
@@ -32,7 +29,7 @@
         <span class="ht-archive-card__tag">Case Study</span>
       </div>
 
-      <div class="archive__item-body ht-archive-card__body">
+      <div class="ht-archive-card__body">
         <div class="ht-archive-card__meta">
           {% if post.date %}
             <time datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%b %d, %Y" }}</time>
@@ -42,18 +39,19 @@
           {% endif %}
         </div>
 
-        <h3 class="archive__item-title ht-archive-card__title" itemprop="headline">{{ title }}</h3>
+        <h3 class="ht-archive-card__title">{{ title }}</h3>
 
         {% if post.excerpt %}
-          <div class="archive__item-excerpt ht-archive-card__excerpt" itemprop="description">{{ post.excerpt | strip_html | truncate: 140 }}</div>
+          <div class="ht-archive-card__excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>
         {% endif %}
 
         <div class="ht-archive-card__footer">
           <span class="ht-archive-card__cta">Read build note <b aria-hidden="true">→</b></span>
         </div>
       </div>
-
-    {% else %}
+    </a>
+  {% else %}
+    <article class="archive__item ht-archive-card" itemscope itemtype="http://schema.org/CreativeWork">
       <h2 class="archive__item-title ht-archive-card__title" itemprop="headline">
         {% if post.link %}
           <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
@@ -74,9 +72,6 @@
       {% if post.excerpt %}
         <div class="archive__item-excerpt ht-archive-card__excerpt" itemprop="description">{{ post.excerpt | strip_html }}</div>
       {% endif %}
-    {% endif %}
-  </article>
-  {% if include.type == "grid" and post.url %}
-    </a>
+    </article>
   {% endif %}
 </div>
