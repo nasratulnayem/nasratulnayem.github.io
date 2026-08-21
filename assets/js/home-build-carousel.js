@@ -23,7 +23,18 @@
 
       cards.forEach((card) => {
         const index = available.indexOf(card);
-        card.hidden = index < firstVisible || index >= firstVisible + visibleCount;
+        const isVisible = index >= firstVisible && index < firstVisible + visibleCount;
+        card.hidden = !isVisible;
+
+        // Native lazy loading does not always fetch an image inside a newly
+        // revealed carousel card until a later scroll. Make only the cards the
+        // visitor can currently see eager, so no feature-image slot looks
+        // empty when an arrow is used.
+        if (isVisible) {
+          card.querySelectorAll("img[loading='lazy']").forEach((image) => {
+            image.loading = "eager";
+          });
+        }
       });
 
       const hasMore = available.length > visibleCount;
