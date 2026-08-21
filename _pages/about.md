@@ -153,7 +153,7 @@ author_profile: false
     <article class="bento-card bento-card--featured glow-card">
       <div class="bento-card__badge-row">
         <span class="ht-badge ht-badge--cyan">FLAGSHIP PRODUCT</span>
-        <span class="ht-badge ht-badge--green">v0.2.2 Pro Available</span>
+        <span class="ht-badge ht-badge--green">v0.2.2 Pro</span>
       </div>
       <div class="bento-card__header">
         <h3 class="bento-card__title">Importon Bridge</h3>
