@@ -568,51 +568,31 @@ body {
   align-items: flex-start;
 }
 
-/* Status Pulse Badge */
-.ht-hero__status-badge {
+/* Availability Pill — clean, modern, minimal */
+.ht-avail-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 6px 14px;
-  background: rgba(0, 245, 160, 0.08);
-  border: 1px solid rgba(0, 245, 160, 0.25);
+  gap: 0.5rem;
+  padding: 5px 14px 5px 10px;
+  background: rgba(0, 245, 160, 0.06);
+  border: 1px solid rgba(0, 245, 160, 0.18);
   border-radius: var(--ht-radius-full);
-  margin-bottom: 1.5rem;
-}
-
-.ht-status-pulse {
-  position: relative;
-  width: 8px;
-  height: 8px;
-  background: var(--ht-emerald);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--ht-emerald);
-}
-
-.ht-status-pulse::after {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--ht-emerald);
-  opacity: 0.4;
-  animation: ht-pulse 2s infinite ease-out;
-}
-
-@keyframes ht-pulse {
-  0% { transform: scale(0.6); opacity: 0.8; }
-  100% { transform: scale(2.2); opacity: 0; }
-}
-
-.ht-hero__status-text {
   font-family: var(--ht-font-mono);
-  font-size: 0.76rem;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: var(--ht-emerald);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+  white-space: nowrap;
+}
+
+.ht-avail-pill__dot {
+  width: 7px;
+  height: 7px;
+  background: var(--ht-emerald);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--ht-emerald);
+  flex-shrink: 0;
 }
 
 /* Hero Headline */
@@ -1398,33 +1378,36 @@ body {
 .ht-work-controls {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .ht-work-controls--page {
   width: var(--ht-container);
-  margin: 0 auto 2.5rem auto;
+  margin: 0 auto 3rem auto;
 }
 
 .portfolio-filter-hud {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
   background: var(--ht-bg-surface);
   border: 1px solid var(--ht-border);
-  padding: 4px;
+  padding: 5px;
   border-radius: var(--ht-radius-full);
   overflow-x: auto;
+  max-width: 100%;
 }
 
 .filter-chip {
-  padding: 6px 14px;
+  padding: 7px 16px;
   background: transparent;
   border: 0;
   border-radius: var(--ht-radius-full);
   color: var(--ht-text-secondary);
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
@@ -1441,31 +1424,35 @@ body {
   border: 1px solid var(--ht-border-hover);
 }
 
+.ht-search-wrap {
+  display: inline-flex;
+}
+
 .ht-search-wrap input {
-  height: 40px;
-  padding: 0 16px;
+  height: 42px;
+  padding: 0 18px;
   border-radius: var(--ht-radius-full);
   background: var(--ht-bg-surface);
   border: 1px solid var(--ht-border);
   color: var(--ht-text-primary);
   font-family: var(--ht-font-sans);
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   outline: none;
-  width: 220px;
+  width: 240px;
   transition: all 0.2s ease;
 }
 
 .ht-search-wrap input:focus {
   border-color: var(--ht-cyan);
-  width: 260px;
+  width: 280px;
 }
 
 /* Post Cards Grid */
 .work-grid, .portfolio-grid, .home-build-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
 }
 
 .ht-card-item {
@@ -1483,7 +1470,8 @@ body {
   text-decoration: none !important;
   color: inherit !important;
   backdrop-filter: blur(20px);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ht-project-card:hover {
@@ -2745,15 +2733,22 @@ code {
 }
 
 /* 16. High-Tech Footer ----------------------------------------------------- */
+.page__footer,
+.site-footer-wrap,
 .ht-footer {
-  width: 100%;
+  width: 100% !important;
   margin: 0 !important;
-  padding: 4rem 0 0 0;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  backdrop-filter: none;
-  border-top: 1px solid var(--ht-border);
+  padding: 0 !important;
+  background: var(--ht-bg-base) !important;
+  background-color: var(--ht-bg-base) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+}
+
+.ht-footer {
+  padding: 4rem 0 2rem 0 !important;
+  border-top: 1px solid var(--ht-border) !important;
 }
 
 .ht-footer__cta-band,

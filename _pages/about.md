@@ -8,10 +8,10 @@ author_profile: false
 <!-- Hero Section with Dual-Pane High-Tech Console -->
 <section class="ht-hero" aria-labelledby="ht-hero-title">
   <div class="ht-hero__content">
-    <div class="ht-hero__status-badge">
-      <span class="ht-status-pulse"></span>
-      <span class="ht-hero__status-text">AVAILABLE FOR WEB &amp; AUTOMATION CONTRACTS · REMOTE WORLDWIDE</span>
-    </div>
+    <span class="ht-avail-pill">
+      <span class="ht-avail-pill__dot"></span>
+      Available for projects
+    </span>
 
     <h1 id="ht-hero-title" class="ht-hero__headline">
       Architecting Fast Websites, Ecommerce Engines &amp; <span class="ht-text-gradient">Intelligent Automations.</span>

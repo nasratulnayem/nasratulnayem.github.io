@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: default
 title: "Engineering Portfolio & Build Notes"
 permalink: /portfolio/
 author_profile: false
