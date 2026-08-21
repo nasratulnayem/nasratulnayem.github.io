@@ -93,6 +93,16 @@ html:not([data-theme="dark"]) {
   --ht-shadow-glow: 0 0 40px rgba(2, 132, 199, 0.08);
 }
 
+/* Primary Action Buttons in Light Mode have white text */
+html:not([data-theme="dark"]) .ht-btn-primary,
+html:not([data-theme="dark"]) .ht-btn-cta,
+html:not([data-theme="dark"]) .ht-btn-glow,
+html:not([data-theme="dark"]) .ht-mobile-cta-btn,
+html:not([data-theme="dark"]) .plugin-page .plugin-button--primary {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
 /* 2. Global Reset & Base Setup ---------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
