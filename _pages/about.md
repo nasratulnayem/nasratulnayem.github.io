@@ -196,10 +196,10 @@ author_profile: false
     <!-- Bento 2: High-Speed Web & WordPress -->
     <article class="bento-card glow-card">
       <div class="bento-card__badge-row">
+        <div class="bento-card__icon-box">
+          <i class="fab fa-wordpress-simple" aria-hidden="true"></i>
+        </div>
         <span class="ht-badge">WEB ENGINEERING</span>
-      </div>
-      <div class="bento-card__icon-box">
-        <i class="fab fa-wordpress-simple" aria-hidden="true"></i>
       </div>
       <h3 class="bento-card__title">Websites That Feel Instant</h3>
       <p class="bento-card__desc">Custom WordPress themes, clean PHP 8+ plugins, responsive frontend code, and high Core Web Vitals optimization.</p>
@@ -214,10 +214,10 @@ author_profile: false
     <!-- Bento 3: Ecommerce Growth -->
     <article class="bento-card glow-card">
       <div class="bento-card__badge-row">
+        <div class="bento-card__icon-box">
+          <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+        </div>
         <span class="ht-badge">ECOMMERCE</span>
-      </div>
-      <div class="bento-card__icon-box">
-        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
       </div>
       <h3 class="bento-card__title">Stores That Convert</h3>
       <p class="bento-card__desc">Shopify Liquid section engineering and WooCommerce checkout optimization designed to reduce drop-offs and manage large catalogs.</p>
@@ -232,10 +232,10 @@ author_profile: false
     <!-- Bento 4: Autonomous Python & AI Automations -->
     <article class="bento-card glow-card">
       <div class="bento-card__badge-row">
+        <div class="bento-card__icon-box">
+          <i class="fas fa-robot" aria-hidden="true"></i>
+        </div>
         <span class="ht-badge">AUTOMATION &amp; AI</span>
-      </div>
-      <div class="bento-card__icon-box">
-        <i class="fas fa-robot" aria-hidden="true"></i>
       </div>
       <h3 class="bento-card__title">Automations That Return Time</h3>
       <p class="bento-card__desc">Custom Python bots, Playwright scrapers, scheduled syncs, and AI LLM integrations that do the repetitive heavy lifting.</p>
@@ -250,10 +250,10 @@ author_profile: false
     <!-- Bento 5: Engineering SLA & Communication -->
     <article class="bento-card glow-card">
       <div class="bento-card__badge-row">
+        <div class="bento-card__icon-box">
+          <i class="fas fa-bolt" aria-hidden="true"></i>
+        </div>
         <span class="ht-badge ht-badge--green">DIRECT ACCESS</span>
-      </div>
-      <div class="bento-card__icon-box">
-        <i class="fas fa-bolt" aria-hidden="true"></i>
       </div>
       <h3 class="bento-card__title">Clear Engineering Partnership</h3>
       <p class="bento-card__desc">Work directly with the builder. No bloated agency retainers, no account manager delays, and clear transparent scoping before any line of code is written.</p>
