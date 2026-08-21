@@ -76,17 +76,33 @@ author_profile: false
 
       <div class="hero-terminal__body" aria-live="polite">
         <div class="hero-terminal__welcome">
-          <span class="ht-term-cyan">// Nasratul Nayem Developer Runtime [v2.6.0]</span>
+          <span class="ht-term-cyan">// Nasratul Nayem Developer Runtime [v2.6.0]</span><br>
+          <span class="ht-term-muted">// Autonomous systems initialized &middot; All nodes operational</span>
         </div>
         <div class="hero-terminal__line">
           <span class="hero-terminal__prompt">nayem@dev:~$</span>
-          <span class="hero-terminal__cmd">status</span>
+          <span class="hero-terminal__cmd">init --all-modules</span>
         </div>
         <div class="hero-terminal__response">
-          <span class="ht-term-green">● SYSTEM STATUS: ONLINE &amp; ACCEPTING PROJECTS</span><br>
-          &nbsp;&nbsp;• <span class="ht-term-yellow">Core Skills:</span> WordPress, Shopify, WooCommerce, Python, AI<br>
-          &nbsp;&nbsp;• <span class="ht-term-yellow">Flagship:</span> Importon Bridge Pro<br>
-          &nbsp;&nbsp;• <span class="ht-term-yellow">Direct Contact:</span> devnayem30@gmail.com
+<span class="ht-term-green">● SYSTEM STATUS: ONLINE &amp; ACCEPTING NEW PROJECTS</span>
+  • <span class="ht-term-yellow">Location:</span> Bangladesh &middot; Working Worldwide (Remote)
+  • <span class="ht-term-yellow">Direct Contact:</span> devnayem30@gmail.com
+  • <span class="ht-term-yellow">Guaranteed Response:</span> Within 24 hours
+
+<span class="ht-term-cyan">⚡ Engineering &amp; Technology Stack:</span>
+  • <span class="ht-term-yellow">WordPress &amp; PHP:</span> Core APIs, Custom Plugins, WooCommerce, Theme Architecture
+  • <span class="ht-term-yellow">Frontend:</span> Modern JavaScript (ES6+), High Core Web Vitals, Responsive CSS
+  • <span class="ht-term-yellow">Automation &amp; AI:</span> Python, Playwright/Selenium, LLM Prompt Chains, Webhooks, CRON
+  • <span class="ht-term-yellow">Software Distribution:</span> Freemius SDK, Chrome Companion Extensions, REST APIs
+
+<span class="ht-term-cyan">🛠 Specialized Services:</span>
+  [1] <span class="ht-term-green">Web Engineering:</span> High-speed custom WordPress &amp; Shopify builds
+  [2] <span class="ht-term-green">Ecommerce Architecture:</span> Catalogs, custom checkout rules &amp; video galleries
+  [3] <span class="ht-term-green">Automation Pipelines:</span> Data scrapers, browser-to-store bridges &amp; AI drafting
+
+<span class="ht-term-cyan">🚀 Flagship Software:</span>
+  • <span class="ht-term-yellow">Importon Bridge (v0.2.2 Pro):</span> 1-Click browser-to-WooCommerce product importer
+  • <span class="ht-term-yellow">Status:</span> Production-ready with automated updates &amp; 14-day refund guarantee
         </div>
       </div>
     </div>
