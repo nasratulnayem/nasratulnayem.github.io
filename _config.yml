@@ -23,7 +23,7 @@ repository               : "nasratulnayem/nasratulnayem.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "nasratul-nayem.jpg"
   name             : "Nasratul Nayem"
   pronouns         : # example: "she/her"  
   bio              : "Web developer & automation expert"
