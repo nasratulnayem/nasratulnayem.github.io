@@ -24,7 +24,7 @@ categories:
 
   <p>It is built for store owners and developers who want control. No bloated import dashboard. No complicated SaaS layer. Just a focused bridge between the product page you are viewing and the WooCommerce store you manage.</p>
 
-  <p>You can view the project here: <a href="https://github.com/nasratulnayem/importon-bridge" target="_blank" rel="noopener noreferrer">Importon Bridge on GitHub</a>.</p>
+  <p>See the current product details, requirements, and purchase options on the <a href="https://nasratulnayem.github.io/plugins/importon-bridge/">Importon Bridge product page</a>.</p>
 </section>
 
 <section class="codex-block">
@@ -136,7 +136,7 @@ POST  /wp-json/importonbridge/v1/connect     Return connection details for the b
 
   <h3>WordPress side</h3>
   <ol>
-    <li>Download the latest release from the <a href="https://github.com/nasratulnayem/importon-bridge/releases" target="_blank" rel="noopener noreferrer">Importon Bridge releases page</a>.</li>
+    <li>After purchase, download the current plugin ZIP from your Freemius purchase email or customer portal.</li>
     <li>Upload the plugin to <code>/wp-content/plugins/</code>.</li>
     <li>Activate the plugin from the WordPress dashboard.</li>
     <li>Make sure WooCommerce is installed and active.</li>
@@ -194,8 +194,8 @@ POST  /wp-json/importonbridge/v1/connect     Return connection details for the b
 </section>
 
 <section class="codex-block">
-  <h2>What changed in version 0.1.0</h2>
-  <p>The first release focuses on the core bridge between the browser companion and WooCommerce.</p>
+  <h2>What the current 0.2.2 release includes</h2>
+  <p>The current release uses Importon Bridge branding throughout the plugin, WordPress admin, REST connection, browser companion, and release package.</p>
 
   <ul>
     <li>Browser companion product import flow.</li>
@@ -204,7 +204,7 @@ POST  /wp-json/importonbridge/v1/connect     Return connection details for the b
     <li>Optional AI rewriting.</li>
     <li>Batch URL import queue.</li>
     <li>Failed-run logging and admin monitoring.</li>
-    <li>Clean Importon Bridge branding and connection flow.</li>
+    <li>Freemius-ready delivery and a bundled SDK in the official release package.</li>
   </ul>
 </section>
 

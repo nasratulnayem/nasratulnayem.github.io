@@ -93,7 +93,7 @@ author_profile: false
         <div class="hero-terminal__response">
           <span class="ht-term-green">● SYSTEM STATUS: ONLINE &amp; ACCEPTING PROJECTS</span><br>
           &nbsp;&nbsp;• <span class="ht-term-yellow">Core Skills:</span> WordPress, Shopify, WooCommerce, Python, AI<br>
-          &nbsp;&nbsp;• <span class="ht-term-yellow">Flagship:</span> Importon Bridge Pro (WooCommerce Importer)<br>
+          &nbsp;&nbsp;• <span class="ht-term-yellow">Flagship:</span> Importon Bridge Pro<br>
           &nbsp;&nbsp;• <span class="ht-term-yellow">Direct Contact:</span> devnayem30@gmail.com
         </div>
       </div>
@@ -144,7 +144,7 @@ author_profile: false
     <article class="bento-card bento-card--featured glow-card">
       <div class="bento-card__badge-row">
         <span class="ht-badge ht-badge--cyan">FLAGSHIP PRODUCT</span>
-        <span class="ht-badge ht-badge--green">v0.1.0 Pro Available</span>
+        <span class="ht-badge ht-badge--green">v0.2.2 Pro Available</span>
       </div>
       <div class="bento-card__header">
         <h3 class="bento-card__title">Importon Bridge</h3>
@@ -380,8 +380,8 @@ author_profile: false
           </label>
         </div>
 
-        <a class="estimator-submit-btn ht-btn-primary ht-btn--block" href="mailto:devnayem30@gmail.com">
-          <span>Send Configured Scope to Nayem</span>
+        <a class="estimator-submit-btn ht-btn-primary ht-btn--block" href="mailto:devnayem30@gmail.com" aria-label="Send project scope to Nayem">
+          <span>Send Project Scope</span>
           <span aria-hidden="true">→</span>
         </a>
       </div>

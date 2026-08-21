@@ -98,8 +98,9 @@ author_profile: false
       </li>
     </ul>
 
-    <a class="ht-btn-primary ht-btn--glow ht-btn--block" href="mailto:devnayem30@gmail.com?subject=New%20Project%20Brief&body=Hi%20Nayem,%0A%0AHere%20is%20my%20project%20overview:%0A-%20Current%20Website/Platform:%20%0A-%20Goal/Problem:%20%0A-%20Desired%20Timeline:%20%0A%0ABest,%0A[Name]">
-      <span>Launch Email Client with Pre-filled Brief →</span>
+    <a class="ht-btn-primary ht-btn--glow ht-btn--block" href="mailto:devnayem30@gmail.com?subject=New%20Project%20Brief&body=Hi%20Nayem,%0A%0AHere%20is%20my%20project%20overview:%0A-%20Current%20Website/Platform:%20%0A-%20Goal/Problem:%20%0A-%20Desired%20Timeline:%20%0A%0ABest,%0A[Name]" aria-label="Email a project brief with the form pre-filled">
+      <span>Email Project Brief</span>
+      <span aria-hidden="true">→</span>
     </a>
   </div>
 </div>

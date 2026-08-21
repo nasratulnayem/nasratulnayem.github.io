@@ -2903,7 +2903,7 @@ body {
 
 /* The complete desktop navigation needs more than a tablet-width header.
    Switch to the dedicated mobile menu before the nav starts to compress. */
-@media (max-width: 1329px) {
+@media (max-width: 1180px) {
   .ht-nav,
   .ht-btn-palette,
   .ht-btn-cta {
@@ -2912,6 +2912,30 @@ body {
 
   .ht-mobile-menu {
     display: block !important;
+  }
+}
+
+/* Mid-size laptops still have room for the primary navigation, but not the
+   search and project CTA as well. Keep the page links visible there instead
+   of opening a desktop-sized mobile drawer. */
+@media (min-width: 961px) and (max-width: 1180px) {
+  .ht-nav {
+    display: flex !important;
+  }
+
+  .ht-btn-palette,
+  .ht-btn-cta,
+  .ht-mobile-menu {
+    display: none !important;
+  }
+
+  .ht-masthead__inner {
+    gap: 0.5rem;
+  }
+
+  .ht-nav__link {
+    padding: 7px 8px;
+    font-size: 0.78rem;
   }
 }
 
@@ -3817,17 +3841,17 @@ body {
 
   .ht-brand__title {
     max-width: none;
-    font-size: 0.55rem !important;
+    font-size: 0.5rem !important;
     line-height: 1.25;
     letter-spacing: -0.03em;
   }
 
   .ht-brand__title--full {
-    display: none;
+    display: inline;
   }
 
   .ht-brand__title--compact {
-    display: inline;
+    display: none;
   }
 
   .ht-actions {
@@ -3929,15 +3953,12 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
   }
 
   .ht-brand__title--full {
-    display: none;
-  }
-
-  .ht-brand__title--compact {
-    display: none;
-  }
-
-  .ht-brand__title--tiny {
     display: inline;
+  }
+
+  .ht-brand__title--compact,
+  .ht-brand__title--tiny {
+    display: none;
   }
 
   .ht-brand__avatar-wrap {
@@ -4510,4 +4531,130 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
 
 .ht-palette__item-sub {
   color: #94a3b8 !important;
+}
+
+/* One shared desktop canvas -------------------------------------------------
+   Every route now begins on the same outer frame as Home, Plugins, and Work.
+   Rich module layouts use the full canvas; article prose keeps a readable
+   measure inside that canvas rather than shrinking the entire page. */
+@media (min-width: 769px) {
+  #main.marketing-main--standard > .marketing-standard,
+  #main.marketing-main--post > .marketing-post,
+  #main.marketing-main--archive > .marketing-archive {
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+    padding: clamp(2rem, 4vw, 3.5rem) !important;
+  }
+
+  #main.marketing-main--standard .ht-page-hero {
+    width: min(100%, 68rem);
+    max-width: none;
+    margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+    text-align: left;
+  }
+
+  #main.marketing-main--standard .ht-contact-grid,
+  #main.marketing-main--standard .ht-services-grid,
+  #main.marketing-main--standard .ht-process-section,
+  #main.marketing-main--standard .ht-work-section,
+  #main.marketing-main--standard .ht-pipeline-diagram,
+  #main.marketing-main--standard .ht-closing-card {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  #main.marketing-main--standard .ht-contact-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  #main.marketing-main--post .marketing-post__header,
+  #main.marketing-main--post .marketing-post__feature,
+  #main.marketing-main--post .marketing-post__footer,
+  #main.marketing-main--post .pagination {
+    max-width: min(100%, 72rem);
+    margin-inline: 0;
+  }
+
+  #main.marketing-main--post .marketing-post__content {
+    max-width: 78ch;
+    margin-inline: 0;
+  }
+}
+
+/* The masthead is a full-width bar. Its inner content uses the exact same
+   container as the page body, so no page starts inside a floating pill. */
+.site-header.masthead.ht-masthead {
+  top: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0 !important;
+  border: 0;
+  border-radius: 0;
+  background: var(--ht-bg-surface);
+  box-shadow: 0 0.7rem 1.8rem rgba(15, 23, 42, 0.07);
+}
+
+.ht-masthead__inner {
+  width: var(--ht-container);
+  max-width: 1280px;
+  min-height: 64px;
+  height: auto;
+  margin-inline: auto;
+  padding: 0;
+}
+
+.ht-mobile-panel {
+  right: auto;
+  left: 50%;
+  width: var(--ht-container);
+  transform: translateX(-50%);
+}
+
+@media (max-width: 480px) {
+  .site-header.masthead.ht-masthead {
+    width: 100%;
+  }
+}
+
+/* WhatsApp remains readable in dark mode: a light chat bubble always gets
+   dark copy, while the rest of the panel remains a clear dark surface. */
+html[data-theme="dark"] .whatsapp-chat__content {
+  background: #111827;
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+html[data-theme="dark"] .whatsapp-chat__message {
+  background: #111827;
+}
+
+html[data-theme="dark"] .whatsapp-chat__message span {
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+html[data-theme="dark"] .whatsapp-chat__message small {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .whatsapp-chat__action {
+  color: #f8fafc;
+  background: #162334;
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+html[data-theme="dark"] .whatsapp-chat__action:hover,
+html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
+  color: #ffffff;
+  border-color: #25d366;
+  background: #1f2f43;
+}
+
+/* The footer is the end of the document, not the beginning of an empty
+   scroll region. Individual sections already provide the breathing room above
+   it, so no trailing page margin is needed below it. */
+.ht-footer {
+  margin-bottom: 0 !important;
 }

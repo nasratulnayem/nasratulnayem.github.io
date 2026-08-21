@@ -6,7 +6,7 @@ description: "A browser-assisted WooCommerce importer that moves supported produ
 product_name: "Importon Bridge"
 product_price: "49"
 product_image: "/images/work/importon-bridge-by-nasratul-nayem.webp"
-software_version: "0.1.0"
+software_version: "0.2.2"
 wordpress_requirement: "6.0 or later"
 freemius_checkout: true
 freemius_product_id: "28475"

@@ -202,7 +202,7 @@
   <a class="ht-term-link" href="/services/">➔ View full services breakdown</a>
 `,
       flagship: () => `
-<span class="ht-term-cyan">🚀 Flagship Software: Importon Bridge (v0.1.0)</span>
+<span class="ht-term-cyan">🚀 Flagship Software: Importon Bridge (v0.2.2)</span>
   • A browser-assisted workflow engine moving product data to WooCommerce in seconds.
   • Secure REST connection · Freemius Licensing · 14-day money-back guarantee.
   <a class="ht-term-link" href="/plugins/importon-bridge/">➔ Explore Importon Bridge</a>
