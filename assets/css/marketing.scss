@@ -1173,26 +1173,26 @@ body {
   gap: 1.5rem;
 }
 
-/* Cyber High-Tech Bento Card Foundations */
+/* High-Tech Bento Card Foundations */
 .bento-card {
   position: relative;
-  background: linear-gradient(145deg, #090e17 0%, #0d1522 100%);
-  border: 1px solid rgba(0, 210, 255, 0.15);
+  background: var(--ht-bg-card);
+  border: 1px solid var(--ht-border);
   border-radius: var(--ht-radius-lg);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(0, 210, 255, 0.03);
+  box-shadow: var(--ht-shadow-md);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bento-card:hover {
-  border-color: rgba(0, 245, 160, 0.5);
+  border-color: var(--ht-border-hover);
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 210, 255, 0.2), inset 0 0 15px rgba(0, 245, 160, 0.08);
+  box-shadow: var(--ht-shadow-md), 0 0 25px var(--ht-cyan-glow);
 }
 
 /* Cyber Scanning Line */
