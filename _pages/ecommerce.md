@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Ecommerce Systems & Conversion Engineering"
 permalink: /ecommerce/
 author_profile: false

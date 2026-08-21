@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Start a Project or Automation"
 permalink: /contact/
 author_profile: false

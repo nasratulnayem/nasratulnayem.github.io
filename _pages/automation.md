@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Autonomous Python & AI Workflow Engineering"
 permalink: /automation/
 author_profile: false

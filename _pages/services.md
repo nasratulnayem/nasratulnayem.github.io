@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Web Engineering & Custom Development Services"
 permalink: /services/
 author_profile: false
