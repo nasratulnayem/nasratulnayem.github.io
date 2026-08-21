@@ -1146,7 +1146,7 @@ body {
   background: var(--ht-bg-card);
   border: 1px solid var(--ht-border);
   border-radius: var(--ht-radius-lg);
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1191,6 +1191,7 @@ body {
   grid-column: span 2;
   background: linear-gradient(135deg, rgba(14, 20, 29, 0.9) 0%, rgba(18, 30, 44, 0.85) 100%);
   border-color: rgba(0, 210, 255, 0.25);
+  padding: 1.75rem;
 }
 
 /* Bento Badges & Icons */
@@ -1198,19 +1199,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.85rem;
 }
 
 .ht-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 4px 10px;
+  padding: 3px 9px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--ht-border);
   border-radius: var(--ht-radius-full);
   font-family: var(--ht-font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--ht-text-secondary);
 }
@@ -1234,49 +1235,50 @@ body {
 }
 
 .bento-card__icon-box {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--ht-radius-md);
   background: var(--ht-bg-elevated);
   border: 1px solid var(--ht-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   color: var(--ht-cyan);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.85rem;
 }
 
 .bento-card__title {
   font-family: var(--ht-font-heading);
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--ht-text-primary);
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.5rem 0;
   line-height: 1.25;
 }
 
 .bento-card__desc {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--ht-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 1.25rem 0;
+  line-height: 1.5;
+  margin: 0 0 0.85rem 0;
 }
 
 .bento-card__list {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1rem 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.35rem;
 }
 
 .bento-card__list li {
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   color: var(--ht-text-secondary);
   position: relative;
-  padding-left: 18px;
+  padding-left: 16px;
+  line-height: 1.45;
 }
 
 .bento-card__list li::before {
@@ -1289,18 +1291,19 @@ body {
 
 .bento-card__link {
   margin-top: auto;
+  padding-top: 0.5rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
   color: var(--ht-cyan) !important;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 600;
   text-decoration: none !important;
   transition: gap 0.2s ease;
 }
 
 .bento-card__link:hover {
-  gap: 0.7rem;
+  gap: 0.6rem;
 }
 
 /* Importon Bridge Visual Workflow Simulation */
