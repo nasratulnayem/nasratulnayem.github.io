@@ -395,6 +395,34 @@ body {
   display: none;
 }
 
+/* A calm, mobile-only profile action.  It deliberately lives beside the
+   compact identity rather than inside the navigation drawer, but never
+   appears on desktop where the project CTA is the clearer action. */
+.ht-mobile-follow {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 0.72rem;
+  color: var(--ht-text-primary) !important;
+  background: var(--ht-bg-elevated);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.ht-mobile-follow:hover,
+.ht-mobile-follow:focus-visible {
+  color: var(--ht-cyan) !important;
+  border-color: var(--ht-border-hover);
+  background: var(--ht-bg-card-hover);
+}
+
 .ht-mobile-menu summary {
   display: flex;
   flex-direction: column;
@@ -4650,6 +4678,45 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   color: #ffffff;
   border-color: #25d366;
   background: #1f2f43;
+}
+
+/* Mobile identity contract: name, role, Follow, and menu stay on one calm
+   row.  The role becomes progressively shorter before there is any chance of
+   shrinking, clipping, or horizontal scrolling. */
+@media (max-width: 768px) {
+  .ht-mobile-follow {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .ht-btn-theme {
+    display: none !important;
+  }
+
+  .ht-brand__title--full {
+    display: none !important;
+  }
+
+  .ht-brand__title--compact {
+    display: inline !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .ht-brand__title--compact {
+    display: none !important;
+  }
+
+  .ht-brand__title--tiny {
+    display: inline !important;
+  }
+
+  .ht-mobile-follow {
+    min-height: 34px;
+    padding-inline: 0.58rem;
+    font-size: 0.68rem;
+  }
 }
 
 /* The footer is the end of the document, not the beginning of an empty
