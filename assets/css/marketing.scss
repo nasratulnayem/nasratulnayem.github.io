@@ -2054,47 +2054,165 @@ body {
   margin: 0 auto 4rem auto;
 }
 
-/* Process Steps (Services Page) */
+/* Process Steps (Services Page & Product Pages) */
 .ht-process-section {
   width: var(--ht-container);
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 4.5rem auto;
 }
 
-.ht-process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+/* Ultra High-Tech Workflow Pipeline Component */
+.ht-workflow-pipeline {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 }
 
-.ht-process-step {
+.ht-wf-card {
+  flex: 1;
   background: var(--ht-bg-card);
   border: 1px solid var(--ht-border);
   border-radius: var(--ht-radius-lg);
-  padding: 1.75rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--ht-shadow-md);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
-.ht-step-num {
+.ht-wf-card:hover {
+  border-color: var(--ht-border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--ht-shadow-md), 0 0 25px var(--ht-cyan-glow);
+}
+
+.ht-wf-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.ht-wf-node {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.ht-wf-node__num {
   font-family: var(--ht-font-mono);
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--ht-cyan);
-  margin-bottom: 0.75rem;
+  background: rgba(0, 210, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 210, 255, 0.25);
 }
 
-.ht-process-step h3 {
+.ht-wf-node__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ht-bg-elevated);
+  border: 1px solid var(--ht-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--ht-text-primary);
+}
+
+.ht-wf-card__title {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--ht-text-primary);
   margin: 0 0 0.5rem 0;
+  line-height: 1.3;
 }
 
-.ht-process-step p {
+.ht-wf-card__desc {
   font-size: 0.88rem;
   color: var(--ht-text-secondary);
-  line-height: 1.55;
-  margin: 0;
+  line-height: 1.6;
+  margin: 0 0 1.25rem 0;
+}
+
+.ht-wf-card__footer {
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--ht-border);
+}
+
+.ht-wf-signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.74rem;
+  font-family: var(--ht-font-mono);
+  color: var(--ht-emerald);
+  font-weight: 600;
+}
+
+/* Connectors */
+.ht-wf-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.ht-wf-pulse {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ht-border), var(--ht-cyan), var(--ht-border));
+  position: relative;
+}
+
+.ht-wf-pulse::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ht-cyan);
+  box-shadow: 0 0 8px var(--ht-cyan);
+  animation: ht-pulse-move 2s infinite ease-in-out;
+}
+
+@keyframes ht-pulse-move {
+  0% { left: 0; opacity: 0.2; }
+  50% { left: 100%; opacity: 1; }
+  100% { left: 0; opacity: 0.2; }
+}
+
+@media (max-width: 1024px) {
+  .ht-workflow-pipeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .ht-wf-connector {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .ht-workflow-pipeline {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 
 /* Pipeline Flow Diagram (Automation Page) */

@@ -119,36 +119,96 @@ freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?
   </article>
 </div>
 
-<!-- 4-Step Process Section -->
+<!-- High-Tech Connected Pipeline Workflow Section -->
 <section class="ht-process-section">
   <div class="ht-section-header">
     <div class="ht-eyebrow">
       <span class="ht-eyebrow-dot"></span>
-      <span>HOW THE WORKFLOW RUNS</span>
+      <span>AUTOMATED WORKFLOW PIPELINE</span>
     </div>
     <h2 class="ht-section-title">From browser page to WooCommerce in seconds.</h2>
+    <p class="ht-section-subtitle">A high-velocity, 4-stage data bridge engineered to eliminate copy-paste latency.</p>
   </div>
 
-  <div class="ht-process-steps">
-    <div class="ht-process-step">
-      <span class="ht-step-num">01</span>
-      <h3>Install Both Parts</h3>
-      <p>Install the WordPress plugin on your store and add the companion extension to Chrome.</p>
+  <div class="ht-workflow-pipeline">
+    <div class="ht-wf-card glow-card">
+      <div class="ht-wf-card__header">
+        <div class="ht-wf-node">
+          <span class="ht-wf-node__num">01</span>
+          <div class="ht-wf-node__icon"><i class="fab fa-chrome" aria-hidden="true"></i></div>
+        </div>
+        <span class="ht-badge ht-badge--cyan">DEPLOY</span>
+      </div>
+      <div class="ht-wf-card__body">
+        <h3 class="ht-wf-card__title">Install Both Parts</h3>
+        <p class="ht-wf-card__desc">Activate the WordPress plugin on your store and pin the companion extension to Chrome.</p>
+      </div>
+      <div class="ht-wf-card__footer">
+        <span class="ht-wf-signal"><i class="fas fa-check-circle" aria-hidden="true"></i> Handshake Ready</span>
+      </div>
     </div>
-    <div class="ht-process-step">
-      <span class="ht-step-num">02</span>
-      <h3>Connect Store</h3>
-      <p>Authenticate with your WordPress REST API key in one click.</p>
+
+    <div class="ht-wf-connector" aria-hidden="true">
+      <div class="ht-wf-pulse"></div>
     </div>
-    <div class="ht-process-step">
-      <span class="ht-step-num">03</span>
-      <h3>Capture in Browser</h3>
-      <p>Open any supported supplier page and click capture.</p>
+
+    <div class="ht-wf-card glow-card">
+      <div class="ht-wf-card__header">
+        <div class="ht-wf-node">
+          <span class="ht-wf-node__num">02</span>
+          <div class="ht-wf-node__icon"><i class="fas fa-key" aria-hidden="true"></i></div>
+        </div>
+        <span class="ht-badge ht-badge--purple">AUTH</span>
+      </div>
+      <div class="ht-wf-card__body">
+        <h3 class="ht-wf-card__title">Connect Store</h3>
+        <p class="ht-wf-card__desc">Authenticate your WooCommerce endpoint securely via encrypted 1-click REST token exchange.</p>
+      </div>
+      <div class="ht-wf-card__footer">
+        <span class="ht-wf-signal"><i class="fas fa-lock" aria-hidden="true"></i> 256-bit Encrypted</span>
+      </div>
     </div>
-    <div class="ht-process-step">
-      <span class="ht-step-num">04</span>
-      <h3>Review &amp; Publish</h3>
-      <p>Verify prices, adjust attributes in WooCommerce admin, and publish.</p>
+
+    <div class="ht-wf-connector" aria-hidden="true">
+      <div class="ht-wf-pulse"></div>
+    </div>
+
+    <div class="ht-wf-card glow-card">
+      <div class="ht-wf-card__header">
+        <div class="ht-wf-node">
+          <span class="ht-wf-node__num">03</span>
+          <div class="ht-wf-node__icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+        </div>
+        <span class="ht-badge ht-badge--green">CAPTURE</span>
+      </div>
+      <div class="ht-wf-card__body">
+        <h3 class="ht-wf-card__title">Capture in Browser</h3>
+        <p class="ht-wf-card__desc">Navigate to any product page and click Capture. DOM extraction parses titles, prices &amp; galleries.</p>
+      </div>
+      <div class="ht-wf-card__footer">
+        <span class="ht-wf-signal"><i class="fas fa-microchip" aria-hidden="true"></i> Instant DOM Parse</span>
+      </div>
+    </div>
+
+    <div class="ht-wf-connector" aria-hidden="true">
+      <div class="ht-wf-pulse"></div>
+    </div>
+
+    <div class="ht-wf-card glow-card">
+      <div class="ht-wf-card__header">
+        <div class="ht-wf-node">
+          <span class="ht-wf-node__num">04</span>
+          <div class="ht-wf-node__icon"><i class="fab fa-wordpress" aria-hidden="true"></i></div>
+        </div>
+        <span class="ht-badge ht-badge--cyan">PUBLISH</span>
+      </div>
+      <div class="ht-wf-card__body">
+        <h3 class="ht-wf-card__title">Review &amp; Publish</h3>
+        <p class="ht-wf-card__desc">Auto-staged directly into WooCommerce as formatted drafts ready for final inventory validation.</p>
+      </div>
+      <div class="ht-wf-card__footer">
+        <span class="ht-wf-signal"><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i> Live in Store</span>
+      </div>
     </div>
   </div>
 </section>
