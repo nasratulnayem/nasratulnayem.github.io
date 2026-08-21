@@ -2226,6 +2226,25 @@ body {
   font-weight: 700;
   color: var(--ht-cyan);
   white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+
+.ht-case-card:hover .ht-case-card__arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .ht-case-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .ht-case-card__arrow {
+    margin-top: 0.25rem;
+    align-self: flex-start;
+  }
 }
 
 /* Plugins & Products Showcase */
