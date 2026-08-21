@@ -14,23 +14,25 @@ author_profile: false
   <p class="ht-page-hero__desc">Real build notes from the systems I design: high-conversion storefronts, custom WordPress tools, and Python automations that give teams their time back.</p>
 </div>
 
-<div class="ht-work-controls ht-work-controls--page">
-  <div class="portfolio-filter-hud" role="tablist" aria-label="Filter case studies">
-    <button type="button" class="filter-chip is-active" data-category="all">All Systems ({{ site.posts.size }})</button>
-    <button type="button" class="filter-chip" data-category="wordpress">WordPress</button>
-    <button type="button" class="filter-chip" data-category="ecommerce">Ecommerce</button>
-    <button type="button" class="filter-chip" data-category="automation">Automation &amp; AI</button>
-    <button type="button" class="filter-chip" data-category="case study">Case Studies</button>
+<div class="ht-work-section">
+  <div class="ht-work-controls ht-work-controls--page">
+    <div class="portfolio-filter-hud" role="tablist" aria-label="Filter case studies">
+      <button type="button" class="filter-chip is-active" data-category="all">All Systems ({{ site.posts.size }})</button>
+      <button type="button" class="filter-chip" data-category="wordpress">WordPress</button>
+      <button type="button" class="filter-chip" data-category="ecommerce">Ecommerce</button>
+      <button type="button" class="filter-chip" data-category="automation">Automation &amp; AI</button>
+      <button type="button" class="filter-chip" data-category="case study">Case Studies</button>
+    </div>
+    <div class="ht-search-wrap">
+      <input type="text" class="portfolio-search-input" placeholder="Search case studies &amp; tools..." aria-label="Search build notes">
+    </div>
   </div>
-  <div class="ht-search-wrap">
-    <input type="text" class="portfolio-search-input" placeholder="Search case studies &amp; tools..." aria-label="Search build notes">
-  </div>
-</div>
 
-<div class="work-grid portfolio-grid">
-  {% for post in site.posts %}
-    {% include archive-single.html type="grid" %}
-  {% endfor %}
+  <div class="work-grid portfolio-grid">
+    {% for post in site.posts %}
+      {% include archive-single.html type="grid" %}
+    {% endfor %}
+  </div>
 </div>
 
 <!-- Open Source Repositories Section -->
