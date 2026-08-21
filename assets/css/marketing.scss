@@ -2149,7 +2149,14 @@ body {
 .ht-case-card__left {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.4rem;
+}
+
+.ht-case-card__left .ht-badge {
+  display: inline-flex;
+  width: auto;
+  align-self: flex-start;
 }
 
 .ht-case-card__left h3 {
