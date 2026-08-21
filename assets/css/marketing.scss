@@ -2458,11 +2458,10 @@ body {
 .marketing-post, .marketing-standard {
   max-width: var(--ht-reading);
   margin: 0 auto;
-  background: var(--ht-bg-card);
-  border: 1px solid var(--ht-border);
-  border-radius: var(--ht-radius-xl);
-  padding: 3rem;
-  backdrop-filter: blur(24px);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
 }
 
 .marketing-post__header, .marketing-page__header {
@@ -4700,8 +4699,10 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
 
   #main.marketing-main--post .marketing-post,
   #main.marketing-main--standard .marketing-standard {
-    padding: 1.25rem !important;
-    border-radius: var(--ht-radius-lg);
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    border: none !important;
   }
 }
 
