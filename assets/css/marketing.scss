@@ -1004,12 +1004,13 @@ body {
 /* 6. High-Tech Tech Stack Pill Ribbon --------------------------------------- */
 .ht-stack-ribbon {
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   background: var(--ht-bg-surface);
   border-top: 1px solid var(--ht-border);
   border-bottom: 1px solid var(--ht-border);
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .ht-stack-ribbon__inner {
@@ -1017,7 +1018,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.5rem 0.65rem;
   width: var(--ht-container);
   margin: 0 auto;
 }
@@ -1025,12 +1026,12 @@ body {
 .ht-stack-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 8px 16px;
+  gap: 0.4rem;
+  padding: 6px 13px;
   background: var(--ht-bg-card);
   border: 1px solid var(--ht-border);
   border-radius: var(--ht-radius-full);
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--ht-text-secondary);
   white-space: nowrap;
@@ -1040,11 +1041,39 @@ body {
 .ht-stack-pill:hover {
   color: var(--ht-text-primary);
   border-color: var(--ht-border-hover);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .ht-stack-pill i {
   color: var(--ht-cyan);
+  font-size: 0.85em;
+}
+
+@media (max-width: 768px) {
+  .ht-stack-ribbon {
+    padding: 0.85rem 0;
+    margin-bottom: 2.5rem;
+  }
+
+  .ht-stack-ribbon__inner {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0 1rem;
+    gap: 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .ht-stack-ribbon__inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ht-stack-pill {
+    padding: 5px 11px;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
 }
 
 /* 7. Section Header Framework ---------------------------------------------- */
