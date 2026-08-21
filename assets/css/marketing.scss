@@ -1260,12 +1260,15 @@ body {
   margin-bottom: 0;
 }
 
-.bento-card__title {
+.bento-card__title,
+.bento-card h2,
+.bento-card h3 {
   font-family: var(--ht-font-heading);
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--ht-text-primary);
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.5rem 0 !important;
+  padding: 0 !important;
   line-height: 1.25;
 }
 
