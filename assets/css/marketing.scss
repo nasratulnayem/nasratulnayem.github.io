@@ -105,58 +105,7 @@ html:not([data-theme="dark"]) {
   --ht-shadow-glow: 0 0 40px rgba(2, 132, 199, 0.08);
 }
 
-/* Light Theme Overrides for Cards */
-html:not([data-theme="dark"]) .bento-card {
-  background: #ffffff !important;
-  border: 1px solid rgba(15, 23, 42, 0.1) !important;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06), inset 0 0 20px rgba(2, 132, 199, 0.02) !important;
-}
 
-html:not([data-theme="dark"]) .bento-card:hover {
-  border-color: rgba(2, 132, 199, 0.4) !important;
-  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.1), 0 0 20px rgba(2, 132, 199, 0.1) !important;
-}
-
-html:not([data-theme="dark"]) .bento-card__title,
-html:not([data-theme="dark"]) .bento-card h2,
-html:not([data-theme="dark"]) .bento-card h3 {
-  color: #0f172a !important;
-}
-
-html:not([data-theme="dark"]) .bento-card__desc,
-html:not([data-theme="dark"]) .bento-card__list li {
-  color: #334155 !important;
-}
-
-html:not([data-theme="dark"]) .bento-card__icon-box {
-  background: #f1f5f9 !important;
-  border-color: rgba(15, 23, 42, 0.1) !important;
-  color: #0284c7 !important;
-}
-
-html:not([data-theme="dark"]) .ht-badge {
-  background: #f1f5f9 !important;
-  border-color: rgba(15, 23, 42, 0.12) !important;
-  color: #334155 !important;
-}
-
-html:not([data-theme="dark"]) .ht-badge--cyan {
-  background: rgba(2, 132, 199, 0.1) !important;
-  border-color: rgba(2, 132, 199, 0.3) !important;
-  color: #0284c7 !important;
-}
-
-html:not([data-theme="dark"]) .ht-badge--green {
-  background: rgba(5, 150, 105, 0.1) !important;
-  border-color: rgba(5, 150, 105, 0.3) !important;
-  color: #059669 !important;
-}
-
-html:not([data-theme="dark"]) .ht-badge--purple {
-  background: rgba(79, 70, 229, 0.1) !important;
-  border-color: rgba(79, 70, 229, 0.3) !important;
-  color: #4f46e5 !important;
-}
 
 /* Primary Action Buttons in Light Mode have white text */
 html:not([data-theme="dark"]) .ht-btn-primary,
