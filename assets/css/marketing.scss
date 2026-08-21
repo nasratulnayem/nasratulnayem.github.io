@@ -2746,13 +2746,22 @@ code {
 
 /* 16. High-Tech Footer ----------------------------------------------------- */
 .ht-footer {
+  width: 100%;
+  margin: 0 !important;
+  padding: 4rem 0 0 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  backdrop-filter: none;
+  border-top: 1px solid var(--ht-border);
+}
+
+.ht-footer__cta-band,
+.ht-footer__grid,
+.ht-footer__bottom {
   width: var(--ht-container);
-  margin: 5rem auto 2rem auto !important;
-  background: var(--ht-bg-card);
-  border: 1px solid var(--ht-border);
-  border-radius: var(--ht-radius-xl);
-  padding: 3rem;
-  backdrop-filter: blur(24px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ht-footer__cta-band {
@@ -4924,9 +4933,4 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   }
 }
 
-/* The footer is the end of the document, not the beginning of an empty
-   scroll region. Individual sections already provide the breathing room above
-   it, so no trailing page margin is needed below it. */
-.ht-footer {
-  margin-bottom: 0 !important;
-}
+/* Footer is full-width, no trailing margin needed */
