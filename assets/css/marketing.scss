@@ -1569,10 +1569,9 @@ body {
   -webkit-backdrop-filter: blur(20px);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  /* Perfect corner clipping without pixel bleed */
-  border-radius: var(--ht-radius-lg);
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-  mask-image: -webkit-radial-gradient(white, black);
+  /* Hardware-accelerated clip path for pixel-perfect corners across all browsers */
+  clip-path: inset(0 round var(--ht-radius-lg));
+  -webkit-clip-path: inset(0 round var(--ht-radius-lg));
 }
 
 .ht-project-card:hover {
@@ -1601,8 +1600,6 @@ body {
   aspect-ratio: 16 / 9;
   background: #0d131d;
   overflow: hidden;
-  border-top-left-radius: calc(var(--ht-radius-lg) - 1px);
-  border-top-right-radius: calc(var(--ht-radius-lg) - 1px);
   border-bottom: 1px solid var(--ht-border);
 }
 
@@ -1611,8 +1608,6 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-top-left-radius: calc(var(--ht-radius-lg) - 1px);
-  border-top-right-radius: calc(var(--ht-radius-lg) - 1px);
   transition: transform 0.4s ease;
 }
 
