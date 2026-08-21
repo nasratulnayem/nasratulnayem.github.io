@@ -106,20 +106,6 @@ author_profile: false
           &nbsp;&nbsp;• <span class="ht-term-yellow">Direct Contact:</span> devnayem30@gmail.com
         </div>
       </div>
-
-      <div class="hero-terminal__chips">
-        <span class="ht-term-chips-label">Quick run:</span>
-        <button type="button" class="hero-terminal__chip" data-cmd="stack">stack</button>
-        <button type="button" class="hero-terminal__chip" data-cmd="services">services</button>
-        <button type="button" class="hero-terminal__chip" data-cmd="flagship">flagship</button>
-        <button type="button" class="hero-terminal__chip" data-cmd="contact">contact</button>
-        <button type="button" class="hero-terminal__chip" data-cmd="clear">clear</button>
-      </div>
-
-      <div class="hero-terminal__input-row">
-        <span class="hero-terminal__input-prompt">nayem@dev:~$</span>
-        <input type="text" class="hero-terminal__input" placeholder="Type command (e.g. help, stack, contact)..." spellcheck="false" autocomplete="off">
-      </div>
     </div>
   </div>
 </section>
