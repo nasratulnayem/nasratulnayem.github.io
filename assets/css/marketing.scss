@@ -105,6 +105,59 @@ html:not([data-theme="dark"]) {
   --ht-shadow-glow: 0 0 40px rgba(2, 132, 199, 0.08);
 }
 
+/* Light Theme Overrides for Cards */
+html:not([data-theme="dark"]) .bento-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06), inset 0 0 20px rgba(2, 132, 199, 0.02) !important;
+}
+
+html:not([data-theme="dark"]) .bento-card:hover {
+  border-color: rgba(2, 132, 199, 0.4) !important;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.1), 0 0 20px rgba(2, 132, 199, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .bento-card__title,
+html:not([data-theme="dark"]) .bento-card h2,
+html:not([data-theme="dark"]) .bento-card h3 {
+  color: #0f172a !important;
+}
+
+html:not([data-theme="dark"]) .bento-card__desc,
+html:not([data-theme="dark"]) .bento-card__list li {
+  color: #334155 !important;
+}
+
+html:not([data-theme="dark"]) .bento-card__icon-box {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #0284c7 !important;
+}
+
+html:not([data-theme="dark"]) .ht-badge {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #334155 !important;
+}
+
+html:not([data-theme="dark"]) .ht-badge--cyan {
+  background: rgba(2, 132, 199, 0.1) !important;
+  border-color: rgba(2, 132, 199, 0.3) !important;
+  color: #0284c7 !important;
+}
+
+html:not([data-theme="dark"]) .ht-badge--green {
+  background: rgba(5, 150, 105, 0.1) !important;
+  border-color: rgba(5, 150, 105, 0.3) !important;
+  color: #059669 !important;
+}
+
+html:not([data-theme="dark"]) .ht-badge--purple {
+  background: rgba(79, 70, 229, 0.1) !important;
+  border-color: rgba(79, 70, 229, 0.3) !important;
+  color: #4f46e5 !important;
+}
+
 /* Primary Action Buttons in Light Mode have white text */
 html:not([data-theme="dark"]) .ht-btn-primary,
 html:not([data-theme="dark"]) .ht-btn-cta,
@@ -921,6 +974,25 @@ body {
   line-height: 1.65;
   color: #e2e8f0;
   background: #080c12;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 210, 255, 0.45) #080c12;
+}
+
+.hero-terminal__body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hero-terminal__body::-webkit-scrollbar-track {
+  background: #080c12;
+}
+
+.hero-terminal__body::-webkit-scrollbar-thumb {
+  background: rgba(0, 210, 255, 0.4);
+  border-radius: 4px;
+}
+
+.hero-terminal__body::-webkit-scrollbar-thumb:hover {
+  background: var(--ht-cyan);
 }
 
 .hero-terminal__line {
@@ -1505,13 +1577,12 @@ body {
 }
 
 .ht-search-wrap input {
-  height: 42px;
-  padding: 0 18px;
-  border-radius: var(--ht-radius-full);
+  padding: 8px 16px 8px 36px;
   background: var(--ht-bg-surface);
   border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-full);
   color: var(--ht-text-primary);
-  font-family: var(--ht-font-sans);
+  font-family: var(--ht-font-mono);
   font-size: 0.86rem;
   outline: none;
   width: 240px;
@@ -1549,9 +1620,10 @@ body {
   -webkit-backdrop-filter: blur(20px);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  /* Prevent child background leakage on rounded corners */
-  mask-image: radial-gradient(white, black);
+  /* Perfect corner clipping without pixel bleed */
+  border-radius: var(--ht-radius-lg);
   -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: -webkit-radial-gradient(white, black);
 }
 
 .ht-project-card:hover {
@@ -1580,6 +1652,8 @@ body {
   aspect-ratio: 16 / 9;
   background: #0d131d;
   overflow: hidden;
+  border-top-left-radius: calc(var(--ht-radius-lg) - 1px);
+  border-top-right-radius: calc(var(--ht-radius-lg) - 1px);
   border-bottom: 1px solid var(--ht-border);
 }
 
@@ -1588,6 +1662,8 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-top-left-radius: calc(var(--ht-radius-lg) - 1px);
+  border-top-right-radius: calc(var(--ht-radius-lg) - 1px);
   transition: transform 0.4s ease;
 }
 
@@ -1705,7 +1781,7 @@ body {
 }
 
 .home-build-carousel .home-build-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-bottom: 2.5rem;
 }
 
@@ -1767,8 +1843,14 @@ body {
   transform: none;
 }
 
-@media (max-width: 1099px) {
-  .home-build-carousel .home-build-grid {
+@media (max-width: 1100px) {
+  .work-grid, .portfolio-grid, .home-build-carousel .home-build-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .work-grid, .portfolio-grid, .home-build-carousel .home-build-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 }

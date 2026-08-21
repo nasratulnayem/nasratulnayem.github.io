@@ -16,8 +16,10 @@ author_profile: false
 
 <div class="ht-services-grid">
   <article class="bento-card glow-card">
-    <div class="bento-card__badge-row"><span class="ht-badge ht-badge--green">SHOPIFY &amp; LIQUID</span></div>
-    <div class="bento-card__icon-box"><i class="fab fa-shopify" aria-hidden="true"></i></div>
+    <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fab fa-shopify" aria-hidden="true"></i></div>
+      <span class="ht-badge ht-badge--green">SHOPIFY &amp; LIQUID</span>
+    </div>
     <h2 class="bento-card__title">Shopify Storefront Engineering</h2>
     <p class="bento-card__desc">Custom section architecture, fast responsive themes, and conversion features tailored to your brand identity.</p>
     <ul class="bento-card__list">
@@ -29,8 +31,10 @@ author_profile: false
   </article>
 
   <article class="bento-card glow-card">
-    <div class="bento-card__badge-row"><span class="ht-badge ht-badge--cyan">WOOCOMMERCE ARCHITECTURE</span></div>
-    <div class="bento-card__icon-box"><i class="fas fa-shopping-bag" aria-hidden="true"></i></div>
+    <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fas fa-shopping-bag" aria-hidden="true"></i></div>
+      <span class="ht-badge ht-badge--cyan">WOOCOMMERCE ARCHITECTURE</span>
+    </div>
     <h2 class="bento-card__title">WooCommerce Power &amp; Plugins</h2>
     <p class="bento-card__desc">Extend WooCommerce with custom plugins, faster product galleries, and bespoke checkout rules.</p>
     <ul class="bento-card__list">
@@ -42,8 +46,10 @@ author_profile: false
   </article>
 
   <article class="bento-card glow-card">
-    <div class="bento-card__badge-row"><span class="ht-badge ht-badge--purple">CATALOG AUTOMATION</span></div>
-    <div class="bento-card__icon-box"><i class="fas fa-database" aria-hidden="true"></i></div>
+    <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fas fa-database" aria-hidden="true"></i></div>
+      <span class="ht-badge ht-badge--purple">CATALOG AUTOMATION</span>
+    </div>
     <h2 class="bento-card__title">Automated Product Pipelines</h2>
     <p class="bento-card__desc">Eliminate manual product entry with automated scrapers, CSV pipelines, and browser companion importers.</p>
     <ul class="bento-card__list">

@@ -41,8 +41,10 @@ author_profile: false
 
 <div class="ht-services-grid">
   <article class="bento-card glow-card">
-    <div class="bento-card__badge-row"><span class="ht-badge ht-badge--cyan">PYTHON AUTOMATION</span></div>
-    <div class="bento-card__icon-box"><i class="fab fa-python" aria-hidden="true"></i></div>
+    <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fab fa-python" aria-hidden="true"></i></div>
+      <span class="ht-badge ht-badge--cyan">PYTHON AUTOMATION</span>
+    </div>
     <h2 class="bento-card__title">Data Extraction &amp; Web Scrapers</h2>
     <p class="bento-card__desc">Reliable headless browser tools built with Playwright and Python that collect and structure data from permitted public sources.</p>
     <ul class="bento-card__list">
@@ -53,8 +55,10 @@ author_profile: false
   </article>
 
   <article class="bento-card glow-card">
-    <div class="bento-card__badge-row"><span class="ht-badge ht-badge--purple">AI &amp; LLM WORKFLOWS</span></div>
-    <div class="bento-card__icon-box"><i class="fas fa-robot" aria-hidden="true"></i></div>
+    <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fas fa-robot" aria-hidden="true"></i></div>
+      <span class="ht-badge ht-badge--purple">AI &amp; LLM WORKFLOWS</span>
+    </div>
     <h2 class="bento-card__title">Practical AI Integration</h2>
     <p class="bento-card__desc">AI is valuable when directly wired to your business systems, not left in a chat window.</p>
     <ul class="bento-card__list">
@@ -65,8 +69,10 @@ author_profile: false
   </article>
 
   <article class="bento-card glow-card">
-    <div class="bento-card__badge-row"><span class="ht-badge ht-badge--green">SYSTEM INTEGRATIONS</span></div>
-    <div class="bento-card__icon-box"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+    <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+      <span class="ht-badge ht-badge--green">SYSTEM INTEGRATIONS</span>
+    </div>
     <h2 class="bento-card__title">API &amp; Webhook Bridges</h2>
     <p class="bento-card__desc">Connect isolated services together into a continuous, real-time pipeline.</p>
     <ul class="bento-card__list">
