@@ -18,67 +18,63 @@ author_profile: false
   <!-- Service 1 -->
   <article class="bento-card glow-card">
     <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fab fa-wordpress" aria-hidden="true"></i></div>
       <span class="ht-badge ht-badge--cyan">WORDPRESS CORE &amp; PHP</span>
-      <span class="ht-badge">01</span>
     </div>
-    <div class="bento-card__icon-box"><i class="fab fa-wordpress" aria-hidden="true"></i></div>
     <h2 class="bento-card__title">Custom WordPress &amp; PHP Engineering</h2>
     <p class="bento-card__desc">Full-cycle WordPress development that avoids slow, bloated page builders in favor of custom, secure, high-speed architectures.</p>
     <ul class="bento-card__list">
-      <li><strong>Custom Plugin Development:</strong> Bespoke hooks, REST endpoints, and custom post types.</li>
-      <li><strong>Theme Engineering:</strong> Lightweight, semantic, mobile-first responsive frontend.</li>
-      <li><strong>Core Web Vitals &amp; Speed:</strong> Asset optimization, caching strategy, and sub-second page loads.</li>
-      <li><strong>Legacy Maintenance &amp; Upgrades:</strong> PHP 8.x migrations, database cleanup, and security hardening.</li>
+      <li>Custom Plugin Development &amp; custom post types</li>
+      <li>Lightweight, mobile-first responsive frontend</li>
+      <li>Core Web Vitals &amp; sub-second page loads</li>
+      <li>PHP 8.x migrations &amp; security hardening</li>
     </ul>
   </article>
 
   <!-- Service 2 -->
   <article class="bento-card glow-card">
     <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fas fa-shopping-bag" aria-hidden="true"></i></div>
       <span class="ht-badge ht-badge--green">ECOMMERCE &amp; STOREFRONTS</span>
-      <span class="ht-badge">02</span>
     </div>
-    <div class="bento-card__icon-box"><i class="fas fa-shopping-bag" aria-hidden="true"></i></div>
     <h2 class="bento-card__title">Shopify Liquid &amp; WooCommerce Stores</h2>
     <p class="bento-card__desc">Conversion-oriented ecommerce engineering that improves buyer journeys and streamlines store catalog operations.</p>
     <ul class="bento-card__list">
-      <li><strong>Custom Liquid Sections:</strong> High-impact modular Shopify storefront features.</li>
-      <li><strong>WooCommerce Architecture:</strong> Custom variation UX, checkout flows, and product video galleries.</li>
-      <li><strong>Catalog Migration &amp; Sync:</strong> Automated CSV/API imports and attribute structuring.</li>
-      <li><strong>Cart &amp; Checkout Enhancements:</strong> Friction reduction and conversion optimization.</li>
+      <li>Modular Shopify storefront features</li>
+      <li>WooCommerce variation UX &amp; video galleries</li>
+      <li>Automated CSV/API imports &amp; sync</li>
+      <li>Cart &amp; checkout friction reduction</li>
     </ul>
   </article>
 
   <!-- Service 3 -->
   <article class="bento-card glow-card">
     <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fas fa-microchip" aria-hidden="true"></i></div>
       <span class="ht-badge ht-badge--purple">AUTOMATION &amp; AI</span>
-      <span class="ht-badge">03</span>
     </div>
-    <div class="bento-card__icon-box"><i class="fas fa-microchip" aria-hidden="true"></i></div>
     <h2 class="bento-card__title">Autonomous Python &amp; AI Pipelines</h2>
     <p class="bento-card__desc">Custom backend scripts, scrapers, and AI-assisted workflows that execute tasks automatically behind the scenes.</p>
     <ul class="bento-card__list">
-      <li><strong>Data Extraction &amp; Web Scrapers:</strong> Playwright/Selenium automation engines.</li>
-      <li><strong>AI &amp; LLM Integrations:</strong> Automated content tagging, drafting, and product descriptions.</li>
-      <li><strong>API &amp; Webhook Bridges:</strong> Connecting CRMs, Google Sheets, databases, and third-party APIs.</li>
-      <li><strong>Scheduled Cron Tasks:</strong> Automatic backups, report generation, and data synchronization.</li>
+      <li>Playwright/Selenium data extraction engines</li>
+      <li>Automated AI content tagging &amp; drafting</li>
+      <li>CRM, Google Sheets &amp; API Webhook bridges</li>
+      <li>Scheduled cron tasks &amp; sync pipelines</li>
     </ul>
   </article>
 
   <!-- Service 4 -->
   <article class="bento-card glow-card">
     <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
       <span class="ht-badge">CUSTOM WEB APPS</span>
-      <span class="ht-badge">04</span>
     </div>
-    <div class="bento-card__icon-box"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
     <h2 class="bento-card__title">Custom Web Tools &amp; Dashboards</h2>
     <p class="bento-card__desc">When standard plugins are not enough, I build dedicated internal web applications, admin portals, and data processors.</p>
     <ul class="bento-card__list">
-      <li><strong>Operational Dashboards:</strong> Internal team tools and reporting portals.</li>
-      <li><strong>Custom Intake &amp; Booking Flows:</strong> Form validation, routing, and notifications.</li>
-      <li><strong>Freemius &amp; SaaS Monetization:</strong> Custom Chrome companion extensions &amp; licensing.</li>
+      <li>Internal team tools and reporting portals</li>
+      <li>Custom form validation, routing &amp; notifications</li>
+      <li>Chrome companion extensions &amp; licensing</li>
     </ul>
   </article>
 </div>
