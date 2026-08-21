@@ -17,8 +17,11 @@ layout: default
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
 
     <header class="marketing-post__header">
-      <p class="marketing-page__eyebrow">Build note · WordPress, ecommerce &amp; automation</p>
-      {% if page.title %}<h1 itemprop="headline">{{ page.title | strip_html | escape }}</h1>{% endif %}
+      <div class="ht-eyebrow">
+        <span class="ht-eyebrow-dot"></span>
+        <span>BUILD NOTE · CASE STUDY</span>
+      </div>
+      {% if page.title %}<h1 class="marketing-post__title" itemprop="headline">{{ page.title | strip_html | escape }}</h1>{% endif %}
       <div class="marketing-post__meta">
         {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}"><i class="fa fa-calendar" aria-hidden="true"></i> Published {{ page.date | date: "%B %d, %Y" }}</time>{% endif %}
         {% if page.read_time %}<span><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</span>{% endif %}
