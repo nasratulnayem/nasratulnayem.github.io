@@ -551,9 +551,11 @@
     const codeBlocks = document.querySelectorAll('pre > code');
     codeBlocks.forEach(code => {
       const pre = code.parentElement;
-      if (!pre || pre.classList.contains('has-copy-bar')) return;
-      pre.classList.add('has-copy-bar');
+      if (!pre || pre.closest('.ht-code-wrapper')) return;
 
+      const wrapper = document.createElement('div');
+      wrapper.className = 'ht-code-wrapper';
+      
       const header = document.createElement('div');
       header.className = 'code-header-bar';
       
@@ -570,7 +572,9 @@
         </button>
       `;
 
-      pre.insertBefore(header, code);
+      pre.parentNode.insertBefore(wrapper, pre);
+      wrapper.appendChild(header);
+      wrapper.appendChild(pre);
 
       const copyBtn = header.querySelector('.code-copy-btn');
       copyBtn.addEventListener('click', () => {

@@ -2554,7 +2554,39 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Mac-Style Code Header Bar */
+/* Mac-Style Code Window Container */
+.ht-code-wrapper {
+  position: relative;
+  background: #080c12;
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-md);
+  margin: 1.75rem 0;
+  overflow: hidden;
+}
+
+.code-header-bar {
+  position: relative;
+  height: 38px;
+  background: #0d131d;
+  border-bottom: 1px solid var(--ht-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  z-index: 2;
+}
+
+.ht-code-wrapper pre {
+  margin: 0 !important;
+  padding: 1.25rem !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow-x: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 pre {
   position: relative;
   background: #080c12 !important;
@@ -2567,26 +2599,6 @@ pre {
   box-sizing: border-box;
 }
 
-pre.has-copy-bar {
-  padding-top: 3.25rem !important;
-}
-
-.code-header-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 38px;
-  background: #0d131d;
-  border-bottom: 1px solid var(--ht-border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 14px;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-}
-
 .code-dots {
   display: flex;
   gap: 5px;
@@ -2597,6 +2609,10 @@ pre.has-copy-bar {
   height: 9px;
   border-radius: 50%;
 }
+
+.code-dots .dot-red { background: #ff5f56; }
+.code-dots .dot-yellow { background: #ffbd2e; }
+.code-dots .dot-green { background: #27c93f; }
 
 .code-lang-label {
   font-family: var(--ht-font-mono);
