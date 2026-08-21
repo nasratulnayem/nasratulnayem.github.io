@@ -2174,12 +2174,13 @@ body {
 
 /* Plugins & Products Showcase */
 .ht-catalog-grid {
-  width: var(--ht-container);
+  width: 100%;
   margin: 0 auto 4rem auto;
 }
 
 .ht-product-showcase {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
 }
 
 .ht-product-showcase__grid {
@@ -3067,8 +3068,9 @@ code {
     display: block !important;
   }
   .site-header.masthead.ht-masthead {
-    width: calc(100% - 24px);
-    top: 12px;
+    width: var(--ht-container);
+    top: 10px;
+    margin: 10px auto 0 auto !important;
   }
   .ht-bento-grid {
     grid-template-columns: 1fr;
