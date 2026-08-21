@@ -766,6 +766,59 @@ body {
 /* 5. Interactive Live Terminal Simulator ------------------------------------ */
 .ht-hero__terminal-wrap {
   width: 100%;
+  display: grid;
+  gap: 1rem;
+}
+
+.ht-hero__identity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-lg);
+  background: color-mix(in srgb, var(--ht-bg-surface) 90%, transparent);
+  box-shadow: var(--ht-shadow-sm);
+}
+
+.ht-hero__identity-photo {
+  flex: 0 0 auto;
+  width: clamp(5.25rem, 8vw, 7rem);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 2px solid var(--ht-border-hover);
+  border-radius: 1.15rem;
+  box-shadow: 0 0.7rem 1.6rem rgba(2, 43, 58, 0.16);
+}
+
+.ht-hero__identity-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.25rem;
+}
+
+.ht-hero__identity-copy > span {
+  color: var(--ht-cyan);
+  font-family: var(--ht-font-mono);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+
+.ht-hero__identity-copy > strong {
+  color: var(--ht-text-primary);
+  font-family: var(--ht-font-heading);
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.ht-hero__identity-copy > p {
+  margin: 0;
+  color: var(--ht-text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.5;
 }
 
 .hero-terminal {

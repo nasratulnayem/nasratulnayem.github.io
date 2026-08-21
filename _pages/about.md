@@ -56,6 +56,15 @@ author_profile: false
 
   <!-- Interactive Terminal Simulator -->
   <div class="ht-hero__terminal-wrap">
+    <aside class="ht-hero__identity" aria-label="About Nasratul Nayem">
+      <img class="ht-hero__identity-photo" src="{{ '/images/nasratul-nayem.jpg' | relative_url }}" alt="Nasratul Nayem, web developer and automation expert" width="360" height="360">
+      <div class="ht-hero__identity-copy">
+        <span>BUILT IN BANGLADESH · WORKING WORLDWIDE</span>
+        <strong>Direct, thoughtful engineering.</strong>
+        <p>I listen closely to the business problem before I recommend or build a solution.</p>
+      </div>
+    </aside>
+
     <div class="hero-terminal glow-card">
       <div class="hero-terminal__topbar">
         <div class="hero-terminal__dots">
