@@ -5079,24 +5079,31 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
 .ht-expandable-capabilities {
   margin-top: 1.5rem;
   margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .ht-expand-toggle {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
-  padding: 0.65rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   background: var(--ht-bg-surface);
   border: 1px solid var(--ht-border);
   border-radius: var(--ht-radius-full);
   color: var(--ht-cyan);
   font-family: var(--ht-font-mono);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 700;
   cursor: pointer;
   list-style: none;
   transition: all 0.2s ease;
   user-select: none;
+  box-shadow: var(--ht-shadow-sm);
+  margin: 0 auto;
 }
 
 .ht-expand-toggle::-webkit-details-marker {
@@ -5106,11 +5113,16 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
 .ht-expand-toggle:hover {
   background: rgba(0, 210, 255, 0.08);
   border-color: var(--ht-border-hover);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: var(--ht-shadow-md);
 }
 
 .ht-expandable-capabilities[open] .ht-expand-toggle i {
   transform: rotate(180deg);
+}
+
+.ht-expandable-capabilities > .ht-services-grid {
+  width: 100%;
 }
 
 .ht-expand-toggle i {
