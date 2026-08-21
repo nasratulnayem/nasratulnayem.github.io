@@ -5048,9 +5048,50 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   }
 }
 
+.ht-expandable-capabilities {
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.ht-expand-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.25rem;
+  background: var(--ht-bg-surface);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-full);
+  color: var(--ht-cyan);
+  font-family: var(--ht-font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.ht-expand-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.ht-expand-toggle:hover {
+  background: rgba(0, 210, 255, 0.08);
+  border-color: var(--ht-border-hover);
+  transform: translateY(-1px);
+}
+
+.ht-expandable-capabilities[open] .ht-expand-toggle i {
+  transform: rotate(180deg);
+}
+
+.ht-expand-toggle i {
+  transition: transform 0.2s ease;
+}
+
 @media (max-width: 480px) {
   .ht-btn-theme {
-    display: none !important;
+    display: inline-flex !important;
   }
 
   .ht-brand__title--full {
