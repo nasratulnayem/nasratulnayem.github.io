@@ -46,31 +46,23 @@ author_profile: false
       <li>Variant and attribute mapping algorithms</li>
     </ul>
   </article>
-</div>
 
-<!-- Expand to view more capabilities -->
-<details class="ht-expandable-capabilities">
-  <summary class="ht-expand-toggle">
-    <span>View Shopify &amp; Storefront Engineering</span>
-    <i class="fas fa-chevron-down" aria-hidden="true"></i>
-  </summary>
-  <div class="ht-services-grid" style="margin-top: 1.5rem;">
-    <article class="bento-card glow-card">
-      <div class="bento-card__badge-row">
-        <div class="bento-card__icon-box"><i class="fab fa-shopify" aria-hidden="true"></i></div>
-        <span class="ht-badge ht-badge--green">SHOPIFY &amp; LIQUID</span>
-      </div>
-      <h2 class="bento-card__title">Shopify Storefront Engineering</h2>
-      <p class="bento-card__desc">Custom section architecture, fast responsive themes, and conversion features tailored to your brand identity.</p>
-      <ul class="bento-card__list">
-        <li>Modular Shopify sections &amp; blocks (JSON templates)</li>
-        <li>Custom product bundle &amp; variant selection UX</li>
-        <li>Speed optimization &amp; mobile conversion rate fixes</li>
-        <li>App integrations without slowing down page load</li>
-      </ul>
-    </article>
-  </div>
-</details>
+  <!-- Card 3: Shopify Storefront Engineering -->
+  <article class="bento-card glow-card">
+    <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fab fa-shopify" aria-hidden="true"></i></div>
+      <span class="ht-badge ht-badge--green">SHOPIFY &amp; LIQUID</span>
+    </div>
+    <h2 class="bento-card__title">Shopify Storefront Engineering</h2>
+    <p class="bento-card__desc">Custom section architecture, fast responsive themes, and conversion features tailored to your brand identity.</p>
+    <ul class="bento-card__list">
+      <li>Modular Shopify sections &amp; blocks (JSON templates)</li>
+      <li>Custom product bundle &amp; variant selection UX</li>
+      <li>Speed optimization &amp; mobile conversion rate fixes</li>
+      <li>App integrations without slowing down page load</li>
+    </ul>
+  </article>
+</div>
 
 <!-- Relevant Case Studies -->
 <section class="ht-work-section">
