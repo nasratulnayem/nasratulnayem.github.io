@@ -75,11 +75,17 @@
 
 /* Light Theme Overrides */
 html:not([data-theme="dark"]) {
+  --global-bg-color: #f8fafc;
+  --global-footer-bg-color: #f8fafc;
+  --global-border-color: rgba(15, 23, 42, 0.09);
+  --global-text-color: #0f172a;
+  --global-text-color-light: #64748b;
+
   --ht-bg-base: #f8fafc;
   --ht-bg-surface: #ffffff;
   --ht-bg-elevated: #f1f5f9;
-  --ht-bg-card: rgba(255, 255, 255, 0.85);
-  --ht-bg-card-hover: rgba(255, 255, 255, 0.95);
+  --ht-bg-card: #ffffff;
+  --ht-bg-card-hover: #ffffff;
 
   --ht-border: rgba(15, 23, 42, 0.09);
   --ht-border-hover: rgba(14, 116, 144, 0.4);
