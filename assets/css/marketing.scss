@@ -22,7 +22,9 @@
 
   --ht-text-primary: #f8fafc;
   --ht-text-secondary: #94a3b8;
-  --ht-text-muted: #64748b;
+  /* Small metadata appears on dark surfaces throughout the site. This remains
+     visually quiet while meeting a comfortably readable contrast level. */
+  --ht-text-muted: #94a3b8;
 
   /* Accent Colors */
   --ht-cyan: #00d2ff;
@@ -1156,7 +1158,7 @@ body {
 .ht-badge--purple {
   background: rgba(99, 102, 241, 0.08);
   border-color: rgba(99, 102, 241, 0.3);
-  color: #818cf8;
+  color: var(--ht-indigo);
 }
 
 .bento-card__icon-box {
