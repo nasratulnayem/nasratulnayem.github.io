@@ -36,22 +36,6 @@ author_profile: false
       </button>
     </div>
 
-    <div class="ht-hero__metrics-ribbon">
-      <div class="ht-metric-item">
-        <strong>&lt; 24h</strong>
-        <span>Response SLA</span>
-      </div>
-      <div class="ht-metric-separator">/</div>
-      <div class="ht-metric-item">
-        <strong>100%</strong>
-        <span>Remote Delivery</span>
-      </div>
-      <div class="ht-metric-separator">/</div>
-      <div class="ht-metric-item">
-        <strong>Direct</strong>
-        <span>Founder-to-Dev Access</span>
-      </div>
-    </div>
   </div>
 
   <!-- Interactive Terminal Simulator -->
