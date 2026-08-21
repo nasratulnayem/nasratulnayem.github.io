@@ -280,10 +280,24 @@ author_profile: false
     </div>
   </div>
 
-  <div class="work-grid home-build-grid">
-    {% for post in site.posts limit:6 %}
-      {% include archive-single.html type="grid" %}
-    {% endfor %}
+  <div class="home-build-carousel" data-post-carousel role="region" aria-label="Selected build notes">
+    <div class="work-grid home-build-grid">
+      {% for post in site.posts limit:6 %}
+        {% include archive-single.html type="grid" %}
+      {% endfor %}
+    </div>
+
+    <div class="ht-carousel-controls">
+      <span class="ht-carousel-controls__status" aria-live="polite" data-carousel-status></span>
+      <div class="ht-carousel-controls__actions">
+        <button class="ht-carousel-arrow" type="button" data-carousel-previous aria-label="Show previous build notes">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"></path></svg>
+        </button>
+        <button class="ht-carousel-arrow" type="button" data-carousel-next aria-label="Show next build notes">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </div>
   </div>
 
   <div class="ht-work-footer">

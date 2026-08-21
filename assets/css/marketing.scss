@@ -1567,6 +1567,93 @@ body {
   justify-content: center;
 }
 
+/* Home build notes are deliberately browsed, not squeezed into a dense wall
+   of cards. Two cards have room to breathe on desktop; every compact device
+   gets one complete card and calm, keyboard-accessible navigation. */
+.home-build-carousel .home-build-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 1rem;
+}
+
+.ht-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.85rem;
+}
+
+.ht-carousel-controls__status {
+  color: var(--ht-text-muted);
+  font-family: var(--ht-font-mono);
+  font-size: 0.74rem;
+}
+
+.ht-carousel-controls__actions {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.ht-carousel-arrow {
+  display: inline-grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+  cursor: pointer;
+  place-items: center;
+  color: var(--ht-text-primary);
+  border: 1px solid var(--ht-border);
+  border-radius: 999px;
+  background: var(--ht-bg-surface);
+  box-shadow: var(--ht-shadow-sm);
+  transition: transform 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.ht-carousel-arrow svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+}
+
+.ht-carousel-arrow:hover,
+.ht-carousel-arrow:focus-visible {
+  color: var(--ht-cyan);
+  border-color: var(--ht-border-hover);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.ht-carousel-arrow:disabled {
+  cursor: not-allowed;
+  color: var(--ht-text-muted);
+  opacity: 0.55;
+  transform: none;
+}
+
+@media (max-width: 1099px) {
+  .home-build-carousel .home-build-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .ht-carousel-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ht-carousel-controls__status {
+    text-align: center;
+  }
+
+  .ht-carousel-controls__actions {
+    justify-content: center;
+  }
+}
+
 /* 10. Interactive Project Scope & Estimator --------------------------------- */
 .ht-estimator-section {
   width: var(--ht-container);

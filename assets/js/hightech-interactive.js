@@ -479,7 +479,15 @@
     const grid = document.querySelector('.work-grid, .portfolio-grid, .home-build-grid');
     if (!grid) return;
 
-    const cards = grid.querySelectorAll('.archive__item, .archive__item-card-link, .grid__item');
+    // Filter the outer card only. Filtering nested links/articles as well caused
+    // conflicting display states and made a matching build disappear.
+    const cards = grid.querySelectorAll('.ht-card-item, .grid__item');
+
+    const categoryAliases = {
+      wordpress: ['wordpress', 'woocommerce', 'php', 'plugin'],
+      ecommerce: ['ecommerce', 'woocommerce', 'shopify', 'storefront', 'product import'],
+      automation: ['automation', 'automated', 'python', 'playwright', 'ai']
+    };
 
     function applyFilter() {
       const activeBtn = filterContainer ? filterContainer.querySelector('.filter-chip.is-active') : null;
@@ -489,16 +497,23 @@
       cards.forEach(card => {
         const text = card.textContent.toLowerCase();
         const cardCategory = (card.getAttribute('data-category') || '').toLowerCase();
-        const matchesCat = (category === 'all') || cardCategory.includes(category.toLowerCase()) || text.includes(category.toLowerCase());
+        const searchable = `${cardCategory} ${text}`;
+        const terms = categoryAliases[category] || [category.toLowerCase()];
+        const matchesCat = category === 'all' || terms.some(term => searchable.includes(term));
         const matchesQuery = !query || text.includes(query);
+        const matches = matchesCat && matchesQuery;
 
-        if (matchesCat && matchesQuery) {
+        card.dataset.filterMatch = String(matches);
+
+        if (matches) {
           card.style.display = '';
           card.style.opacity = '1';
         } else {
           card.style.display = 'none';
         }
       });
+
+      grid.dispatchEvent(new CustomEvent('portfoliofilterchange'));
     }
 
     if (filterContainer) {
