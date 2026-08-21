@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: plugin
 title: "Importon Bridge — Browser-to-WooCommerce Product Importer"
 permalink: /plugins/importon-bridge/
 author_profile: false
@@ -33,8 +33,8 @@ freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?
       </div>
       <div class="ht-product-showcase__info">
         <div class="bento-card__badge-row">
-          <div class="bento-card__icon-box"><i class="fas fa-plug" aria-hidden="true"></i></div>
           <span class="ht-badge ht-badge--cyan">WOOCOMMERCE AUTOMATION</span>
+          <span class="ht-badge">v0.2.2 Pro</span>
         </div>
         <h2 class="ht-product-title">{{ page.product_name }}</h2>
         <p class="ht-product-summary">{{ page.description | default: "A browser-assisted workflow engine that moves product data from supported web pages into WooCommerce without repetitive manual copy-pasting." }}</p>

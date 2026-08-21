@@ -4281,6 +4281,11 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
     margin-bottom: 3rem;
   }
 
+  .ht-product-showcase__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .bento-card,
   .ht-process-step,
   .ht-contact-card,
