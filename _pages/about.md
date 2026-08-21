@@ -76,8 +76,7 @@ author_profile: false
 
       <div class="hero-terminal__body" aria-live="polite">
         <div class="hero-terminal__welcome">
-          <span class="ht-term-cyan">// Nasratul Nayem Developer Shell [Version 2.6.0]</span><br>
-          <span class="ht-term-muted">// Type commands below or click quick shortcuts:</span>
+          <span class="ht-term-cyan">// Nasratul Nayem Developer Runtime [v2.6.0]</span>
         </div>
         <div class="hero-terminal__line">
           <span class="hero-terminal__prompt">nayem@dev:~$</span>
