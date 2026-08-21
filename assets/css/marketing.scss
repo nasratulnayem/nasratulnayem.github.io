@@ -1562,22 +1562,20 @@ body {
   background: var(--ht-bg-card);
   border: 1px solid var(--ht-border);
   border-radius: var(--ht-radius-lg);
-  overflow: hidden;
+  padding: 1.25rem;
   text-decoration: none !important;
   color: inherit !important;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  /* Hardware-accelerated clip path for pixel-perfect corners across all browsers */
-  clip-path: inset(0 round var(--ht-radius-lg));
-  -webkit-clip-path: inset(0 round var(--ht-radius-lg));
+  overflow: hidden;
 }
 
 .ht-project-card:hover {
   border-color: var(--ht-border-hover);
   transform: translateY(-4px);
-  box-shadow: var(--ht-shadow-md);
+  box-shadow: var(--ht-shadow-md), 0 0 25px var(--ht-cyan-glow);
 }
 
 .ht-project-card .archive__item,
@@ -1598,9 +1596,11 @@ body {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: #0d131d;
+  background: #080c12;
+  border-radius: var(--ht-radius-md);
   overflow: hidden;
-  border-bottom: 1px solid var(--ht-border);
+  border: 1px solid var(--ht-border);
+  margin-bottom: 1.25rem;
 }
 
 .ht-archive-card__visual img {
@@ -1662,7 +1662,7 @@ body {
 }
 
 .ht-archive-card__body {
-  padding: 1.5rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
   flex: 1;
