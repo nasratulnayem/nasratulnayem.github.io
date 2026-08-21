@@ -1152,38 +1152,57 @@ body {
   gap: 1.5rem;
 }
 
-/* Bento Card Foundations */
+/* Cyber High-Tech Bento Card Foundations */
 .bento-card {
   position: relative;
-  background: var(--ht-bg-card);
-  border: 1px solid var(--ht-border);
+  background: linear-gradient(145deg, #090e17 0%, #0d1522 100%);
+  border: 1px solid rgba(0, 210, 255, 0.15);
   border-radius: var(--ht-radius-lg);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(0, 210, 255, 0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bento-card:hover {
-  border-color: var(--ht-border-hover);
-  transform: translateY(-3px);
-  box-shadow: var(--ht-shadow-md);
+  border-color: rgba(0, 245, 160, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 210, 255, 0.2), inset 0 0 15px rgba(0, 245, 160, 0.08);
 }
 
-/* Cursor Glow on Hover */
+/* Cyber Scanning Line */
+.bento-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 210, 255, 0.12), transparent);
+  transform: translateY(-100%);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.bento-card:hover::after {
+  animation: htScanMove 2.2s linear infinite;
+}
+
+@keyframes htScanMove {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Cyber Glare Background Radial Glow */
 .glow-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--ht-gradient-glow);
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 255, 170, 0.12) 0%, rgba(0, 162, 255, 0.06) 50%, transparent 100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
   pointer-events: none;
   border-radius: inherit;
   z-index: 0;
@@ -1195,7 +1214,7 @@ body {
 
 .bento-card > * {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 /* Featured Bento Card (Spans 2 columns) */
