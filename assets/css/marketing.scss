@@ -4563,6 +4563,69 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
   color: #94a3b8 !important;
 }
 
+/* Legacy content components still inherit the original theme's pale link
+   color in light mode. These compact labels need the same readable contrast as
+   the newer marketing interface without changing their layout or hierarchy. */
+html:not([data-theme="dark"]) .plugin-support-grid > article > span,
+html:not([data-theme="dark"]) .plugin-utility-steps > li > span,
+html:not([data-theme="dark"]) .marketing-post__footer .page__taxonomy-item {
+  color: #1F7A8C;
+}
+
+html:not([data-theme="dark"]) .marketing-main--post .pagination--pager {
+  color: #334155;
+}
+
+html:not([data-theme="dark"]) .marketing-main--post .pagination--pager.disabled {
+  color: #64748b;
+}
+
+/* Contact details stay readable at the smallest real phone width. The page
+   card already supplies the shared outer gutter, so this nested grid must use
+   the available card width instead of applying the viewport gutter a second
+   time. Action controls move beneath their channel details before the value
+   text can be squeezed into an unreadable column. */
+@media (max-width: 768px) {
+  #main.marketing-main--standard .marketing-standard .ht-contact-grid {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #main.marketing-main--standard .ht-contact-option {
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    grid-template-areas:
+      "icon details"
+      "action action";
+    align-items: center;
+    column-gap: 0.75rem;
+    row-gap: 0.65rem;
+  }
+
+  #main.marketing-main--standard .ht-contact-option__icon {
+    grid-area: icon;
+  }
+
+  #main.marketing-main--standard .ht-contact-option__content {
+    grid-area: details;
+  }
+
+  #main.marketing-main--standard .ht-contact-option > .ht-btn-copy-sm,
+  #main.marketing-main--standard .ht-contact-option > .ht-btn-link-sm {
+    grid-area: action;
+    justify-self: start;
+  }
+
+  #main.marketing-main--standard .ht-contact-option__val {
+    overflow-wrap: normal;
+    white-space: nowrap;
+    font-size: 0.75rem;
+  }
+}
+
 /* One shared desktop canvas -------------------------------------------------
    Every route now begins on the same outer frame as Home, Plugins, and Work.
    Rich module layouts use the full canvas; article prose keeps a readable
