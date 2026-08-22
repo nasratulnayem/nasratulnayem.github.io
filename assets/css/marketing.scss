@@ -800,20 +800,21 @@ body {
   width: clamp(5.25rem, 8vw, 7rem);
   aspect-ratio: 1;
   object-fit: cover;
+  align-self: center;
   border: 2px solid var(--ht-border-hover);
   border-radius: 1.15rem;
   box-shadow: 0 0.7rem 1.6rem rgba(2, 43, 58, 0.16);
 }
 
 .ht-hero__identity-copy {
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-width: 0;
   gap: 0.32rem;
-  align-self: stretch;
-  padding: 0.2rem 0;
-  transform: translateY(1px);
+  margin: auto 0;
+  padding: 0;
 }
 
 .ht-hero__identity-copy > span {
