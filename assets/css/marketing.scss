@@ -5496,4 +5496,173 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   }
 }
 
+/* Rich Post Cards — high-tech bento language, built from scratch */
+.ht-post-card--rich {
+  display: flex;
+  flex-direction: column;
+  background: var(--ht-bg-card);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ht-shadow-md);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.ht-post-card--rich::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #022b3a 0%, #1f7a8c 50%, #bfdbf7 100%);
+  z-index: 3;
+}
+
+.ht-post-card--rich:hover {
+  transform: translateY(-4px);
+  border-color: var(--ht-border-hover);
+  box-shadow: var(--ht-shadow-md), 0 0 28px rgba(31, 122, 140, 0.18);
+}
+
+.ht-post-card__media {
+  position: relative;
+  aspect-ratio: 16 / 9.5;
+  overflow: hidden;
+  background: #080c12;
+  flex: 0 0 auto;
+}
+
+.ht-post-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.ht-post-card--rich:hover .ht-post-card__media img {
+  transform: scale(1.04);
+}
+
+.ht-post-card__ph {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #022b3a, #1f7a8c);
+  color: #ffffff;
+  font-family: var(--ht-font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+.ht-post-card__hash {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 9px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: var(--ht-font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  z-index: 2;
+}
+
+.ht-post-card__badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 9px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  color: #0f172a;
+  font-family: var(--ht-font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+[data-theme="dark"] .ht-post-card__badge,
+html[data-theme="dark"] .ht-post-card__badge {
+  background: rgba(15, 23, 42, 0.85);
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.ht-post-card__body {
+  padding: 1.25rem 1.25rem 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0;
+}
+
+.ht-post-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--ht-font-mono);
+  font-size: 0.72rem;
+  color: var(--ht-text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.ht-post-card__title {
+  font-family: var(--ht-font-heading);
+  font-size: 1.18rem;
+  font-weight: 800;
+  line-height: 1.28;
+  color: var(--ht-text-primary);
+  margin: 0 0 0.55rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ht-post-card__excerpt {
+  font-size: 0.88rem;
+  color: var(--ht-text-secondary);
+  line-height: 1.58;
+  margin: 0 0 1rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.ht-post-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ht-cyan);
+  letter-spacing: 0.01em;
+}
+
+.ht-post-card__cta i {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.ht-post-card--rich:hover .ht-post-card__cta i {
+  transform: translateX(3px);
+}
+
 /* Footer is full-width, no trailing margin needed */

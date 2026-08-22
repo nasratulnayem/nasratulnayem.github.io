@@ -16,38 +16,25 @@
 
 <div class="{{ include.type | default: "list" }}__item ht-card-item" data-category="{{ card_categories | escape }}">
   {% if include.type == "grid" and post.url %}
-    <a class="ht-project-card" href="{{ base_path }}{{ post.url }}" aria-label="Explore {{ title | strip_html | escape_once }}">
-      <div class="ht-archive-card__visual">
+    {% assign first_cat = post.categories | first | default: post.category | default: "Engineering" %}
+    <a class="ht-post-card ht-post-card--rich" href="{{ base_path }}{{ post.url }}" aria-label="Explore {{ title | strip_html | escape_once }}">
+      <div class="ht-post-card__media">
         {% if teaser %}
           <img src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | prepend: base_path }}{% endif %}" alt="{{ title | strip_html | escape_once }}" loading="lazy">
         {% else %}
-          <div class="ht-archive-card__placeholder">
-            <span class="ht-tech-badge">BUILD NOTE</span>
-            <div class="ht-code-dots"><i></i><i></i><i></i></div>
-          </div>
+          <div class="ht-post-card__ph"><span>Build Note</span></div>
         {% endif %}
-        <span class="ht-archive-card__tag">Case Study</span>
+        <span class="ht-post-card__hash">#{{ first_cat | downcase | replace: ' ', '' }}</span>
+        <span class="ht-post-card__badge">Case Study</span>
       </div>
-
-      <div class="ht-archive-card__body">
-        <div class="ht-archive-card__meta">
-          {% if post.date %}
-            <time datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%b %d, %Y" }}</time>
-          {% endif %}
-          {% if post.read_time %}
-            <span><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</span>
-          {% endif %}
+      <div class="ht-post-card__body">
+        <div class="ht-post-card__meta">
+          {% if post.date %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>{% endif %}
+          {% if post.read_time %}<span>{{ post.read_time }} min read</span>{% endif %}
         </div>
-
-        <h3 class="ht-archive-card__title">{{ title }}</h3>
-
-        {% if post.excerpt %}
-          <div class="ht-archive-card__excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>
-        {% endif %}
-
-        <div class="ht-archive-card__footer">
-          <span class="ht-archive-card__cta">Read build note <b aria-hidden="true">→</b></span>
-        </div>
+        <h3 class="ht-post-card__title">{{ title }}</h3>
+        {% if post.excerpt %}<p class="ht-post-card__excerpt">{{ post.excerpt | strip_html | truncate: 135 }}</p>{% endif %}
+        <span class="ht-post-card__cta">Read build note <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
       </div>
     </a>
   {% else %}
