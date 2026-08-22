@@ -282,12 +282,15 @@
       return {
         track: null,
         mount: function () {
-          if (reduceMotion) return;
+          /* Always build the track so command output always has a stable
+             container — even when the OS disables animations. */
           track = document.createElement('div');
           track.className = 'hero-terminal__track';
           while (outputEl.firstChild) track.appendChild(outputEl.firstChild);
           outputEl.appendChild(track);
           this.track = track;
+          apply();
+          if (reduceMotion) return;
           if ('IntersectionObserver' in window) {
             new IntersectionObserver(function (entries) {
               offscreen = !entries[0].isIntersecting;
@@ -301,12 +304,14 @@
           });
         },
         activity: function (toBottom) {
+          if (!track) return;
           stop();
           if (toBottom) snapToBottom(); else resume(RESUME_DELAY);
         },
         reset: function () {
+          if (!track) { outputEl.innerHTML = ''; return; }
           stop(); offset = 0; dir = -1; apply();
-          if ('IntersectionObserver' in window) resume(1200); else resume(2500);
+          resume(1200);
         }
       };
     })();
@@ -315,24 +320,25 @@
     function executeCommand(cmdStr) {
       const cleanCmd = cmdStr.trim().toLowerCase();
       if (!cleanCmd) return;
+      const out = autoScroll.track || outputEl;
 
       const line = document.createElement('div');
       line.className = 'hero-terminal__line';
       line.innerHTML = `<span class="hero-terminal__prompt">nayem@dev:~$</span> <span class="hero-terminal__cmd">${escapeHtml(cmdStr)}</span>`;
-      autoScroll.track.appendChild(line);
+      out.appendChild(line);
 
       const resp = document.createElement('div');
       resp.className = 'hero-terminal__response';
 
       if (COMMANDS[cleanCmd]) {
-        const out = COMMANDS[cleanCmd]();
+        const result = COMMANDS[cleanCmd]();
         if (cleanCmd !== 'clear') {
-          resp.innerHTML = out;
-          autoScroll.track.appendChild(resp);
+          resp.innerHTML = result;
+          out.appendChild(resp);
         }
       } else {
         resp.innerHTML = `<span class="ht-term-red">Command not recognized: "${escapeHtml(cmdStr)}".</span> Type <span class="ht-term-green">help</span> for a list of available commands.`;
-        autoScroll.track.appendChild(resp);
+        out.appendChild(resp);
       }
 
       if (cleanCmd === 'clear') { autoScroll.reset(); } else { autoScroll.activity(true); }
