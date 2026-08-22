@@ -84,32 +84,32 @@ author_profile: false
           <span class="hero-terminal__prompt">nayem@dev:~$</span>
           <span class="hero-terminal__cmd">status</span>
         </div>
-        <div class="hero-terminal__response">
-<span class="ht-term-green">● SYSTEM: ONLINE &amp; ACCEPTING PROJECTS</span>
-• <span class="ht-term-yellow">Location:</span> Bangladesh (Remote Worldwide)
-• <span class="ht-term-yellow">Direct Contact:</span> devnayem30@gmail.com
-• <span class="ht-term-yellow">Response Time:</span> Within 24 hours guaranteed
+        <div class="hero-terminal__response hero-terminal__response--stack">
+          <div><span class="ht-term-green">● SYSTEM: ONLINE &amp; ACCEPTING PROJECTS</span></div>
+          <div>• <span class="ht-term-yellow">Location:</span> Bangladesh (Remote Worldwide)</div>
+          <div>• <span class="ht-term-yellow">Direct Contact:</span> devnayem30@gmail.com</div>
+          <div>• <span class="ht-term-yellow">Response Time:</span> Within 24 hours guaranteed</div>
         </div>
 
         <div class="hero-terminal__line">
           <span class="hero-terminal__prompt">nayem@dev:~$</span>
           <span class="hero-terminal__cmd">stack --summary</span>
         </div>
-        <div class="hero-terminal__response">
-<span class="ht-term-cyan">⚡ Core Engineering Stack:</span>
-• <span class="ht-term-yellow">Web &amp; CMS:</span> WordPress Core, PHP 8+, Custom Plugins, WooCommerce, Shopify Liquid
-• <span class="ht-term-yellow">Frontend:</span> Vanilla JS / ES6+, High Core Web Vitals, Modern CSS
-• <span class="ht-term-yellow">Automation &amp; AI:</span> Python, Playwright, LLM Orchestration, REST APIs, CRON
+        <div class="hero-terminal__response hero-terminal__response--stack">
+          <div><span class="ht-term-cyan">⚡ Core Engineering Stack:</span></div>
+          <div>• <span class="ht-term-yellow">Web &amp; CMS:</span> WordPress Core, PHP 8+, Custom Plugins, WooCommerce, Shopify Liquid</div>
+          <div>• <span class="ht-term-yellow">Frontend:</span> Vanilla JS / ES6+, High Core Web Vitals, Modern CSS</div>
+          <div>• <span class="ht-term-yellow">Automation &amp; AI:</span> Python, Playwright, LLM Orchestration, REST APIs, CRON</div>
         </div>
 
         <div class="hero-terminal__line">
           <span class="hero-terminal__prompt">nayem@dev:~$</span>
           <span class="hero-terminal__cmd">flagship</span>
         </div>
-        <div class="hero-terminal__response">
-<span class="ht-term-cyan">🚀 Flagship Software: Importon Bridge (v0.2.2 Pro)</span>
-• 1-Click browser-to-WooCommerce product importer
-• Production-grade &middot; Freemius licensed &middot; 14-day refund window
+        <div class="hero-terminal__response hero-terminal__response--stack">
+          <div><span class="ht-term-cyan">🚀 Flagship Software: Importon Bridge (v0.2.2 Pro)</span></div>
+          <div>• 1-Click browser-to-WooCommerce product importer</div>
+          <div>• Production-grade &middot; Freemius licensed &middot; 14-day refund window</div>
         </div>
       </div>
     </div>

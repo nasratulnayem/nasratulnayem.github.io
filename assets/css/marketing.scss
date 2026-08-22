@@ -846,6 +846,28 @@ body {
   border-color: var(--ht-border-hover);
 }
 
+/* Rich white terminal in light mode */
+[data-theme="light"] .hero-terminal {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08), 0 0 20px rgba(31, 122, 140, 0.06);
+}
+
+[data-theme="light"] .hero-terminal__topbar {
+  background: #f8fafc;
+  border-bottom-color: rgba(15, 23, 42, 0.07);
+}
+
+[data-theme="light"] .hero-terminal__tabs {
+  background: #f1f5f9;
+  border-bottom-color: rgba(15, 23, 42, 0.07);
+}
+
+.hero-terminal__response--stack {
+  display: grid;
+  gap: 0.32rem;
+}
+
 .hero-terminal__topbar {
   display: flex;
   align-items: center;
@@ -948,6 +970,20 @@ body {
 
 .hero-terminal__body::-webkit-scrollbar-thumb:hover {
   background: var(--ht-cyan);
+}
+
+[data-theme="light"] .hero-terminal__body {
+  background: #ffffff;
+  color: #334155;
+  scrollbar-color: rgba(31, 122, 140, 0.35) #ffffff;
+}
+
+[data-theme="light"] .hero-terminal__body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+[data-theme="light"] .hero-terminal__body::-webkit-scrollbar-thumb {
+  background: rgba(31, 122, 140, 0.25);
 }
 
 .hero-terminal__line {
