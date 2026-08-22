@@ -343,9 +343,12 @@ body {
 .ht-btn-palette {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   height: 38px;
-  padding: 0 9px;
+  min-width: 38px;
+  width: 38px;
+  padding: 0;
   border-radius: var(--ht-radius-full);
   background: var(--ht-bg-elevated);
   border: 1px solid var(--ht-border);
@@ -3104,6 +3107,7 @@ code {
   text-align: left;
   cursor: pointer;
   transition: all 0.15s ease;
+  min-width: 0;
 }
 
 .ht-palette__item:hover, .ht-palette__item.is-focused {
@@ -3111,20 +3115,40 @@ code {
 }
 
 .ht-palette__item-icon {
-  font-size: 1.1rem;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(31, 122, 140, 0.1);
+  border: 1px solid rgba(31, 122, 140, 0.18);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #38bdf8;
 }
 
 .ht-palette__item-label {
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: #f8fafc;
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ht-palette__item-sub {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: #94a3b8;
   font-family: var(--ht-font-mono);
+  flex: 0 0 auto;
+  max-width: 52%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
 }
 
 .ht-palette__footer {
