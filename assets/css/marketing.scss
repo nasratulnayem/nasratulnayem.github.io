@@ -2097,10 +2097,46 @@ body {
   }
 }
 
-/* Process Steps (Services Page & Product Pages) */
 .ht-process-section {
   width: var(--ht-container);
   margin: 0 auto 4.5rem auto;
+}
+
+.ht-process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.ht-process-step {
+  background: var(--ht-bg-card);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ht-step-num {
+  font-family: var(--ht-font-mono);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ht-cyan);
+  margin-bottom: 0.75rem;
+}
+
+.ht-process-step h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ht-text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.ht-process-step p {
+  font-size: 0.88rem;
+  color: var(--ht-text-secondary);
+  line-height: 1.55;
+  margin: 0;
 }
 
 /* Ultra High-Tech Workflow Pipeline Component */
