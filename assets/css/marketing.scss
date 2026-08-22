@@ -5030,6 +5030,11 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
   margin-bottom: 3.5rem !important;
 }
 
+.site-shell > :last-child > :last-child,
+.site-shell > :last-child > :last-child > :last-child {
+  margin-bottom: 0 !important;
+}
+
 /* Dark feature surfaces keep their own readable token set in light mode.
    These cards intentionally use a dark visual treatment; inheriting the light
    palette would otherwise put dark copy on a dark surface. */
