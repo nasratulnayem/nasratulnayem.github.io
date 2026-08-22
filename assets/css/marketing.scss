@@ -4934,6 +4934,30 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
   }
 }
 
+/* Pages wrapped in #main already receive the shared top offset from the
+   main-layout contract; their first .ht-page-hero must not stack a second
+   one on top, so every page starts at exactly the same height. */
+#main .ht-page-hero {
+  margin-top: 0;
+}
+
+/* One identical gap between the last content block and the footer on every
+   page: wrappers and final top-level sections carry no bottom margin of
+   their own; the shared footer's own top padding is THE gap everywhere. */
+#main[class*="marketing-main--"] {
+  margin-bottom: 0 !important;
+}
+
+#main[class*="marketing-main--"] > :last-child,
+#main[class*="marketing-main--"] > :last-child > :last-child,
+#main[class*="marketing-main--plugin"] > article > .plugin-page__inner > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.site-shell > :last-child {
+  margin-bottom: 0 !important;
+}
+
 /* Dark feature surfaces keep their own readable token set in light mode.
    These cards intentionally use a dark visual treatment; inheriting the light
    palette would otherwise put dark copy on a dark surface. */

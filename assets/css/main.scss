@@ -2337,7 +2337,9 @@ body {
   font-family: $sans-serif;
 }
 
-.plugin-page h1 {
+/* Shared .ht-page-hero headings keep the standard page rhythm everywhere,
+   including plugin-layout pages; this legacy reset only covers old sections. */
+.plugin-page h1:not(.ht-page-hero__title) {
   margin: 0;
   font-size: clamp(2.25rem, 5vw, 4.4rem);
   font-weight: 780;
@@ -4227,4 +4229,89 @@ body {
   .plugin-confidence dl {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+/* WhatsApp launcher — brand high-tech treatment per theme.
+   Replaces the stock green bubble: frosted brand surfaces, teal icon,
+   soft glow ring; adapts cleanly to dark and light mode. */
+.whatsapp-chat__launcher {
+  background: #ffffff;
+  box-shadow: 0 0.55rem 1.5rem rgba(31, 122, 140, 0.22), inset 0 0 0 1px #bfdbf7;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-chat__launcher:hover {
+  box-shadow: 0 0.7rem 1.8rem rgba(31, 122, 140, 0.32), inset 0 0 0 1px #bfdbf7, 0 0 16px rgba(31, 122, 140, 0.28);
+}
+
+.whatsapp-chat__launcher svg {
+  fill: #1f7a8c;
+}
+
+[data-theme="dark"] .whatsapp-chat__launcher,
+html:not([data-theme="light"]) .whatsapp-chat__launcher {
+  background: rgba(2, 43, 58, 0.92);
+  box-shadow: 0 0.55rem 1.5rem rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(191, 219, 247, 0.4), 0 0 18px rgba(31, 122, 140, 0.35);
+}
+
+[data-theme="dark"] .whatsapp-chat__launcher:hover,
+html:not([data-theme="light"]) .whatsapp-chat__launcher:hover {
+  background: rgba(2, 43, 58, 0.98);
+  box-shadow: 0 0.7rem 1.8rem rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(191, 219, 247, 0.6), 0 0 24px rgba(31, 122, 140, 0.5);
+}
+
+[data-theme="dark"] .whatsapp-chat__launcher svg,
+html:not([data-theme="light"]) .whatsapp-chat__launcher svg {
+  fill: #bfdbf7;
+}
+
+/* WhatsApp panel — same brand treatment as the launcher.
+   The stock green header band is replaced by brand surfaces that adapt to
+   each theme; message bubble and action hover follow the same tokens. */
+.whatsapp-chat__header {
+  color: #ffffff;
+  background: linear-gradient(135deg, #1f7a8c 0%, #022b3a 100%);
+}
+
+.whatsapp-chat__action:hover,
+.whatsapp-chat__action:focus {
+  color: #022b3a;
+  border-color: #1f7a8c;
+}
+
+[data-theme="dark"] .whatsapp-chat__content,
+[data-theme="dark"] .whatsapp-chat__action,
+html:not([data-theme="light"]) .whatsapp-chat__content,
+html:not([data-theme="light"]) .whatsapp-chat__action {
+  border-color: rgba(191, 219, 247, 0.16);
+}
+
+[data-theme="dark"] .whatsapp-chat__header,
+html:not([data-theme="light"]) .whatsapp-chat__header {
+  background: rgba(2, 43, 58, 0.95);
+  box-shadow: inset 0 -1px 0 rgba(191, 219, 247, 0.22);
+}
+
+[data-theme="dark"] .whatsapp-chat__header > svg,
+html:not([data-theme="light"]) .whatsapp-chat__header > svg {
+  fill: #bfdbf7;
+}
+
+[data-theme="dark"] .whatsapp-chat__header span,
+html:not([data-theme="light"]) .whatsapp-chat__header span {
+  color: rgba(191, 219, 247, 0.75);
+}
+
+[data-theme="dark"] .whatsapp-chat__message span,
+html:not([data-theme="light"]) .whatsapp-chat__message span {
+  background: rgba(191, 219, 247, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(191, 219, 247, 0.14);
+}
+
+[data-theme="dark"] .whatsapp-chat__action:hover,
+[data-theme="dark"] .whatsapp-chat__action:focus,
+html:not([data-theme="light"]) .whatsapp-chat__action:hover,
+html:not([data-theme="light"]) .whatsapp-chat__action:focus {
+  color: #bfdbf7;
+  border-color: rgba(31, 122, 140, 0.6);
 }
