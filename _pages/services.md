@@ -89,26 +89,79 @@ author_profile: false
     <h2 class="ht-section-title">A transparent, 4-step engineering process.</h2>
   </div>
 
-  <div class="ht-process-steps">
-    <div class="ht-process-step">
-      <span class="ht-step-num">01</span>
-      <h3>Bottleneck Discovery</h3>
-      <p>Send your link or workflow problem. We define what is happening now, what needs to change, and platform constraints before quoting.</p>
+  <div class="ht-workflow-pipeline">
+    <div class="ht-wf-card glow-card">
+      <div class="ht-wf-card__header">
+        <div class="ht-wf-node">
+          <span class="ht-wf-node__num">01</span>
+          <div class="ht-wf-node__icon"><i class="fas fa-search" aria-hidden="true"></i></div>
+        </div>
+        <span class="ht-badge ht-badge--cyan">DISCOVER</span>
+      </div>
+      <div class="ht-wf-card__body">
+        <h3 class="ht-wf-card__title">Bottleneck Discovery</h3>
+        <p class="ht-wf-card__desc">Send your link or workflow problem. We define what is happening now, what needs to change, and platform constraints before quoting.</p>
+      </div>
+      <div class="ht-wf-card__footer">
+        <span class="ht-wf-signal"><i class="fas fa-check-circle" aria-hidden="true"></i> Brief Captured</span>
+      </div>
     </div>
-    <div class="ht-process-step">
-      <span class="ht-step-num">02</span>
-      <h3>Architecture &amp; Scope</h3>
-      <p>I provide a clean scope, timeline, and architectural approach. No unexpected scope creep or surprise delays.</p>
+
+    <div class="ht-wf-connector" aria-hidden="true"><div class="ht-wf-pulse"></div></div>
+
+    <div class="ht-wf-card glow-card">
+      <div class="ht-wf-card__header">
+        <div class="ht-wf-node">
+          <span class="ht-wf-node__num">02</span>
+          <div class="ht-wf-node__icon"><i class="fas fa-drafting-compass" aria-hidden="true"></i></div>
+        </div>
+        <span class="ht-badge ht-badge--purple">PLAN</span>
+      </div>
+      <div class="ht-wf-card__body">
+        <h3 class="ht-wf-card__title">Architecture &amp; Scope</h3>
+        <p class="ht-wf-card__desc">I provide a clean scope, timeline, and architectural approach. No unexpected scope creep or surprise delays.</p>
+      </div>
+      <div class="ht-wf-card__footer">
+        <span class="ht-wf-signal"><i class="fas fa-lock" aria-hidden="true"></i> Scope Locked</span>
+      </div>
     </div>
-    <div class="ht-process-step">
-      <span class="ht-step-num">03</span>
-      <h3>Build &amp; Test</h3>
-      <p>Rapid development in staging environments with regular milestone updates and quality assurance.</p>
+
+    <div class="ht-wf-connector" aria-hidden="true"><div class="ht-wf-pulse"></div></div>
+
+    <div class="ht-wf-card glow-card">
+      <div class="ht-wf-card__header">
+        <div class="ht-wf-node">
+          <span class="ht-wf-node__num">03</span>
+          <div class="ht-wf-node__icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+        </div>
+        <span class="ht-badge ht-badge--green">BUILD</span>
+      </div>
+      <div class="ht-wf-card__body">
+        <h3 class="ht-wf-card__title">Build &amp; Test</h3>
+        <p class="ht-wf-card__desc">Rapid development in staging environments with regular milestone updates and quality assurance.</p>
+      </div>
+      <div class="ht-wf-card__footer">
+        <span class="ht-wf-signal"><i class="fas fa-vial" aria-hidden="true"></i> QA Passed</span>
+      </div>
     </div>
-    <div class="ht-process-step">
-      <span class="ht-step-num">04</span>
-      <h3>Ship &amp; Support</h3>
-      <p>Smooth production deployment, documentation, video walkthroughs, and direct post-launch bug warranty.</p>
+
+    <div class="ht-wf-connector" aria-hidden="true"><div class="ht-wf-pulse"></div></div>
+
+    <div class="ht-wf-card glow-card">
+      <div class="ht-wf-card__header">
+        <div class="ht-wf-node">
+          <span class="ht-wf-node__num">04</span>
+          <div class="ht-wf-node__icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+        </div>
+        <span class="ht-badge ht-badge--cyan">SHIP</span>
+      </div>
+      <div class="ht-wf-card__body">
+        <h3 class="ht-wf-card__title">Ship &amp; Support</h3>
+        <p class="ht-wf-card__desc">Smooth production deployment, documentation, video walkthroughs, and direct post-launch bug warranty.</p>
+      </div>
+      <div class="ht-wf-card__footer">
+        <span class="ht-wf-signal"><i class="fas fa-life-ring" aria-hidden="true"></i> Live &amp; Supported</span>
+      </div>
     </div>
   </div>
 </section>
