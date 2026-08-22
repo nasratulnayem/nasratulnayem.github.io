@@ -5521,6 +5521,7 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   right: 0;
   height: 3px;
   background: linear-gradient(90deg, #022b3a 0%, #1f7a8c 50%, #bfdbf7 100%);
+  border-radius: var(--ht-radius-lg) var(--ht-radius-lg) 0 0;
   z-index: 3;
 }
 
