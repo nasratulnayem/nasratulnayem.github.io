@@ -1691,6 +1691,21 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   margin-bottom: 1.25rem;
 }
 
+/* High-tech flush visual — no gap behind rounded corners */
+.ht-project-card .ht-archive-card__visual {
+  margin: -1.25rem -1.25rem 1.25rem -1.25rem;
+  width: calc(100% + 2.5rem);
+  border-radius: var(--ht-radius-lg) var(--ht-radius-lg) 0 0;
+  border: none;
+  border-bottom: 1px solid var(--ht-border);
+}
+
+.work-grid .ht-project-card .ht-archive-card__visual {
+  margin: -5px -5px 1rem -5px;
+  width: calc(100% + 10px);
+  border-radius: 14px 14px 0 0;
+}
+
 .ht-archive-card__visual img {
   width: 100%;
   height: 100%;
@@ -1754,6 +1769,10 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+.work-grid .ht-project-card .ht-archive-card__body {
+  padding: 0 1.1rem 1.1rem 1.1rem;
 }
 
 .ht-archive-card__meta {
