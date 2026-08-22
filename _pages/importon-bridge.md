@@ -20,7 +20,7 @@ freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?
     <span class="ht-eyebrow-dot"></span>
     <span>WOOCOMMERCE PRODUCT WORKFLOW</span>
   </div>
-  <h1 class="ht-page-hero__title">Capture product pages in the browser. Sync directly to WooCommerce.</h1>
+  <h1 class="ht-page-hero__title">Auto import products from Alibaba to WooCommerce with AI rewrites or more.</h1>
   <p class="ht-page-hero__desc">Move supplier product details, high-res galleries, attributes, and variations into your store without copying every field by hand.</p>
 </div>
 
