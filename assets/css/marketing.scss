@@ -881,6 +881,39 @@ body {
   line-height: 1.5;
 }
 
+/* Legacy theme paragraph margins (.home-page/.page__content p) outrank the
+   reset above and silently push the copy off-center by 24px.  Outrank back. */
+.ht-hero__terminal-wrap .ht-hero__identity-copy > span,
+.ht-hero__terminal-wrap .ht-hero__identity-copy > strong,
+.ht-hero__terminal-wrap .ht-hero__identity-copy > p {
+  margin: 0;
+}
+
+/* Phone contract: the copy stack is often taller than a square photo, which
+   makes top/bottom spacing unequal.  Letting the photo stretch to the full
+   card height guarantees identical space above and below the text. */
+@media (max-width: 600px) {
+  .ht-hero__identity {
+    padding: 0;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  .ht-hero__identity-photo {
+    align-self: stretch;
+    width: clamp(6rem, 26vw, 7.5rem);
+    aspect-ratio: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .ht-hero__identity-copy {
+    padding: 1rem;
+  }
+}
+
 .hero-terminal {
   background: #080c12;
   border: 1px solid rgba(255, 255, 255, 0.1);
