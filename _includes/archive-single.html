@@ -24,10 +24,12 @@
         {% else %}
           <div class="ht-post-card__ph"><span>Build Note</span></div>
         {% endif %}
-        <span class="ht-post-card__hash">#{{ first_cat | downcase | replace: ' ', '' }}</span>
-        <span class="ht-post-card__badge">Case Study</span>
       </div>
       <div class="ht-post-card__body">
+        <div class="ht-post-card__badge-row">
+          <span class="ht-badge ht-badge--cyan">#{{ first_cat | downcase | replace: ' ', '' }}</span>
+          <span class="ht-badge">Case Study</span>
+        </div>
         <div class="ht-post-card__meta">
           {% if post.date %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>{% endif %}
           {% if post.read_time %}<span>{{ post.read_time }} min read</span>{% endif %}

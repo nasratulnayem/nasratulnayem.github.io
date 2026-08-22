@@ -5537,6 +5537,7 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   overflow: hidden;
   background: #080c12;
   flex: 0 0 auto;
+  border-radius: 0;
 }
 
 .ht-post-card__media img {
@@ -5610,6 +5611,14 @@ html[data-theme="dark"] .ht-post-card__badge {
   flex-direction: column;
   flex: 1;
   gap: 0;
+}
+
+.ht-post-card__badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
 }
 
 .ht-post-card__meta {
