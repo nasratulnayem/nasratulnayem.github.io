@@ -225,22 +225,37 @@
       }
     };
 
-    /* ---- Lightweight auto-scroll engine ----------------------------------
-       GPU-only transform drift (no layout thrash), pauses off-screen & on
-       hidden tabs, hands over to the reader on interaction and quietly
-       resumes drifting after a long idle period. */
+    /* ---- Infinite auto-scroll engine --------------------------------------
+       Seamless marquee: content is duplicated once and translated forever,
+       wrapping invisibly at the seam - no stops, no reversals, lifetime loop.
+       GPU-only transform, pauses off-screen & on hidden tabs. Any command or
+       tab click pauses the loop, glides to the newest output, then the loop
+       quietly restarts RESUME_DELAY after the last interaction. */
     var autoScroll = (function () {
       var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var track = null, rafId = null, idleTimer = null, offscreen = false;
-      var offset = 0, dir = -1, lastTs = 0;
-      var SPEED = 26;            // px/s — calm cinematic drift
-      var RESUME_DELAY = 12000;  // resume drift 12s after last interaction
+      var offset = 0, lastTs = 0;
+      var SPEED = 26;           /* px/s - calm cinematic drift */
+      var RESUME_DELAY = 3500;  /* restart loop 3.5s after last interaction */
 
-      function maxOffset() {
-        return Math.max(0, track.scrollHeight - outputEl.clientHeight);
-      }
       function apply() {
         track.style.transform = 'translate3d(0,' + offset.toFixed(2) + 'px,0)';
+      }
+      function half() {
+        return track.scrollHeight / 2;
+      }
+      function clearClones() {
+        var clones = track.querySelectorAll(':scope > .is-clone');
+        for (var i = 0; i < clones.length; i++) clones[i].remove();
+      }
+      function buildLoop() {
+        clearClones();
+        var copy = document.createElement('div');
+        copy.className = 'is-clone';
+        copy.setAttribute('aria-hidden', 'true');
+        var kids = Array.prototype.slice.call(track.childNodes);
+        for (var i = 0; i < kids.length; i++) copy.appendChild(kids[i].cloneNode(true));
+        track.appendChild(copy);
       }
       function stop() {
         if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
@@ -249,26 +264,32 @@
       function step(ts) {
         if (offscreen || document.hidden) { rafId = null; return; }
         var dt = Math.min(64, ts - lastTs); lastTs = ts;
-        offset += dir * SPEED * dt / 1000;
-        var max = maxOffset();
-        if (offset <= -max && dir < 0) { offset = -max; apply(); rafId = null; resume(3200); return; }
-        if (offset >= 0 && dir > 0)   { offset = 0;    apply(); rafId = null; resume(4200); return; }
-        apply();
+        var H = half();
+        if (H > outputEl.clientHeight * 0.6) {
+          offset -= SPEED * dt / 1000;
+          if (offset <= -H) offset += H;   /* invisible seam */
+          apply();
+        }
         rafId = requestAnimationFrame(step);
       }
-      function resume(delay) {
+      function start() {
+        if (reduceMotion || !track || rafId) return;
+        lastTs = performance.now();
+        rafId = requestAnimationFrame(step);
+      }
+      function schedule(delay) {
         clearTimeout(idleTimer);
         idleTimer = setTimeout(function () {
-          if (maxOffset() > 4 && !offscreen && !document.hidden) {
-            if (offset <= -maxOffset()) dir = 1; else dir = -1;
-            lastTs = performance.now();
-            if (!rafId) rafId = requestAnimationFrame(step);
-          }
+          if (!track) return;
+          buildLoop();
+          offset = 0;
+          apply();
+          start();
         }, delay);
       }
-      function snapToBottom() {
-        stop();
-        offset = -maxOffset();
+      function showLatest() {
+        clearClones();
+        offset = -Math.max(0, track.scrollHeight - outputEl.clientHeight);
         if (!reduceMotion) {
           track.style.transition = 'transform 480ms cubic-bezier(.22,.61,.36,1)';
           apply();
@@ -276,42 +297,41 @@
         } else {
           apply();
         }
-        resume(RESUME_DELAY);
       }
 
       return {
         track: null,
         mount: function () {
           /* Always build the track so command output always has a stable
-             container — even when the OS disables animations. */
+             container - even when the OS disables animations. */
           track = document.createElement('div');
           track.className = 'hero-terminal__track';
           while (outputEl.firstChild) track.appendChild(outputEl.firstChild);
           outputEl.appendChild(track);
           this.track = track;
-          apply();
-          if (reduceMotion) return;
           if ('IntersectionObserver' in window) {
             new IntersectionObserver(function (entries) {
               offscreen = !entries[0].isIntersecting;
-              if (offscreen) { stop(); } else { resume(1200); }
+              if (offscreen) { stop(); } else { schedule(800); }
             }, { threshold: 0.05 }).observe(terminal);
-          } else {
-            resume(2500);
           }
           document.addEventListener('visibilitychange', function () {
-            if (document.hidden) stop(); else resume(2000);
+            if (document.hidden) stop(); else schedule(1200);
           });
+          buildLoop();
+          start();
         },
         activity: function (toBottom) {
-          if (!track) return;
           stop();
-          if (toBottom) snapToBottom(); else resume(RESUME_DELAY);
+          if (toBottom) showLatest();
+          schedule(RESUME_DELAY);
         },
         reset: function () {
           if (!track) { outputEl.innerHTML = ''; return; }
-          stop(); offset = 0; dir = -1; apply();
-          resume(1200);
+          track.innerHTML = '';
+          offset = 0;
+          apply();
+          schedule(RESUME_DELAY);
         }
       };
     })();
