@@ -2164,6 +2164,16 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   }
 }
 
+.ht-services-grid--triple {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .ht-services-grid--triple {
+    grid-template-columns: 1fr;
+  }
+}
+
 .ht-process-section {
   width: var(--ht-container);
   margin: 0 auto 4.5rem auto;

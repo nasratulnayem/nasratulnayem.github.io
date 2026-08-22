@@ -39,7 +39,7 @@ author_profile: false
   </div>
 </div>
 
-<div class="ht-services-grid">
+<div class="ht-services-grid ht-services-grid--triple">
   <article class="bento-card glow-card">
     <div class="bento-card__badge-row">
       <div class="bento-card__icon-box"><i class="fab fa-python" aria-hidden="true"></i></div>
