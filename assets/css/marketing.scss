@@ -5502,38 +5502,28 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   flex-direction: column;
   background: var(--ht-bg-card);
   border: 1px solid var(--ht-border);
-  border-radius: var(--ht-radius-lg);
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: var(--ht-shadow-md);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  box-shadow: none;
   text-decoration: none !important;
   color: inherit !important;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.2s ease;
   position: relative;
 }
 
 .ht-post-card--rich::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #022b3a 0%, #1f7a8c 50%, #bfdbf7 100%);
-  border-radius: var(--ht-radius-lg) var(--ht-radius-lg) 0 0;
-  z-index: 3;
+  display: none;
 }
 
 .ht-post-card--rich:hover {
-  transform: translateY(-4px);
+  transform: none;
   border-color: var(--ht-border-hover);
-  box-shadow: var(--ht-shadow-md), 0 0 28px rgba(31, 122, 140, 0.18);
+  box-shadow: none;
 }
 
 .ht-post-card__media {
   position: relative;
-  aspect-ratio: 16 / 9.5;
+  aspect-ratio: auto;
   overflow: hidden;
   background: #080c12;
   flex: 0 0 auto;
@@ -5541,8 +5531,8 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
 }
 
 .ht-post-card--rich .ht-post-card__media {
-  margin: -1.25rem -1.25rem 1.25rem -1.25rem;
-  width: calc(100% + 2.5rem);
+  margin: 0 0 1rem 0;
+  width: 100%;
   border-radius: 0;
   border: none;
   border-bottom: 1px solid var(--ht-border);
@@ -5550,14 +5540,14 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
 
 .ht-post-card__media img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
-  transition: transform 0.45s ease;
+  transition: none;
 }
 
 .ht-post-card--rich:hover .ht-post-card__media img {
-  transform: scale(1.04);
+  transform: none;
 }
 
 .ht-post-card__ph {
