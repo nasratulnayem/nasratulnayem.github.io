@@ -3411,10 +3411,18 @@ code {
 }
 
 .ht-footer__links a {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
   font-size: 0.88rem;
   color: var(--ht-text-secondary) !important;
   text-decoration: none !important;
   transition: color 0.15s ease;
+}
+
+.ht-footer__links a > i {
+  width: 1.15em;
+  text-align: center;
 }
 
 .ht-footer__links a:hover {
