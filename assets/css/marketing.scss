@@ -5050,37 +5050,47 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
   margin-top: 0;
 }
 
-/* One identical breathing gap between the last content block and the footer
-   on every page — matches the generous rhythm you called perfect on /plugins/. */
-#main[class*="marketing-main--"] {
-  margin-bottom: 3.5rem !important;
+/* One identical breathing gap on every page — single source.
+   Wrappers contribute 0; the last content block itself carries the gap. */
+#main[class*="marketing-main--"],
+.site-shell > :last-child {
+  margin-bottom: 0 !important;
 }
 
 #main[class*="marketing-main--"] > :last-child,
 #main[class*="marketing-main--"] > :last-child > :last-child,
 #main[class*="marketing-main--plugin"] > article > .plugin-page__inner > :last-child,
-#main.marketing-main--home > article > .home-page__content > :last-child {
-  margin-bottom: 0 !important;
-}
-
-.site-shell > :last-child {
-  margin-bottom: 3.5rem !important;
-}
-
+#main.marketing-main--home > article > .home-page__content > :last-child,
 .site-shell > :last-child > :last-child,
 .site-shell > :last-child > :last-child > :last-child {
   margin-bottom: 0 !important;
 }
 
-/* Ecommerce / Automation / Plugin catalog extra inner margins would otherwise
-   double-stack on top of the unified wrapper gap. Normalize them. */
-.ht-work-section:last-child,
-.ht-catalog-grid:last-child {
+#main.marketing-main--home > article > .home-page__content > :last-child,
+#main[class*="marketing-main--plugin"] > article > .plugin-page__inner > :last-child,
+.site-shell > :last-child {
   margin-bottom: 3.5rem !important;
 }
 
-.ht-work-section:last-child .ht-case-study-list:last-child {
+.ht-work-section:last-child .ht-case-study-list:last-child,
+.ht-catalog-grid:last-child {
   margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  #main.marketing-main--home > article > .home-page__content > :last-child,
+  #main[class*="marketing-main--plugin"] > article > .plugin-page__inner > :last-child,
+  .site-shell > :last-child {
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #main.marketing-main--home > article > .home-page__content > :last-child,
+  #main[class*="marketing-main--plugin"] > article > .plugin-page__inner > :last-child,
+  .site-shell > :last-child {
+    margin-bottom: 1.6rem !important;
+  }
 }
 
 /* Dark feature surfaces keep their own readable token set in light mode.
