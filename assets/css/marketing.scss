@@ -672,12 +672,12 @@ body {
 /* Hero Headline */
 .ht-hero__headline {
   font-family: var(--ht-font-heading);
-  font-size: clamp(2.3rem, 4.4vw, 3.8rem);
+  font-size: clamp(2.1rem, 3.55vw, 3.1rem);
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.08;
   letter-spacing: -0.03em;
   color: var(--ht-text-primary);
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .ht-text-gradient {
@@ -687,10 +687,10 @@ body {
 }
 
 .ht-hero__lead {
-  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  font-size: clamp(1.02rem, 1.15vw, 1.13rem);
   color: var(--ht-text-secondary);
-  line-height: 1.65;
-  margin: 0 0 2rem 0;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
   max-width: 620px;
 }
 
@@ -704,7 +704,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.85rem;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Button Variants */
