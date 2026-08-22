@@ -5323,12 +5323,13 @@ html:not([data-theme="dark"]) .marketing-main--post .pagination--pager.disabled 
 }
 
 /* Post pagination sits alone between the article footer and the closing CTA.
-   Give it deliberate breathing room on both sides instead of inheriting the
-   theme's cramped single-em rhythm. */
+   The design-system zeroing rules strip margins from last children (!important),
+   so the below-gap is delivered as padding instead of margin. */
 #main.marketing-main--post .pagination {
   margin-top: 3rem;
-  margin-bottom: 4.75rem;
+  margin-bottom: 0;
   padding-top: 0;
+  padding-bottom: 4.5rem;
 }
 
 /* Contact details stay readable at the smallest real phone width. The page
