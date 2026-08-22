@@ -5014,11 +5014,10 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
   margin-top: 0;
 }
 
-/* One identical gap between the last content block and the footer on every
-   page: wrappers and final top-level sections carry no bottom margin of
-   their own; the shared footer's own top padding is THE gap everywhere. */
+/* One identical breathing gap between the last content block and the footer
+   on every page — matches the generous rhythm you called perfect on /plugins/. */
 #main[class*="marketing-main--"] {
-  margin-bottom: 0 !important;
+  margin-bottom: 3.5rem !important;
 }
 
 #main[class*="marketing-main--"] > :last-child,
@@ -5028,7 +5027,7 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
 }
 
 .site-shell > :last-child {
-  margin-bottom: 0 !important;
+  margin-bottom: 3.5rem !important;
 }
 
 /* Dark feature surfaces keep their own readable token set in light mode.

@@ -60,64 +60,7 @@ freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?
   </article>
 </div>
 
-<!-- Architecture & Capabilities Grid -->
-<div class="ht-services-grid ht-capabilities-grid" id="ht-capabilities-grid">
-  <article class="bento-card glow-card">
-    <div class="bento-card__badge-row">
-      <div class="bento-card__icon-box"><i class="fas fa-globe" aria-hidden="true"></i></div>
-      <span class="ht-badge ht-badge--cyan">BROWSER COMPANION</span>
-    </div>
-    <h2 class="bento-card__title">1-Click Browser Capture</h2>
-    <p class="bento-card__desc">Extract title, descriptions, price, and media while viewing any supported product page.</p>
-    <ul class="bento-card__list">
-      <li>Automated DOM parser for product details</li>
-      <li>Instant image gallery extraction</li>
-      <li>Clean JSON payload construction</li>
-    </ul>
-  </article>
 
-  <article class="bento-card glow-card">
-    <div class="bento-card__badge-row">
-      <div class="bento-card__icon-box"><i class="fab fa-wordpress" aria-hidden="true"></i></div>
-      <span class="ht-badge ht-badge--green">REST API SYNC</span>
-    </div>
-    <h2 class="bento-card__title">Direct Store Ingestion</h2>
-    <p class="bento-card__desc">Secure WordPress REST API connection imports data straight into your store database.</p>
-    <ul class="bento-card__list">
-      <li>Secure encrypted application password keys</li>
-      <li>Draft &amp; publish lifecycle control</li>
-      <li>Automatic taxonomy &amp; category assignment</li>
-    </ul>
-  </article>
-
-  <article class="bento-card glow-card">
-    <div class="bento-card__badge-row">
-      <div class="bento-card__icon-box"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
-      <span class="ht-badge ht-badge--purple">VARIATIONS</span>
-    </div>
-    <h2 class="bento-card__title">Attributes &amp; Variations</h2>
-    <p class="bento-card__desc">Intelligently maps product variants, sizes, colors, and SKUs into native WooCommerce attributes.</p>
-    <ul class="bento-card__list">
-      <li>Multi-attribute combination generator</li>
-      <li>Variant-level pricing and stock mapping</li>
-      <li>Automatic thumbnail and gallery linkage</li>
-    </ul>
-  </article>
-
-  <article class="bento-card glow-card">
-    <div class="bento-card__badge-row">
-      <div class="bento-card__icon-box"><i class="fas fa-robot" aria-hidden="true"></i></div>
-      <span class="ht-badge">AI ENHANCEMENT</span>
-    </div>
-    <h2 class="bento-card__title">AI Content Rewriting</h2>
-    <p class="bento-card__desc">Connect your OpenAI or Gemini API key to rewrite product copy and SEO metadata automatically.</p>
-    <ul class="bento-card__list">
-      <li>Unique product descriptions for SEO</li>
-      <li>Smart keyword optimization</li>
-      <li>Customizable system prompts</li>
-    </ul>
-  </article>
-</div>
 
 <!-- High-Tech Connected Pipeline Workflow Section -->
 <section class="ht-process-section">
