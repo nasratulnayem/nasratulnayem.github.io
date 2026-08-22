@@ -1339,6 +1339,27 @@ body {
   gap: 0.35rem;
 }
 
+/* Compact variant for Importon Bridge capabilities grid — smaller headings like pipeline cards */
+.plugin-page__inner .ht-services-grid .bento-card {
+  padding: 1.1rem;
+}
+
+.plugin-page__inner .ht-services-grid .bento-card__title {
+  font-size: 1.02rem;
+  line-height: 1.28;
+  margin-bottom: 0.35rem !important;
+}
+
+.plugin-page__inner .ht-services-grid .bento-card__desc {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin-bottom: 0.65rem;
+}
+
+.plugin-page__inner .ht-services-grid .bento-card__list li {
+  font-size: 0.78rem;
+}
+
 .bento-card__list li {
   font-size: 0.82rem;
   color: var(--ht-text-secondary);
