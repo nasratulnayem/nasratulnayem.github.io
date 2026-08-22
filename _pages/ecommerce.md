@@ -14,7 +14,7 @@ author_profile: false
   <p class="ht-page-hero__desc">From custom Shopify Liquid sections to high-scale WooCommerce catalogs, I build store experiences that remove checkout friction and automate product data management.</p>
 </div>
 
-<div class="ht-services-grid">
+<div class="ht-services-grid ht-services-grid--triple">
   <!-- Card 1: WooCommerce Power & Plugins -->
   <article class="bento-card glow-card">
     <div class="bento-card__badge-row">
