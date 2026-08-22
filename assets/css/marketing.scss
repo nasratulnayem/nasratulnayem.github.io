@@ -5058,7 +5058,8 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
 
 #main[class*="marketing-main--"] > :last-child,
 #main[class*="marketing-main--"] > :last-child > :last-child,
-#main[class*="marketing-main--plugin"] > article > .plugin-page__inner > :last-child {
+#main[class*="marketing-main--plugin"] > article > .plugin-page__inner > :last-child,
+#main.marketing-main--home > article > .home-page__content > :last-child {
   margin-bottom: 0 !important;
 }
 
