@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Ecommerce Systems & Conversion Engineering"
+description: "Ecommerce engineering by Nasratul Nayem — WooCommerce builds, checkout optimization, product automation, and conversion-focused stores."
 permalink: /ecommerce/
 author_profile: false
 ---

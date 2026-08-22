@@ -2,6 +2,7 @@
 layout: home
 permalink: /
 title: "Websites, ecommerce, and automation that reduce manual work"
+description: "Nasratul Nayem — web developer & automation expert from Bangladesh working worldwide. Websites, WooCommerce, WordPress plugins, and AI-powered automations."
 author_profile: false
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Engineering Portfolio & Build Notes"
+description: "Selected engineering portfolio and build notes by Nasratul Nayem — websites, ecommerce systems, and automation projects with real outcomes."
 permalink: /portfolio/
 author_profile: false
 ---

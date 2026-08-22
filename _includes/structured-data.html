@@ -1,0 +1,87 @@
+{% include base_path %}
+
+{% assign sd_url = site.url | default: 'https://nasratulnayem.github.io' %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ sd_url }}/#person",
+      "name": "Nasratul Nayem",
+      "givenName": "Nasratul",
+      "familyName": "Nayem",
+      "url": "{{ sd_url }}/",
+      "image": "{{ sd_url }}/images/nasratul-nayem.jpg",
+      "email": "mailto:devnayem30@gmail.com",
+      "jobTitle": "Web Developer & Automation Expert",
+      "description": "Web developer and automation expert building websites, WooCommerce stores, WordPress plugins, and AI-powered business automations.",
+      "knowsAbout": [
+        "Web Development",
+        "WordPress",
+        "WooCommerce",
+        "WordPress Plugin Development",
+        "Business Process Automation",
+        "Ecommerce Development",
+        "AI Automation"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BD"
+      },
+      "sameAs": [
+        "https://github.com/nasratulnayem"{% if site.author.linkedin %},
+        "https://www.linkedin.com/in/{{ site.author.linkedin }}"{% endif %}{% if site.author.twitter %},
+        "https://x.com/{{ site.author.twitter }}"{% endif %}{% if site.author.facebook %},
+        "https://www.facebook.com/{{ site.author.facebook }}"{% endif %}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ sd_url }}/#website",
+      "url": "{{ sd_url }}/",
+      "name": "Nasratul Nayem — Web Developer & Automation Expert",
+      "description": "Websites, ecommerce, and automation that reduce manual work. Custom web engineering, WooCommerce tools, and WordPress plugins by Nasratul Nayem.",
+      "publisher": { "@id": "{{ sd_url }}/#person" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "{{ sd_url }}/#profilepage",
+      "url": "{{ sd_url }}/",
+      "about": { "@id": "{{ sd_url }}/#person" },
+      "name": "Nasratul Nayem — Web Developer & Automation Expert"
+    }
+  ]
+}
+</script>
+
+{% unless page.url == '/' or page.url == '/index.html' %}
+{% assign crumbs = page.url | split: '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ sd_url }}/"
+    }{% assign depth = 2 %}{% assign trail = '' %}{% for crumb in crumbs %}{% if crumb != '' %}{% capture trail %}{{ trail }}/{{ crumb }}{% endcapture %},{% if forloop.last %}
+    {
+      "@type": "ListItem",
+      "position": {{ depth }},
+      "name": {{ page.title | jsonify }}
+    }{% else %}
+    {
+      "@type": "ListItem",
+      "position": {{ depth }},
+      "name": "{% case trail %}{% when '/plugins' %}Plugins Hub{% else %}{{ crumb | capitalize }}{% endcase %}",
+      "item": "{{ sd_url }}{{ trail }}/"
+    }{% endif %}{% assign depth = depth | plus: 1 %}{% endif %}{% endfor %}
+  ]
+}
+</script>
+{% endunless %}
