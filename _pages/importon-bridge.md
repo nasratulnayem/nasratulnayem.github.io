@@ -18,7 +18,7 @@ freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?
 <div class="ht-page-hero">
   <div class="ht-eyebrow">
     <span class="ht-eyebrow-dot"></span>
-    <span>WOOCOMMERCE PRODUCT WORKFLOW</span>
+    <span>MADE FOR DROPSHIPPERS · AI-POWERED IMPORTING</span>
   </div>
   <h1 class="ht-page-hero__title">Alibaba to WooCommerce Product Import Automatically Using Ai</h1>
   <p class="ht-page-hero__desc">Move supplier product details, high-res galleries, attributes, and variations into your store without copying every field by hand.</p>
