@@ -1028,31 +1028,31 @@ html:not([data-theme="dark"]) .hero-terminal__tabs {
 .hero-terminal__body {
   padding: 1.5rem 1.5rem 1.25rem 1.5rem;
   height: 320px;
-  overflow-y: auto;
+  overflow: hidden;
   font-family: var(--ht-font-mono);
   font-size: 0.86rem;
   line-height: 1.65;
   color: #e2e8f0;
   background: #080c12;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 210, 255, 0.45) #080c12;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .hero-terminal__body::-webkit-scrollbar {
-  width: 6px;
+  display: none;
 }
 
-.hero-terminal__body::-webkit-scrollbar-track {
-  background: #080c12;
+/* GPU-animated drift track — the auto-scroll engine translates this layer
+   only, so scrolling stays on the compositor at full frame rate. */
+.hero-terminal__track {
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
-.hero-terminal__body::-webkit-scrollbar-thumb {
-  background: rgba(0, 210, 255, 0.4);
-  border-radius: 4px;
-}
-
-.hero-terminal__body::-webkit-scrollbar-thumb:hover {
-  background: var(--ht-cyan);
+@media (prefers-reduced-motion: reduce) {
+  .hero-terminal__track {
+    transform: none !important;
+  }
 }
 
 html:not([data-theme="dark"]) .hero-terminal__body {
@@ -5320,6 +5320,15 @@ html:not([data-theme="dark"]) .marketing-main--post .pagination--pager {
 
 html:not([data-theme="dark"]) .marketing-main--post .pagination--pager.disabled {
   color: #64748b;
+}
+
+/* Post pagination sits alone between the article footer and the closing CTA.
+   Give it deliberate breathing room on both sides instead of inheriting the
+   theme's cramped single-em rhythm. */
+#main.marketing-main--post .pagination {
+  margin-top: 2.75rem;
+  margin-bottom: 2.75rem;
+  padding-top: 0;
 }
 
 /* Contact details stay readable at the smallest real phone width. The page

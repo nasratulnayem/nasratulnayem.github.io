@@ -11,7 +11,7 @@ author_profile: false
     <span class="ht-eyebrow-dot"></span>
     <span>ENGINEERING BUILDS &amp; CASE STUDIES</span>
   </div>
-  <h1 class="ht-page-hero__title">From business bottleneck to shipped production software.</h1>
+  <h1 class="ht-page-hero__title">From rough idea to shipped production software.</h1>
   <p class="ht-page-hero__desc">Real build notes from the systems I design: high-conversion storefronts, custom WordPress tools, and Python automations that give teams their time back.</p>
 </div>
 

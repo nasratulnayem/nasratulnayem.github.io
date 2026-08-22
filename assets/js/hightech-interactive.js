@@ -220,10 +220,97 @@
   • <span class="ht-term-yellow">WhatsApp:</span> Instant messaging available via widget
 `,
       clear: () => {
-        outputEl.innerHTML = '';
+        if (autoScroll.track) { autoScroll.track.innerHTML = ''; } else { outputEl.innerHTML = ''; }
         return '';
       }
     };
+
+    /* ---- Lightweight auto-scroll engine ----------------------------------
+       GPU-only transform drift (no layout thrash), pauses off-screen & on
+       hidden tabs, hands over to the reader on interaction and quietly
+       resumes drifting after a long idle period. */
+    var autoScroll = (function () {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var track = null, rafId = null, idleTimer = null, offscreen = false;
+      var offset = 0, dir = -1, lastTs = 0;
+      var SPEED = 16;            // px/s — calm cinematic drift
+      var RESUME_DELAY = 12000;  // resume drift 12s after last interaction
+
+      function maxOffset() {
+        return Math.max(0, track.scrollHeight - outputEl.clientHeight);
+      }
+      function apply() {
+        track.style.transform = 'translate3d(0,' + offset.toFixed(2) + 'px,0)';
+      }
+      function stop() {
+        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        clearTimeout(idleTimer);
+      }
+      function step(ts) {
+        if (offscreen || document.hidden) { rafId = null; return; }
+        var dt = Math.min(64, ts - lastTs); lastTs = ts;
+        offset += dir * SPEED * dt / 1000;
+        var max = maxOffset();
+        if (offset <= -max && dir < 0) { offset = -max; apply(); rafId = null; resume(5000); return; }
+        if (offset >= 0 && dir > 0)   { offset = 0;    apply(); rafId = null; resume(7000); return; }
+        apply();
+        rafId = requestAnimationFrame(step);
+      }
+      function resume(delay) {
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(function () {
+          if (maxOffset() > 4 && !offscreen && !document.hidden) {
+            if (offset <= -maxOffset()) dir = 1; else dir = -1;
+            lastTs = performance.now();
+            if (!rafId) rafId = requestAnimationFrame(step);
+          }
+        }, delay);
+      }
+      function snapToBottom() {
+        stop();
+        offset = -maxOffset();
+        if (!reduceMotion) {
+          track.style.transition = 'transform 480ms cubic-bezier(.22,.61,.36,1)';
+          apply();
+          setTimeout(function () { track.style.transition = ''; }, 520);
+        } else {
+          apply();
+        }
+        resume(RESUME_DELAY);
+      }
+
+      return {
+        track: null,
+        mount: function () {
+          if (reduceMotion) return;
+          track = document.createElement('div');
+          track.className = 'hero-terminal__track';
+          while (outputEl.firstChild) track.appendChild(outputEl.firstChild);
+          outputEl.appendChild(track);
+          this.track = track;
+          if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries) {
+              offscreen = !entries[0].isIntersecting;
+              if (offscreen) { stop(); } else { resume(1800); }
+            }, { threshold: 0.05 }).observe(terminal);
+          } else {
+            resume(2500);
+          }
+          document.addEventListener('visibilitychange', function () {
+            if (document.hidden) stop(); else resume(2000);
+          });
+        },
+        activity: function (toBottom) {
+          stop();
+          if (toBottom) snapToBottom(); else resume(RESUME_DELAY);
+        },
+        reset: function () {
+          stop(); offset = 0; dir = -1; apply();
+          if ('IntersectionObserver' in window) resume(1800); else resume(2500);
+        }
+      };
+    })();
+    autoScroll.mount();
 
     function executeCommand(cmdStr) {
       const cleanCmd = cmdStr.trim().toLowerCase();
@@ -232,7 +319,7 @@
       const line = document.createElement('div');
       line.className = 'hero-terminal__line';
       line.innerHTML = `<span class="hero-terminal__prompt">nayem@dev:~$</span> <span class="hero-terminal__cmd">${escapeHtml(cmdStr)}</span>`;
-      outputEl.appendChild(line);
+      autoScroll.track.appendChild(line);
 
       const resp = document.createElement('div');
       resp.className = 'hero-terminal__response';
@@ -241,14 +328,14 @@
         const out = COMMANDS[cleanCmd]();
         if (cleanCmd !== 'clear') {
           resp.innerHTML = out;
-          outputEl.appendChild(resp);
+          autoScroll.track.appendChild(resp);
         }
       } else {
         resp.innerHTML = `<span class="ht-term-red">Command not recognized: "${escapeHtml(cmdStr)}".</span> Type <span class="ht-term-green">help</span> for a list of available commands.`;
-        outputEl.appendChild(resp);
+        autoScroll.track.appendChild(resp);
       }
 
-      outputEl.scrollTop = outputEl.scrollHeight;
+      if (cleanCmd === 'clear') { autoScroll.reset(); } else { autoScroll.activity(true); }
     }
 
     if (inputEl) {

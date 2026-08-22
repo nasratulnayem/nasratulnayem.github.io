@@ -19,7 +19,7 @@ author_profile: false
     </h1>
 
     <p class="ht-hero__lead">
-      Hi, I’m <strong>Nasratul Nayem</strong>—a web developer and automation engineer from Bangladesh. I build high-performance WordPress systems, conversion-driven Shopify &amp; WooCommerce stores, and autonomous Python/AI pipelines that eliminate manual business bottlenecks.
+      Hi, I’m <strong>Nasratul Nayem</strong>—a web developer and automation engineer from Bangladesh. I build high-performance WordPress systems, conversion-driven Shopify &amp; WooCommerce stores, and autonomous Python/AI pipelines that cut out repetitive manual work.
     </p>
 
     <div class="ht-hero__actions">

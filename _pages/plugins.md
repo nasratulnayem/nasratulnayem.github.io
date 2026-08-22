@@ -11,7 +11,7 @@ description: "Focused WordPress & WooCommerce software tools by Nasratul Nayem b
     <span>PROVEN SOFTWARE TOOLS</span>
   </div>
   <h1 class="ht-page-hero__title">Focused tools for workflows that should never be manual.</h1>
-  <p class="ht-page-hero__desc">Production-grade WordPress plugins built around specific business bottlenecks. Each product includes full documentation, secure licensing via Freemius, automatic updates, and a 14-day refund window.</p>
+  <p class="ht-page-hero__desc">Production-grade WordPress plugins built around specific workflow problems. Each product includes full documentation, secure licensing via Freemius, automatic updates, and a 14-day refund window.</p>
 </div>
 
 <div class="ht-catalog-grid">

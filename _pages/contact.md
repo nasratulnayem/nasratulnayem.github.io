@@ -11,7 +11,7 @@ author_profile: false
     <span class="ht-eyebrow-dot"></span>
     <span>DIRECT ENGINEERING CONTACT</span>
   </div>
-  <h1 class="ht-page-hero__title">Let’s turn your bottleneck into an automated, high-speed system.</h1>
+  <h1 class="ht-page-hero__title">Let’s turn your slow manual process into an automated, high-speed system.</h1>
   <p class="ht-page-hero__desc">Whether you need a custom WordPress plugin, a WooCommerce/Shopify store optimization, a Python bot, or an AI workflow, reach out directly. I respond to all inquiries within 24 hours.</p>
 </div>
 
