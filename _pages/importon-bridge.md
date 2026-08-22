@@ -61,7 +61,7 @@ freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?
 </div>
 
 <!-- Architecture & Capabilities Grid -->
-<div class="ht-services-grid">
+<div class="ht-services-grid ht-capabilities-grid ht-capabilities--collapsed" id="ht-capabilities-grid">
   <article class="bento-card glow-card">
     <div class="bento-card__badge-row">
       <div class="bento-card__icon-box"><i class="fas fa-globe" aria-hidden="true"></i></div>
@@ -118,6 +118,28 @@ freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?
     </ul>
   </article>
 </div>
+<div class="ht-expand-wrap" style="text-align:center; margin: 1.25rem auto 0;">
+  <button class="ht-expand-toggle" type="button" id="ht-capabilities-toggle" aria-expanded="false" aria-controls="ht-capabilities-grid">
+    <span>View more</span>
+    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+  </button>
+</div>
+<script>
+(function(){
+  var grid=document.getElementById('ht-capabilities-grid');
+  var btn=document.getElementById('ht-capabilities-toggle');
+  if(!grid||!btn) return;
+  btn.addEventListener('click', function(){
+    var collapsed=grid.classList.contains('ht-capabilities--collapsed');
+    grid.classList.toggle('ht-capabilities--collapsed', !collapsed);
+    grid.classList.toggle('ht-capabilities--expanded', collapsed);
+    btn.setAttribute('aria-expanded', collapsed ? 'true' : 'false');
+    btn.querySelector('span').textContent = collapsed ? 'View less' : 'View more';
+    var icon=btn.querySelector('i');
+    if(icon){ icon.className = collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'; }
+  });
+})();
+</script>
 
 <!-- High-Tech Connected Pipeline Workflow Section -->
 <section class="ht-process-section">

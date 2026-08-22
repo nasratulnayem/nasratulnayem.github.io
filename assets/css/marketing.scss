@@ -1360,6 +1360,10 @@ body {
   font-size: 0.78rem;
 }
 
+.ht-capabilities--collapsed .bento-card:nth-child(n+4) {
+  display: none;
+}
+
 .bento-card__list li {
   font-size: 0.82rem;
   color: var(--ht-text-secondary);
