@@ -12,6 +12,11 @@
 <link rel="preload" href="{{ base_path }}/assets/css/fontawesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{ base_path }}/assets/css/fontawesome.css"></noscript>
 
+<style>
+  /* Critical: prevent header/footer FOUC on refresh */
+  .ht-masthead{visibility:visible;opacity:1}
+  .ht-footer,.page__footer{visibility:visible;opacity:1}
+</style>
 <!-- Favicons & App Icons -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png"/>
 <link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg"/>
