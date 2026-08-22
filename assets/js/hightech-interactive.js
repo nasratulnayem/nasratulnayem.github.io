@@ -233,7 +233,7 @@
       var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var track = null, rafId = null, idleTimer = null, offscreen = false;
       var offset = 0, dir = -1, lastTs = 0;
-      var SPEED = 16;            // px/s — calm cinematic drift
+      var SPEED = 26;            // px/s — calm cinematic drift
       var RESUME_DELAY = 12000;  // resume drift 12s after last interaction
 
       function maxOffset() {
@@ -251,8 +251,8 @@
         var dt = Math.min(64, ts - lastTs); lastTs = ts;
         offset += dir * SPEED * dt / 1000;
         var max = maxOffset();
-        if (offset <= -max && dir < 0) { offset = -max; apply(); rafId = null; resume(5000); return; }
-        if (offset >= 0 && dir > 0)   { offset = 0;    apply(); rafId = null; resume(7000); return; }
+        if (offset <= -max && dir < 0) { offset = -max; apply(); rafId = null; resume(3200); return; }
+        if (offset >= 0 && dir > 0)   { offset = 0;    apply(); rafId = null; resume(4200); return; }
         apply();
         rafId = requestAnimationFrame(step);
       }
@@ -291,7 +291,7 @@
           if ('IntersectionObserver' in window) {
             new IntersectionObserver(function (entries) {
               offscreen = !entries[0].isIntersecting;
-              if (offscreen) { stop(); } else { resume(1800); }
+              if (offscreen) { stop(); } else { resume(1200); }
             }, { threshold: 0.05 }).observe(terminal);
           } else {
             resume(2500);
@@ -306,7 +306,7 @@
         },
         reset: function () {
           stop(); offset = 0; dir = -1; apply();
-          if ('IntersectionObserver' in window) resume(1800); else resume(2500);
+          if ('IntersectionObserver' in window) resume(1200); else resume(2500);
         }
       };
     })();
