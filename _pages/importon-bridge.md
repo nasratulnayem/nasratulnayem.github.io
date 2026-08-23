@@ -85,7 +85,7 @@ freemius_pricings:
     <p class="ht-section-subtitle" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span style="display:inline-flex;align-items:center;gap:6px;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;padding:4px 10px;border-radius:9999px;font-size:11px;font-weight:600;"><i class="fas fa-shield-alt" aria-hidden="true"></i> Verified by Freemius</span><span style="color:#475569;">• 5.0/5 average from 5 Featured reviews</span></p>
   </div>
   <style>
-    .ht-reviews-viewport{overflow:hidden;position:relative;padding:14px 6px;margin:-14px -6px}
+    .ht-reviews-viewport{overflow:hidden;position:relative;padding:14px 24px;margin:-14px -24px}
     .ht-reviews-track{display:flex;gap:16px;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform;padding:2px}
     .ht-review-card{flex:0 0 calc(33.333% - 10.66px);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px;overflow:hidden;border-radius:12px}
     @media(max-width:1024px){.ht-review-card{flex:0 0 calc(50% - 8px)}}
@@ -103,7 +103,7 @@ freemius_pricings:
       <article class="bento-card glow-card ht-review-card"><div style="color:#f59e0b;letter-spacing:2px">★★★★★</div><h3 style="margin:0;font-size:15px">$9.99 pays for itself in one batch</h3><p style="margin:0;color:#475569;font-size:13px;line-height:1.5">Starter saved more than 2 hours of VA cost on first 40 products. Will move to Growth 5 Sites. Trial made it easy to try.</p><div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid #f1f5f9"><img src="https://s3-us-west-2.amazonaws.com/freemius/plugins/28475/reviews/70f9bac432e5518f109e8fd53c4e45f4.jpg" alt="Marco Rossi" style="width:36px;height:36px;border-radius:50%" loading="lazy"><div><strong style="font-size:13px">Marco Rossi</strong><br><span style="font-size:11px;color:#64748b">Founder, Rossi Imports</span></div></div></article>
     </div>
   </div>
-  <p style="text-align:center;margin:10px 0 0;font-size:11px;color:#64748b;display:flex;align-items:center;justify-content:center;gap:6px;"><i class="fas fa-check-circle" style="color:#16a34a" aria-hidden="true"></i> Verified by Freemius • Featured on pricing</p>
+  <p style="text-align:center;margin:10px 0 0;font-size:11px;color:#64748b;display:flex;align-items:center;justify-content:center;gap:6px;"><i class="fas fa-check-circle" style="color:#16a34a" aria-hidden="true"></i> Verified by Freemius</p>
   <div class="ht-carousel-nav" id="htReviewsDots" aria-label="Review pagination"></div>
   <script>
   (function(){
