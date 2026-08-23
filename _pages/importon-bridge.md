@@ -103,7 +103,6 @@ freemius_pricings:
       <article class="bento-card glow-card ht-review-card"><div style="color:#f59e0b;letter-spacing:2px">★★★★★</div><h3 style="margin:0;font-size:15px">$9.99 pays for itself in one batch</h3><p style="margin:0;color:#475569;font-size:13px;line-height:1.5">Starter saved more than 2 hours of VA cost on first 40 products. Will move to Growth 5 Sites. Trial made it easy to try.</p><div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid #f1f5f9"><img src="https://s3-us-west-2.amazonaws.com/freemius/plugins/28475/reviews/70f9bac432e5518f109e8fd53c4e45f4.jpg" alt="Marco Rossi" style="width:36px;height:36px;border-radius:50%" loading="lazy"><div><strong style="font-size:13px">Marco Rossi</strong><br><span style="font-size:11px;color:#64748b">Founder, Rossi Imports</span></div></div></article>
     </div>
   </div>
-  <p style="text-align:center;margin:10px 0 0;font-size:11px;color:#64748b;display:flex;align-items:center;justify-content:center;gap:6px;"><i class="fas fa-check-circle" style="color:#16a34a" aria-hidden="true"></i> Verified by Freemius</p>
   <div class="ht-carousel-nav" id="htReviewsDots" aria-label="Review pagination"></div>
   <script>
   (function(){
