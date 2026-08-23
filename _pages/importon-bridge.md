@@ -142,9 +142,9 @@ freemius_pricings:
     <p class="ht-section-subtitle">Live Featured reviews from Freemius — auto-syncs to admin.php?page=importon-bridge-pricing</p>
   </div>
   <style>
-    .ht-reviews-viewport{overflow:hidden;position:relative}
-    .ht-reviews-track{display:flex;gap:16px;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform}
-    .ht-review-card{flex:0 0 calc(33.333% - 10.66px);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px}
+    .ht-reviews-viewport{overflow:hidden;position:relative;padding:14px 6px;margin:-14px -6px}
+    .ht-reviews-track{display:flex;gap:16px;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform;padding:2px}
+    .ht-review-card{flex:0 0 calc(33.333% - 10.66px);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px;overflow:visible}
     @media(max-width:1024px){.ht-review-card{flex:0 0 calc(50% - 8px)}}
     @media(max-width:640px){.ht-review-card{flex:0 0 100%}}
     .ht-carousel-nav{display:flex;justify-content:center;gap:8px;margin-top:14px}
