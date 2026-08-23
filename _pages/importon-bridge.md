@@ -5,7 +5,7 @@ description: "Alibaba to WooCommerce product importer with AI rewrites. Move sup
 permalink: /tools/importon-bridge/
 author_profile: false
 product_name: "Importon Bridge"
-product_price: "49"
+product_price: "79"
 product_image: "/images/work/importon-bridge-by-nasratul-nayem.webp"
 software_version: "0.2.2"
 wordpress_requirement: "6.0 or later"
@@ -13,7 +13,18 @@ freemius_checkout: true
 freemius_product_id: "28475"
 freemius_plan_id: "46909"
 freemius_public_key: "pk_899cd9e07ac2b4825e4c96464c7e0"
-freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?licenses=1&billing_cycle=annual&currency=auto&language=auto&title=Importon%20Bridge%20Pro&cancel_url=https%3A%2F%2Fnasratulnayem.github.io%2Fplugins%2Fimporton-bridge%2F"
+freemius_checkout_url: "https://checkout.freemius.com/plugin/28475/plan/46909/"
+freemius_trial_url: "https://checkout.freemius.com/plugin/28475/plan/46909/?trial=paid"
+freemius_pricings:
+  - name: Starter — 1 Site
+    monthly: "$9.99"
+    annual: "$79"
+  - name: Growth — 5 Sites
+    monthly: "$19.99"
+    annual: "$149"
+  - name: Scale — Unlimited
+    monthly: "$39.99"
+    annual: "$299"
 ---
 
 <div class="ht-page-hero">
@@ -22,7 +33,7 @@ freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?
     <span>MADE FOR DROPSHIPPERS</span>
   </div>
   <h1 class="ht-page-hero__title">Alibaba to WooCommerce Product Importer</h1>
-  <p class="ht-page-hero__desc">Move supplier product details, high-res galleries, attributes, and variations into your store without copying every field by hand.</p>
+  <p class="ht-page-hero__desc">Move supplier product details, high-res galleries, attributes, and variations into your store without copying every field by hand. <strong>7-day free trial</strong> — card required, auto-charges after trial, cancel anytime.</p>
 </div>
 
 <!-- Flagship Showcase Bento Card -->
@@ -51,9 +62,11 @@ freemius_checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?
           <div class="ht-product-price">
             <strong>${{ page.product_price }}</strong>
             <span>/ year</span>
+            <small style="display:block;color:#64748b;font-size:11px;">$9.99/mo · Growth $19.99/mo · Scale $39.99/mo — 7-day free trial</small>
           </div>
           <div class="ht-product-cta-group">
-            <a class="ht-btn-primary ht-btn--glow" href="{{ page.freemius_checkout_url }}" target="_blank" rel="nofollow noopener noreferrer">Buy Pro License ↗</a>
+            <a class="ht-btn-primary ht-btn--glow" href="{{ page.freemius_trial_url }}" target="_blank" rel="nofollow noopener noreferrer">Start 7-Day Trial ↗</a>
+            <a class="ht-btn-secondary" href="{{ page.freemius_checkout_url }}" target="_blank" rel="nofollow noopener noreferrer">Buy Pro License</a>
           </div>
         </div>
       </div>

@@ -11,7 +11,8 @@ description: "Focused WordPress & WooCommerce software tools by Nasratul Nayem b
     <span>PROVEN SOFTWARE TOOLS</span>
   </div>
   <h1 class="ht-page-hero__title">Focused tools for workflows that should never be manual.</h1>
-  <p class="ht-page-hero__desc">Production-grade WordPress plugins built around specific workflow problems. Each product includes full documentation, secure licensing via Freemius, automatic updates, and a 14-day refund window.</p>
+  <p class="ht-page-hero__desc">Production-grade WordPress plugins built around specific workflow problems. Start with a <strong>7-day free trial</strong> — card saved at checkout, auto-charges after 7 days, cancel anytime. Secure licensing via Freemius, automatic updates, and a 14-day refund window.</p>
+  <div style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 14px;background:rgba(31,122,140,0.08);border:1px solid rgba(31,122,140,0.18);border-radius:9999px;font-size:12px;color:#0f172a;"><span style="width:7px;height:7px;background:#f59e0b;border-radius:50%;display:inline-block;"></span> Try Importon Bridge free for 7 days → <a href="https://checkout.freemius.com/plugin/28475/plan/46909/?trial=paid" target="_blank" rel="nofollow" style="color:#1F7A8C;font-weight:700;text-decoration:none;">Start Trial</a></div>
 </div>
 
 <div class="ht-catalog-grid">
@@ -42,7 +43,8 @@ description: "Focused WordPress & WooCommerce software tools by Nasratul Nayem b
             </div>
             <div class="ht-product-cta-group">
               <a class="ht-btn-secondary" href="{{ product.url | relative_url }}">See Full Workflow →</a>
-              <a class="ht-btn-primary ht-btn--glow" href="{{ product.checkout_url }}" target="_blank" rel="nofollow noopener noreferrer">Buy Pro License ↗</a>
+              <a class="ht-btn-primary ht-btn--glow" href="{{ product.trial_url }}" target="_blank" rel="nofollow noopener noreferrer">Start 7-Day Trial ↗</a>
+              <a class="ht-btn-secondary" href="{{ product.checkout_url }}" target="_blank" rel="nofollow noopener noreferrer">Buy Pro License</a>
             </div>
           </div>
         </div>

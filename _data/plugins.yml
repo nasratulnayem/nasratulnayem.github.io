@@ -7,10 +7,25 @@ products:
     url: /tools/importon-bridge/
     image: /images/work/importon-bridge-by-nasratul-nayem.webp
     summary: Import product details from supported browser pages into WooCommerce without copying every field by hand.
-    price: "$49"
-    billing: / year
-    plan: Pro · 1 site
-    checkout_url: "https://checkout.freemius.com/product/28475/plan/46909/?licenses=1&billing_cycle=annual&currency=auto&language=auto&title=Importon%20Bridge%20Pro&cancel_url=https%3A%2F%2Fnasratulnayem.github.io%2Fplugins%2Fimporton-bridge%2F"
+    price: "$9.99"
+    billing: / month
+    annual_price: "$79 / year"
+    plan: Starter · 1 Site — 7-day free trial
+    checkout_url: "https://checkout.freemius.com/plugin/28475/plan/46909/"
+    trial_url: "https://checkout.freemius.com/plugin/28475/plan/46909/?trial=paid"
+    pricings:
+      - name: Starter — 1 Site
+        monthly: "$9.99"
+        annual: "$79"
+        id: "83839"
+      - name: Growth — 5 Sites
+        monthly: "$19.99"
+        annual: "$149"
+        id: "83837"
+      - name: Scale — Unlimited
+        monthly: "$39.99"
+        annual: "$299"
+        id: "83838"
     highlights:
       - Browser companion included
       - Product, image, attribute, and variation data
