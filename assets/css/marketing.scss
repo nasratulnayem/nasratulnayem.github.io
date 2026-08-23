@@ -2527,68 +2527,81 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
-  background: var(--ht-bg-card);
+  gap: 1.25rem;
+  padding: 1.1rem 1.4rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), transparent), var(--ht-bg-card);
   border: 1px solid var(--ht-border);
-  border-radius: var(--ht-radius-lg);
+  border-radius: 16px;
   text-decoration: none !important;
   color: inherit !important;
-  transition: all 0.25s ease;
+  transition: all 0.22s cubic-bezier(.4,0,.2,1);
 }
 
 .ht-case-card:hover {
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), transparent), var(--ht-bg-card-hover);
   border-color: var(--ht-border-hover);
-  transform: translateX(4px);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
 }
 
 .ht-case-card__left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.4rem;
+  gap: 0.35rem;
+  min-width: 0;
+  flex: 1;
 }
 
 .ht-case-card__left .ht-badge {
   display: inline-flex;
   width: auto;
   align-self: flex-start;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  padding: 0.22rem 0.5rem;
 }
 
 .ht-case-card__left h3 {
-  font-size: 1.2rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--ht-text-primary);
-  margin: 0.3rem 0 0 0;
+  margin: 0;
+  line-height: 1.32;
+  letter-spacing: -0.015em;
 }
 
 .ht-case-card__left p {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: var(--ht-text-secondary);
   margin: 0;
+  line-height: 1.5;
+  opacity: 0.9;
 }
 
 .ht-case-card__arrow {
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   font-weight: 700;
   color: var(--ht-cyan);
   white-space: nowrap;
   transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .ht-case-card:hover .ht-case-card__arrow {
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
 @media (max-width: 768px) {
   .ht-case-card {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
-    padding: 1.25rem;
+    gap: 0.7rem;
+    padding: 0.9rem 1rem;
   }
 
   .ht-case-card__arrow {
-    margin-top: 0.25rem;
+    margin-top: 0;
     align-self: flex-start;
   }
 }
