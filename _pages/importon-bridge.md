@@ -84,10 +84,10 @@ freemius_pricings:
     <h2 id="reviews-title" class="ht-section-title">Real alibaba to woocommerce product import reviews</h2>
   </div>
   <style>
-    .ht-reviews-viewport{position:relative;margin:0 -24px;padding:0 24px;overflow:hidden}
-    .ht-reviews-track{display:flex;gap:12px;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform;padding:14px 0}
-    .ht-review-card{flex:0 0 calc((100% - 24px) / 3);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:12px}
-    @media(max-width:1024px){.ht-review-card{flex:0 0 calc((100% - 12px) / 2)}}
+    .ht-reviews-viewport{position:relative;overflow:hidden}
+    .ht-reviews-track{display:flex;gap:16px;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform;padding:14px 0}
+    .ht-review-card{flex:0 0 calc((100% - 32px) / 3);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:12px}
+    @media(max-width:1024px){.ht-review-card{flex:0 0 calc((100% - 16px) / 2)}}
     @media(max-width:640px){.ht-review-card{flex:0 0 100%}}
     .ht-carousel-nav{display:flex;justify-content:center;gap:8px;margin-top:14px}
     .ht-carousel-dot{width:7px;height:7px;border-radius:50%;background:#cbd5e1;border:none;cursor:pointer;padding:0}
@@ -120,7 +120,7 @@ freemius_pricings:
       for(let i=0;i<perView;i++){const c=originalCards[i].cloneNode(true);c.classList.add('is-clone');track.appendChild(c);}
       for(let i=total-perView;i<total;i++){const c=originalCards[i].cloneNode(true);c.classList.add('is-clone');track.insertBefore(c,track.firstChild);}
     }
-    function cardW(){const c=track.querySelector('.ht-review-card');return c?c.getBoundingClientRect().width+16:0;}
+    function cardW(){const c=track.querySelector('.ht-review-card');if(!c) return 0;const gap=parseInt(getComputedStyle(track).gap)||16;return{w:c.getBoundingClientRect().width,g:gap};}
     function renderDots(){
       dotsWrap.innerHTML='';
       for(let i=0;i<getPages();i++){const b=document.createElement('button');b.className='ht-carousel-dot'+(i===index?' is-active':'');b.setAttribute('aria-label','Go to slide '+(i+1));b.onclick=()=>{go(i);};dotsWrap.appendChild(b);}
@@ -130,10 +130,11 @@ freemius_pricings:
       perView=getPerView();
       const pages=getPages();
       index=((i%pages)+pages)%pages;
-      const w=cardW();
+      const{w,g}=cardW();
       const shift=perView+index*perView;
+      const offset=shift*w+(shift-1)*g;
       track.style.transition=animate?'transform .55s cubic-bezier(.4,0,.2,1)':'none';
-      track.style.transform='translateX(-'+shift*w+'px)';
+      track.style.transform='translateX(-'+offset+'px)';
       [...dotsWrap.children].forEach((d,j)=>d.classList.toggle('is-active',j===index));
     }
     function next(){go(index+1);}
