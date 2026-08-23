@@ -1,7 +1,7 @@
 ---
 layout: plugin
 title: "Alibaba to WooCommerce Product Import — Importer Plugin for WordPress | Importon Bridge"
-description: "Alibaba to WooCommerce product import in 1-click. Importon Bridge — the Alibaba to WooCommerce Product Importer for WordPress. Chrome extension + AI rewrites, galleries, variations & batch URL queue. 7-day free trial."
+description: "Import products from Alibaba to WooCommerce in 1-click. Chrome extension + AI rewrites, galleries, variations & batch URL queue. 7-day free trial."
 permalink: /tools/importon-bridge/
 keywords: "alibaba to woocommerce product import, Alibaba to WooCommerce Product Importer, Alibaba WooCommerce import, import Alibaba to WooCommerce, Alibaba product importer WooCommerce"
 author_profile: false
@@ -44,30 +44,30 @@ freemius_pricings:
       <div class="ht-product-showcase__visual">
         <img src="{{ page.product_image | relative_url }}" alt="Alibaba to WooCommerce Product Importer - Importon Bridge workflow" loading="lazy">
       </div>
-      <div class="ht-product-showcase__info" style="display:flex;flex-direction:column;justify-content:center;gap:0;padding:8px 0">
+      <div class="ht-product-showcase__info">
         <div class="bento-card__badge-row">
-          <span class="ht-badge ht-badge--cyan" style="font-size:10px;padding:3px 8px">WOOCOMMERCE AUTOMATION</span>
-          <span class="ht-badge" style="font-size:10px;padding:3px 8px">v0.2.2 Pro</span>
+          <span class="ht-badge ht-badge--cyan">WOOCOMMERCE AUTOMATION</span>
+          <span class="ht-badge">v0.2.2 Pro</span>
         </div>
-        <h2 class="ht-product-title" style="font-size:1.4rem;margin:6px 0 6px">{{ page.product_name }}</h2>
-        <p class="ht-product-summary" style="font-size:0.82rem;margin-bottom:8px;line-height:1.5">{{ page.description | default: "A browser-assisted workflow engine that moves product data from supported web pages into WooCommerce without repetitive manual copy-pasting." }}</p>
+        <h2 class="ht-product-title">{{ page.product_name }}</h2>
+        <p class="ht-product-summary">{{ page.description }}</p>
 
-        <ul class="ht-product-highlights" style="margin-bottom:10px;gap:4px">
-          <li style="font-size:0.78rem"><i class="fas fa-check" aria-hidden="true"></i> Chrome companion extension included</li>
-          <li style="font-size:0.78rem"><i class="fas fa-check" aria-hidden="true"></i> Product, image, attribute &amp; variation sync</li>
-          <li style="font-size:0.78rem"><i class="fas fa-check" aria-hidden="true"></i> Import logs, retries &amp; batch URL queue</li>
-          <li style="font-size:0.78rem"><i class="fas fa-check" aria-hidden="true"></i> Automatic updates &amp; 14-day refund window</li>
+        <ul class="ht-product-highlights">
+          <li><i class="fas fa-check" aria-hidden="true"></i> Chrome companion extension included</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i> Product, image, attribute &amp; variation sync</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i> Import logs, retries &amp; batch URL queue</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i> Automatic updates &amp; 14-day refund window</li>
         </ul>
 
-        <div class="ht-product-pricing-bar" style="padding-top:8px">
+        <div class="ht-product-pricing-bar">
           <div class="ht-product-price">
-            <strong style="font-size:1.3rem">${{ page.product_price }}</strong>
+            <strong>${{ page.product_price }}</strong>
             <span>/ year</span>
-            <small style="display:block;color:#64748b;font-size:10px;">$9.99/mo · Growth $19.99/mo · Scale $39.99/mo — 7-day free trial</small>
+            <small style="display:block;color:#64748b;font-size:11px;">$9.99/mo · Growth $19.99/mo · Scale $39.99/mo — 7-day free trial</small>
           </div>
           <div class="ht-product-cta-group">
-            <a class="ht-btn-primary ht-btn--glow" href="{{ page.freemius_trial_url }}" target="_blank" rel="nofollow noopener noreferrer" style="font-size:0.82rem;padding:8px 16px">Start 7-Day Trial ↗</a>
-            <a class="ht-btn-secondary" href="{{ page.freemius_checkout_url }}" target="_blank" rel="nofollow noopener noreferrer" style="font-size:0.82rem;padding:8px 16px">Buy Pro License</a>
+            <a class="ht-btn-primary ht-btn--glow" href="{{ page.freemius_trial_url }}" target="_blank" rel="nofollow noopener noreferrer">Start 7-Day Trial ↗</a>
+            <a class="ht-btn-secondary" href="{{ page.freemius_checkout_url }}" target="_blank" rel="nofollow noopener noreferrer">Buy Pro License</a>
           </div>
         </div>
       </div>
