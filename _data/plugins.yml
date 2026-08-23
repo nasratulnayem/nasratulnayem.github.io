@@ -27,6 +27,4 @@ products:
         annual: "$299"
         id: "83838"
     highlights:
-      - Browser companion included
-      - Product, image, attribute, and variation data
       - Import logs, retries, and optional AI rewriting
