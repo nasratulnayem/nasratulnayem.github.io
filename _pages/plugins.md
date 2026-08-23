@@ -12,6 +12,8 @@ description: "Focused WordPress & WooCommerce software tools by Nasratul Nayem b
   </div>
   <h1 class="ht-page-hero__title">Focused tools for workflows that should never be manual.</h1>
   <p class="ht-page-hero__desc">Production-grade WordPress plugins built around specific workflow problems. Start with a <strong>7-day free trial</strong> — card saved at checkout, auto-charges after 7 days, cancel anytime. Secure licensing via Freemius, automatic updates, and a 14-day refund window.</p>
+  <style>.ht-trial-pill{background:rgba(31,122,140,0.08);border:1px solid rgba(31,122,140,0.18);color:#0f172a}.ht-trial-pill a{color:#1F7A8C}@media(prefers-color-scheme:dark){.ht-trial-pill{background:rgba(31,122,140,0.18);border-color:rgba(31,122,140,0.32);color:#e0f2f1}.ht-trial-pill a{color:#5eead4}}html[data-theme="dark"] .ht-trial-pill{background:rgba(31,122,140,0.18);border-color:rgba(31,122,140,0.32);color:#e0f2f1}html[data-theme="dark"] .ht-trial-pill a{color:#5eead4}</style>
+  <div class="ht-trial-pill" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 14px;border-radius:9999px;font-size:12px;"><span style="width:7px;height:7px;background:#f59e0b;border-radius:50%;display:inline-block;"></span> Try Importon Bridge free for 7 days → <a href="https://checkout.freemius.com/plugin/28475/plan/46909/?trial=paid" target="_blank" rel="nofollow" style="font-weight:700;text-decoration:none;">Start Trial</a></div>
 </div>
 
 <div class="ht-catalog-grid">
