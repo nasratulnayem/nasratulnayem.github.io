@@ -176,12 +176,12 @@ keywords: "Nasratul Nayem, Full-Stack Developer Bangladesh, WordPress Expert, Wo
       </div>
 
       <div class="bento-card__actions">
-        <a class="ht-btn-primary" href="{{ '/plugins/importon-bridge/' | relative_url }}">
+        <a class="ht-btn-primary" href="{{ '/tools/importon-bridge/' | relative_url }}">
           <span>See Product Tour</span>
           <span aria-hidden="true">→</span>
         </a>
-        <a class="ht-btn-secondary" href="https://checkout.freemius.com/product/28475/plan/46909/?licenses=1&billing_cycle=annual&currency=auto&language=auto&title=Importon%20Bridge%20Pro" target="_blank" rel="nofollow noopener noreferrer">
-          <span>Get Pro for $49/yr</span>
+        <a class="ht-btn-secondary" href="https://checkout.freemius.com/plugin/28475/plan/46909/?trial=paid" target="_blank" rel="nofollow noopener noreferrer">
+          <span>Get Pro for $9.99/m</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>
