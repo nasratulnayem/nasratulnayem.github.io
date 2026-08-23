@@ -52,12 +52,6 @@ freemius_pricings:
         <h2 class="ht-product-title">{{ page.product_name }}</h2>
         <p class="ht-product-summary">{{ page.description }}</p>
 
-        <ul class="ht-product-highlights">
-          <li><i class="fas fa-check" aria-hidden="true"></i> Chrome companion extension included</li>
-          <li><i class="fas fa-check" aria-hidden="true"></i> Product, image, attribute &amp; variation sync</li>
-          <li><i class="fas fa-check" aria-hidden="true"></i> Import logs, retries &amp; batch URL queue</li>
-        </ul>
-
         <div class="ht-product-pricing-bar">
           <div class="ht-product-price">
             <strong>${{ page.product_price }}</strong>
