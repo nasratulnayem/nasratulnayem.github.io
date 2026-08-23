@@ -26,5 +26,4 @@ products:
         monthly: "$39.99"
         annual: "$299"
         id: "83838"
-    highlights:
-      - Import logs, retries, and optional AI rewriting
+    highlights: []

@@ -31,11 +31,13 @@ description: "Focused WordPress & WooCommerce software tools by Nasratul Nayem b
           <h2 class="ht-product-title"><a href="{{ product.url | relative_url }}">{{ product.name }}</a></h2>
           <p class="ht-product-summary">{{ product.summary }}</p>
 
+          {% if product.highlights.size > 0 %}
           <ul class="ht-product-highlights">
             {% for highlight in product.highlights %}
               <li><i class="fas fa-check" aria-hidden="true"></i> {{ highlight }}</li>
             {% endfor %}
           </ul>
+          {% endif %}
 
           <div class="ht-product-pricing-bar">
             <div class="ht-product-price">
