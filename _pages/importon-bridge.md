@@ -131,7 +131,7 @@ freemius_pricings:
       </div>
     </article>
   </div>
-  <p style="text-align:center;margin-top:12px;font-size:11px;color:#94a3b8;">Live Featured reviews from Freemius — <a href="https://dashboard.freemius.com/plugin/28475/reviews/" target="_blank" rel="nofollow">View all 5 on Freemius</a> · Auto-syncs to <code>admin.php?page=importon-bridge-pricing</code></p>
+  <p style="text-align:center;margin-top:12px;font-size:11px;color:#94a3b8;">Auto-syncs to <code>admin.php?page=importon-bridge-pricing</code></p>
 </section>
 
 <!-- High-Tech Connected Pipeline Workflow Section -->
@@ -230,16 +230,23 @@ freemius_pricings:
 
 <!-- SEO: Alibaba to WooCommerce Product Import - Value Prop -->
 <section class="ht-work-section">
-  <div class="ht-section-header">
-    <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>ALIBABA TO WOOCOMMERCE PRODUCT IMPORT</span></div>
-    <h2 class="ht-section-title">The fastest alibaba to woocommerce product import for dropshippers</h2>
-    <p class="ht-section-subtitle">Importon Bridge is purpose-built for <strong>alibaba to woocommerce product import</strong> — not generic CSV. Capture any Alibaba product page in Chrome and publish to WooCommerce as a complete product with gallery, attributes, variations, video and AI description in seconds.</p>
-  </div>
-  <div class="ht-bento-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
-    <div class="glow-card" style="padding:18px;"><h3 style="margin:0 0 8px;">1. Alibaba to WooCommerce Product Import in 1-Click</h3><p style="margin:0;color:#475569;">No manual copy-paste. Open supplier page → Click Capture → Importon Bridge extracts title, price, SKU, gallery, attributes and variations via DOM.</p></div>
-    <div class="glow-card" style="padding:18px;"><h3 style="margin:0 0 8px;">2. Batch URL Import + AI</h3><p style="margin:0;color:#475569;">Queue unlimited Alibaba URLs, run with retry/logs, and auto-rewrite descriptions with OpenAI/Gemini for unique SEO content.</p></div>
-    <div class="glow-card" style="padding:18px;"><h3 style="margin:0 0 8px;">3. Built for WooCommerce Scale</h3><p style="margin:0;color:#475569;">Image sideloading to media library, variation mapping, video import, import logs and 14-day refund — production-grade alibaba to woocommerce product import.</p></div>
-  </div>
+  <!-- Alibaba → WooCommerce High‑Tech Section -->
+<div class="ht-alibaba-section">
+  <article class="bento-card glow-card">
+    <div class="bento-card__badge-row">
+      <div class="bento-card__icon-box"><i class="fas fa-shopping-bag" aria-hidden="true"></i></div>
+      <span class="ht-badge ht-badge--cyan">ALIBABA → WOOCOMMERCE</span>
+    </div>
+    <h2 class="bento-card__title">The fastest Alibaba‑to‑WooCommerce product import for dropshippers</h2>
+    <p class="bento-card__desc">Capture any Alibaba product page in Chrome and publish to WooCommerce as a complete product with gallery, attributes, variations, video and AI‑generated description in seconds.</p>
+    <ul class="bento-card__list">
+      <li><strong>1‑Click Import</strong> – Open supplier page → Click Capture → Instant product creation.</li>
+      <li><strong>Batch + AI</strong> – Queue unlimited URLs, auto‑rewrite descriptions with OpenAI/Gemini.</li>
+      <li><strong>Scale‑Ready</strong> – Media sideloading, variation mapping, video import, detailed logs, 14‑day refund.</li>
+    </ul>
+  </article>
+</div>
+<!-- End Alibaba → WooCommerce Section -->
 </section>
 
 <!-- SEO FAQ - Alibaba to WooCommerce Product Import -->
