@@ -56,7 +56,6 @@ freemius_pricings:
           <li><i class="fas fa-check" aria-hidden="true"></i> Chrome companion extension included</li>
           <li><i class="fas fa-check" aria-hidden="true"></i> Product, image, attribute &amp; variation sync</li>
           <li><i class="fas fa-check" aria-hidden="true"></i> Import logs, retries &amp; batch URL queue</li>
-          <li><i class="fas fa-check" aria-hidden="true"></i> Automatic updates &amp; 14-day refund window</li>
         </ul>
 
         <div class="ht-product-pricing-bar">
