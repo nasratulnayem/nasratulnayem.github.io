@@ -79,7 +79,7 @@ freemius_pricings:
   <style>
     .ht-reviews-viewport{position:relative;overflow:hidden;padding:12px 16px}
     .ht-reviews-track{display:flex;gap:16px;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform}
-    .ht-review-card{flex:0 0 calc((100% - 32px) / 3);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:12px;border:1.5px solid #006EFC}
+    .ht-review-card{flex:0 0 calc((100% - 32px) / 3);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:12px;border:1.5px solid #006EFC;box-shadow:none !important;backdrop-filter:none;-webkit-backdrop-filter:none}
     .ht-review-card::before,.ht-review-card::after{display:none !important}
     .ht-review-card:hover{box-shadow:none !important;transform:none !important}
     @media(max-width:1024px){.ht-review-card{flex:0 0 calc((100% - 16px) / 2)}}
