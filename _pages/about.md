@@ -1,9 +1,10 @@
 ---
 layout: home
 permalink: /
-title: "Websites, ecommerce, and automation that reduce manual work"
-description: "Nasratul Nayem — web developer & automation expert from Bangladesh working worldwide. Websites, WooCommerce, WordPress plugins, and AI-powered automations."
-author_profile: false
+title: "Nasratul Nayem — Full-Stack Developer | WordPress, WooCommerce & AI Automation Expert"
+description: "Nasratul Nayem, Full-Stack Web Developer from Bangladesh — WordPress Expert, Shopify & WooCommerce Specialist, Automation & AI Engineer. High-performance websites, ecommerce engines and intelligent automations for global brands."
+author_profile: true
+keywords: "Nasratul Nayem, Full-Stack Developer Bangladesh, WordPress Expert, WooCommerce Developer, Shopify Expert, Automation Engineer"
 ---
 
 <!-- Hero Section with Dual-Pane High-Tech Console -->

@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Nasratul Nayem"
-title_separator          : "-"
+title                    : "Nasratul Nayem — Full-Stack Developer | WordPress & Shopify Expert"
+title_separator          : "·"
 name                     : &name "Nasratul Nayem"
-description              : &description "Web developer & automation expert for WordPress, Shopify, ecommerce, and AI workflows."
+description              : &description "Nasratul Nayem — Full-Stack Web Developer, WordPress Expert & Automation Engineer from Bangladesh. High-performance WooCommerce, Shopify & AI workflows for global brands."
 url                      : https://nasratulnayem.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,9 +26,9 @@ author:
   avatar           : "nasratul-nayem.jpg"
   name             : "Nasratul Nayem"
   pronouns         : # example: "she/her"  
-  bio              : "Web developer & automation expert"
-  location         : "Remote"
-  employer         :
+  bio              : "Full-Stack Developer · WordPress & Shopify Expert · Automation Engineer — Building fast WooCommerce & AI workflows"
+  location         : "Dhaka, Bangladesh · Remote Worldwide"
+  employer         : "Freelance"
   uri              : "https://nasratulnayem.github.io"
   email            : "devnayem30@gmail.com"
 
@@ -58,7 +58,7 @@ author:
   # Social media
   artstation       : # Username
   bluesky          : # Replace this with your Bluesky username
-  facebook         : # Username
+  facebook         : "codex.nayem"
   flickr           : # Username
   foursquare       : # Username
   goodreads        : # Username
@@ -66,7 +66,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "nasratulnayem"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -74,12 +74,12 @@ author:
   steam            : # Username
   telegram         : # URL
   tumblr           : # Username
-  twitter          : # Username for X / Twitter
+  twitter          : "codex_nayem"
   vine             : # Username
   weibo            : # Username
   wikipedia        : # Username
   xing             : # Username
-  youtube          : # Username
+  youtube           : "@nasratulnayem"
   zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
@@ -92,8 +92,8 @@ publication_category:
     title: 'Conference Papers'
 
 # Site Settings
-teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
-breadcrumbs              : false # true, false (default)
+teaser                   : "/images/nasratul-nayem.jpg" # professional headshot for rich results
+breadcrumbs              : true # true for rich breadcrumbs
 words_per_minute         : 160
 future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
@@ -130,7 +130,7 @@ atom_feed:
 
 
 # SEO Related
-google_site_verification :
+google_site_verification : "google7e8ac330e253a2a1"
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
@@ -138,13 +138,13 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : "codex_nayem"
 facebook:
-  username               :
-  app_id                 :
-  publisher              :
-og_image                 :  # Social media default site image
-og_description           :  # Social media default site image description
+  username               : "codex.nayem"
+  app_id                 : ""
+  publisher              : ""
+og_image                 : "/images/nasratul-nayem.jpg"
+og_description           : "Full-Stack Developer, WordPress & Shopify Expert, Automation Engineer — Nasratul Nayem from Bangladesh, building WooCommerce & AI workflows worldwide."
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -152,6 +152,10 @@ social:
   name                   : "Nasratul Nayem"
   links:
     - "https://github.com/nasratulnayem"
+    - "https://facebook.com/codex.nayem"
+    - "https://www.linkedin.com/in/nasratulnayem"
+    - "https://twitter.com/codex_nayem"
+    - "https://www.youtube.com/@nasratulnayem"
 
 
 # Analytics
@@ -309,6 +313,7 @@ timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 # Plugins
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
@@ -318,6 +323,7 @@ plugins:
 # Mimic GitHub Pages with --safe
 whitelist:
   - jekyll-feed
+  - jekyll-seo-tag
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
