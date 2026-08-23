@@ -109,47 +109,59 @@ freemius_pricings:
     const track=document.getElementById('htReviewsTrack');
     const viewport=document.getElementById('htReviewsViewport');
     if(!track||!viewport) return;
-    const originalCards=[...track.querySelectorAll('.ht-review-card:not(.is-clone)')];
+    const originals=[...track.children];
     const dotsWrap=document.getElementById('htReviewsDots');
-    let perView=3, index=0, timer=null, isDown=false, startX=0, curX=0, total=originalCards.length;
+    let perView=3, page=0, timer=null, isDown=false, startX=0, curX=0;
+    const total=originals.length;
     function getPerView(){if(window.innerWidth<=640) return 1;if(window.innerWidth<=1024) return 2;return 3;}
     function getPages(){return Math.ceil(total/perView);}
-    function rebuild(){
+    function build(){
       track.querySelectorAll('.is-clone').forEach(n=>n.remove());
       perView=getPerView();
-      for(let i=0;i<perView;i++){const c=originalCards[i].cloneNode(true);c.classList.add('is-clone');track.appendChild(c);}
-      for(let i=total-perView;i<total;i++){const c=originalCards[i].cloneNode(true);c.classList.add('is-clone');track.insertBefore(c,track.firstChild);}
+      for(let i=0;i<perView;i++){const c=originals[total-perView+i].cloneNode(true);c.classList.add('is-clone');track.insertBefore(c,track.firstChild);}
+      for(let i=0;i<perView;i++){const c=originals[i].cloneNode(true);c.classList.add('is-clone');track.appendChild(c);}
     }
-    function cardW(){const c=track.querySelector('.ht-review-card');if(!c) return 0;const gap=parseInt(getComputedStyle(track).gap)||16;return{w:c.getBoundingClientRect().width,g:gap};}
-    function renderDots(){
+    function getW(){const c=track.querySelector('.ht-review-card');if(!c)return 0;const gap=parseInt(getComputedStyle(track).gap)||16;return c.getBoundingClientRect().width+gap;}
+    function dots(){
       dotsWrap.innerHTML='';
-      for(let i=0;i<getPages();i++){const b=document.createElement('button');b.className='ht-carousel-dot'+(i===index?' is-active':'');b.setAttribute('aria-label','Go to slide '+(i+1));b.onclick=()=>{go(i);};dotsWrap.appendChild(b);}
+      const n=getPages();
+      for(let i=0;i<n;i++){const b=document.createElement('button');b.className='ht-carousel-dot'+(i===page?' is-active':'');b.setAttribute('aria-label','Slide '+(i+1));b.onclick=()=>{goTo(i);};dotsWrap.appendChild(b);}
     }
-    function go(i,animate){
-      if(animate===undefined) animate=true;
+    function goTo(p,anim){
+      if(anim===undefined) anim=true;
       perView=getPerView();
       const pages=getPages();
-      index=((i%pages)+pages)%pages;
-      const{w,g}=cardW();
-      const shift=perView+index*perView;
-      const offset=shift*w+(shift-1)*g;
-      track.style.transition=animate?'transform .55s cubic-bezier(.4,0,.2,1)':'none';
+      page=((p%pages)+pages)%pages;
+      const w=getW();
+      const offset=(perView+page*perView)*w;
+      track.style.transition=anim?'transform .5s cubic-bezier(.4,0,.2,1)':'none';
       track.style.transform='translateX(-'+offset+'px)';
-      [...dotsWrap.children].forEach((d,j)=>d.classList.toggle('is-active',j===index));
+      [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('is-active',i===page));
     }
-    function next(){go(index+1);}
+    function next(){goTo(page+1);}
+    function reset(){
+      perView=getPerView();
+      const w=getW();
+      const offset=(perView+page*perView)*w;
+      track.style.transition='none';
+      track.style.transform='translateX(-'+offset+'px)';
+      void track.offsetHeight;
+    }
+    track.addEventListener('transitionend',function(){
+      const pages=getPages();
+      if(page>=pages-1){page=0;reset();}
+    });
     function startAuto(){stopAuto();timer=setInterval(next,3000);}
     function stopAuto(){if(timer){clearInterval(timer);timer=null;}}
-    function init(){rebuild();renderDots();go(0,false);startAuto();}
+    function init(){build();dots();goTo(0,false);startAuto();}
     viewport.addEventListener('mouseenter',stopAuto);
     viewport.addEventListener('mouseleave',startAuto);
     viewport.addEventListener('touchstart',e=>{isDown=true;startX=e.touches[0].clientX;stopAuto();},{passive:true});
-    viewport.addEventListener('touchmove',e=>{if(!isDown) return;curX=e.touches[0].clientX-startX;},{passive:true});
-    viewport.addEventListener('touchend',()=>{if(!isDown) return;isDown=false;if(Math.abs(curX)>40){curX<0?next():go(index-1);}else go(index);curX=0;startAuto();});
+    viewport.addEventListener('touchmove',e=>{if(!isDown)return;curX=e.touches[0].clientX-startX;},{passive:true});
+    viewport.addEventListener('touchend',()=>{if(!isDown)return;isDown=false;if(Math.abs(curX)>40){curX<0?next():goTo(page-1);}else goTo(page);curX=0;startAuto();});
     viewport.addEventListener('mousedown',e=>{isDown=true;startX=e.clientX;stopAuto();});
-    window.addEventListener('mouseup',e=>{if(!isDown) return;isDown=false;const dx=e.clientX-startX;if(Math.abs(dx)>40){dx<0?next():go(index-1);}else go(index);startAuto();});
-    track.addEventListener('transitionend',()=>{go(index,false);});
-    let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(init,150);});
+    window.addEventListener('mouseup',e=>{if(!isDown)return;isDown=false;const dx=e.clientX-startX;if(Math.abs(dx)>40){dx<0?next():goTo(page-1);}else goTo(page);startAuto();});
+    let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(init,150);});
     init();
   })();
   </script>
