@@ -44,7 +44,6 @@ description: "Focused WordPress & WooCommerce software tools by Nasratul Nayem b
             <div class="ht-product-cta-group">
               <a class="ht-btn-secondary" href="{{ product.url | relative_url }}">See Full Workflow →</a>
               <a class="ht-btn-primary ht-btn--glow" href="{{ product.trial_url }}" target="_blank" rel="nofollow noopener noreferrer">Start 7-Day Trial ↗</a>
-              <a class="ht-btn-secondary" href="{{ product.checkout_url }}" target="_blank" rel="nofollow noopener noreferrer">Buy Pro License</a>
             </div>
           </div>
         </div>
