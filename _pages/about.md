@@ -393,4 +393,32 @@ keywords: "Nasratul Nayem, Full-Stack Developer Bangladesh, WordPress Expert, Wo
   </div>
 </section>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "url": "https://nasratulnayem.github.io/",
+      "name": "Nasratul Nayem",
+      "description": "Nasratul Nayem — Full-Stack Developer, WordPress & Shopify Expert, Automation Engineer",
+      "publisher": {"@type": "Person", "name": "Nasratul Nayem", "url": "https://nasratulnayem.github.io/"},
+      "potentialAction": {"@type": "SearchAction", "target": "https://nasratulnayem.github.io/search/?q={search_term_string}", "query-input": "required name=search_term_string"},
+      "hasPart": [
+        {"@type": "SiteNavigationElement", "name": "Tools", "url": "https://nasratulnayem.github.io/tools/"},
+        {"@type": "SiteNavigationElement", "name": "Alibaba to WooCommerce Product Import", "url": "https://nasratulnayem.github.io/tools/importon-bridge/"},
+        {"@type": "SiteNavigationElement", "name": "Portfolio", "url": "https://nasratulnayem.github.io/portfolio/"},
+        {"@type": "SiteNavigationElement", "name": "Services", "url": "https://nasratulnayem.github.io/services/"},
+        {"@type": "SiteNavigationElement", "name": "Contact", "url": "https://nasratulnayem.github.io/contact/"}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://nasratulnayem.github.io/"}
+      ]
+    }
+  ]
+}
+</script>
 
