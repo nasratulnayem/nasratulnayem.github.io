@@ -181,7 +181,7 @@ keywords: "Nasratul Nayem, Full-Stack Developer Bangladesh, WordPress Expert, Wo
           <span aria-hidden="true">→</span>
         </a>
         <a class="ht-btn-secondary" href="https://checkout.freemius.com/plugin/28475/plan/46909/?trial=paid" target="_blank" rel="nofollow noopener noreferrer">
-          <span>Start Free Trial</span>
+          <span>Start 7-Day Free Trial</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>
