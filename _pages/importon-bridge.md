@@ -106,62 +106,54 @@ freemius_pricings:
   <div class="ht-carousel-nav" id="htReviewsDots" aria-label="Review pagination"></div>
   <script>
   (function(){
-    const track=document.getElementById('htReviewsTrack');
-    const viewport=document.getElementById('htReviewsViewport');
-    if(!track||!viewport) return;
-    const originals=[...track.children];
-    const dotsWrap=document.getElementById('htReviewsDots');
-    let perView=3, page=0, timer=null, isDown=false, startX=0, curX=0;
-    const total=originals.length;
-    function getPerView(){if(window.innerWidth<=640) return 1;if(window.innerWidth<=1024) return 2;return 3;}
-    function getPages(){return Math.ceil(total/perView);}
+    var track=document.getElementById('htReviewsTrack');
+    var viewport=document.getElementById('htReviewsViewport');
+    if(!track||!viewport)return;
+    var originals=[].slice.call(track.children);
+    var dotsWrap=document.getElementById('htReviewsDots');
+    var perView=3,idx=0,timer=null,isDown=false,startX=0,curX=0,total=originals.length;
+    function pv(){return window.innerWidth<=640?1:window.innerWidth<=1024?2:3;}
+    function slideW(){var c=track.querySelector('.ht-review-card');if(!c)return 0;return c.getBoundingClientRect().width+(parseInt(getComputedStyle(track).gap)||16);}
     function build(){
-      track.querySelectorAll('.is-clone').forEach(n=>n.remove());
-      perView=getPerView();
-      for(let i=0;i<perView;i++){const c=originals[total-perView+i].cloneNode(true);c.classList.add('is-clone');track.insertBefore(c,track.firstChild);}
-      for(let i=0;i<perView;i++){const c=originals[i].cloneNode(true);c.classList.add('is-clone');track.appendChild(c);}
+      track.querySelectorAll('.is-clone').forEach(function(n){n.remove();});
+      perView=pv();
+      for(var i=0;i<perView;i++){var c=originals[total-perView+i].cloneNode(true);c.classList.add('is-clone');track.insertBefore(c,track.firstChild);}
+      for(var i=0;i<perView;i++){var c=originals[i].cloneNode(true);c.classList.add('is-clone');track.appendChild(c);}
     }
-    function getW(){const c=track.querySelector('.ht-review-card');if(!c)return 0;const gap=parseInt(getComputedStyle(track).gap)||16;return c.getBoundingClientRect().width+gap;}
     function dots(){
       dotsWrap.innerHTML='';
-      const n=getPages();
-      for(let i=0;i<n;i++){const b=document.createElement('button');b.className='ht-carousel-dot'+(i===page?' is-active':'');b.setAttribute('aria-label','Slide '+(i+1));b.onclick=()=>{goTo(i);};dotsWrap.appendChild(b);}
+      for(var i=0;i<total;i++){var b=document.createElement('button');b.className='ht-carousel-dot'+(i===idx%total?' is-active':'');b.setAttribute('aria-label','Slide '+(i+1));b.onclick=(function(j){return function(){goTo(j);};})(i);dotsWrap.appendChild(b);}
     }
-    function goTo(p,anim){
-      if(anim===undefined) anim=true;
-      perView=getPerView();
-      const pages=getPages();
-      page=((p%pages)+pages)%pages;
-      const w=getW();
-      const offset=(perView+page*perView)*w;
-      track.style.transition=anim?'transform .5s cubic-bezier(.4,0,.2,1)':'none';
-      track.style.transform='translateX(-'+offset+'px)';
-      [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('is-active',i===page));
+    function goTo(i,anim){
+      perView=pv();
+      idx=((i%total)+total)%total;
+      var off=(perView+idx)*slideW();
+      track.style.transition=anim===false?'none':'transform .5s cubic-bezier(.4,0,.2,1)';
+      track.style.transform='translateX(-'+off+'px)';
+      var dots=dotsWrap.children;for(var j=0;j<dots.length;j++)dots[j].classList.toggle('is-active',j===idx%total);
     }
-    function next(){goTo(page+1);}
-    function reset(){
-      perView=getPerView();
-      const w=getW();
-      const offset=(perView+page*perView)*w;
+    function hardReset(){
+      perView=pv();
+      var off=(perView+idx)*slideW();
       track.style.transition='none';
-      track.style.transform='translateX(-'+offset+'px)';
+      track.style.transform='translateX(-'+off+'px)';
       void track.offsetHeight;
     }
+    function next(){goTo(idx+1);}
     track.addEventListener('transitionend',function(){
-      const pages=getPages();
-      if(page>=pages-1){page=0;reset();}
+      if(idx>=total-1){idx=0;hardReset();}
     });
     function startAuto(){stopAuto();timer=setInterval(next,3000);}
     function stopAuto(){if(timer){clearInterval(timer);timer=null;}}
     function init(){build();dots();goTo(0,false);startAuto();}
     viewport.addEventListener('mouseenter',stopAuto);
     viewport.addEventListener('mouseleave',startAuto);
-    viewport.addEventListener('touchstart',e=>{isDown=true;startX=e.touches[0].clientX;stopAuto();},{passive:true});
-    viewport.addEventListener('touchmove',e=>{if(!isDown)return;curX=e.touches[0].clientX-startX;},{passive:true});
-    viewport.addEventListener('touchend',()=>{if(!isDown)return;isDown=false;if(Math.abs(curX)>40){curX<0?next():goTo(page-1);}else goTo(page);curX=0;startAuto();});
-    viewport.addEventListener('mousedown',e=>{isDown=true;startX=e.clientX;stopAuto();});
-    window.addEventListener('mouseup',e=>{if(!isDown)return;isDown=false;const dx=e.clientX-startX;if(Math.abs(dx)>40){dx<0?next():goTo(page-1);}else goTo(page);startAuto();});
-    let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(init,150);});
+    viewport.addEventListener('touchstart',function(e){isDown=true;startX=e.touches[0].clientX;stopAuto();},{passive:true});
+    viewport.addEventListener('touchmove',function(e){if(!isDown)return;curX=e.touches[0].clientX-startX;},{passive:true});
+    viewport.addEventListener('touchend',function(){if(!isDown)return;isDown=false;if(Math.abs(curX)>40){curX<0?next():goTo(idx-1);}else goTo(idx);startAuto();});
+    viewport.addEventListener('mousedown',function(e){isDown=true;startX=e.clientX;stopAuto();});
+    window.addEventListener('mouseup',function(e){if(!isDown)return;isDown=false;var dx=e.clientX-startX;if(Math.abs(dx)>40){dx<0?next():goTo(idx-1);}else goTo(idx);startAuto();});
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(init,150);});
     init();
   })();
   </script>
