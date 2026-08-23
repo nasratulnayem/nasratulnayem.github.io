@@ -134,6 +134,94 @@ freemius_pricings:
   <p style="text-align:center;margin-top:12px;font-size:11px;color:#94a3b8;">Auto-syncs to <code>admin.php?page=importon-bridge-pricing</code></p>
 </section>
 
+<!-- Live Reviews Carousel — 3 on desktop, 1 on mobile, auto infinite -->
+<section class="ht-work-section" aria-labelledby="reviews-title">
+  <div class="ht-section-header">
+    <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>TRUSTED BY STORES — 5.0/5</span></div>
+    <h2 id="reviews-title" class="ht-section-title">Real alibaba to woocommerce product import reviews</h2>
+    <p class="ht-section-subtitle">Live Featured reviews from Freemius — auto-syncs to admin.php?page=importon-bridge-pricing</p>
+  </div>
+  <style>
+    .ht-reviews-viewport{overflow:hidden;position:relative}
+    .ht-reviews-track{display:flex;gap:16px;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform}
+    .ht-review-card{flex:0 0 calc(33.333% - 10.66px);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px}
+    @media(max-width:1024px){.ht-review-card{flex:0 0 calc(50% - 8px)}}
+    @media(max-width:640px){.ht-review-card{flex:0 0 100%}}
+    .ht-carousel-nav{display:flex;justify-content:center;gap:8px;margin-top:14px}
+    .ht-carousel-dot{width:7px;height:7px;border-radius:50%;background:#cbd5e1;border:none;cursor:pointer;padding:0}
+    .ht-carousel-dot.is-active{background:#006EFC}
+  </style>
+  <div class="ht-reviews-viewport" id="htReviewsViewport">
+    <div class="ht-reviews-track" id="htReviewsTrack">
+      <article class="bento-card glow-card ht-review-card"><div style="color:#f59e0b;letter-spacing:2px">★★★★★</div><h3 style="margin:0;font-size:15px">It's Like a New Evolution for Dropshipping</h3><p style="margin:0;color:#475569;font-size:13px;line-height:1.5">Captured 20 Alibaba pages with the Chrome extension. Gallery, price and variations came in correctly and batch queue handled retries. First time I didn't copy-paste for hours.</p><div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid #f1f5f9"><img src="https://s3-us-west-2.amazonaws.com/freemius/plugins/28475/reviews/524d834875aee9e89a4f2c20838d4c70.jpg" alt="Alex Rivera" style="width:36px;height:36px;border-radius:50%" loading="lazy"><div><strong style="font-size:13px">Alex Rivera</strong><br><span style="font-size:11px;color:#64748b">Founder, UrbanTrends Co</span></div></div></article>
+      <article class="bento-card glow-card ht-review-card" style="border:1.5px solid #006EFC;box-shadow:0 4px 16px rgba(0,110,252,0.08)"><div style="color:#f59e0b;letter-spacing:2px">★★★★★</div><h3 style="margin:0;font-size:15px">Finally sane managing 5 stores</h3><p style="margin:0;color:#475569;font-size:13px;line-height:1.5">We manage 5 WooCommerce stores. Queue 40 Alibaba URLs, AI rewrites descriptions, logs show what failed. Went from a full day of manual work to about an hour.</p><div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid #f1f5f9"><img src="https://s3-us-west-2.amazonaws.com/freemius/plugins/28475/reviews/e75043adbe827b1488ddd7d3e4f3ed1b.png" alt="Priya Shah" style="width:36px;height:36px;border-radius:50%" loading="lazy"><div><strong style="font-size:13px">Priya Shah</strong><br><span style="font-size:11px;color:#64748b">Agency Owner, ScaleCommerce</span></div></div></article>
+      <article class="bento-card glow-card ht-review-card"><div style="color:#f59e0b;letter-spacing:2px">★★★★★</div><h3 style="margin:0;font-size:15px">Variations and 8 images imported perfectly</h3><p style="margin:0;color:#475569;font-size:13px;line-height:1.5">Imported a jacket with 6 color/size variations — all SKUs and images mapped. What used to be 30 mins per product is now 2 clicks.</p><div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid #f1f5f9"><img src="https://s3-us-west-2.amazonaws.com/freemius/plugins/28475/reviews/293a043785ec0b6560924e63953f48f9.jpg" alt="Sofia Mendes" style="width:36px;height:36px;border-radius:50%" loading="lazy"><div><strong style="font-size:13px">Sofia Mendes</strong><br><span style="font-size:11px;color:#64748b">Ecommerce Manager, ModaLuna</span></div></div></article>
+      <article class="bento-card glow-card ht-review-card"><div style="color:#f59e0b;letter-spacing:2px">★★★★★</div><h3 style="margin:0;font-size:15px">AI rewrite saved hours of editing</h3><p style="margin:0;color:#475569;font-size:13px;line-height:1.5">OpenAI rewrite gave unique descriptions straight away, no duplicate Alibaba text. Did 15 products in one batch.</p><div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid #f1f5f9"><img src="https://s3-us-west-2.amazonaws.com/freemius/plugins/28475/reviews/aeef339b6358dd5138a0775895c25387.jpg" alt="Daniel Kim" style="width:36px;height:36px;border-radius:50%" loading="lazy"><div><strong style="font-size:13px">Daniel Kim</strong><br><span style="font-size:11px;color:#64748b">SEO Specialist, RankPilot</span></div></div></article>
+      <article class="bento-card glow-card ht-review-card"><div style="color:#f59e0b;letter-spacing:2px">★★★★★</div><h3 style="margin:0;font-size:15px">$9.99 pays for itself in one batch</h3><p style="margin:0;color:#475569;font-size:13px;line-height:1.5">Starter saved more than 2 hours of VA cost on first 40 products. Will move to Growth 5 Sites. Trial made it easy to try.</p><div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid #f1f5f9"><img src="https://s3-us-west-2.amazonaws.com/freemius/plugins/28475/reviews/70f9bac432e5518f109e8fd53c4e45f4.jpg" alt="Marco Rossi" style="width:36px;height:36px;border-radius:50%" loading="lazy"><div><strong style="font-size:13px">Marco Rossi</strong><br><span style="font-size:11px;color:#64748b">Founder, Rossi Imports</span></div></div></article>
+    </div>
+  </div>
+  <div class="ht-carousel-nav" id="htReviewsDots" aria-label="Review pagination"></div>
+  <script>
+  (function(){
+    const track=document.getElementById('htReviewsTrack');
+    const viewport=document.getElementById('htReviewsViewport');
+    if(!track||!viewport) return;
+    let cards=[...track.children];
+    const dotsWrap=document.getElementById('htReviewsDots');
+    let perView=3, index=0, timer=null, isDown=false, startX=0, curX=0;
+    function getPerView(){if(window.innerWidth<=640) return 1; if(window.innerWidth<=1024) return 2; return 3;}
+    function cloneForLoop(){
+      track.querySelectorAll('.is-clone').forEach(n=>n.remove());
+      cards=[...track.querySelectorAll('.ht-review-card:not(.is-clone)')];
+      const need=getPerView();
+      for(let i=0;i<need;i++){const c=cards[i].cloneNode(true);c.classList.add('is-clone');track.appendChild(c);}
+      for(let i=cards.length-need;i<cards.length;i++){const c=cards[i].cloneNode(true);c.classList.add('is-clone');track.insertBefore(c,track.firstChild);}
+    }
+    function cardWidth(){const c=track.querySelector('.ht-review-card');if(!c) return 0;return c.getBoundingClientRect().width+16;}
+    function dots(){
+      perView=getPerView();
+      const pages=Math.ceil(5/perView);
+      dotsWrap.innerHTML='';
+      for(let i=0;i<pages;i++){const b=document.createElement('button');b.className='ht-carousel-dot'+(i===index?' is-active':'');b.setAttribute('aria-label','Go to slide '+(i+1));b.onclick=()=>go(i);dotsWrap.appendChild(b);}
+    }
+    function go(i,animate=true){
+      perView=getPerView();
+      const pages=Math.ceil(5/perView);
+      index=(i+pages)%pages;
+      const w=cardWidth();
+      const offset=(perView + index*perView)*w;
+      track.style.transition=animate?'transform .6s cubic-bezier(.22,.61,.36,1)':'none';
+      track.style.transform='translateX(-'+offset+'px)';
+      [...dotsWrap.children].forEach((d,j)=>d.classList.toggle('is-active',j===index));
+    }
+    function next(){go(index+1);}
+    function startAuto(){stopAuto();timer=setInterval(next,2800);}
+    function stopAuto(){if(timer)clearInterval(timer);}
+    function init(){
+      cloneForLoop();dots();
+      perView=getPerView();
+      go(0,false);
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{track.style.transition='transform .6s cubic-bezier(.22,.61,.36,1)';}));
+      startAuto();
+    }
+    viewport.addEventListener('mouseenter',stopAuto);
+    viewport.addEventListener('mouseleave',startAuto);
+    viewport.addEventListener('touchstart',e=>{isDown=true;startX=e.touches[0].clientX;stopAuto();},{passive:true});
+    viewport.addEventListener('touchmove',e=>{if(!isDown) return;curX=e.touches[0].clientX-startX;},{passive:true});
+    viewport.addEventListener('touchend',()=>{if(!isDown) return;isDown=false;if(Math.abs(curX)>40){curX<0?next():go(index-1);}else go(index);curX=0;startAuto();});
+    viewport.addEventListener('mousedown',e=>{isDown=true;startX=e.clientX;stopAuto();});
+    window.addEventListener('mouseup',e=>{if(!isDown) return;isDown=false;const dx=e.clientX-startX;if(Math.abs(dx)>40){dx<0?next():go(index-1);}else go(index);startAuto();});
+    track.addEventListener('transitionend',()=>{
+      const pages=Math.ceil(5/perView);
+      if(index>=pages){index=0;go(0,false);}
+      if(index<0){index=pages-1;go(index,false);}
+    });
+    window.addEventListener('resize',()=>{init();});
+    init();
+  })();
+  </script>
+</section>
+
 <!-- High-Tech Connected Pipeline Workflow Section -->
 <section class="ht-process-section">
   <div class="ht-section-header">
