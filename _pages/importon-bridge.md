@@ -316,27 +316,6 @@ freemius_pricings:
   </div>
 </section>
 
-<!-- SEO: Alibaba to WooCommerce Product Import - Value Prop -->
-<section class="ht-work-section">
-  <!-- Alibaba → WooCommerce High‑Tech Section -->
-<div class="ht-alibaba-section">
-  <article class="bento-card glow-card">
-    <div class="bento-card__badge-row">
-      <div class="bento-card__icon-box"><i class="fas fa-shopping-bag" aria-hidden="true"></i></div>
-      <span class="ht-badge ht-badge--cyan">ALIBABA → WOOCOMMERCE</span>
-    </div>
-    <h2 class="bento-card__title">The fastest Alibaba‑to‑WooCommerce product import for dropshippers</h2>
-    <p class="bento-card__desc">Capture any Alibaba product page in Chrome and publish to WooCommerce as a complete product with gallery, attributes, variations, video and AI‑generated description in seconds.</p>
-    <ul class="bento-card__list">
-      <li><strong>1‑Click Import</strong> – Open supplier page → Click Capture → Instant product creation.</li>
-      <li><strong>Batch + AI</strong> – Queue unlimited URLs, auto‑rewrite descriptions with OpenAI/Gemini.</li>
-      <li><strong>Scale‑Ready</strong> – Media sideloading, variation mapping, video import, detailed logs, 14‑day refund.</li>
-    </ul>
-  </article>
-</div>
-<!-- End Alibaba → WooCommerce Section -->
-</section>
-
 <!-- SEO FAQ - Alibaba to WooCommerce Product Import -->
 <section class="ht-work-section">
   <div class="ht-section-header">
