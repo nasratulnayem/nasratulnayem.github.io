@@ -4,7 +4,7 @@ products:
     short_name: Importon Bridge
     status: Available now
     category: WooCommerce product workflow
-    url: /plugins/importon-bridge/
+    url: /tools/importon-bridge/
     image: /images/work/importon-bridge-by-nasratul-nayem.webp
     summary: Import product details from supported browser pages into WooCommerce without copying every field by hand.
     price: "$49"

@@ -1,7 +1,7 @@
 ---
 layout: plugin
 title: "Software & Plugins Hub"
-permalink: /plugins/
+permalink: /tools/
 description: "Focused WordPress & WooCommerce software tools by Nasratul Nayem built to eliminate manual work."
 ---
 

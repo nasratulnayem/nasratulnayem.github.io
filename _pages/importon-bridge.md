@@ -2,7 +2,7 @@
 layout: plugin
 title: "Importon Bridge — Alibaba to WooCommerce Product Importer"
 description: "Alibaba to WooCommerce product importer with AI rewrites. Move supplier products, galleries, attributes, and variations into your store automatically."
-permalink: /plugins/importon-bridge/
+permalink: /tools/importon-bridge/
 author_profile: false
 product_name: "Importon Bridge"
 product_price: "49"
