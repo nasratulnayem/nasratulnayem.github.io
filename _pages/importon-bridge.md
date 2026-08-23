@@ -81,6 +81,7 @@ freemius_pricings:
     .ht-reviews-track{display:flex;gap:16px;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform}
     .ht-review-card{flex:0 0 calc((100% - 32px) / 3);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:12px;border:1.5px solid #006EFC;box-shadow:none !important;backdrop-filter:none;-webkit-backdrop-filter:none}
     .ht-review-card p{margin:0;color:#334155;font-size:14px;line-height:1.65}
+    html[data-theme="dark"] .ht-review-card p{color:#cbd5e1}
     .ht-review-card::before,.ht-review-card::after{display:none !important}
     .ht-review-card:hover{box-shadow:none !important;transform:none !important}
     .ht-review-author{margin-top:auto;padding-top:10px;border-top:1px solid #f1f5f9;display:flex;align-items:center;gap:8px}
