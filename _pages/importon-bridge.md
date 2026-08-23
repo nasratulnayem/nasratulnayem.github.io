@@ -1,8 +1,9 @@
 ---
 layout: plugin
-title: "Importon Bridge — Alibaba to WooCommerce Product Importer"
-description: "Alibaba to WooCommerce product importer with AI rewrites. Move supplier products, galleries, attributes, and variations into your store automatically."
+title: "Alibaba to WooCommerce Product Importer — Importon Bridge | 1-Click Alibaba Import"
+description: "Alibaba to WooCommerce Product Importer for WordPress. Importon Bridge imports Alibaba products to WooCommerce in 1-click with Chrome extension, AI rewrites, galleries, variations & batch URL queue. 7-day free trial."
 permalink: /tools/importon-bridge/
+keywords: "Alibaba to WooCommerce Product Importer, Alibaba WooCommerce import, Alibaba product importer WooCommerce, import Alibaba to WooCommerce"
 author_profile: false
 product_name: "Importon Bridge"
 product_price: "79"
@@ -33,7 +34,7 @@ freemius_pricings:
     <span>MADE FOR DROPSHIPPERS</span>
   </div>
   <h1 class="ht-page-hero__title">Alibaba to WooCommerce Product Importer</h1>
-  <p class="ht-page-hero__desc">Move supplier product details, high-res galleries, attributes, and variations into your store without copying every field by hand. <strong>7-day free trial</strong> — card required, auto-charges after trial, cancel anytime.</p>
+  <p class="ht-page-hero__desc"><strong>Importon Bridge</strong> is the fastest <strong>Alibaba to WooCommerce Product Importer</strong> for WordPress. Move supplier product details, high-res galleries, attributes, and variations into WooCommerce without copying every field by hand. <strong>7-day free trial</strong> — card required, auto-charges after trial, cancel anytime.</p>
 </div>
 
 <!-- Flagship Showcase Bento Card -->
@@ -41,7 +42,7 @@ freemius_pricings:
   <article class="bento-card bento-card--featured glow-card ht-product-showcase">
     <div class="ht-product-showcase__grid">
       <div class="ht-product-showcase__visual">
-        <img src="{{ page.product_image | relative_url }}" alt="{{ page.product_name }} workflow" loading="lazy">
+        <img src="{{ page.product_image | relative_url }}" alt="Alibaba to WooCommerce Product Importer - Importon Bridge workflow" loading="lazy">
       </div>
       <div class="ht-product-showcase__info">
         <div class="bento-card__badge-row">
@@ -169,6 +170,41 @@ freemius_pricings:
     </div>
   </div>
 </section>
+
+<!-- SEO FAQ - Alibaba to WooCommerce Product Importer -->
+<section class="ht-work-section">
+  <div class="ht-section-header">
+    <div class="ht-eyebrow">
+      <span class="ht-eyebrow-dot"></span>
+      <span>ALIBABA TO WOOCOMMERCE FAQ</span>
+    </div>
+    <h2 class="ht-section-title">Alibaba to WooCommerce Product Importer — FAQ</h2>
+  </div>
+  <div class="ht-faq-grid" style="display:grid;gap:16px;">
+    <details class="glow-card" style="padding:16px;border-radius:12px;"><summary style="font-weight:600;cursor:pointer;">What is Alibaba to WooCommerce Product Importer?</summary><p style="margin:8px 0 0;color:#475569;">Importon Bridge is a Chrome extension + WordPress plugin that imports any Alibaba product page to WooCommerce in 1-click — titles, prices, galleries, attributes, variations, videos and AI-rewritten descriptions.</p></details>
+    <details class="glow-card" style="padding:16px;border-radius:12px;"><summary style="font-weight:600;cursor:pointer;">How does import from Alibaba to WooCommerce work?</summary><p style="margin:8px 0 0;color:#475569;">Install plugin + extension → Connect store via REST token → Open Alibaba product → Click Capture → Review in Import Queue → Publish to WooCommerce as draft.</p></details>
+    <details class="glow-card" style="padding:16px;border-radius:12px;"><summary style="font-weight:600;cursor:pointer;">Does it support batch URL import and AI rewriting?</summary><p style="margin:8px 0 0;color:#475569;">Yes — Batch URL Import queues unlimited Alibaba URLs with retry/logs, and OpenAI/Gemini rewrites descriptions automatically.</p></details>
+    <details class="glow-card" style="padding:16px;border-radius:12px;"><summary style="font-weight:600;cursor:pointer;">How much does Alibaba to WooCommerce import cost?</summary><p style="margin:8px 0 0;color:#475569;">Starter 1 Site $9.99/mo ($79/yr), Growth 5 Sites $19.99/mo ($149/yr), Scale Unlimited $39.99/mo ($299/yr) — 7-day free trial, 14-day refund.</p></details>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Importon Bridge — Alibaba to WooCommerce Product Importer",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "WordPress",
+  "description": "Alibaba to WooCommerce Product Importer for WordPress. 1-click import Alibaba products to WooCommerce with Chrome extension, AI rewrites, galleries, variations and batch queue.",
+  "url": "https://nasratulnayem.github.io/tools/importon-bridge/",
+  "offers": [
+    {"@type": "Offer", "name": "Starter — 1 Site", "price": "79", "priceCurrency": "USD"},
+    {"@type": "Offer", "name": "Growth — 5 Sites", "price": "149", "priceCurrency": "USD"},
+    {"@type": "Offer", "name": "Scale — Unlimited", "price": "299", "priceCurrency": "USD"}
+  ],
+  "provider": {"@type": "Person", "name": "Nasratul Nayem", "url": "https://nasratulnayem.github.io/"}
+}
+</script>
 
 <!-- Related Build Notes / Case Studies -->
 <section class="ht-work-section">
