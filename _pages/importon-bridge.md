@@ -34,7 +34,7 @@ freemius_pricings:
     <span>MADE FOR DROPSHIPPERS</span>
   </div>
   <h1 class="ht-page-hero__title">Alibaba to WooCommerce Product Import</h1>
-  <p class="ht-page-hero__desc"><strong>Alibaba to WooCommerce product import</strong> in 1-click. <strong>Importon Bridge</strong> is the fastest <strong>Alibaba to WooCommerce Product Importer</strong> for WordPress — move supplier product details, high-res galleries, attributes and variations into WooCommerce without copying every field by hand. <strong>7-day free trial</strong> — card required, auto-charges after trial, cancel anytime.</p>
+  <p class="ht-page-hero__desc"><strong>Importon Bridge</strong> does 1-click <strong>Alibaba to WooCommerce</strong> product import for WordPress — move supplier details, galleries, attributes and variations into WooCommerce without copying by hand. <strong>7-day free trial</strong> — card required, auto-charges after trial, cancel anytime.</p>
 </div>
 
 <!-- Flagship Showcase Bento Card -->
