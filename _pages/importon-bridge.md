@@ -84,10 +84,10 @@ freemius_pricings:
     <h2 id="reviews-title" class="ht-section-title">Real alibaba to woocommerce product import reviews</h2>
   </div>
   <style>
-    .ht-reviews-viewport{overflow:hidden;position:relative}
-    .ht-reviews-track{display:flex;gap:16px;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform;padding:14px 24px}
-    .ht-review-card{flex:0 0 calc((100% - 32px) / 3);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px;overflow:hidden;border-radius:12px}
-    @media(max-width:1024px){.ht-review-card{flex:0 0 calc((100% - 16px) / 2)}}
+    .ht-reviews-viewport{position:relative;margin:0 -24px;padding:0 24px;overflow:hidden}
+    .ht-reviews-track{display:flex;gap:12px;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform;padding:14px 0}
+    .ht-review-card{flex:0 0 calc((100% - 24px) / 3);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:12px}
+    @media(max-width:1024px){.ht-review-card{flex:0 0 calc((100% - 12px) / 2)}}
     @media(max-width:640px){.ht-review-card{flex:0 0 100%}}
     .ht-carousel-nav{display:flex;justify-content:center;gap:8px;margin-top:14px}
     .ht-carousel-dot{width:7px;height:7px;border-radius:50%;background:#cbd5e1;border:none;cursor:pointer;padding:0}
