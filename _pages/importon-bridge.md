@@ -80,9 +80,8 @@ freemius_pricings:
 <!-- Live Reviews Carousel — 3 on desktop, 1 on mobile, auto infinite -->
 <section class="ht-work-section" aria-labelledby="reviews-title">
   <div class="ht-section-header">
-    <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>TRUSTED BY STORES — 5.0/5</span></div>
+    <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>TRUSTED BY STORES</span></div>
     <h2 id="reviews-title" class="ht-section-title">Real alibaba to woocommerce product import reviews</h2>
-    <p class="ht-section-subtitle" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span style="display:inline-flex;align-items:center;gap:6px;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;padding:4px 10px;border-radius:9999px;font-size:11px;font-weight:600;"><i class="fas fa-shield-alt" aria-hidden="true"></i> Verified by Freemius</span><span style="color:#475569;">• 5.0/5 average from 5 Featured reviews</span></p>
   </div>
   <style>
     .ht-reviews-viewport{overflow:hidden;position:relative;padding:14px 24px;margin:-14px -24px}
