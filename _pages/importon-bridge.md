@@ -82,12 +82,12 @@ freemius_pricings:
   <div class="ht-section-header">
     <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>TRUSTED BY STORES — 5.0/5</span></div>
     <h2 id="reviews-title" class="ht-section-title">Real alibaba to woocommerce product import reviews</h2>
-    <p class="ht-section-subtitle">Live Featured reviews from Freemius — auto-syncs to admin.php?page=importon-bridge-pricing</p>
+    <p class="ht-section-subtitle" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span style="display:inline-flex;align-items:center;gap:6px;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;padding:4px 10px;border-radius:9999px;font-size:11px;font-weight:600;"><i class="fas fa-shield-alt" aria-hidden="true"></i> Verified by Freemius</span><span style="color:#475569;">• 5.0/5 average from 5 Featured reviews</span></p>
   </div>
   <style>
     .ht-reviews-viewport{overflow:hidden;position:relative;padding:14px 6px;margin:-14px -6px}
-    .ht-reviews-track{display:flex;gap:16px;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform;padding:2px}
-    .ht-review-card{flex:0 0 calc(33.333% - 10.66px);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px;overflow:visible}
+    .ht-reviews-track{display:flex;gap:16px;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform;padding:2px}
+    .ht-review-card{flex:0 0 calc(33.333% - 10.66px);min-width:0;display:flex;flex-direction:column;gap:10px;padding:18px;overflow:hidden;border-radius:12px}
     @media(max-width:1024px){.ht-review-card{flex:0 0 calc(50% - 8px)}}
     @media(max-width:640px){.ht-review-card{flex:0 0 100%}}
     .ht-carousel-nav{display:flex;justify-content:center;gap:8px;margin-top:14px}
@@ -103,51 +103,44 @@ freemius_pricings:
       <article class="bento-card glow-card ht-review-card"><div style="color:#f59e0b;letter-spacing:2px">★★★★★</div><h3 style="margin:0;font-size:15px">$9.99 pays for itself in one batch</h3><p style="margin:0;color:#475569;font-size:13px;line-height:1.5">Starter saved more than 2 hours of VA cost on first 40 products. Will move to Growth 5 Sites. Trial made it easy to try.</p><div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid #f1f5f9"><img src="https://s3-us-west-2.amazonaws.com/freemius/plugins/28475/reviews/70f9bac432e5518f109e8fd53c4e45f4.jpg" alt="Marco Rossi" style="width:36px;height:36px;border-radius:50%" loading="lazy"><div><strong style="font-size:13px">Marco Rossi</strong><br><span style="font-size:11px;color:#64748b">Founder, Rossi Imports</span></div></div></article>
     </div>
   </div>
-  <p style="text-align:center;margin:10px 0 0;font-size:11px;color:#94a3b8;letter-spacing:0.02em;">Auto-syncs to <code style="background:rgba(148,163,184,0.12);padding:2px 6px;border-radius:4px;font-size:11px;">admin.php?page=importon-bridge-pricing</code></p>
+  <p style="text-align:center;margin:10px 0 0;font-size:11px;color:#64748b;display:flex;align-items:center;justify-content:center;gap:6px;"><i class="fas fa-check-circle" style="color:#16a34a" aria-hidden="true"></i> Verified by Freemius • Featured on pricing</p>
   <div class="ht-carousel-nav" id="htReviewsDots" aria-label="Review pagination"></div>
   <script>
   (function(){
     const track=document.getElementById('htReviewsTrack');
     const viewport=document.getElementById('htReviewsViewport');
     if(!track||!viewport) return;
-    let cards=[...track.children];
+    const originalCards=[...track.querySelectorAll('.ht-review-card:not(.is-clone)')];
     const dotsWrap=document.getElementById('htReviewsDots');
-    let perView=3, index=0, timer=null, isDown=false, startX=0, curX=0;
-    function getPerView(){if(window.innerWidth<=640) return 1; if(window.innerWidth<=1024) return 2; return 3;}
-    function cloneForLoop(){
+    let perView=3, index=0, timer=null, isDown=false, startX=0, curX=0, total=originalCards.length;
+    function getPerView(){if(window.innerWidth<=640) return 1;if(window.innerWidth<=1024) return 2;return 3;}
+    function getPages(){return Math.ceil(total/perView);}
+    function rebuild(){
       track.querySelectorAll('.is-clone').forEach(n=>n.remove());
-      cards=[...track.querySelectorAll('.ht-review-card:not(.is-clone)')];
-      const need=getPerView();
-      for(let i=0;i<need;i++){const c=cards[i].cloneNode(true);c.classList.add('is-clone');track.appendChild(c);}
-      for(let i=cards.length-need;i<cards.length;i++){const c=cards[i].cloneNode(true);c.classList.add('is-clone');track.insertBefore(c,track.firstChild);}
-    }
-    function cardWidth(){const c=track.querySelector('.ht-review-card');if(!c) return 0;return c.getBoundingClientRect().width+16;}
-    function dots(){
       perView=getPerView();
-      const pages=Math.ceil(5/perView);
+      for(let i=0;i<perView;i++){const c=originalCards[i].cloneNode(true);c.classList.add('is-clone');track.appendChild(c);}
+      for(let i=total-perView;i<total;i++){const c=originalCards[i].cloneNode(true);c.classList.add('is-clone');track.insertBefore(c,track.firstChild);}
+    }
+    function cardW(){const c=track.querySelector('.ht-review-card');return c?c.getBoundingClientRect().width+16:0;}
+    function renderDots(){
       dotsWrap.innerHTML='';
-      for(let i=0;i<pages;i++){const b=document.createElement('button');b.className='ht-carousel-dot'+(i===index?' is-active':'');b.setAttribute('aria-label','Go to slide '+(i+1));b.onclick=()=>go(i);dotsWrap.appendChild(b);}
+      for(let i=0;i<getPages();i++){const b=document.createElement('button');b.className='ht-carousel-dot'+(i===index?' is-active':'');b.setAttribute('aria-label','Go to slide '+(i+1));b.onclick=()=>{go(i);};dotsWrap.appendChild(b);}
     }
-    function go(i,animate=true){
+    function go(i,animate){
+      if(animate===undefined) animate=true;
       perView=getPerView();
-      const pages=Math.ceil(5/perView);
-      index=(i+pages)%pages;
-      const w=cardWidth();
-      const offset=(perView + index*perView)*w;
-      track.style.transition=animate?'transform .6s cubic-bezier(.22,.61,.36,1)':'none';
-      track.style.transform='translateX(-'+offset+'px)';
+      const pages=getPages();
+      index=((i%pages)+pages)%pages;
+      const w=cardW();
+      const shift=perView+index*perView;
+      track.style.transition=animate?'transform .55s cubic-bezier(.4,0,.2,1)':'none';
+      track.style.transform='translateX(-'+shift*w+'px)';
       [...dotsWrap.children].forEach((d,j)=>d.classList.toggle('is-active',j===index));
     }
     function next(){go(index+1);}
-    function startAuto(){stopAuto();timer=setInterval(next,2800);}
-    function stopAuto(){if(timer)clearInterval(timer);}
-    function init(){
-      cloneForLoop();dots();
-      perView=getPerView();
-      go(0,false);
-      requestAnimationFrame(()=>requestAnimationFrame(()=>{track.style.transition='transform .6s cubic-bezier(.22,.61,.36,1)';}));
-      startAuto();
-    }
+    function startAuto(){stopAuto();timer=setInterval(next,3000);}
+    function stopAuto(){if(timer){clearInterval(timer);timer=null;}}
+    function init(){rebuild();renderDots();go(0,false);startAuto();}
     viewport.addEventListener('mouseenter',stopAuto);
     viewport.addEventListener('mouseleave',startAuto);
     viewport.addEventListener('touchstart',e=>{isDown=true;startX=e.touches[0].clientX;stopAuto();},{passive:true});
@@ -155,12 +148,8 @@ freemius_pricings:
     viewport.addEventListener('touchend',()=>{if(!isDown) return;isDown=false;if(Math.abs(curX)>40){curX<0?next():go(index-1);}else go(index);curX=0;startAuto();});
     viewport.addEventListener('mousedown',e=>{isDown=true;startX=e.clientX;stopAuto();});
     window.addEventListener('mouseup',e=>{if(!isDown) return;isDown=false;const dx=e.clientX-startX;if(Math.abs(dx)>40){dx<0?next():go(index-1);}else go(index);startAuto();});
-    track.addEventListener('transitionend',()=>{
-      const pages=Math.ceil(5/perView);
-      if(index>=pages){index=0;go(0,false);}
-      if(index<0){index=pages-1;go(index,false);}
-    });
-    window.addEventListener('resize',()=>{init();});
+    track.addEventListener('transitionend',()=>{go(index,false);});
+    let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(init,150);});
     init();
   })();
   </script>
