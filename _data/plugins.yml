@@ -10,7 +10,7 @@ products:
     price: "$9.99"
     billing: / month
     annual_price: "$79 / year"
-    plan: Starter · 1 Site — 7-day free trial
+    plan: Pro
     checkout_url: "https://checkout.freemius.com/plugin/28475/plan/46909/"
     trial_url: "https://checkout.freemius.com/plugin/28475/plan/46909/?trial=paid"
     pricings:
