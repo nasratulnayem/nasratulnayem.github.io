@@ -59,7 +59,7 @@ freemius_pricings:
             <small style="display:block;color:#64748b;font-size:11px;">$9.99/mo · Growth $19.99/mo · Scale $39.99/mo — 7-day free trial</small>
           </div>
           <div class="ht-product-cta-group">
-            <a class="ht-btn-primary ht-btn--glow" href="{{ page.freemius_trial_url }}" target="_blank" rel="nofollow noopener noreferrer">Start 7-Day Trial ↗</a>
+            <a class="ht-btn-primary ht-btn--glow" href="#" onclick="openTrialPopup(event)">Start 7-Day Trial ↗</a>
             <a class="ht-btn-secondary" href="{{ page.freemius_checkout_url }}" target="_blank" rel="nofollow noopener noreferrer">Buy Pro License</a>
           </div>
         </div>
@@ -328,7 +328,60 @@ freemius_pricings:
 }
 </script>
 
-<!-- Related Build Notes / Case Studies -->
+<!-- Trial Popup Modal -->
+<div id="trialPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;backdrop-filter:blur(4px);">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#1e293b;border:1px solid #334155;border-radius:16px;padding:40px;max-width:480px;width:90%;box-shadow:0 25px 50px rgba(0,0,0,0.5);">
+    <button onclick="closeTrialPopup()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#64748b;font-size:24px;cursor:pointer;line-height:1;">&times;</button>
+    <div style="text-align:center;margin-bottom:24px;">
+      <div style="display:inline-block;background:rgba(0,110,252,0.15);color:#006EFC;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:12px;">7-DAY FREE TRIAL</div>
+      <h2 style="color:#f1f5f9;font-size:22px;font-weight:700;margin:0 0 8px;">Start Importing from Alibaba</h2>
+      <p style="color:#94a3b8;font-size:14px;margin:0;">Get instant access to Importon Bridge. No credit card required for trial.</p>
+    </div>
+    <form id="trialForm" onsubmit="return handleTrialSubmit(event)">
+      <input type="email" id="trialEmail" placeholder="your@email.com" required style="width:100%;padding:14px 18px;background:#0f172a;border:1px solid #334155;border-radius:8px;color:#f1f5f9;font-size:15px;margin-bottom:12px;box-sizing:border-box;">
+      <button type="submit" id="trialBtn" style="width:100%;padding:14px;background:#006EFC;color:white;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;">Send Trial Link to My Email</button>
+    </form>
+    <p id="trialSuccess" style="display:none;text-align:center;color:#22c55e;font-size:14px;margin-top:12px;">Check your email! Your trial link is on its way.</p>
+    <p style="text-align:center;color:#475569;font-size:12px;margin-top:16px;">No spam · Cancel anytime · Instant access</p>
+  </div>
+</div>
+
+<script>
+function openTrialPopup(e) {
+  e.preventDefault();
+  document.getElementById('trialPopup').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeTrialPopup() {
+  document.getElementById('trialPopup').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.getElementById('trialPopup').addEventListener('click', function(e) {
+  if (e.target === this) closeTrialPopup();
+});
+function handleTrialSubmit(e) {
+  e.preventDefault();
+  var btn = document.getElementById('trialBtn');
+  var email = document.getElementById('trialEmail').value;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch('https://script.google.com/macros/s/AKfycbz0n11kKYQP4iPkdn-HbpJf1domhdJklHEQ3H8POZEF0FnsQeYk71Uokzl2Agh2pAq7/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({email: email, source: 'trial_popup'})
+  }).then(function() {
+    document.getElementById('trialSuccess').style.display = 'block';
+    btn.textContent = '✓ Sent!';
+    setTimeout(function() { closeTrialPopup(); }, 2000);
+  }).catch(function() {
+    btn.textContent = 'Send Trial Link to My Email';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again.');
+  });
+  return false;
+}
+</script>
 <section class="ht-work-section">
   <div class="ht-section-header">
     <div class="ht-eyebrow">
