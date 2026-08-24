@@ -1,8 +1,8 @@
 ---
 layout: plugin
-title: "Software & Plugins Hub"
+title: "WordPress Plugins & Software Tools"
 permalink: /tools/
-description: "Focused WordPress & WooCommerce software tools by Nasratul Nayem built to eliminate manual work."
+description: "WordPress and WooCommerce tools I've built to solve specific workflow problems. Free trials available."
 ---
 
 <div class="ht-page-hero">

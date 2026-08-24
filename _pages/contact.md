@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Start a Project or Automation"
-description: "Contact Nasratul Nayem to start a website, ecommerce, or automation project. Direct email and WhatsApp, response within 24 hours."
+title: "Start a Project — Contact Nasratul Nayem"
+description: "Need a WordPress plugin, WooCommerce store, or automation system? Direct email and WhatsApp. I respond within 24 hours."
 permalink: /contact/
 author_profile: false
 ---

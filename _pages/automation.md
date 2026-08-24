@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Autonomous Python & AI Workflow Engineering"
-description: "Python and AI workflow automation by Nasratul Nayem — scrapers, bots, pipelines, and AI-assisted business processes that cut manual work."
+title: "Python & AI Automation Engineering"
+description: "I build Python scrapers, bots, and AI-assisted workflows that replace repetitive manual tasks. Real automation systems for real business problems."
 permalink: /automation/
 author_profile: false
 ---

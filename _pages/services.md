@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Web Engineering & Custom Development Services"
-description: "Custom web development services by Nasratul Nayem — fast websites, WooCommerce engineering, API integrations, and automation-first builds."
+title: "Web Development Services"
+description: "I build fast WordPress sites, WooCommerce stores, API integrations, and automation-first systems. Let's talk about your project."
 permalink: /services/
 author_profile: false
 ---

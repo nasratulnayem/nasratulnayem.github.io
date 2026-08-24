@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Engineering Portfolio & Build Notes"
-description: "Selected engineering portfolio and build notes by Nasratul Nayem — websites, ecommerce systems, and automation projects with real outcomes."
+title: "Engineering Portfolio — WordPress, Ecommerce & Automation"
+description: "Selected projects I've built — WordPress systems, WooCommerce stores, Python automation pipelines, and real outcomes for real clients."
 permalink: /portfolio/
 author_profile: false
 ---
