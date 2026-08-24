@@ -403,6 +403,13 @@ keywords: "Nasratul Nayem, Full-Stack Developer Bangladesh, WordPress Expert, Wo
       "name": "Nasratul Nayem",
       "description": "Nasratul Nayem — Full-Stack Developer, WordPress & Shopify Expert, Automation Engineer",
       "publisher": {"@type": "Person", "name": "Nasratul Nayem", "url": "https://nasratulnayem.github.io/"},
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Nasratul Nayem",
+        "url": "https://nasratulnayem.github.io/",
+        "jobTitle": "Web Developer & Automation Expert",
+        "knowsAbout": ["WordPress", "WooCommerce", "Shopify", "Alibaba", "Web Development", "Automation"]
+      },
       "potentialAction": {"@type": "SearchAction", "target": "https://nasratulnayem.github.io/search/?q={search_term_string}", "query-input": "required name=search_term_string"},
       "hasPart": [
         {"@type": "SiteNavigationElement", "name": "Tools", "url": "https://nasratulnayem.github.io/tools/"},
