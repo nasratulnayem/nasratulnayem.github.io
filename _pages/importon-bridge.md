@@ -329,20 +329,31 @@ freemius_pricings:
 </script>
 
 <!-- Trial Popup Modal -->
-<div id="trialPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:9999;backdrop-filter:blur(8px);">
-  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--ht-bg-surface,#1e293b);border:1px solid var(--ht-border,#334155);border-radius:var(--ht-radius-lg,16px);padding:40px;max-width:480px;width:90%;box-shadow:0 25px 60px rgba(0,0,0,0.5);">
-    <button onclick="closeTrialPopup()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--ht-text-muted,#64748b);font-size:24px;cursor:pointer;line-height:1;padding:0;">&times;</button>
-    <div style="text-align:center;margin-bottom:24px;">
-      <span class="ht-badge ht-badge--cyan">7-DAY FREE TRIAL</span>
-      <h2 style="color:var(--ht-text-primary,#f1f5f9);font-size:22px;font-weight:700;margin:12px 0 8px;">Start Importing from Alibaba</h2>
-      <p style="color:var(--ht-text-secondary,#94a3b8);font-size:14px;margin:0;">Enter your email to get your trial link instantly.</p>
-    </div>
-    <form id="trialForm" onsubmit="return handleTrialSubmit(event)">
-      <input type="email" id="trialEmail" placeholder="your@email.com" required style="width:100%;padding:14px 18px;background:var(--ht-bg-base,#0f172a);border:1px solid var(--ht-border,#334155);border-radius:var(--ht-radius-md,8px);color:var(--ht-text-primary,#f1f5f9);font-size:15px;margin-bottom:12px;box-sizing:border-box;font-family:inherit;">
-      <button type="submit" id="trialBtn" class="ht-btn-primary" style="width:100%;justify-content:center;">Send Trial Link to My Email</button>
-    </form>
-    <p id="trialSuccess" style="display:none;text-align:center;color:var(--ht-green,#22c55e);font-size:14px;margin-top:12px;">Check your inbox! Your trial link is on its way.</p>
-    <p style="text-align:center;color:var(--ht-text-muted,#475569);font-size:12px;margin-top:16px;">No spam · Cancel anytime</p>
+<style>
+  .trial-modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:9999;backdrop-filter:blur(8px)}
+  .trial-modal-card{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:440px;width:90%}
+  .trial-modal-card .bento-card{padding:2rem}
+  .trial-modal-card .bento-card:hover{transform:translateY(-4px)}
+  .trial-modal-card .ht-btn-primary{width:100%;height:44px;font-size:14px;border-radius:var(--ht-radius-full)}
+  .trial-modal-card input[type="email"]{width:100%;padding:12px 16px;background:var(--ht-bg-base);border:1px solid var(--ht-border);border-radius:var(--ht-radius-md);color:var(--ht-text-primary);font-size:14px;margin-bottom:12px;box-sizing:border-box;font-family:inherit;transition:border-color 0.2s}
+  .trial-modal-card input[type="email"]:focus{outline:none;border-color:var(--ht-cyan)}
+  .trial-modal-card input[type="email"]::placeholder{color:var(--ht-text-muted)}
+</style>
+<div id="trialPopup" class="trial-modal-overlay">
+  <div class="trial-modal-card">
+    <article class="bento-card glow-card">
+      <button onclick="closeTrialPopup()" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--ht-text-muted);font-size:20px;cursor:pointer;line-height:1;padding:0;z-index:10;">&times;</button>
+      <div style="text-align:center;margin-bottom:20px;">
+        <span class="ht-badge ht-badge--cyan">7-DAY FREE TRIAL</span>
+        <h2 style="color:var(--ht-text-primary);font-size:20px;font-weight:700;margin:12px 0 6px;">Start Importing from Alibaba</h2>
+        <p style="color:var(--ht-text-secondary);font-size:13px;margin:0;">Enter your email to get your trial link.</p>
+      </div>
+      <form id="trialForm" onsubmit="return handleTrialSubmit(event)">
+        <input type="email" id="trialEmail" placeholder="your@email.com" required>
+        <button type="submit" id="trialBtn" class="ht-btn-primary">Send Trial Link</button>
+      </form>
+      <p id="trialSuccess" style="display:none;text-align:center;color:var(--ht-green);font-size:13px;margin-top:12px;">Check your inbox!</p>
+    </article>
   </div>
 </div>
 
@@ -372,12 +383,11 @@ function handleTrialSubmit(e) {
     body: JSON.stringify({email: email, source: 'trial_popup'})
   }).then(function() {
     document.getElementById('trialSuccess').style.display = 'block';
-    btn.textContent = '✓ Sent!';
+    btn.textContent = 'Sent!';
     setTimeout(function() { closeTrialPopup(); }, 2000);
   }).catch(function() {
-    btn.textContent = 'Send Trial Link to My Email';
+    btn.textContent = 'Send Trial Link';
     btn.disabled = false;
-    alert('Something went wrong. Please try again.');
   });
   return false;
 }
