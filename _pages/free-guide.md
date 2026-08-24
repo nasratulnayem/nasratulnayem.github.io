@@ -31,13 +31,23 @@ author_profile: false
     </div>
     <h2 class="bento-card__title">Get the Complete Product Import Checklist</h2>
     <p class="bento-card__desc">10 steps to import products perfectly — from pre-import setup to checkout testing. Used by 500+ store owners.</p>
-    <form action="https://formspree.io/f/xppaevrn" method="POST" style="margin-top: 1rem;">
+    <form action="https://formspree.io/f/xppaevrn" method="POST" style="margin-top: 1rem;" id="guideForm">
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
         <input type="email" name="email" placeholder="your@email.com" required style="flex: 1; min-width: 250px; padding: 14px 18px; background: var(--ht-bg-surface); border: 1px solid var(--ht-border); border-radius: var(--ht-radius-md); color: var(--ht-text-primary); font-size: 16px; font-family: var(--ht-font-sans);">
         <button type="submit" class="ht-btn-primary">Send Me the Guide</button>
       </div>
       <p style="margin: 12px 0 0; font-size: 13px; color: var(--ht-text-muted);">No spam · Unsubscribe anytime · Instant access</p>
     </form>
+    <script>
+    document.getElementById('guideForm').addEventListener('submit', function(e) {
+      var email = this.querySelector('input[name="email"]').value;
+      fetch('https://email-automation-api.vercel.app/api/subscribe', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email: email})
+      }).catch(function(err) { console.log('Webhook error:', err); });
+    });
+    </script>
   </article>
 
   <!-- Step 01 -->
