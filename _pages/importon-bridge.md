@@ -379,7 +379,7 @@ function handleTrialSubmit(e) {
     method: 'POST',
     mode: 'no-cors',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({email: email, source: 'popup_product'})
+    body: JSON.stringify({email: email, source: 'product'})
   }).then(function() {
     document.getElementById('trialSuccess').style.display = 'block';
     btn.textContent = 'Sent!';
