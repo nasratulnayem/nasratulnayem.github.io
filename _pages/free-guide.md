@@ -41,7 +41,7 @@ author_profile: false
     <script>
     document.getElementById('guideForm').addEventListener('submit', function(e) {
       var email = this.querySelector('input[name="email"]').value;
-      fetch('https://email-automation-api.vercel.app/api/subscribe', {
+      fetch('https://email-api-black.vercel.app/api/subscribe', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email: email})
