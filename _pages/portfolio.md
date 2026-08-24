@@ -69,17 +69,3 @@ author_profile: false
   </div>
 </section>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "url": "https://nasratulnayem.github.io/portfolio/",
-  "name": "Engineering Portfolio",
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Nasratul Nayem",
-    "url": "https://nasratulnayem.github.io/"
-  }
-}
-</script>
-

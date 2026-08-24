@@ -104,19 +104,3 @@ author_profile: false
     </a>
   </div>
 </section>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "url": "https://nasratulnayem.github.io/ecommerce/",
-  "name": "WooCommerce & Ecommerce Development",
-  "description": "I build WooCommerce stores focused on conversions — checkout optimization, product automation, and fast storefronts.",
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Nasratul Nayem",
-    "url": "https://nasratulnayem.github.io/",
-    "knowsAbout": ["WooCommerce", "Ecommerce", "WordPress", "Shopify"]
-  }
-}
-</script>

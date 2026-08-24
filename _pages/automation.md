@@ -123,19 +123,3 @@ author_profile: false
     </a>
   </div>
 </section>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "url": "https://nasratulnayem.github.io/automation/",
-  "name": "Python & AI Automation Engineering",
-  "description": "I build Python scrapers, bots, and AI-assisted workflows that replace repetitive manual tasks.",
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Nasratul Nayem",
-    "url": "https://nasratulnayem.github.io/",
-    "knowsAbout": ["Python", "Automation", "Web Scraping", "AI Workflows"]
-  }
-}
-</script>

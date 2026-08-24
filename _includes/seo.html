@@ -90,10 +90,15 @@
   <script type="application/ld+json">
     {
       "@context" : "http://schema.org",
-      "@type" : "{% if site.social.type %}{{ site.social.type }}{% else %}Person{% endif %}",
-      "name" : "{{ site.social.name | default: site.name }}",
+      "@type" : "ProfilePage",
+      "name" : "{{ page.title | default: site.name }}",
       "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.social.links | jsonify }}
+      "mainEntity" : {
+        "@type" : "Person",
+        "name" : "{{ site.social.name | default: site.name }}",
+        "url" : {{ seo_url | jsonify }},
+        "sameAs" : {{ site.social.links | jsonify }}
+      }
     }
   </script>
 {% endif %}

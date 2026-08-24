@@ -219,18 +219,3 @@ POST  /wp-json/importonbridge/v1/connect     Return connection details for the b
   <p>That focus is what makes the plugin useful. It is a practical bridge for people who want a cleaner product import process without giving up control of their WordPress store.</p>
 </section>
 {% endraw %}
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Import Products from Browser Pages to WooCommerce",
-  "url": "https://nasratulnayem.github.io/blog/importon-bridge-product-import-workflow/",
-  "author": {"@type": "Person", "name": "Nasratul Nayem", "url": "https://nasratulnayem.github.io/"},
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Nasratul Nayem",
-    "url": "https://nasratulnayem.github.io/"
-  }
-}
-</script>

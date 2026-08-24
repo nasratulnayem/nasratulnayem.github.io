@@ -106,18 +106,3 @@ author_profile: false
     </a>
   </div>
 </div>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "url": "https://nasratulnayem.github.io/contact/",
-  "name": "Contact Nasratul Nayem",
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Nasratul Nayem",
-    "url": "https://nasratulnayem.github.io/",
-    "email": "devnayem30@gmail.com"
-  }
-}
-</script>

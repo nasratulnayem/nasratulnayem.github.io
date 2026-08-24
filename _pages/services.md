@@ -166,20 +166,3 @@ author_profile: false
     </div>
   </div>
 </section>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "url": "https://nasratulnayem.github.io/services/",
-  "name": "Web Development Services",
-  "description": "I build fast WordPress sites, WooCommerce stores, API integrations, and automation-first systems.",
-  "provider": {
-    "@type": "Person",
-    "name": "Nasratul Nayem",
-    "url": "https://nasratulnayem.github.io/"
-  },
-  "areaServed": "Worldwide",
-  "serviceType": ["WordPress Development", "WooCommerce Engineering", "Python Automation", "API Integration"]
-}
-</script>
