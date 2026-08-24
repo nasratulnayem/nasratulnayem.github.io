@@ -54,9 +54,9 @@ freemius_pricings:
 
         <div class="ht-product-pricing-bar">
           <div class="ht-product-price">
-            <strong>${{ page.product_price }}</strong>
-            <span>/ year</span>
-            <small style="display:block;color:#64748b;font-size:11px;">$9.99/mo · Growth $19.99/mo · Scale $39.99/mo — 7-day free trial</small>
+            <strong>$9.99</strong>
+            <span>/ month</span>
+            <small style="display:block;color:#64748b;font-size:11px;">$79/year (save 34%) · Growth $19.99/mo · Scale $39.99/mo — 7-day free trial</small>
           </div>
           <div class="ht-product-cta-group">
             <a class="ht-btn-primary ht-btn--glow" href="#" onclick="openTrialPopup(event)">Start 7-Day Trial ↗</a>
