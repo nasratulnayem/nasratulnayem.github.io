@@ -445,7 +445,7 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     <article class="bento-card glow-card">
       <button onclick="closeTrialPopup()" style="position:absolute;top:14px;right:14px;background:none;border:none;color:var(--ht-text-muted);font-size:22px;cursor:pointer;line-height:1;padding:0;z-index:10;">&times;</button>
       <div style="text-align:center;margin-bottom:24px;">
-        <h2 style="color:var(--ht-text-primary);font-size:22px;font-weight:700;margin:0 0 8px;">Start Importing from Alibaba</h2>
+        <h2 style="color:var(--ht-text-primary);font-size:22px;font-weight:700;margin:0 0 8px;text-decoration:none;border:none;">Start Importing from Alibaba</h2>
         <p style="color:var(--ht-text-secondary);font-size:14px;margin:0;">Get your trial link sent to your email.</p>
       </div>
       <form id="trialForm" onsubmit="return handleTrialSubmit(event)">
