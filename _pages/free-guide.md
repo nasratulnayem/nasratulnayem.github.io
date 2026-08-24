@@ -6,6 +6,12 @@ permalink: /free-guide/
 author_profile: false
 ---
 
+<style>
+  @media (max-width: 640px) {
+    .fg-span { grid-column: span 1 !important; }
+  }
+</style>
+
 <div class="ht-page-hero">
   <div class="ht-eyebrow">
     <span class="ht-eyebrow-dot"></span>
@@ -18,7 +24,7 @@ author_profile: false
 <div class="ht-services-grid">
 
   <!-- Email Capture Card -->
-  <article class="bento-card glow-card bento-card--featured" style="grid-column: span 2;">
+  <article class="bento-card glow-card bento-card--featured fg-span" style="grid-column: span 2;">
     <div class="bento-card__badge-row">
       <span class="ht-badge ht-badge--cyan">FREE DOWNLOAD</span>
       <span class="ht-badge">PDF Checklist</span>
@@ -135,7 +141,7 @@ author_profile: false
   </article>
 
   <!-- Why This Guide -->
-  <article class="bento-card glow-card bento-card--featured" style="grid-column: span 2;">
+  <article class="bento-card glow-card bento-card--featured fg-span" style="grid-column: span 2;">
     <div class="bento-card__badge-row">
       <span class="ht-badge ht-badge--cyan">WHY THIS GUIDE</span>
     </div>
@@ -148,7 +154,7 @@ author_profile: false
   </article>
 
   <!-- CTA Card -->
-  <article class="bento-card glow-card bento-card--featured" style="grid-column: span 2; text-align: center;">
+  <article class="bento-card glow-card bento-card--featured fg-span" style="grid-column: span 2; text-align: center;">
     <h2 class="bento-card__title">Ready to Automate?</h2>
     <p class="bento-card__desc">Importon Bridge does all the heavy lifting — import products from any browser page to WooCommerce in one click.</p>
     <div style="display: flex; gap: 12px; justify-content: center; margin-top: 1rem; flex-wrap: wrap;">
