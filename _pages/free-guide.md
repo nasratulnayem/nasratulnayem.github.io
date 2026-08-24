@@ -47,7 +47,7 @@ author_profile: false
       var email = document.getElementById('guideEmail').value;
       btn.textContent = 'Sending...';
       btn.disabled = true;
-      fetch('https://script.google.com/macros/s/AKfycbx-cqieponiFhjatnujxHiz15Quo36Q8FXEL06aSDiFSCsVNJM_wNYUxVZGxxEO5ZaI/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbx45gi8b7WDO5x6BzUB6d540dHCh8lGRedZCw3qa34LG1eqaOUjXwW7xc6Oou2RLG7z/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: {'Content-Type': 'application/json'},
