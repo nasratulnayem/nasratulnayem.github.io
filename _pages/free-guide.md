@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Free Guide: WooCommerce Product Import Checklist"
-description: "The complete checklist for importing products from Alibaba, AliExpress, Shopify, or any website to WooCommerce. Free PDF guide included."
+title: "Import Alibaba Products to WooCommerce — Free Guide"
+description: "How to import Alibaba, AliExpress, and Shopify products to WooCommerce automatically. Free checklist shows the exact process."
 permalink: /free-guide/
 author_profile: false
 ---
@@ -15,10 +15,10 @@ author_profile: false
 <div class="ht-page-hero">
   <div class="ht-eyebrow">
     <span class="ht-eyebrow-dot"></span>
-    <span>FREE RESOURCE</span>
+    <span>FREE GUIDE</span>
   </div>
-  <h1 class="ht-page-hero__title">WooCommerce Product Import Checklist</h1>
-  <p class="ht-page-hero__desc">The exact 10-step checklist I use to import products from Alibaba, AliExpress, Shopify, or any website to WooCommerce — without wasting hours on manual copy-paste.</p>
+  <h1 class="ht-page-hero__title">Import Alibaba Products to WooCommerce Automatically</h1>
+  <p class="ht-page-hero__desc">The exact process for bulk importing products from Alibaba, AliExpress, or any supplier to WooCommerce — with AI-powered auto-mapping, no manual copy-paste.</p>
 </div>
 
 <div class="ht-services-grid">
@@ -26,17 +26,17 @@ author_profile: false
   <!-- Email Capture Card -->
   <article class="bento-card glow-card bento-card--featured fg-span" style="grid-column: span 2;">
     <div class="bento-card__badge-row">
-      <span class="ht-badge ht-badge--cyan">FREE DOWNLOAD</span>
-      <span class="ht-badge">PDF Checklist</span>
+      <span class="ht-badge ht-badge--cyan">FREE GUIDE</span>
+      <span class="ht-badge">Alibaba to WooCommerce</span>
     </div>
-    <h2 class="bento-card__title">Get the Complete Product Import Checklist</h2>
-    <p class="bento-card__desc">10 steps to import products perfectly — from pre-import setup to checkout testing. Used by 500+ store owners.</p>
+    <h2 class="bento-card__title">Bulk Import Alibaba Products to WooCommerce in Minutes</h2>
+    <p class="bento-card__desc">AI-powered auto-mapping handles titles, descriptions, prices, images, and SEO. Import 500+ products without manual copy-paste. Get the free checklist.</p>
     <form id="guideForm" onsubmit="return handleSubmit(event)">
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
         <input type="email" id="guideEmail" placeholder="your@email.com" required style="flex: 1; min-width: 250px; padding: 14px 18px; background: var(--ht-bg-surface); border: 1px solid var(--ht-border); border-radius: var(--ht-radius-md); color: var(--ht-text-primary); font-size: 16px; font-family: var(--ht-font-sans);">
         <button type="submit" class="ht-btn-primary" id="guideBtn">Send Me the Guide</button>
       </div>
-      <p id="guideMsg" style="margin: 12px 0 0; font-size: 13px; color: var(--ht-green); display: none;">✓ Check your inbox! Your checklist is on its way.</p>
+      <p id="guideMsg" style="margin: 12px 0 0; font-size: 13px; color: var(--ht-green); display: none;">✓ Check your inbox! Your Alibaba to WooCommerce guide is on its way.</p>
       <p style="margin: 12px 0 0; font-size: 13px; color: var(--ht-text-muted);">No spam · Unsubscribe anytime · Instant access</p>
     </form>
     <script>
