@@ -1,9 +1,9 @@
 ---
 layout: plugin
-title: "Alibaba to WooCommerce Product Import — Importer Plugin for WordPress | Importon Bridge"
-description: "Import products from Alibaba to WooCommerce in 1-click. Chrome extension + AI rewrites, galleries, variations & batch URL queue. 7-day free trial."
+title: "Importon Bridge — Alibaba to WooCommerce Import Plugin for WordPress"
+description: "I built Importon Bridge to move product data from Alibaba into WooCommerce without manual copy-paste. Chrome extension captures galleries, variations, and attributes in one click. Free trial included."
 permalink: /tools/importon-bridge/
-keywords: "alibaba to woocommerce product import, Alibaba to WooCommerce Product Importer, Alibaba WooCommerce import, import Alibaba to WooCommerce, Alibaba product importer WooCommerce"
+keywords: "alibaba to woocommerce, product import plugin, wordpress ecommerce automation"
 author_profile: false
 product_name: "Importon Bridge"
 product_price: "79"
