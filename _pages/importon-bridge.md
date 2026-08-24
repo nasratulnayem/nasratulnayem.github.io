@@ -375,7 +375,7 @@ function handleTrialSubmit(e) {
   var email = document.getElementById('trialEmail').value;
   btn.textContent = 'Sending...';
   btn.disabled = true;
-    fetch('https://script.google.com/macros/s/AKfycbwPJX-D0BTGWHL2t8DhtSZoTO9QT4uFBrhIxEBKHWvRttqMagYVvItfsTpbAj7CKohK/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbyM07x3Pq_NzeWYQcM3GeiB3OLkeaGtGueA1HdcQcVJiiOYskwwlGvBXLlaBrPucR5h/exec', {
     method: 'POST',
     mode: 'no-cors',
     headers: {'Content-Type': 'application/json'},
