@@ -1,4 +1,5 @@
 ---
+sitemap: false
 title: "How I Built a Lightweight WebP Converter for WordPress Images"
 date: "2026-05-25 09:22:21 +0000"
 permalink: "/blog/effortless-webp-converter-for-wordpress/"
@@ -15,6 +16,7 @@ header:
 categories:
   - "Custom Plugins"
 ---
+sitemap: false
 
 {% raw %}
 <p></p>

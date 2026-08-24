@@ -1,4 +1,5 @@
 ---
+sitemap: false
 title: "Import Products from Browser Pages to WooCommerce"
 date: "2026-02-21 12:28:01 +0000"
 permalink: "/blog/importon-bridge-product-import-workflow/"
@@ -15,6 +16,7 @@ header:
 categories:
   - "Custom Plugins"
 ---
+sitemap: false
 
 {% raw %}
 <section class="codex-block">

@@ -1,4 +1,5 @@
 ---
+sitemap: false
 title: "I got tired of Canva so I built a thumbnail engine with Playwright"
 date: "2026-05-25 10:19:44 +0000"
 permalink: "/blog/autofacebookpost-case-study/"
@@ -15,6 +16,7 @@ header:
 categories:
   - "Python Automations"
 ---
+sitemap: false
 
 {% raw %}
 <section class="codex-block">

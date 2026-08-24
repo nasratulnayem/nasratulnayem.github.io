@@ -1,4 +1,5 @@
 ---
+sitemap: false
 title: "Watch Product Video’ Option Can Be Added from the Product Edit Page | WooCommerce"
 date: "2026-02-21 12:50:37 +0000"
 permalink: "/blog/product-link-below-title-custom-plugin-case-study/"
@@ -15,6 +16,7 @@ header:
 categories:
   - "Custom Plugins"
 ---
+sitemap: false
 
 {% raw %}
 <section class="codex-block">

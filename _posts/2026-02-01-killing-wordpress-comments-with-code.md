@@ -1,4 +1,5 @@
 ---
+sitemap: false
 title: "How to Stop Spam Comments in WordPress Without a Plugin"
 date: "2026-02-01 10:37:10 +0000"
 permalink: "/blog/killing-wordpress-comments-with-code/"
@@ -15,6 +16,7 @@ header:
 categories:
   - "PHP Snippets"
 ---
+sitemap: false
 
 {% raw %}
 <section class="codex-block">

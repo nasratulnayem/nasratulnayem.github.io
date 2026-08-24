@@ -1,4 +1,5 @@
 ---
+sitemap: false
 title: "Add video to WooCommerce gallery for free"
 date: "2026-03-10 18:18:32 +0000"
 permalink: "/blog/add-video-to-woocommerce-gallery-for-free/"
@@ -15,6 +16,7 @@ header:
 categories:
   - "Custom Plugins"
 ---
+sitemap: false
 
 {% raw %}
 <p></p>

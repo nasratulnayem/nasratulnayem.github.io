@@ -1,4 +1,5 @@
 ---
+sitemap: false
 title: "A faster way to edit WooCommerce products"
 date: "2026-02-05 20:12:27 +0000"
 permalink: "/blog/a-faster-way-to-edit-woocommerce-products/"
@@ -15,6 +16,7 @@ header:
 categories:
   - "PHP Snippets"
 ---
+sitemap: false
 
 {% raw %}
 <section class="codex-block">

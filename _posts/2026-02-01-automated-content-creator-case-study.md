@@ -1,4 +1,5 @@
 ---
+sitemap: false
 title: "Video Automation Engine That Posts Instagram Reels While You Sleep"
 date: "2026-02-01 06:14:45 +0000"
 permalink: "/blog/automated-content-creator-case-study/"
@@ -15,6 +16,7 @@ header:
 categories:
   - "Python Automations"
 ---
+sitemap: false
 
 {% raw %}
 <section class="codex-block">

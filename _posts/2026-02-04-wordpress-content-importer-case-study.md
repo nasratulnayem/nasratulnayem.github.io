@@ -1,4 +1,5 @@
 ---
+sitemap: false
 title: "Building a simple tool to move content to WordPress"
 date: "2026-02-04 18:03:25 +0000"
 permalink: "/blog/wordpress-content-importer-case-study/"
@@ -15,6 +16,7 @@ header:
 categories:
   - "Python Automations"
 ---
+sitemap: false
 
 {% raw %}
 <section class="codex-block">
