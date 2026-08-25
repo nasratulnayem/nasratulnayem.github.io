@@ -13,64 +13,76 @@ title                    : "Nasratul Nayem — Full-Stack Developer | WordPress 
 title_separator          : "·"
 name                     : &name "Nasratul Nayem"
 description              : &description "Nasratul Nayem — Full-Stack Web Developer, WordPress Expert & Automation Engineer from Bangladesh. High-performance WooCommerce, Shopify & AI workflows for global brands."
-url                      : https://nasratulnayem.github.io
-baseurl                  : ""
+url                      : https://nasratulnayem.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+                                                           # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "nasratulnayem/nasratulnayem.github.io"
 
-# Site Author
+# Site Author - The following control what appear as part of the author content on the side bar.
+#               If a field is blank the icon and link will not appear, otherwise it will be shown.
+#               Additional customization can be done by editing /_includes/author-profile.html
 author:
+  # Biographic information
   avatar           : "nasratul-nayem.jpg"
   name             : "Nasratul Nayem"
-  pronouns         : 
+  pronouns         : # example: "she/her"  
   bio              : "Full-Stack Developer · WordPress & Shopify Expert · Automation Engineer — Building fast WooCommerce & AI workflows"
   location         : "Dhaka, Bangladesh · Remote Worldwide"
   employer         : "Freelance"
   uri              : "https://nasratulnayem.github.io"
   email            : "devnayem30@gmail.com"
-  academia         :
-  arxiv            :
-  googlescholar    :
-  inspire-hep      :
-  impactstory      :
-  orcid            :
-  semantic         :
-  ssrn             :
-  pubmed           :
-  researchgate     :
-  scopus           :
-  zotero           :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  github           : "nasratulnayem"
-  kaggle           :
-  stackoverflow    :
-  artstation       :
-  bluesky          :
-  facebook         : "codex.nayem"
-  flickr           :
-  foursquare       :
-  goodreads        :
-  google_plus      :
-  keybase          :
-  instagram        :
-  lastfm           :
-  linkedin         : "nasratulnayem"
-  mastodon         :
-  medium           :
-  pinterest        :
-  soundcloud       :
-  steam            :
-  telegram         :
-  tumblr           :
-  twitter          : "codex_nayem"
-  vine             :
-  weibo            :
-  wikipedia        :
-  xing             :
-  youtube           : "@nasratulnayem"
-  zhihu            :
 
+  # Academic websites
+  academia         : # URL
+  arxiv            : # URL - Update with the correct link to your profile
+  googlescholar    :
+  inspire-hep      : # URL
+  impactstory      : # URL
+  orcid            :
+  semantic         : # URL
+  ssrn             : # URL
+  pubmed           :
+  researchgate     : # URL
+  scopus           : # URL
+  zotero           : # URL
+
+
+  # Repositories and software development
+  bitbucket        : # Username - Update with your username on the site
+  codepen          : # Username
+  dribbble         : # Username
+  github           : "nasratulnayem"
+  kaggle           : # Username  
+  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+
+  # Social media
+  artstation       : # Username
+  bluesky          : # Replace this with your Bluesky username
+  facebook         : "codex.nayem"
+  flickr           : # Username
+  foursquare       : # Username
+  goodreads        : # Username
+  google_plus      : # Username
+  keybase          : # Username
+  instagram        : # Username
+  lastfm           : # Username
+  linkedin         : "nasratulnayem"
+  mastodon         : # URL
+  medium           : # URL
+  pinterest        : # Username
+  soundcloud       : # Username
+  steam            : # Username
+  telegram         : # URL
+  tumblr           : # Username
+  twitter          : "codex_nayem"
+  vine             : # Username
+  weibo            : # Username
+  wikipedia        : # Username
+  xing             : # Username
+  youtube           : "@nasratulnayem"
+  zhihu            : # Username
+
+# Publication Category - The following the list of publication categories and their headings
 publication_category:
   books:
     title: 'Books'
@@ -80,25 +92,25 @@ publication_category:
     title: 'Conference Papers'
 
 # Site Settings
-teaser                   : "/images/nasratul-nayem.jpg"
-breadcrumbs              : true
+teaser                   : "/images/nasratul-nayem.jpg" # professional headshot for rich results
+breadcrumbs              : true # true for rich breadcrumbs
 words_per_minute         : 160
 future                   : false
-read_more                : "disabled"
-talkmap_link             : false
+read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
+talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
-  provider               :
+  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
     shortname            :
   discourse:
-    server               :
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
     appid                :
-    num_posts            :
-    colorscheme          :
+    num_posts            : # 5 (default)
+    colorscheme          : # "light" (default), "dark"
 staticman:
   allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "gh-pages"
+  branch                 : "gh-pages" # "master", "gh-pages"
   commitMessage          : "New comment."
   filename               : comment-{@timestamp}
   format                 : "yml"
@@ -111,16 +123,18 @@ staticman:
     date:
       type               : "date"
       options:
-        format           : "iso8601"
+        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : false
-  path                   :
+  hide                   : false     # change to true to hide the RSS feed in the footer
+  path                   : # blank (default) uses feed.xml
+
 
 # SEO Related
 google_site_verification : "google7e8ac330e253a2a1"
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
+
 
 # Social Sharing
 twitter:
@@ -131,6 +145,8 @@ facebook:
   publisher              : ""
 og_image                 : "/images/nasratul-nayem.jpg"
 og_description           : "Full-Stack Developer, WordPress & Shopify Expert, Automation Engineer — Nasratul Nayem from Bangladesh, building WooCommerce & AI workflows worldwide."
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
 social:
   type                   : Person
   name                   : "Nasratul Nayem"
@@ -141,11 +157,13 @@ social:
     - "https://twitter.com/codex_nayem"
     - "https://www.youtube.com/@nasratulnayem"
 
+
 # Analytics
 analytics:
-  provider               :  "false"
+  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
     tracking_id          :
+
 
 # Reading Files
 include:
@@ -185,12 +203,14 @@ keep_files:
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
+
 # Conversion
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
+
 
 # Markdown Processing
 kramdown:
@@ -203,7 +223,8 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-# Collections
+
+# These settings control the types of collections used by the template
 collections:
   teaching:
     output: true
@@ -218,8 +239,10 @@ collections:
     output: true
     permalink: /:collection/:path/
 
-# Defaults
+
+# These settings control how pages and collections are included in the site
 defaults:
+  # _posts
   - scope:
       path: ""
       type: posts
@@ -230,12 +253,14 @@ defaults:
       comments: false
       share: false
       related: false
+  # _pages
   - scope:
       path: ""
       type: pages
     values:
       layout: single
       author_profile: true
+  # _teaching
   - scope:
       path: ""
       type: teaching
@@ -244,6 +269,7 @@ defaults:
       author_profile: true
       share: true
       comments: true
+  # _publications
   - scope:
       path: ""
       type: publications
@@ -252,6 +278,7 @@ defaults:
       author_profile: true
       share: true
       comments: true
+  # _portfolio
   - scope:
       path: ""
       type: portfolio
@@ -260,6 +287,7 @@ defaults:
       author_profile: true
       share: true
       comment: true
+  # _talks
   - scope:
       path: ""
       type: talks
@@ -276,14 +304,19 @@ defaults:
     values:
       sitemap: false
 
+
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed
+  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
 
 # Outputting
 permalink: /:categories/:title/
-timezone: Etc/UTC
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
+timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
 
 # Plugins
 plugins:
@@ -293,6 +326,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jemoji
+
+# Mimic GitHub Pages with --safe
 whitelist:
   - jekyll-feed
   - jekyll-gist
@@ -301,15 +336,38 @@ whitelist:
   - jekyll-redirect-from
   - jemoji
 
+
 # Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path/my-awesome-category/index.html ~> path: /
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+
 
 # HTML Compression
+# - https://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
