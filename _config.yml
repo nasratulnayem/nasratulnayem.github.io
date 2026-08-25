@@ -155,12 +155,6 @@ include:
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
-  - 404.html
-  - sitemap.xml
-  - sitemap/
-  - feed.xml
-  - redirects.json
-  - assets/
   - .asset-cache
   - .bundle
   - .github
