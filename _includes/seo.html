@@ -89,15 +89,19 @@
 {% if site.social %}
   <script type="application/ld+json">
     {
-      "@context" : "http://schema.org",
-      "@type" : "ProfilePage",
-      "name" : "{{ page.title | default: site.name }}",
-      "url" : {{ seo_url | jsonify }},
-      "mainEntity" : {
-        "@type" : "Person",
-        "name" : "{{ site.social.name | default: site.name }}",
-        "url" : {{ seo_url | jsonify }},
-        "sameAs" : {{ site.social.links | jsonify }}
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "name": "{{ page.title | default: site.name }}",
+      "url": {{ seo_url | jsonify }},
+      "dateModified": "{{ site.time | date_to_xmlschema }}",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "{{ site.social.name | default: site.name }}",
+        "url": {{ seo_url | jsonify }},
+        "image": "{{ site.url }}/images/nasratul-nayem.jpg",
+        "jobTitle": "Full-Stack Developer",
+        "description": "{{ site.description }}",
+        "sameAs": {{ site.social.links | jsonify }}
       }
     }
   </script>
