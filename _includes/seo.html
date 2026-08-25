@@ -91,11 +91,13 @@
     {
       "@context": "https://schema.org",
       "@type": "ProfilePage",
+      "@id": "{{ seo_url }}/#profilepage",
       "name": "{{ page.title | default: site.name }}",
       "url": {{ seo_url | jsonify }},
       "dateModified": "{{ site.time | date_to_xmlschema }}",
       "mainEntity": {
         "@type": "Person",
+        "@id": "{{ seo_url }}/#person",
         "name": "{{ site.social.name | default: site.name }}",
         "url": {{ seo_url | jsonify }},
         "image": "{{ site.url }}/images/nasratul-nayem.jpg",
