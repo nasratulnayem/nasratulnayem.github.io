@@ -1,7 +1,7 @@
 ---
 layout: home
 permalink: /
-title: "Nasratul Nayem — Web Developer & Automation Engineer"
+title: "Nasratul Nayem | Web Developer & Automation Engineer"
 description: "I build high-performance WordPress systems, WooCommerce storefronts, and Python automation pipelines. Based in Bangladesh, working with clients worldwide."
 author_profile: true
 keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automation engineer"
@@ -20,7 +20,7 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     </h1>
 
     <p class="ht-hero__lead">
-      Hi, I’m <strong>Nasratul Nayem</strong>—a web developer and automation engineer from Bangladesh. I build high-performance WordPress systems, conversion-driven Shopify &amp; WooCommerce stores, and autonomous Python/AI pipelines that cut out repetitive manual work.
+      Hi, I’m <strong>Nasratul Nayem</strong>|a web developer and automation engineer from Bangladesh. I build high-performance WordPress systems, conversion-driven Shopify &amp; WooCommerce stores, and autonomous Python/AI pipelines that cut out repetitive manual work.
     </p>
 
     <div class="ht-hero__actions">
@@ -98,7 +98,7 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
           <span class="hero-terminal__cmd">stack --summary</span>
         </div>
         <div class="hero-terminal__response hero-terminal__response--stack">
-          <div><span class="ht-term-cyan">⚡ Core Engineering Stack:</span></div>
+          <div><span class="ht-term-cyan">Core Engineering Stack:</span></div>
           <div>• <span class="ht-term-yellow">Web &amp; CMS:</span> WordPress Core, PHP 8+, Custom Plugins, WooCommerce, Shopify Liquid</div>
           <div>• <span class="ht-term-yellow">Frontend:</span> Vanilla JS / ES6+, High Core Web Vitals, Modern CSS</div>
           <div>• <span class="ht-term-yellow">Automation &amp; AI:</span> Python, Playwright, LLM Orchestration, REST APIs, CRON</div>
@@ -109,9 +109,9 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
           <span class="hero-terminal__cmd">flagship</span>
         </div>
         <div class="hero-terminal__response hero-terminal__response--stack">
-          <div><span class="ht-term-cyan">🚀 Flagship Software: Importon Bridge (v0.2.2 Pro)</span></div>
+          <div><span class="ht-term-cyan">Flagship Software: Importon Bridge (v0.2.2 Pro)</span></div>
           <div>• 1-Click browser-to-WooCommerce product importer</div>
-          <div>• Production-grade &middot; Freemius licensed &middot; 14-day refund window</div>
+          <div>• WooCommerce workflow &middot; Freemius licensing &middot; documented product roadmap</div>
         </div>
       </div>
     </div>
@@ -401,7 +401,7 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
       "@type": "WebSite",
       "url": "https://nasratulnayem.github.io/",
       "name": "Nasratul Nayem",
-      "description": "Nasratul Nayem — Full-Stack Developer, WordPress & Shopify Expert, Automation Engineer",
+      "description": "Nasratul Nayem | Full-Stack Developer, WordPress & Shopify Expert, Automation Engineer",
       "publisher": {"@type": "Person", "name": "Nasratul Nayem", "url": "https://nasratulnayem.github.io/"},
       "mainEntity": {
         "@type": "Person",
