@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Engineering Portfolio — WordPress, Ecommerce & Automation"
-description: "Selected projects I've built — WordPress systems, WooCommerce stores, Python automation pipelines, and real outcomes for real clients."
+title: "Engineering Portfolio | WordPress, Ecommerce & Automation"
+description: "Selected projects I've built | WordPress systems, WooCommerce stores, Python automation pipelines, and real outcomes for real clients."
 permalink: /portfolio/
 author_profile: false
 ---
@@ -43,7 +43,7 @@ author_profile: false
       <span class="ht-eyebrow-dot"></span>
       <span>OPEN SOURCE SOFTWARE</span>
     </div>
-    <h2 class="ht-section-title">Open-Source Repositories &amp; Utilities</h2>
+    <h2 class="ht-section-title">Selected Open-Source Engineering</h2>
   </div>
 
   <div class="ht-oss-grid">
@@ -53,17 +53,17 @@ author_profile: false
         <span class="ht-badge"><i class="fab fa-github"></i> Open Source</span>
       </div>
       <h3 class="bento-card__title">Effortless WebP Converter</h3>
-      <p class="bento-card__desc">Automatic lightweight converter converting uploaded media to modern WebP format in WordPress on the fly without external cloud API dependencies.</p>
+      <p class="bento-card__desc">A WordPress plugin that batch-converts media-library images and serves available WebP versions while preserving the originals.</p>
       <span class="ht-oss-link">View on GitHub ↗</span>
     </a>
 
-    <a class="bento-card glow-card ht-oss-card" href="https://github.com/nasratulnayem/VideoAutomation" target="_blank" rel="noopener noreferrer">
+    <a class="bento-card glow-card ht-oss-card" href="https://github.com/nasratulnayem/gsc-bulk-indexer" target="_blank" rel="noopener noreferrer">
       <div class="bento-card__badge-row">
         <span class="ht-badge ht-badge--green">Python Engine</span>
         <span class="ht-badge"><i class="fab fa-github"></i> Open Source</span>
       </div>
-      <h3 class="bento-card__title">VideoAutomation Pipeline</h3>
-      <p class="bento-card__desc">Automated video compilation, subtitle rendering, and scheduled publishing pipeline built in Python.</p>
+      <h3 class="bento-card__title">Google Search Console Bulk Indexer</h3>
+      <p class="bento-card__desc">A privacy-focused Chromium extension that processes URL inspection requests, skips indexed pages, respects quota signals, and resumes interrupted queues.</p>
       <span class="ht-oss-link">View on GitHub ↗</span>
     </a>
   </div>
