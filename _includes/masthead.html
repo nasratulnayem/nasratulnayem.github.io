@@ -31,7 +31,29 @@
         {% if page.url == link.url or link.url != '/' and page.url contains link.url %}
           {% assign active_link = true %}
         {% endif %}
-        <a class="ht-nav__link{% if active_link %} is-active{% endif %}" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+
+        {% if link.children %}
+          <div class="ht-nav__dropdown-wrap">
+            <a class="ht-nav__link ht-nav__link--has-dropdown{% if active_link %} is-active{% endif %}" href="{{ domain }}{{ link.url }}" aria-haspopup="true" aria-expanded="false">
+              <span>{{ link.title }}</span>
+              <svg class="ht-nav__caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <div class="ht-nav__dropdown-menu" role="menu">
+              <div class="ht-nav__dropdown-inner">
+                {% for child in link.children %}
+                  <a class="ht-nav__dropdown-item" href="{{ base_path }}{{ child.url }}" role="menuitem">
+                    <div class="ht-nav__dropdown-item-title">{{ child.title }}</div>
+                    {% if child.desc %}
+                      <div class="ht-nav__dropdown-item-desc">{{ child.desc }}</div>
+                    {% endif %}
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <a class="ht-nav__link{% if active_link %} is-active{% endif %}" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+        {% endif %}
       {% endfor %}
     </nav>
 
@@ -80,6 +102,16 @@
                 <span>{{ link.title }}</span>
                 <span class="ht-mobile-arrow">→</span>
               </a>
+              {% if link.children %}
+                <div class="ht-mobile-sublinks" style="padding-left: 1rem; margin-top: -0.2rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                  {% for child in link.children %}
+                    <a class="ht-mobile-sublink" href="{{ base_path }}{{ child.url }}" style="font-size: 0.82rem; color: var(--ht-text-secondary); text-decoration: none; padding: 4px 8px; display: flex; align-items: center; gap: 6px;">
+                      <span style="color: var(--ht-cyan);">↳</span>
+                      <span>{{ child.title }}</span>
+                    </a>
+                  {% endfor %}
+                </div>
+              {% endif %}
             {% endfor %}
           </div>
           <div class="ht-mobile-footer">

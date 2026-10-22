@@ -3,9 +3,6 @@
 # Changing the order here will adjust the order and you can also add additional
 # links. Removing a link prevents it from showing in the header, but does not
 # prevent it from being included in the site.
-#
-# NOTE that only one of the CV options should be selected, the first is for the
-#      Markdown formatted page while the second is generated using JSON.
 
 main:
   - title: "Services"
@@ -16,6 +13,13 @@ main:
     url: /automation/
   - title: "Tools"
     url: /tools/
+    children:
+      - title: "Importon Bridge"
+        url: /tools/importon-bridge/
+        desc: "Alibaba to WooCommerce Import Plugin"
+      - title: "Image metadata cleaner"
+        url: /tools/image-metadata-cleaner/
+        desc: "Privacy-focused visible pixel copy tool"
   - title: "Work"
     url: /portfolio/
   - title: "Contact"

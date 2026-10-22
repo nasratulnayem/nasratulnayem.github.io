@@ -9,37 +9,36 @@
 
 /* 1. Global CSS Custom Properties (High-Tech Design System) ---------------- */
 :root {
-  /* High-Tech Dark Palette (Default) */
-  --ht-bg-base: #080b10;
-  --ht-bg-surface: #0e141d;
-  --ht-bg-elevated: #141c28;
-  --ht-bg-card: rgba(14, 20, 29, 0.75);
-  --ht-bg-card-hover: rgba(20, 28, 40, 0.88);
+  /* Minimalist Warm Neutral Dark Palette (Jisun / Linear / Vercel style) */
+  --ht-bg-base: #141414;
+  --ht-bg-surface: #1c1c1c;
+  --ht-bg-elevated: #242424;
+  --ht-bg-card: #1c1c1c;
+  --ht-bg-card-hover: #222222;
   
-  --ht-border: rgba(255, 255, 255, 0.08);
-  --ht-border-hover: rgba(56, 189, 248, 0.35);
-  --ht-border-active: rgba(0, 245, 160, 0.5);
+  --ht-border: rgba(255, 255, 255, 0.09);
+  --ht-border-hover: rgba(255, 255, 255, 0.22);
+  --ht-border-active: rgba(255, 255, 255, 0.4);
 
   --ht-text-primary: #f8fafc;
-  --ht-text-secondary: #94a3b8;
-  /* Small metadata appears on dark surfaces throughout the site. This remains
-     visually quiet while meeting a comfortably readable contrast level. */
-  --ht-text-muted: #94a3b8;
+  --ht-text-secondary: #a1a1aa;
+  --ht-text-muted: #71717a;
 
-  /* Accent Colors */
-  --ht-cyan: #00d2ff;
-  --ht-cyan-glow: rgba(0, 210, 255, 0.25);
-  --ht-emerald: #00f5a0;
-  --ht-emerald-glow: rgba(0, 245, 160, 0.25);
-  --ht-indigo: #6366f1;
-  --ht-indigo-glow: rgba(99, 102, 241, 0.25);
+  /* Accent Colors - Natural dev neutrals & refined emerald/accent */
+  --ht-cyan: #38bdf8;
+  --ht-cyan-glow: rgba(255, 255, 255, 0.06);
+  --ht-emerald: #10b981;
+  --ht-emerald-glow: rgba(16, 185, 129, 0.15);
+  --ht-indigo: #818cf8;
+  --ht-indigo-glow: rgba(255, 255, 255, 0.06);
   --ht-amber: #f59e0b;
   --ht-red: #ef4444;
 
   /* Gradients */
-  --ht-gradient-text: linear-gradient(135deg, #00f5a0 0%, #00d2ff 50%, #6366f1 100%);
-  --ht-gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --ht-gradient-glow: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.12), transparent 40%);
+  --ht-gradient-text: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+  --ht-gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  --ht-gradient-glow: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.05), transparent 40%);
+
 
   /* Typography */
   --ht-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -75,8 +74,8 @@
 
 /* Light Theme Overrides */
 html:not([data-theme="dark"]) {
-  --global-bg-color: #f8fafc;
-  --global-footer-bg-color: #f8fafc;
+  --global-bg-color: var(--ht-text-primary);
+  --global-footer-bg-color: var(--ht-text-primary);
   --global-border-color: rgba(15, 23, 42, 0.09);
   --global-text-color: #0f172a;
   --global-text-color-light: #64748b;
@@ -173,7 +172,7 @@ html {
   font-family: var(--ht-font-sans);
   background-color: var(--ht-bg-base);
   color: var(--ht-text-primary);
-  scroll-behavior: smooth;
+  /* native scroll-behavior removed so Lenis handles silky-smooth scrolling */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -372,6 +371,117 @@ body {
   font-weight: 600;
 }
 
+
+/* Navigation Dropdown Menu (High-Tech Design) */
+.ht-nav__dropdown-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.ht-nav__link--has-dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ht-nav__caret {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.7;
+}
+
+.ht-nav__dropdown-wrap:hover .ht-nav__caret {
+  transform: rotate(180deg);
+  opacity: 1;
+  color: var(--ht-text-primary);
+}
+
+.ht-nav__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  min-width: 260px;
+  padding-top: 10px;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.22s;
+  z-index: 1000;
+}
+
+.ht-nav__dropdown-wrap:hover .ht-nav__dropdown-menu,
+.ht-nav__dropdown-menu:hover {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.ht-nav__dropdown-inner {
+  background: var(--ht-bg-surface);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-lg, 14px);
+  padding: 8px;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255, 255, 255, 0.05),
+              0 0 24px -4px var(--ht-cyan-glow);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ht-nav__dropdown-item {
+  display: block;
+  padding: 10px 14px;
+  border-radius: var(--ht-radius-md, 8px);
+  text-decoration: none !important;
+  transition: all 0.18s ease;
+  border: 1px solid transparent;
+}
+
+.ht-nav__dropdown-item:hover {
+  background: rgba(0, 210, 255, 0.06);
+  border-color: rgba(0, 210, 255, 0.18);
+  transform: translateX(2px);
+}
+
+.ht-nav__dropdown-item-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ht-text-primary);
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ht-nav__dropdown-item:hover .ht-nav__dropdown-item-title {
+  color: var(--ht-text-primary);
+}
+
+.ht-nav__dropdown-item-desc {
+  font-size: 0.74rem;
+  line-height: 1.35;
+  color: var(--ht-text-secondary);
+}
+
+[data-theme="light"] .ht-nav__dropdown-inner {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.12),
+              0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .ht-nav__dropdown-item:hover {
+  background: rgba(0, 110, 255, 0.05);
+  border-color: rgba(0, 110, 255, 0.15);
+}
+
 /* Header Actions */
 .ht-actions {
   display: flex;
@@ -451,13 +561,13 @@ body {
   height: 38px;
   padding: 0 12px;
   border-radius: var(--ht-radius-full);
-  background: linear-gradient(135deg, var(--ht-emerald), var(--ht-cyan));
+  background: #f8fafc; color: #09090b !important;
   color: #05141c !important;
   font-size: 0.8rem;
   font-weight: 700;
   text-decoration: none !important;
   white-space: nowrap;
-  box-shadow: 0 0 20px var(--ht-cyan-glow);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.25s ease;
 }
 
@@ -564,7 +674,7 @@ body {
   gap: 0.4rem;
   background: transparent;
   border: 0;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   font-size: 0.8rem;
   font-family: var(--ht-font-sans);
   cursor: pointer;
@@ -608,7 +718,7 @@ body {
   justify-content: center;
   height: 44px;
   border-radius: var(--ht-radius-md);
-  background: linear-gradient(135deg, var(--ht-emerald), var(--ht-cyan));
+  background: #f8fafc; color: #09090b !important;
   color: #05141c !important;
   font-weight: 700;
   text-decoration: none !important;
@@ -672,12 +782,23 @@ body {
 /* Hero Headline */
 .ht-hero__headline {
   font-family: var(--ht-font-heading);
-  font-size: clamp(2.1rem, 3.55vw, 3.1rem);
+  font-size: clamp(2.8rem, 4.8vw, 4.2rem);
   font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
   color: var(--ht-text-primary);
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.85rem 0;
+}
+
+.ht-hero__subheadline {
+  font-family: var(--ht-font-sans);
+  font-size: clamp(1.15rem, 1.45vw, 1.4rem);
+  font-weight: 500;
+  line-height: 1.4;
+  color: #94a3b8;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.6rem 0;
+  max-width: 640px;
 }
 
 .ht-text-gradient {
@@ -716,7 +837,7 @@ body {
   height: 48px;
   padding: 0 24px;
   border-radius: var(--ht-radius-full);
-  background: linear-gradient(135deg, var(--ht-emerald), var(--ht-cyan));
+  background: #f8fafc; color: #09090b !important;
   color: #05141c !important;
   font-weight: 700;
   font-size: 0.95rem;
@@ -777,8 +898,8 @@ body {
 }
 
 .ht-btn-tertiary:hover {
-  color: var(--ht-cyan);
-  border-color: var(--ht-cyan);
+  color: var(--ht-text-primary);
+  border-color: var(--ht-text-primary);
   background: rgba(0, 210, 255, 0.05);
 }
 
@@ -859,7 +980,7 @@ body {
 }
 
 .ht-hero__identity-copy > span {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   font-family: var(--ht-font-mono);
   font-size: 0.67rem;
   font-weight: 700;
@@ -1020,8 +1141,8 @@ html:not([data-theme="dark"]) .hero-terminal__tabs {
 }
 
 .hero-terminal__tab-btn.is-active {
-  color: var(--ht-cyan);
-  border-bottom-color: var(--ht-cyan);
+  color: var(--ht-text-primary);
+  border-bottom-color: var(--ht-text-primary);
   background: rgba(0, 210, 255, 0.04);
 }
 
@@ -1078,13 +1199,13 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 }
 
 .hero-terminal__prompt {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   user-select: none;
   font-weight: 700;
 }
 
 .hero-terminal__cmd {
-  color: #f8fafc;
+  color: var(--ht-text-primary);
   font-weight: 600;
 }
 
@@ -1097,12 +1218,12 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 }
 
 /* Terminal ANSI Colors */
-.ht-term-cyan { color: var(--ht-cyan); font-weight: 600; }
+.ht-term-cyan { color: var(--ht-text-primary); font-weight: 600; }
 .ht-term-green { color: var(--ht-emerald); font-weight: 600; }
 .ht-term-yellow { color: var(--ht-amber); }
 .ht-term-red { color: var(--ht-red); }
 .ht-term-muted { color: #64748b; }
-.ht-term-link { color: var(--ht-cyan); text-decoration: underline; }
+.ht-term-link { color: var(--ht-text-primary); text-decoration: underline; }
 
 .hero-terminal__chips {
   display: flex;
@@ -1134,9 +1255,9 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 }
 
 .hero-terminal__chip:hover {
-  background: var(--ht-cyan);
+  background: #f8fafc;
   color: #05141c;
-  border-color: var(--ht-cyan);
+  border-color: var(--ht-text-primary);
 }
 
 .hero-terminal__input-row {
@@ -1161,7 +1282,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   outline: none;
   font-family: var(--ht-font-mono);
   font-size: 0.85rem;
-  color: #f8fafc;
+  color: var(--ht-text-primary);
 }
 
 /* 6. High-Tech Tech Stack Pill Ribbon --------------------------------------- */
@@ -1208,7 +1329,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 }
 
 .ht-stack-pill i {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   font-size: 0.85em;
 }
 
@@ -1261,16 +1382,16 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   margin-bottom: 0.6rem;
 }
 
 .ht-eyebrow-dot {
   width: 6px;
   height: 6px;
-  background: var(--ht-cyan);
+  background: #f8fafc;
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--ht-cyan);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
 
 .ht-section-title {
@@ -1322,7 +1443,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 .bento-card:hover {
   border-color: var(--ht-border-hover);
   transform: translateY(-4px);
-  box-shadow: var(--ht-shadow-md), 0 0 25px var(--ht-cyan-glow);
+  box-shadow: var(--ht-shadow-md), 0 0 25px rgba(255, 255, 255, 0.04);
 }
 
 /* Cyber Scanning Line */
@@ -1330,7 +1451,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent, rgba(0, 210, 255, 0.12), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.08), transparent);
   transform: translateY(-100%);
   pointer-events: none;
   z-index: 2;
@@ -1351,7 +1472,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(0, 255, 170, 0.12) 0%, rgba(0, 162, 255, 0.06) 50%, transparent 100%);
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 60%, transparent 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -1401,7 +1522,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 .ht-badge--cyan {
   background: rgba(0, 210, 255, 0.08);
   border-color: rgba(0, 210, 255, 0.3);
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
 }
 
 .ht-badge--green {
@@ -1426,7 +1547,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
   font-size: 1.05rem;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   margin-bottom: 0;
 }
 
@@ -1507,7 +1628,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   content: '▹';
   position: absolute;
   left: 0;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   font-family: var(--ht-font-mono);
 }
 
@@ -1557,7 +1678,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
 }
 
 .ht-bridge-step span {
@@ -1579,7 +1700,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 .ht-bridge-pulse {
   height: 2px;
   width: 100%;
-  background: linear-gradient(90deg, transparent, var(--ht-cyan), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   animation: ht-flow 1.8s infinite ease-in-out;
 }
 
@@ -1688,7 +1809,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 
 .filter-chip.is-active {
   background: var(--ht-bg-elevated);
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   border: 1px solid var(--ht-border-hover);
 }
 
@@ -1710,7 +1831,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 }
 
 .ht-search-wrap input:focus {
-  border-color: var(--ht-cyan);
+  border-color: var(--ht-text-primary);
   width: 280px;
 }
 
@@ -1746,7 +1867,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 .ht-project-card:hover {
   border-color: var(--ht-border-hover);
   transform: translateY(-4px);
-  box-shadow: var(--ht-shadow-md), 0 0 25px var(--ht-cyan-glow);
+  box-shadow: var(--ht-shadow-md), 0 0 25px rgba(255, 255, 255, 0.04);
 }
 
 .ht-project-card .archive__item,
@@ -1803,7 +1924,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   font-family: var(--ht-font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.1em;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   font-weight: 700;
 }
 
@@ -1864,7 +1985,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 }
 
 .ht-project-card:hover .ht-archive-card__title {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
 }
 
 .ht-archive-card__excerpt {
@@ -1883,7 +2004,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 .ht-archive-card__cta {
   font-size: 0.84rem;
   font-weight: 600;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
@@ -1949,7 +2070,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 
 .ht-carousel-arrow:hover,
 .ht-carousel-arrow:focus-visible {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   border-color: var(--ht-border-hover);
   outline: none;
   transform: translateY(-2px);
@@ -2014,7 +2135,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   font-family: var(--ht-font-mono);
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   letter-spacing: 0.08em;
   margin-bottom: 1.25rem;
 }
@@ -2040,7 +2161,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 .ht-check-card input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  accent-color: var(--ht-cyan);
+  accent-color: var(--ht-text-primary);
   cursor: pointer;
 }
 
@@ -2064,7 +2185,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   font-family: var(--ht-font-mono);
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
 }
 
 .ht-summary-box {
@@ -2140,7 +2261,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 }
 
 .ht-radio-label input {
-  accent-color: var(--ht-cyan);
+  accent-color: var(--ht-text-primary);
 }
 
 /* 11. Closing Call-to-Action ------------------------------------------------ */
@@ -2266,7 +2387,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   font-family: var(--ht-font-mono);
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   margin-bottom: 0.75rem;
 }
 
@@ -2314,7 +2435,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 .ht-wf-card:hover {
   border-color: var(--ht-border-hover);
   transform: translateY(-4px);
-  box-shadow: var(--ht-shadow-md), 0 0 25px var(--ht-cyan-glow);
+  box-shadow: var(--ht-shadow-md), 0 0 25px rgba(255, 255, 255, 0.04);
 }
 
 .ht-wf-card__header {
@@ -2334,8 +2455,8 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   font-family: var(--ht-font-mono);
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--ht-cyan);
-  background: rgba(0, 210, 255, 0.1);
+  color: var(--ht-text-primary);
+  background: rgba(255, 255, 255, 0.08);
   padding: 2px 8px;
   border-radius: 4px;
   border: 1px solid rgba(0, 210, 255, 0.25);
@@ -2397,7 +2518,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 .ht-wf-pulse {
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, var(--ht-border), var(--ht-cyan), var(--ht-border));
+  background: rgba(255, 255, 255, 0.1);
   position: relative;
 }
 
@@ -2409,8 +2530,8 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--ht-cyan);
-  box-shadow: 0 0 8px var(--ht-cyan);
+  background: #f8fafc;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
   animation: ht-pulse-move 2s infinite ease-in-out;
 }
 
@@ -2472,7 +2593,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -2511,7 +2632,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, transparent, var(--ht-cyan), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   animation: ht-flow 2s infinite ease-in-out;
 }
 
@@ -2577,7 +2698,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 .ht-case-card__arrow {
   font-size: 0.84rem;
   font-weight: 700;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   white-space: nowrap;
   transition: transform 0.2s ease;
   flex-shrink: 0;
@@ -2727,7 +2848,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 .ht-oss-link {
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   margin-top: auto;
 }
 
@@ -2791,7 +2912,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
 }
 
 .ht-icon--wa {
@@ -2833,8 +2954,8 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 }
 
 .ht-btn-copy-sm:hover, .ht-btn-link-sm:hover {
-  color: var(--ht-cyan);
-  border-color: var(--ht-cyan);
+  color: var(--ht-text-primary);
+  border-color: var(--ht-text-primary);
 }
 
 .ht-brief-list {
@@ -2856,7 +2977,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
   font-family: var(--ht-font-mono);
   font-size: 0.85rem;
   font-weight: 800;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   padding-top: 2px;
 }
 
@@ -2957,7 +3078,7 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 }
 
 .marketing-post__content a, .marketing-page__content a {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -3061,7 +3182,7 @@ pre {
 
 .code-copy-btn:hover {
   background: rgba(255, 255, 255, 0.1);
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
 }
 
 .code-copy-btn.is-copied {
@@ -3125,7 +3246,7 @@ code {
 }
 
 .ht-palette__search-icon {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
 }
 
 .ht-palette__input {
@@ -3135,7 +3256,7 @@ code {
   outline: none;
   font-family: var(--ht-font-sans);
   font-size: 1.05rem;
-  color: #f8fafc;
+  color: var(--ht-text-primary);
 }
 
 .ht-palette__badge {
@@ -3186,7 +3307,7 @@ code {
 }
 
 .ht-palette__item:hover, .ht-palette__item.is-focused {
-  background: rgba(0, 210, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .ht-palette__item-icon {
@@ -3196,17 +3317,17 @@ code {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(31, 122, 140, 0.1);
-  border: 1px solid rgba(31, 122, 140, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   font-size: 0.85rem;
-  color: #38bdf8;
+  color: #a1a1aa;
 }
 
 .ht-palette__item-label {
   font-weight: 600;
   font-size: 0.88rem;
-  color: #f8fafc;
+  color: var(--ht-text-primary);
   flex: 1 1 auto;
   min-width: 0;
   white-space: nowrap;
@@ -3262,7 +3383,7 @@ code {
   gap: 0.6rem;
   font-size: 0.88rem;
   font-weight: 600;
-  color: #f8fafc;
+  color: var(--ht-text-primary);
   z-index: 10001;
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -3356,18 +3477,18 @@ code {
   height: 44px;
   padding: 0 20px;
   border-radius: var(--ht-radius-full);
-  background: linear-gradient(135deg, var(--ht-emerald), var(--ht-cyan));
+  background: #f8fafc; color: #09090b !important;
   color: #05141c !important;
   font-weight: 700;
   font-size: 0.9rem;
   text-decoration: none !important;
-  box-shadow: 0 0 20px var(--ht-cyan-glow);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.25s ease;
 }
 
 .ht-btn-glow:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px var(--ht-cyan-glow);
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.2);
 }
 
 .ht-btn-copy-mail {
@@ -3412,9 +3533,9 @@ code {
 .ht-footer__brand-dot {
   width: 8px;
   height: 8px;
-  background: var(--ht-cyan);
+  background: #f8fafc;
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--ht-cyan);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
 
 .ht-footer__tagline {
@@ -3445,7 +3566,7 @@ code {
   font-family: var(--ht-font-mono);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   letter-spacing: 0.08em;
   margin-bottom: 1.25rem;
   text-transform: uppercase;
@@ -3693,7 +3814,7 @@ body {
    surface, and responsive rhythm as the rest of the site. */
 .marketing-main--plugin {
   width: var(--ht-container) !important;
-  max-width: 1280px !important;
+  max-width: 1120px !important;
   margin: 2.75rem auto 5.5rem !important;
   padding: 0 !important;
 }
@@ -3720,7 +3841,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   margin: 0 0 0.85rem;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   font-family: var(--ht-font-mono);
   font-size: 0.72rem;
   font-weight: 700;
@@ -3814,7 +3935,7 @@ body {
   flex: 0 0 auto;
   place-items: center;
   color: #05141c;
-  background: linear-gradient(135deg, var(--ht-emerald), var(--ht-cyan));
+  background: #f8fafc; color: #09090b !important;
   border: 0;
   border-radius: 0.72rem;
   box-shadow: 0 0 22px var(--ht-cyan-glow);
@@ -3875,7 +3996,7 @@ body {
 
 .plugin-page .plugin-button--primary {
   color: #05141c !important;
-  background: linear-gradient(135deg, var(--ht-emerald), var(--ht-cyan));
+  background: #f8fafc; color: #09090b !important;
   box-shadow: 0 0 24px var(--ht-cyan-glow);
 }
 
@@ -4021,7 +4142,7 @@ body {
   display: grid;
   gap: 0.45rem;
   place-items: center;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
 }
 
 .importon-comparison__bridge .importon-comparison__mark {
@@ -4052,7 +4173,7 @@ body {
 }
 
 .plugin-hero__visual-caption b {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
 }
 
 .plugin-proof-strip {
@@ -4177,7 +4298,7 @@ body {
 .plugin-feature-grid__number {
   display: block;
   margin: 0 0 0.8rem;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   font-family: var(--ht-font-mono);
   font-size: 0.68rem;
   font-weight: 800;
@@ -4244,7 +4365,7 @@ body {
 
 .plugin-pricing .plugin-eyebrow,
 .plugin-final-cta .plugin-eyebrow {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
 }
 
 .plugin-pricing h2,
@@ -4385,7 +4506,7 @@ body {
 
 .plugin-confidence dd a,
 .plugin-faq a {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
 }
 
 .plugin-faq {
@@ -4424,7 +4545,7 @@ body {
   position: absolute;
   top: 50%;
   right: 1.1rem;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   content: "+";
   font-family: var(--ht-font-mono);
   font-size: 1.2rem;
@@ -5115,7 +5236,7 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
 #main.marketing-main--standard,
 #main.marketing-main--archive {
   width: var(--ht-container) !important;
-  max-width: 1280px !important;
+  max-width: 1120px !important;
   margin: 0 auto !important;
   padding-top: clamp(2rem, 4vw, 3.5rem) !important;
 }
@@ -5236,7 +5357,6 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
 /* Dark feature surfaces keep their own readable token set in light mode.
    These cards intentionally use a dark visual treatment; inheriting the light
    palette would otherwise put dark copy on a dark surface. */
-.bento-card--featured,
 .ht-closing-card {
   --ht-text-primary: #f8fafc;
   --ht-text-secondary: #cbd5e1;
@@ -5245,6 +5365,58 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
   --ht-border: rgba(255, 255, 255, 0.14);
   --ht-border-hover: rgba(56, 189, 248, 0.55);
 }
+
+/* Light theme styling for featured cards: cleanly adapt to white/elevated surface */
+html:not([data-theme="dark"]) .bento-card--featured {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.04) !important;
+  --ht-text-primary: #0f172a !important;
+  --ht-text-secondary: #334155 !important;
+  --ht-text-muted: #64748b !important;
+  --ht-bg-elevated: #f1f5f9 !important;
+  --ht-border: rgba(15, 23, 42, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .bento-card--featured .bento-card__title {
+  color: #0f172a !important;
+}
+
+html:not([data-theme="dark"]) .bento-card--featured .bento-card__desc {
+  color: #475569 !important;
+}
+
+html:not([data-theme="dark"]) .bento-card--featured .bento-card__visual-bridge {
+  background: #f8fafc !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html:not([data-theme="dark"]) .bento-card--featured .ht-bridge-icon {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #0284c7 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not([data-theme="dark"]) .bento-card--featured .ht-bridge-step span {
+  color: #475569 !important;
+}
+
+html:not([data-theme="dark"]) .bento-card--featured .bento-card__highlights span {
+  color: #475569 !important;
+}
+
+html:not([data-theme="dark"]) .bento-card--featured .ht-btn-secondary {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  color: #0f172a !important;
+}
+
+html:not([data-theme="dark"]) .bento-card--featured .ht-btn-secondary:hover {
+  background: #e2e8f0 !important;
+  border-color: rgba(15, 23, 42, 0.25) !important;
+}
+
 
 .plugin-hero__visual.importon-comparison .plugin-hero__visual-caption {
   color: #94a3b8;
@@ -5500,14 +5672,14 @@ html[data-theme="dark"] .whatsapp-chat__message small {
 }
 
 html[data-theme="dark"] .whatsapp-chat__action {
-  color: #f8fafc;
+  color: var(--ht-text-primary);
   background: #162334;
   border-color: rgba(148, 163, 184, 0.35);
 }
 
 html[data-theme="dark"] .whatsapp-chat__action:hover,
 html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
-  color: #ffffff;
+  color: var(--ht-text-primary);
   border-color: #25d366;
   background: #1f2f43;
 }
@@ -5539,7 +5711,7 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   background: var(--ht-bg-surface);
   border: 1px solid var(--ht-border);
   border-radius: var(--ht-radius-full);
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   font-family: var(--ht-font-mono);
   font-size: 0.84rem;
   font-weight: 700;
@@ -5664,7 +5836,7 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   display: grid;
   place-items: center;
   background: linear-gradient(135deg, #022b3a, #1f7a8c);
-  color: #ffffff;
+  color: var(--ht-text-primary);
   font-family: var(--ht-font-mono);
   font-size: 0.85rem;
   letter-spacing: 0.04em;
@@ -5679,7 +5851,7 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
-  color: #ffffff;
+  color: var(--ht-text-primary);
   font-family: var(--ht-font-mono);
   font-size: 0.7rem;
   font-weight: 700;
@@ -5768,7 +5940,7 @@ html[data-theme="dark"] .ht-post-card__badge {
   gap: 0.35rem;
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   letter-spacing: 0.01em;
 }
 
@@ -5782,3 +5954,944 @@ html[data-theme="dark"] .ht-post-card__badge {
 }
 
 /* Footer is full-width, no trailing margin needed */
+
+
+
+/* Minimalist Dev Theme Overrides - Matching jisun.online clean aesthetic */
+[data-theme="dark"],
+:root {
+  --ht-bg-base: #141414 !important;
+  --ht-bg-surface: #1c1c1c !important;
+  --ht-bg-elevated: #242424 !important;
+  --ht-bg-card: #1c1c1c !important;
+  --ht-bg-card-hover: #222222 !important;
+  --ht-border: rgba(255, 255, 255, 0.08) !important;
+  --ht-border-hover: rgba(255, 255, 255, 0.22) !important;
+}
+
+/* Hide blue background particle canvas mesh */
+.bg-mesh-canvas {
+  display: none !important;
+}
+
+/* Site Background with Subtle Grid Pattern like jisun.online */
+html[data-theme="dark"],
+html:not([data-theme="light"]) {
+  background-color: #141414 !important;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+}
+
+/* Floating Masthead in Dark Mode */
+html[data-theme="dark"] .site-header.masthead.ht-masthead,
+html:not([data-theme="light"]) .site-header.masthead.ht-masthead {
+  background: rgba(24, 24, 27, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+/* Primary CTA Button: Clean High-End Monochromatic Style (like jisun.online) */
+html[data-theme="dark"] .ht-btn-cta,
+html[data-theme="dark"] .ht-btn-primary,
+html:not([data-theme="light"]) .ht-btn-cta,
+html:not([data-theme="light"]) .ht-btn-primary {
+  background: #f8fafc !important;
+  color: #09090b !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  border: none !important;
+}
+
+html[data-theme="dark"] .ht-btn-cta:hover,
+html[data-theme="dark"] .ht-btn-primary:hover,
+html:not([data-theme="light"]) .ht-btn-cta:hover,
+html:not([data-theme="light"]) .ht-btn-primary:hover {
+  background: #ffffff !important;
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Secondary Button */
+html[data-theme="dark"] .ht-btn-secondary,
+html:not([data-theme="light"]) .ht-btn-secondary {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .ht-btn-secondary:hover,
+html:not([data-theme="light"]) .ht-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Hero Terminal in Dark Mode: Clean Slate Black instead of Blue Cyber */
+html[data-theme="dark"] .hero-terminal,
+html:not([data-theme="light"]) .hero-terminal {
+  background: #18181b !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
+}
+
+html[data-theme="dark"] .hero-terminal__topbar,
+html:not([data-theme="light"]) .hero-terminal__topbar {
+  background: #141416 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="dark"] .hero-terminal__tabs,
+html:not([data-theme="light"]) .hero-terminal__tabs {
+  background: #1c1c1f !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Bento Cards in Dark Mode: Neutral Warm Dark (No neon blue glow) */
+html[data-theme="dark"] .bento-card,
+html:not([data-theme="light"]) .bento-card {
+  background: #18181b !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .bento-card::after,
+html:not([data-theme="light"]) .bento-card::after {
+  display: none !important;
+}
+
+html[data-theme="dark"] .bento-card:hover,
+html:not([data-theme="light"]) .bento-card:hover {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Featured Bento Card */
+html[data-theme="dark"] .bento-card--featured,
+html:not([data-theme="light"]) .bento-card--featured {
+  background: #18181b !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+html[data-theme="dark"] .bento-card--featured .bento-card__visual-bridge,
+html:not([data-theme="light"]) .bento-card--featured .bento-card__visual-bridge {
+  background: #121214 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Navigation Links */
+html[data-theme="dark"] .ht-nav__link.is-active,
+html:not([data-theme="light"]) .ht-nav__link.is-active {
+  color: #f8fafc !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Dropdown Menu */
+html[data-theme="dark"] .ht-nav__dropdown-inner,
+html:not([data-theme="light"]) .ht-nav__dropdown-inner {
+  background: #18181b !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6) !important;
+}
+
+
+
+
+/* ==========================================================================
+   STRICT MONOCHROMATIC OVERRIDES - Removing all sky blue / cyan / neon glows
+   Achieving the true clean developer aesthetic like jisun.online
+   ========================================================================== */
+
+:root,
+[data-theme="dark"],
+html:not([data-theme="light"]) {
+  --ht-cyan: #f8fafc !important;
+  --ht-cyan-glow: rgba(255, 255, 255, 0.05) !important;
+  --ht-border-hover: rgba(255, 255, 255, 0.25) !important;
+  --ht-border-active: rgba(255, 255, 255, 0.4) !important;
+  --ht-gradient-text: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%) !important;
+  --ht-shadow-glow: none !important;
+}
+
+/* Eliminate all cyan & neon gradients from headlines & buttons */
+.ht-text-gradient {
+  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Remove cyan glow and border from avatar */
+.ht-brand__avatar-wrap {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.ht-brand__status-dot {
+  background: #10b981 !important;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6) !important;
+}
+
+/* Reading Progress Bar: Pure Minimalist Neutral */
+.reading-progress-bar {
+  background: #f8fafc !important;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Eyebrows & Badges: Clean monochrome */
+.ht-eyebrow,
+.ht-eyebrow-dot {
+  color: #a1a1aa !important;
+  background: #a1a1aa !important;
+  box-shadow: none !important;
+}
+.ht-eyebrow {
+  background: transparent !important;
+}
+
+/* Stack Ribbons & Chips */
+.ht-stack-pill:hover {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+.ht-stack-pill i {
+  color: #a1a1aa !important;
+}
+
+/* Terminal ANSI classes */
+.ht-term-cyan {
+  color: #f8fafc !important;
+}
+.ht-term-link {
+  color: #e2e8f0 !important;
+}
+
+/* Navigation Carets & Hover States */
+.ht-nav__dropdown-wrap:hover .ht-nav__caret,
+.ht-nav__dropdown-item:hover .ht-nav__dropdown-item-title,
+.ht-mobile-link:hover,
+.ht-mobile-link.is-active,
+.ht-btn-palette:hover,
+.ht-btn-theme:hover {
+  color: #ffffff !important;
+}
+
+.ht-nav__dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Clean up WhatsApp widget colors */
+.whatsapp-chat__launcher,
+[data-theme="dark"] .whatsapp-chat__launcher,
+html:not([data-theme="light"]) .whatsapp-chat__launcher {
+  background: #18181b !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+.whatsapp-chat__launcher:hover,
+[data-theme="dark"] .whatsapp-chat__launcher:hover,
+html:not([data-theme="light"]) .whatsapp-chat__launcher:hover {
+  background: #242427 !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+.whatsapp-chat__launcher svg,
+[data-theme="dark"] .whatsapp-chat__launcher svg,
+html:not([data-theme="light"]) .whatsapp-chat__launcher svg {
+  fill: #f8fafc !important;
+}
+.whatsapp-chat__header,
+[data-theme="dark"] .whatsapp-chat__header,
+html:not([data-theme="light"]) .whatsapp-chat__header {
+  background: #141416 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+}
+.whatsapp-chat__header strong {
+  color: #f8fafc !important;
+}
+.whatsapp-chat__content,
+[data-theme="dark"] .whatsapp-chat__content,
+html:not([data-theme="light"]) .whatsapp-chat__content {
+  background: #18181b !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.whatsapp-chat__message,
+[data-theme="dark"] .whatsapp-chat__message,
+html:not([data-theme="light"]) .whatsapp-chat__message {
+  background: #18181b !important;
+}
+.whatsapp-chat__message span,
+[data-theme="dark"] .whatsapp-chat__message span,
+html:not([data-theme="light"]) .whatsapp-chat__message span {
+  background: #242427 !important;
+  color: #f8fafc !important;
+  box-shadow: none !important;
+}
+.whatsapp-chat__action,
+[data-theme="dark"] .whatsapp-chat__action,
+html:not([data-theme="light"]) .whatsapp-chat__action {
+  background: #f8fafc !important;
+  color: #09090b !important;
+  border: none !important;
+}
+.whatsapp-chat__action:hover,
+[data-theme="dark"] .whatsapp-chat__action:hover,
+html:not([data-theme="light"]) .whatsapp-chat__action:hover {
+  background: #ffffff !important;
+  color: #09090b !important;
+}
+
+/* Remove glow from cards and buttons */
+.glow-card,
+.ht-btn--glow {
+  box-shadow: none !important;
+}
+
+/* Links & CTAs across all pages */
+a.ht-btn-cta,
+button.ht-btn-cta,
+.ht-btn-primary,
+.ht-mobile-cta-btn {
+  background: #f8fafc !important;
+  color: #09090b !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+a.ht-btn-cta:hover,
+button.ht-btn-cta:hover,
+.ht-btn-primary:hover,
+.ht-mobile-cta-btn:hover {
+  background: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.15) !important;
+}
+
+.ht-btn-secondary,
+.ht-btn-tertiary {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #f8fafc !important;
+}
+
+.ht-btn-secondary:hover,
+.ht-btn-tertiary:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+
+
+/* ==========================================================================
+   Spotlight Dynamic Mouse Glow — Soft, Pure Monochromatic Highlight (No Blue)
+   ========================================================================== */
+.bento-card,
+.glow-card,
+.ht-wf-card,
+.ht-project-card,
+.home-capability-card,
+.plugin-product-card {
+  position: relative;
+}
+
+.bento-card::before,
+.glow-card::before,
+.ht-wf-card::before,
+.ht-project-card::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.07), transparent 45%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.bento-card:hover::before,
+.glow-card:hover::before,
+.ht-wf-card:hover::before,
+.ht-project-card:hover::before {
+  opacity: 1 !important;
+}
+
+/* Ensure card content stays crisply above the spotlight glow */
+.bento-card > *,
+.glow-card > *,
+.ht-wf-card > *,
+.ht-project-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   Lenis Smooth Scroll Engine Styles (SaaS Top Notch Feel)
+   ========================================================================== */
+html.lenis,
+html.lenis body {
+  height: auto !important;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip !important;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+
+/* ==========================================================================
+   Post Layout: Boxed desktop grid with sticky recent projects sidebar
+   ========================================================================== */
+.marketing-post-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .marketing-post-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    align-items: start;
+    gap: 3.5rem;
+  }
+}
+
+.marketing-post-sidebar {
+  display: block;
+}
+
+.marketing-post-sidebar__sticky {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.marketing-post-sidebar__header {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ht-border);
+}
+
+.marketing-post-sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.marketing-sidebar-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem;
+  border-radius: var(--ht-radius-md);
+  border: 1px solid var(--ht-border);
+  background: var(--ht-bg-card);
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.marketing-sidebar-card:hover {
+  border-color: var(--ht-border-hover);
+  background: var(--ht-bg-elevated);
+  transform: translateY(-2px);
+}
+
+.marketing-sidebar-card__thumb {
+  width: 68px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: var(--ht-radius-sm);
+  overflow: hidden;
+  background: #09090b;
+  border: 1px solid var(--ht-border);
+}
+
+.marketing-sidebar-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.marketing-sidebar-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.marketing-sidebar-card__title {
+  margin: 0 !important;
+  font-family: var(--ht-font-sans);
+  font-size: 0.82rem !important;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ht-text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.marketing-sidebar-card__date {
+  font-family: var(--ht-font-mono);
+  font-size: 0.72rem;
+  color: var(--ht-text-muted);
+}
+
+.marketing-sidebar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ht-text-muted);
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.marketing-sidebar-link:hover {
+  color: var(--ht-text-primary);
+}
+
+/* ==========================================================================
+   Monochromatic Absolute Guarantee & Light Theme Text Contrast Fixes
+   ========================================================================== */
+html:not([data-theme="dark"]) body,
+html:not([data-theme="dark"]) .site-main,
+html:not([data-theme="dark"]) #main {
+  background-color: #f8fafc !important;
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) h1,
+html:not([data-theme="dark"]) h2,
+html:not([data-theme="dark"]) h3,
+html:not([data-theme="dark"]) h4,
+html:not([data-theme="dark"]) h5,
+html:not([data-theme="dark"]) h6,
+html:not([data-theme="dark"]) .marketing-post__title,
+html:not([data-theme="dark"]) .ht-section-title,
+html:not([data-theme="dark"]) .bento-card__title {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) p,
+html:not([data-theme="dark"]) li,
+html:not([data-theme="dark"]) .marketing-post__content,
+html:not([data-theme="dark"]) .ht-review-card p {
+  color: #334155 !important;
+}
+
+html:not([data-theme="dark"]) .bento-card,
+html:not([data-theme="dark"]) .ht-review-card,
+html:not([data-theme="dark"]) .marketing-sidebar-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .ht-btn-primary,
+html:not([data-theme="dark"]) .ht-btn-cta,
+html:not([data-theme="dark"]) .ht-btn-glow {
+  background: #09090b !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .ht-btn-primary:hover,
+html:not([data-theme="dark"]) .ht-btn-cta:hover,
+html:not([data-theme="dark"]) .ht-btn-glow:hover {
+  background: #18181b !important;
+  color: #ffffff !important;
+}
+
+/* Eliminate any lingering cyan/blue/green focus borders or outlines */
+*:focus,
+*:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.4) !important;
+}
+html:not([data-theme="dark"]) *:focus,
+html:not([data-theme="dark"]) *:focus-visible {
+  outline-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* ==========================================================================
+   Comprehensive Light Mode Perfect Inversion (Crisp, High Contrast, Luxury)
+   ========================================================================== */
+html:not([data-theme="dark"]) {
+  /* Core brand colors */
+  --ht-bg-base: #f8fafc !important;
+  --ht-bg-surface: #ffffff !important;
+  --ht-bg-elevated: #f1f5f9 !important;
+  --ht-bg-card: #ffffff !important;
+  --ht-border: rgba(15, 23, 42, 0.1) !important;
+  --ht-border-hover: rgba(15, 23, 42, 0.25) !important;
+  --ht-text-primary: #09090b !important;
+  --ht-text-secondary: #334155 !important;
+  --ht-text-muted: #64748b !important;
+}
+
+/* Masthead in Light Mode */
+html:not([data-theme="dark"]) .site-header.masthead.ht-masthead {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not([data-theme="dark"]) .ht-brand__name {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-brand__title {
+  color: #64748b !important;
+}
+
+html:not([data-theme="dark"]) .ht-nav__link {
+  color: #334155 !important;
+}
+
+html:not([data-theme="dark"]) .ht-nav__link:hover,
+html:not([data-theme="dark"]) .ht-nav__link.is-active {
+  color: #09090b !important;
+  background: rgba(15, 23, 42, 0.06) !important;
+}
+
+html:not([data-theme="dark"]) .ht-btn-palette,
+html:not([data-theme="dark"]) .ht-btn-theme {
+  color: #334155 !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  background: #ffffff !important;
+}
+
+html:not([data-theme="dark"]) .ht-btn-palette:hover,
+html:not([data-theme="dark"]) .ht-btn-theme:hover {
+  color: #09090b !important;
+  border-color: rgba(15, 23, 42, 0.25) !important;
+}
+
+/* Secondary Button in Light Mode */
+html:not([data-theme="dark"]) .ht-btn-secondary {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  color: #09090b !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not([data-theme="dark"]) .ht-btn-secondary:hover {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.3) !important;
+}
+
+/* Tertiary Button (Copy Email) in Light Mode */
+html:not([data-theme="dark"]) .ht-btn-tertiary,
+html:not([data-theme="dark"]) .ht-btn-copy-mail {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-btn-tertiary:hover,
+html:not([data-theme="dark"]) .ht-btn-copy-mail:hover {
+  background: #e2e8f0 !important;
+  color: #09090b !important;
+}
+
+/* Terminal in Light Mode: Clean White Slate Terminal */
+html:not([data-theme="dark"]) .hero-terminal {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+html:not([data-theme="dark"]) .hero-terminal__topbar {
+  background: #f8fafc !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+html:not([data-theme="dark"]) .hero-terminal__tabs {
+  background: #f1f5f9 !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+html:not([data-theme="dark"]) .hero-terminal__tab-btn {
+  color: #64748b !important;
+}
+
+html:not([data-theme="dark"]) .hero-terminal__tab-btn.is-active {
+  background: #ffffff !important;
+  color: #09090b !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .hero-terminal__body {
+  background: #ffffff !important;
+  color: #334155 !important;
+}
+
+html:not([data-theme="dark"]) .hero-terminal__cmd {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .hero-terminal__response {
+  color: #475569 !important;
+}
+
+/* Identity card in Light Mode */
+html:not([data-theme="dark"]) .ht-hero__identity {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .ht-hero__identity-copy strong {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-hero__identity-copy p,
+html:not([data-theme="dark"]) .ht-hero__identity-copy span {
+  color: #64748b !important;
+}
+
+/* Tech Stack Ribbon Pills */
+html:not([data-theme="dark"]) .ht-stack-pill {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #334155 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+}
+
+html:not([data-theme="dark"]) .ht-stack-pill:hover {
+  border-color: rgba(15, 23, 42, 0.3) !important;
+  color: #09090b !important;
+}
+
+/* Bento Cards in Light Mode */
+html:not([data-theme="dark"]) .bento-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not([data-theme="dark"]) .bento-card:hover {
+  border-color: rgba(15, 23, 42, 0.2) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not([data-theme="dark"]) .bento-card__desc {
+  color: #64748b !important;
+}
+
+html:not([data-theme="dark"]) .bento-card__list li {
+  color: #334155 !important;
+}
+
+html:not([data-theme="dark"]) .bento-card__link {
+  color: #09090b !important;
+}
+
+/* Visual Bridge in Light Mode */
+html:not([data-theme="dark"]) .bento-card__visual-bridge {
+  background: #f8fafc !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+html:not([data-theme="dark"]) .ht-bridge-step span {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-bridge-icon {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #09090b !important;
+}
+
+/* Estimator in Light Mode */
+html:not([data-theme="dark"]) .ht-estimator-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .ht-check-card {
+  background: #f8fafc !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .ht-check-card:hover {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.2) !important;
+}
+
+html:not([data-theme="dark"]) .ht-check-card strong {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-check-card span {
+  color: #64748b !important;
+}
+
+html:not([data-theme="dark"]) .ht-estimator__summary {
+  background: #f8fafc !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .ht-summary-stat-val {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-summary-stat-lbl {
+  color: #64748b !important;
+}
+
+/* Footer in Light Mode */
+html:not([data-theme="dark"]) .ht-footer {
+  background: #ffffff !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+html:not([data-theme="dark"]) .ht-footer__cta-band {
+  background: #f8fafc !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+html:not([data-theme="dark"]) .ht-footer__cta-title {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-footer__cta-desc {
+  color: #64748b !important;
+}
+
+html:not([data-theme="dark"]) .ht-footer__brand strong {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-footer__tagline {
+  color: #64748b !important;
+}
+
+html:not([data-theme="dark"]) .ht-footer__heading {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-footer__links a {
+  color: #64748b !important;
+}
+
+html:not([data-theme="dark"]) .ht-footer__links a:hover {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-footer__bottom-copy {
+  color: #94a3b8 !important;
+}
+
+/* Command Palette (Ctrl+K) in Light Mode */
+html:not([data-theme="dark"]) .ht-palette__dialog {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
+html:not([data-theme="dark"]) .ht-palette__input {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-palette__input::placeholder {
+  color: #94a3b8 !important;
+}
+
+html:not([data-theme="dark"]) .ht-palette__search-icon {
+  color: #64748b !important;
+}
+
+html:not([data-theme="dark"]) .ht-palette__badge,
+html:not([data-theme="dark"]) .ht-palette__footer kbd {
+  background: #f1f5f9 !important;
+  color: #64748b !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .ht-palette__group-title {
+  color: #94a3b8 !important;
+}
+
+html:not([data-theme="dark"]) .ht-palette__item-label {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-palette__item-sub {
+  color: #64748b !important;
+}
+
+html:not([data-theme="dark"]) .ht-palette__item-icon {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #334155 !important;
+}
+
+html:not([data-theme="dark"]) .ht-palette__item:hover,
+html:not([data-theme="dark"]) .ht-palette__item.is-focused {
+  background: #f8fafc !important;
+}
+
+/* Dropdown menu in Light Mode */
+html:not([data-theme="dark"]) .ht-nav__dropdown-inner {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not([data-theme="dark"]) .ht-nav__dropdown-item-title {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-nav__dropdown-item-desc {
+  color: #64748b !important;
+}
+
+html:not([data-theme="dark"]) .ht-nav__dropdown-item:hover {
+  background: #f8fafc !important;
+}
+
+/* Mobile panel in Light Mode */
+html:not([data-theme="dark"]) .ht-mobile-panel {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .ht-mobile-link {
+  color: #09090b !important;
+  border-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+html:not([data-theme="dark"]) .ht-hamburger-bar {
+  background: #09090b !important;
+}
+
+/* Blog Archive & Single Post in Light Mode */
+html:not([data-theme="dark"]) .archive__item-title {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .archive__item-excerpt {
+  color: #475569 !important;
+}
+
+html:not([data-theme="dark"]) .marketing-post__header {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .marketing-post__meta {
+  color: #64748b !important;
+}
