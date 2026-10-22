@@ -328,14 +328,49 @@
         },
         reset: function () {
           if (!track) { outputEl.innerHTML = ''; return; }
+          stop();
+          clearClones();
           track.innerHTML = '';
           offset = 0;
           apply();
           schedule(RESUME_DELAY);
+        },
+        displayView: function (htmlContent) {
+          if (!track) { outputEl.innerHTML = htmlContent; return; }
+          stop();
+          clearClones();
+          track.style.transition = 'none';
+          offset = 0;
+          apply();
+          track.innerHTML = htmlContent;
+          schedule(RESUME_DELAY * 2);
         }
       };
     })();
     autoScroll.mount();
+
+    function renderView(viewName) {
+      const cleanCmd = (viewName || '').trim().toLowerCase();
+      if (!cleanCmd || !COMMANDS[cleanCmd]) return;
+
+      const welcomeHtml = `
+<div class="hero-terminal__welcome">
+  <span class="ht-term-cyan">// Nasratul Nayem Developer Runtime [v2.6.0]</span><br>
+  <span class="ht-term-muted">// Active View: ${cleanCmd.toUpperCase()}</span>
+</div>`;
+
+      const promptHtml = `
+<div class="hero-terminal__line">
+  <span class="hero-terminal__prompt">nayem@dev:~$</span> <span class="hero-terminal__cmd">${escapeHtml(cleanCmd)}</span>
+</div>`;
+
+      const respHtml = `
+<div class="hero-terminal__response hero-terminal__response--stack">
+  ${COMMANDS[cleanCmd]()}
+</div>`;
+
+      autoScroll.displayView(welcomeHtml + promptHtml + respHtml);
+    }
 
     function executeCommand(cmdStr) {
       const cleanCmd = cmdStr.trim().toLowerCase();
@@ -385,12 +420,13 @@
 
     // Tab switching if terminal has multi-view tabs
     tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
         tabBtns.forEach(b => b.classList.remove('is-active'));
         btn.classList.add('is-active');
         const view = btn.getAttribute('data-view');
         if (view && COMMANDS[view]) {
-          executeCommand(view);
+          renderView(view);
         }
       });
     });
