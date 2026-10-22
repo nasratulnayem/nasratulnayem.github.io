@@ -261,6 +261,7 @@ author_profile: false
   cursor: pointer;
   width: 100%;
   height: 100%;
+  z-index: 10;
 }
 .ht-cleaner-dropzone__icon {
   width: 60px;
@@ -603,6 +604,12 @@ author_profile: false
   fileInput.addEventListener('change', function(e) {
     const file = e.target.files && e.target.files[0];
     if (file) processImage(file);
+  });
+
+  dropzone.addEventListener('click', function(e) {
+    if (e.target !== fileInput) {
+      fileInput.click();
+    }
   });
 
   dropzone.addEventListener('dragover', function(e) {
