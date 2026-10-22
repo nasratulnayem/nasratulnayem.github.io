@@ -73,8 +73,8 @@ freemius_pricings:
 <!-- Live Reviews Carousel — 3 on desktop, 1 on mobile, auto infinite -->
 <section class="ht-work-section" aria-labelledby="reviews-title">
   <div class="ht-section-header">
-    <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>TRUSTED BY STORES</span></div>
-    <h2 id="reviews-title" class="ht-section-title">Real alibaba to woocommerce product import reviews</h2>
+    <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>USER FEEDBACK</span></div>
+    <h2 id="reviews-title" class="ht-section-title">Alibaba to WooCommerce product import reviews</h2>
   </div>
   <style>
     .ht-reviews-viewport{position:relative;overflow:hidden;padding:12px 16px}

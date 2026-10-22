@@ -16,11 +16,15 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     </span>
 
     <h1 id="ht-hero-title" class="ht-hero__headline">
-      Architecting Fast Websites, Ecommerce Engines &amp; <span class="ht-text-gradient">Intelligent Automations.</span>
+      Hi, I'm Nayem.
     </h1>
 
+    <h2 class="ht-hero__subheadline">
+      AI Automation Specialist &amp; Founder | Building Intelligent Systems That Scale
+    </h2>
+
     <p class="ht-hero__lead">
-      Hi, I’m <strong>Nasratul Nayem</strong>|a web developer and automation engineer from Bangladesh. I build high-performance WordPress systems, conversion-driven Shopify &amp; WooCommerce stores, and autonomous Python/AI pipelines that cut out repetitive manual work.
+      I design and build AI-powered automation systems, intelligent agents, and custom API integrations that help businesses reduce manual work, streamline operations, and scale efficiently. From n8n workflows and CRM automation to AI products and browser extensions, I turn complex ideas into practical, reliable solutions.
     </p>
 
     <div class="ht-hero__actions">
@@ -268,7 +272,7 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
         <span class="ht-eyebrow-dot"></span>
         <span>ENGINEERING LOGS &amp; BUILDS</span>
       </div>
-      <h2 id="work-title" class="ht-section-title">Real work, with the thinking behind it.</h2>
+      <h2 id="work-title" class="ht-section-title">Case studies, with the thinking behind them.</h2>
     </div>
     <div class="ht-work-controls">
       <div class="portfolio-filter-hud" role="tablist" aria-label="Filter case studies">

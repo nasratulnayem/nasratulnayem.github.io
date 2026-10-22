@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Python & AI Automation Engineering"
-description: "I build Python scrapers, bots, and AI-assisted workflows that replace repetitive manual tasks. Real automation systems for real business problems."
+description: "I build Python scrapers, bots, and AI-assisted workflows that replace repetitive manual tasks. Automation systems for modern business operations."
 permalink: /automation/
 author_profile: false
 ---

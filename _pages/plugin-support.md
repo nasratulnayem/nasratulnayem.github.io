@@ -10,7 +10,7 @@ description: "Product support for plugins sold by Nasratul Nayem."
     <span class="ht-eyebrow-dot"></span>
     <span>PLUGIN SUPPORT</span>
   </div>
-  <h1 class="ht-page-hero__title">A useful support request starts with the real situation.</h1>
+  <h1 class="ht-page-hero__title">A useful support request starts with the actual situation.</h1>
   <p class="ht-page-hero__desc">Email <a href="mailto:devnayem30@gmail.com">devnayem30@gmail.com</a> with the product name, your order email, WordPress and WooCommerce versions, and a clear description of what happened. I aim to respond within two business days.</p>
 </div>
 

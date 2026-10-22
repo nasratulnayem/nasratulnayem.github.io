@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Engineering Portfolio | WordPress, Ecommerce & Automation"
-description: "Selected projects I've built | WordPress systems, WooCommerce stores, Python automation pipelines, and real outcomes for real clients."
+description: "Selected projects I've built | WordPress systems, WooCommerce stores, Python automation pipelines, and measurable outcomes for clients."
 permalink: /portfolio/
 author_profile: false
 ---
@@ -12,7 +12,7 @@ author_profile: false
     <span>ENGINEERING BUILDS &amp; CASE STUDIES</span>
   </div>
   <h1 class="ht-page-hero__title">From rough idea to shipped production software.</h1>
-  <p class="ht-page-hero__desc">Real build notes from the systems I design: high-conversion storefronts, custom WordPress tools, and Python automations that give teams their time back.</p>
+  <p class="ht-page-hero__desc">Build notes from the systems I design: high-conversion storefronts, custom WordPress tools, and Python automations that give teams their time back.</p>
 </div>
 
 <div class="ht-work-section">
