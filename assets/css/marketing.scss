@@ -6895,3 +6895,144 @@ html:not([data-theme="dark"]) .marketing-post__header {
 html:not([data-theme="dark"]) .marketing-post__meta {
   color: #64748b !important;
 }
+
+/* ==========================================================================
+   Modern Minimalist Badges & Eyebrows (Exact Match to User Reference)
+   ========================================================================== */
+
+/* 1. Availability Status Pill (Hero) */
+.ht-avail-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  padding: 4px 12px 4px 10px !important;
+  background: var(--ht-bg-card, #18181b) !important;
+  border: 1px solid var(--ht-border, rgba(255, 255, 255, 0.12)) !important;
+  border-radius: 9999px !important;
+  font-family: var(--ht-font-sans, inherit) !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  color: var(--ht-text-muted, #a1a1aa) !important;
+  letter-spacing: normal !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  margin-bottom: 1rem !important;
+  white-space: nowrap !important;
+}
+
+.ht-avail-pill__dot {
+  width: 7px !important;
+  height: 7px !important;
+  background: #10b981 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2) !important;
+  flex-shrink: 0 !important;
+}
+
+html:not([data-theme="dark"]) .ht-avail-pill {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #64748b !important;
+}
+
+/* 2. Section Eyebrow Dividers (Exact Match to Reference: Thin line with rounded pill) */
+.ht-eyebrow {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.75rem !important;
+  font-family: var(--ht-font-sans, inherit) !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  letter-spacing: normal !important;
+  color: var(--ht-text-primary, #f8fafc) !important;
+  margin-bottom: 0.85rem !important;
+  width: 100% !important;
+}
+
+/* Hide the old dot */
+.ht-eyebrow-dot {
+  display: none !important;
+}
+
+/* Style the text inside eyebrow as the clean pill from reference */
+.ht-eyebrow > span:not(.ht-eyebrow-dot) {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 3px 14px !important;
+  background: #e4e4e7 !important;
+  color: #09090b !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 9999px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  white-space: nowrap !important;
+}
+
+html:not([data-theme="dark"]) .ht-eyebrow > span:not(.ht-eyebrow-dot) {
+  background: #09090b !important;
+  color: #ffffff !important;
+  border-color: #09090b !important;
+}
+
+/* Subtle horizontal line before & after eyebrow badge */
+.ht-eyebrow::after {
+  content: '' !important;
+  flex: 1 1 0% !important;
+  height: 1px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .ht-eyebrow::after {
+  background: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* 3. Tech Tags & Pill Badges (.ht-badge, .ht-card-badge, .ht-tag) */
+.ht-badge,
+.ht-card-badge,
+.ht-tag,
+.ht-stack-badge,
+.portfolio-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 2px 10px !important;
+  border-radius: 9999px !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #e4e4e7 !important;
+  white-space: nowrap !important;
+  transition: all 0.2s ease !important;
+}
+
+.ht-badge:hover,
+.ht-card-badge:hover,
+.ht-tag:hover,
+.ht-stack-badge:hover,
+.portfolio-badge:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+html:not([data-theme="dark"]) .ht-badge,
+html:not([data-theme="dark"]) .ht-card-badge,
+html:not([data-theme="dark"]) .ht-tag,
+html:not([data-theme="dark"]) .ht-stack-badge,
+html:not([data-theme="dark"]) .portfolio-badge {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .ht-badge:hover,
+html:not([data-theme="dark"]) .ht-card-badge:hover,
+html:not([data-theme="dark"]) .ht-tag:hover,
+html:not([data-theme="dark"]) .ht-stack-badge:hover,
+html:not([data-theme="dark"]) .portfolio-badge:hover {
+  background: #e2e8f0 !important;
+  color: #09090b !important;
+}
+
