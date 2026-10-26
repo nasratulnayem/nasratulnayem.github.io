@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Image Metadata Cleaner — Free Private Image Sanitizer"
-description: "Remove EXIF, GPS, camera model, and hidden metadata from JPG, PNG, and WebP images directly in your browser. 100% private, zero uploads."
+title: "Free Image Metadata Remover"
+description: "Remove image metadata online with this free EXIF remover. Strip GPS location, camera details and hidden data from JPG, PNG and WebP privately in your browser."
+excerpt: "Remove image metadata online with this free EXIF remover. Strip GPS location, camera details and hidden data from JPG, PNG and WebP privately in your browser."
 permalink: /tools/image-metadata-cleaner/
-keywords: "image metadata cleaner, remove exif, strip metadata, privacy tool, local image cleaner"
 author_profile: false
 ---
 
@@ -19,25 +19,25 @@ author_profile: false
     </div>
 
     <!-- Page Hero Header -->
-    <header class="ht-cleaner-hero">
-      <div class="ht-cleaner-pill">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ht-cleaner-pill__icon"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg>
-        <span>Local image tool</span>
+    <header class="ht-page-hero ht-cleaner-hero">
+      <div class="ht-eyebrow">
+        <span class="ht-eyebrow-dot"></span>
+        <span>FREE, PRIVATE IMAGE TOOL</span>
       </div>
-      <h1 class="ht-cleaner-title">Create a clean image copy.</h1>
-      <p class="ht-cleaner-subtitle">A fresh copy, rebuilt from visible pixels. Your image stays on this device and is never uploaded.</p>
+      <h1 class="ht-page-hero__title ht-cleaner-title">Free Image Metadata Remover</h1>
+      <p class="ht-page-hero__desc ht-cleaner-subtitle">Remove EXIF data, GPS location and other hidden details from a photo before you share it. Your image is cleaned in this browser and never uploaded.</p>
     </header>
 
     <!-- Main Tool Box Card -->
     <section class="ht-cleaner-card" aria-labelledby="cleaner-heading">
       <div class="ht-cleaner-card__header">
         <div>
-          <h2 id="cleaner-heading" class="ht-cleaner-card__title">Image metadata cleaner</h2>
+          <h2 id="cleaner-heading" class="ht-cleaner-card__title">Remove image metadata online</h2>
           <p class="ht-cleaner-card__meta">JPG, PNG, or WebP &middot; up to 25 MB</p>
         </div>
         <div class="ht-cleaner-badge">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
-          <span>No upload &bull; 100% Client-side</span>
+          <span>Private &bull; runs on this device</span>
         </div>
       </div>
 
@@ -54,8 +54,8 @@ author_profile: false
           <div class="ht-cleaner-dropzone__icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10l-3.1-3.1a2 2 0 0 0-2.814.014L6 21"></path><path d="m14 19.5 3-3 3 3"></path><path d="M17 22v-5.5"></path><circle cx="9" cy="9" r="2"></circle></svg>
           </div>
-          <span class="ht-cleaner-dropzone__heading">Choose an image</span>
-          <span class="ht-cleaner-dropzone__sub">Tap to select or drop it here. It stays on your device.</span>
+          <span class="ht-cleaner-dropzone__heading">Choose a photo to clean</span>
+          <span class="ht-cleaner-dropzone__sub">JPG, PNG, or WebP up to 25 MB. It stays on your device.</span>
         </div>
 
         <!-- Processing State -->
@@ -76,7 +76,7 @@ author_profile: false
             </div>
             <div class="ht-cleaner-info-item">
               <span class="ht-cleaner-info-label">Metadata:</span>
-              <span id="cleaner-status" class="ht-cleaner-info-val ht-text-emerald">✓ Removed</span>
+              <span id="cleaner-status" class="ht-cleaner-info-val ht-cleaner-status">✓ Removed</span>
             </div>
           </div>
           <div class="ht-cleaner-actions">
@@ -99,31 +99,62 @@ author_profile: false
         <div class="ht-cleaner-feature-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
         </div>
-        <h3 class="ht-cleaner-feature-title">Private by design</h3>
-        <p class="ht-cleaner-feature-desc">The processing runs 100% locally in your browser memory. No data or image ever touches a remote server.</p>
+        <h3 class="ht-cleaner-feature-title">No upload, no account</h3>
+        <p class="ht-cleaner-feature-desc">This online EXIF remover processes your image locally in the browser. The original photo is not sent to a server.</p>
       </article>
 
       <article class="ht-cleaner-card-feature">
         <div class="ht-cleaner-feature-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><circle cx="10" cy="12" r="2"></circle><path d="m20 17-1.296-1.296a2.41 2.41 0 0 0-3.408 0L9 22"></path></svg>
         </div>
-        <h3 class="ht-cleaner-feature-title">Fresh file</h3>
-        <p class="ht-cleaner-feature-desc">The browser re-encodes visible pixels and removes embedded EXIF, GPS, IPTC, XMP, and content-credential data.</p>
+        <h3 class="ht-cleaner-feature-title">Remove hidden photo details</h3>
+        <p class="ht-cleaner-feature-desc">The new image copy removes supported EXIF, GPS, IPTC, XMP, and embedded content-credential metadata.</p>
       </article>
 
       <article class="ht-cleaner-card-feature">
         <div class="ht-cleaner-feature-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
         </div>
-        <h3 class="ht-cleaner-feature-title">Your format</h3>
-        <p class="ht-cleaner-feature-desc">PNG, JPEG, and WebP formats are seamlessly supported and preserved with optimal visual quality.</p>
+        <h3 class="ht-cleaner-feature-title">JPG, PNG, and WebP</h3>
+        <p class="ht-cleaner-feature-desc">Download a clean copy in the same supported image format, ready to share or post online.</p>
       </article>
     </div>
 
-    <!-- Bottom Disclaimer -->
-    <p class="ht-cleaner-disclaimer">
-      Embedded EXIF, GPS, IPTC, XMP, and content-credential metadata are removed from the new file. This cannot erase visible or pixel-level watermarks or control AI labels added by social platforms.
-    </p>
+    <section class="ht-cleaner-seo-content" aria-labelledby="cleaner-how-title">
+      <div class="ht-cleaner-copy-block">
+        <h2 id="cleaner-how-title">How to remove EXIF and GPS data from a photo</h2>
+        <ol class="ht-cleaner-steps">
+          <li><strong>Select an image.</strong> Choose a JPG, PNG, or WebP photo from your device.</li>
+          <li><strong>Let the browser clean it.</strong> The tool creates a fresh image from its visible pixels and removes supported embedded metadata.</li>
+          <li><strong>Download the clean copy.</strong> Save the new file and share that copy instead of the original.</li>
+        </ol>
+        <p>Photos can contain EXIF metadata such as GPS coordinates, camera and phone details, capture dates, and editing software. Removing this hidden information can help protect your privacy when posting photos online or listing items for sale. It does not remove details that are visible in the picture.</p>
+      </div>
+
+      <div class="ht-cleaner-copy-block" aria-labelledby="cleaner-faq-title">
+        <h2 id="cleaner-faq-title">Image metadata remover: common questions</h2>
+        <div class="ht-cleaner-faq-grid">
+          <article>
+            <h3>Does this remove EXIF and GPS location data?</h3>
+            <p>It removes supported EXIF, GPS, IPTC, XMP, and content-credential metadata from the new JPG, PNG, or WebP file. Location clues visible in the image itself remain.</p>
+          </article>
+          <article>
+            <h3>Is my photo uploaded or stored?</h3>
+            <p>No. Image processing happens locally in your browser. The selected image is not uploaded to this website or stored on its server.</p>
+          </article>
+          <article>
+            <h3>Will removing metadata change image quality?</h3>
+            <p>The tool re-encodes a fresh copy. PNG remains lossless; JPG and WebP may be recompressed, so small visual or file-size differences are possible.</p>
+          </article>
+          <article>
+            <h3>Can this remove an AI label or watermark?</h3>
+            <p>It removes supported metadata embedded in the file. It cannot erase visible or pixel-level watermarks or control AI labels added by social platforms.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <p class="ht-cleaner-disclaimer">Use the downloaded copy when sharing. Some websites may add their own metadata or labels after upload.</p>
 
   </div>
 </div>
@@ -151,42 +182,13 @@ author_profile: false
   transition: all 0.2s ease;
 }
 .ht-cleaner-back:hover {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   transform: translateX(-3px);
 }
-.ht-cleaner-hero {
-  margin-bottom: 32px;
-}
-.ht-cleaner-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(0, 245, 160, 0.08);
-  border: 1px solid rgba(0, 245, 160, 0.25);
-  color: var(--ht-emerald);
-  padding: 4px 14px;
-  border-radius: var(--ht-radius-full, 9999px);
-  font-size: 0.78rem;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-.ht-cleaner-pill__icon {
-  color: var(--ht-emerald);
-}
-.ht-cleaner-title {
-  font-size: clamp(2rem, 4vw, 2.85rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--ht-text-primary);
-  line-height: 1.15;
-  margin: 0 0 12px 0;
-}
-.ht-cleaner-subtitle {
-  font-size: 1.05rem;
-  color: var(--ht-text-secondary);
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0;
+.ht-cleaner-page .ht-cleaner-hero {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto 32px;
 }
 
 /* Card */
@@ -222,10 +224,11 @@ author_profile: false
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--ht-emerald);
+  color: var(--ht-text-primary);
   font-size: 0.82rem;
   font-weight: 600;
-  background: rgba(0, 245, 160, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--ht-border);
   padding: 4px 10px;
   border-radius: var(--ht-radius-full, 9999px);
 }
@@ -250,8 +253,8 @@ author_profile: false
 }
 .ht-cleaner-dropzone:hover,
 .ht-cleaner-dropzone.is-dragover {
-  border-color: var(--ht-cyan);
-  background: rgba(0, 210, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.035);
   transform: translateY(-2px);
 }
 .ht-cleaner-file-hidden {
@@ -272,7 +275,7 @@ author_profile: false
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   margin-bottom: 16px;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
@@ -299,8 +302,8 @@ author_profile: false
 .ht-cleaner-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(0, 210, 255, 0.15);
-  border-top-color: var(--ht-cyan);
+  border: 3px solid rgba(255, 255, 255, 0.18);
+  border-top-color: var(--ht-text-primary);
   border-radius: 50%;
   animation: htSpin 0.8s linear infinite;
 }
@@ -317,9 +320,9 @@ author_profile: false
   display: flex;
   align-items: center;
   gap: 10px;
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.25);
-  color: #f87171;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--ht-border);
+  color: var(--ht-text-primary);
   padding: 12px 16px;
   border-radius: 8px;
   font-size: 0.88rem;
@@ -333,14 +336,14 @@ author_profile: false
   gap: 18px;
 }
 .ht-cleaner-preview-box {
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--ht-border);
-  border-radius: 12px;
-  padding: 16px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 240px;
+  min-height: 0;
   max-height: 520px;
   overflow: hidden;
 }
@@ -348,8 +351,8 @@ author_profile: false
   max-width: 100%;
   max-height: 480px;
   object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  box-shadow: none;
 }
 .ht-cleaner-preview-info {
   display: flex;
@@ -375,8 +378,8 @@ author_profile: false
   font-weight: 600;
   color: var(--ht-text-primary);
 }
-.ht-text-emerald {
-  color: var(--ht-emerald) !important;
+.ht-cleaner-status {
+  color: var(--ht-text-primary) !important;
 }
 
 /* Buttons */
@@ -400,14 +403,14 @@ author_profile: false
   flex: 1;
 }
 .ht-cleaner-btn--primary {
-  background: var(--ht-cyan);
-  color: #080b10;
-  box-shadow: 0 4px 18px var(--ht-cyan-glow);
+  background: #f4f4f5;
+  color: #09090b;
+  box-shadow: none;
 }
 .ht-cleaner-btn--primary:hover {
-  background: #38bdf8;
+  background: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 22px var(--ht-cyan-glow);
+  box-shadow: none;
 }
 .ht-cleaner-btn--secondary {
   background: var(--ht-bg-elevated);
@@ -438,7 +441,7 @@ author_profile: false
   border-color: var(--ht-border-hover);
 }
 .ht-cleaner-feature-icon {
-  color: var(--ht-cyan);
+  color: var(--ht-text-primary);
   margin-bottom: 12px;
 }
 .ht-cleaner-feature-title {
@@ -462,11 +465,60 @@ author_profile: false
   line-height: 1.6;
 }
 
-.ht-cleaner-hero {
-  text-align: center;
+.ht-cleaner-seo-content {
+  display: grid;
+  gap: 20px;
+  margin: 0 0 22px;
 }
-.ht-cleaner-hero > .ht-cleaner-pill {
-  margin-inline: auto;
+.ht-cleaner-copy-block {
+  padding: 24px;
+  background: var(--ht-bg-surface);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-lg, 16px);
+}
+.ht-cleaner-copy-block h2 {
+  margin: 0 0 14px;
+  color: var(--ht-text-primary);
+  font-family: var(--ht-font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+.ht-cleaner-copy-block p,
+.ht-cleaner-steps {
+  color: var(--ht-text-secondary);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+.ht-cleaner-copy-block p:last-child {
+  margin-bottom: 0;
+}
+.ht-cleaner-steps {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding-left: 1.4rem;
+}
+.ht-cleaner-steps strong,
+.ht-cleaner-faq-grid h3 {
+  color: var(--ht-text-primary);
+}
+.ht-cleaner-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+}
+.ht-cleaner-faq-grid article {
+  min-width: 0;
+}
+.ht-cleaner-faq-grid h3 {
+  margin: 0 0 6px;
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+.ht-cleaner-faq-grid p {
+  margin: 0;
+  font-size: 0.88rem;
 }
 
 /* Keep the mobile tool calm, legible, and touch-friendly. */
@@ -482,21 +534,8 @@ author_profile: false
   .ht-cleaner-topbar {
     margin-bottom: 24px;
   }
-  .ht-cleaner-hero {
+  .ht-cleaner-page .ht-cleaner-hero {
     margin-bottom: 26px;
-  }
-  .ht-cleaner-title {
-    max-width: 13ch;
-    margin-inline: auto;
-    font-size: clamp(2rem, 8.5vw, 2.55rem);
-    line-height: 1.06;
-    text-wrap: balance;
-  }
-  .ht-cleaner-subtitle {
-    max-width: 34ch;
-    margin-inline: auto;
-    font-size: 0.98rem;
-    line-height: 1.55;
   }
   .ht-cleaner-card {
     margin-bottom: 18px;
@@ -543,10 +582,7 @@ author_profile: false
     gap: 12px;
   }
   .ht-cleaner-preview-box {
-    min-height: 180px;
     max-height: 48svh;
-    padding: 10px;
-    border-radius: 16px;
   }
   .ht-cleaner-preview-img {
     max-height: 44svh;
@@ -596,6 +632,13 @@ author_profile: false
   .ht-cleaner-card-feature {
     padding: 17px;
   }
+  .ht-cleaner-copy-block {
+    padding: 18px;
+  }
+  .ht-cleaner-faq-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
   .ht-cleaner-disclaimer {
     padding-inline: 2px;
     font-size: 0.78rem;
@@ -618,27 +661,68 @@ author_profile: false
 .ht-cleaner-dropzone:focus-within,
 .ht-cleaner-btn:focus-visible,
 .ht-cleaner-back:focus-visible {
-  outline: 3px solid rgba(0, 210, 255, 0.72);
+  outline: 2px solid rgba(255, 255, 255, 0.78);
   outline-offset: 3px;
 }
 
-[data-theme="light"] .ht-cleaner-card,
-[data-theme="light"] .ht-cleaner-card-feature {
+html:not([data-theme="dark"]) .ht-cleaner-card,
+html:not([data-theme="dark"]) .ht-cleaner-card-feature,
+html:not([data-theme="dark"]) .ht-cleaner-copy-block {
   background: #ffffff;
   border-color: rgba(0,0,0,0.08);
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
-[data-theme="light"] .ht-cleaner-preview-box {
-  background: #f8fafc;
-}
-[data-theme="light"] .ht-cleaner-dropzone {
+html:not([data-theme="dark"]) .ht-cleaner-dropzone {
   background: #fafafa;
+  border-color: rgba(15, 23, 42, 0.16);
 }
-[data-theme="light"] .ht-cleaner-preview-info {
-  background: #f1f5f9;
+html:not([data-theme="dark"]) .ht-cleaner-dropzone:hover,
+html:not([data-theme="dark"]) .ht-cleaner-dropzone.is-dragover {
+  background: #f4f4f5;
+  border-color: rgba(15, 23, 42, 0.42);
 }
-[data-theme="light"] .ht-cleaner-btn--primary {
+html:not([data-theme="dark"]) .ht-cleaner-dropzone__icon {
+  color: #09090b;
+  background: #f4f4f5;
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: none;
+}
+html:not([data-theme="dark"]) .ht-cleaner-feature-icon {
+  color: #09090b;
+}
+html:not([data-theme="dark"]) .ht-cleaner-badge {
+  color: #18181b;
+  background: rgba(15, 23, 42, 0.035);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+html:not([data-theme="dark"]) .ht-cleaner-spinner {
+  border-color: rgba(15, 23, 42, 0.14);
+  border-top-color: #09090b;
+}
+html:not([data-theme="dark"]) .ht-cleaner-preview-info {
+  background: #f4f4f5;
+  border-color: rgba(15, 23, 42, 0.1);
+}
+html:not([data-theme="dark"]) .ht-cleaner-btn--primary {
+  background: #09090b;
   color: #ffffff;
+}
+html:not([data-theme="dark"]) .ht-cleaner-btn--primary:hover {
+  background: #27272a;
+}
+html:not([data-theme="dark"]) .ht-cleaner-btn--secondary {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.16);
+  color: #09090b;
+}
+html:not([data-theme="dark"]) .ht-cleaner-btn--secondary:hover {
+  background: #f4f4f5;
+  border-color: rgba(15, 23, 42, 0.28);
+}
+html:not([data-theme="dark"]) .ht-cleaner-dropzone:focus-within,
+html:not([data-theme="dark"]) .ht-cleaner-btn:focus-visible,
+html:not([data-theme="dark"]) .ht-cleaner-back:focus-visible {
+  outline-color: rgba(9, 9, 11, 0.72);
 }
 </style>
 
