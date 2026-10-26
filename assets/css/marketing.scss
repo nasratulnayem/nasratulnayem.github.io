@@ -7058,4 +7058,13 @@ html:not([data-theme="dark"]) .portfolio-badge:hover {
   }
 }
 
+/* Center only the label inside each page hero; keep its content container as-is. */
+.ht-page-hero > .ht-eyebrow {
+  justify-content: center !important;
+}
+
+.ht-page-hero > .ht-eyebrow::after {
+  display: none !important;
+}
+
 

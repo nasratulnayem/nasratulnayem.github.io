@@ -25,7 +25,7 @@ author_profile: false
         <span>Local image tool</span>
       </div>
       <h1 class="ht-cleaner-title">Create a clean image copy.</h1>
-      <p class="ht-cleaner-subtitle">Make a fresh copy from visible pixels. Your image stays in this browser and is never uploaded to any server.</p>
+      <p class="ht-cleaner-subtitle">A fresh copy, rebuilt from visible pixels. Your image stays on this device and is never uploaded.</p>
     </header>
 
     <!-- Main Tool Box Card -->
@@ -54,8 +54,8 @@ author_profile: false
           <div class="ht-cleaner-dropzone__icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10l-3.1-3.1a2 2 0 0 0-2.814.014L6 21"></path><path d="m14 19.5 3-3 3 3"></path><path d="M17 22v-5.5"></path><circle cx="9" cy="9" r="2"></circle></svg>
           </div>
-          <span class="ht-cleaner-dropzone__heading">Click or drag an image here</span>
-          <span class="ht-cleaner-dropzone__sub">Nothing leaves your device.</span>
+          <span class="ht-cleaner-dropzone__heading">Choose an image</span>
+          <span class="ht-cleaner-dropzone__sub">Tap to select or drop it here. It stays on your device.</span>
         </div>
 
         <!-- Processing State -->
@@ -71,12 +71,12 @@ author_profile: false
           </div>
           <div class="ht-cleaner-preview-info">
             <div class="ht-cleaner-info-item">
-              <span class="ht-cleaner-info-label">Clean File Name:</span>
+              <span class="ht-cleaner-info-label">File name:</span>
               <span id="cleaner-file-name" class="ht-cleaner-info-val">clean-image.png</span>
             </div>
             <div class="ht-cleaner-info-item">
-              <span class="ht-cleaner-info-label">Status:</span>
-              <span class="ht-cleaner-info-val ht-text-emerald">✓ Metadata Stripped</span>
+              <span class="ht-cleaner-info-label">Metadata:</span>
+              <span id="cleaner-status" class="ht-cleaner-info-val ht-text-emerald">✓ Removed</span>
             </div>
           </div>
           <div class="ht-cleaner-actions">
@@ -108,7 +108,7 @@ author_profile: false
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><circle cx="10" cy="12" r="2"></circle><path d="m20 17-1.296-1.296a2.41 2.41 0 0 0-3.408 0L9 22"></path></svg>
         </div>
         <h3 class="ht-cleaner-feature-title">Fresh file</h3>
-        <p class="ht-cleaner-feature-desc">The output is freshly re-rendered from the visible pixels, ensuring EXIF, GPS location, device serials, and timestamps are stripped.</p>
+        <p class="ht-cleaner-feature-desc">The browser re-encodes visible pixels and removes embedded EXIF, GPS, IPTC, XMP, and content-credential data.</p>
       </article>
 
       <article class="ht-cleaner-card-feature">
@@ -122,7 +122,7 @@ author_profile: false
 
     <!-- Bottom Disclaimer -->
     <p class="ht-cleaner-disclaimer">
-      This tool creates a new image file from visible pixels; it does not alter the visible image content. Platform-specific labels or external detection algorithms remain outside this tool's control.
+      Embedded EXIF, GPS, IPTC, XMP, and content-credential metadata are removed from the new file. This cannot erase visible or pixel-level watermarks or control AI labels added by social platforms.
     </p>
 
   </div>
@@ -462,6 +462,166 @@ author_profile: false
   line-height: 1.6;
 }
 
+.ht-cleaner-hero {
+  text-align: center;
+}
+.ht-cleaner-hero > .ht-cleaner-pill {
+  margin-inline: auto;
+}
+
+/* Keep the mobile tool calm, legible, and touch-friendly. */
+@media (max-width: 640px) {
+  .ht-cleaner-page {
+    padding: 24px 14px calc(52px + env(safe-area-inset-bottom));
+    min-height: 0;
+  }
+  .ht-cleaner-container {
+    width: 100%;
+    max-width: 520px;
+  }
+  .ht-cleaner-topbar {
+    margin-bottom: 24px;
+  }
+  .ht-cleaner-hero {
+    margin-bottom: 26px;
+  }
+  .ht-cleaner-title {
+    max-width: 13ch;
+    margin-inline: auto;
+    font-size: clamp(2rem, 8.5vw, 2.55rem);
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+  .ht-cleaner-subtitle {
+    max-width: 34ch;
+    margin-inline: auto;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+  .ht-cleaner-card {
+    margin-bottom: 18px;
+    border-radius: 20px;
+  }
+  .ht-cleaner-card__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px 18px 16px;
+  }
+  .ht-cleaner-card__title {
+    font-size: 1.05rem;
+  }
+  .ht-cleaner-card__meta {
+    font-size: 0.8rem;
+  }
+  .ht-cleaner-badge {
+    max-width: 100%;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+  .ht-cleaner-card__body {
+    padding: 16px;
+  }
+  .ht-cleaner-dropzone {
+    min-height: 228px;
+    padding: 28px 16px;
+    border-radius: 16px;
+  }
+  .ht-cleaner-dropzone__heading {
+    max-width: 20ch;
+    font-size: 1rem;
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+  .ht-cleaner-dropzone__sub {
+    max-width: 27ch;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+  .ht-cleaner-preview-wrap {
+    gap: 12px;
+  }
+  .ht-cleaner-preview-box {
+    min-height: 180px;
+    max-height: 48svh;
+    padding: 10px;
+    border-radius: 16px;
+  }
+  .ht-cleaner-preview-img {
+    max-height: 44svh;
+  }
+  .ht-cleaner-preview-info {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+    padding: 13px;
+  }
+  .ht-cleaner-info-item {
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .ht-cleaner-info-item:first-child .ht-cleaner-info-label {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .ht-cleaner-info-item:first-child .ht-cleaner-info-val {
+    min-width: 0;
+    max-width: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1 1 auto;
+    text-align: right;
+  }
+  .ht-cleaner-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+  .ht-cleaner-btn {
+    width: 100%;
+    min-height: 54px;
+    padding: 0 16px;
+    font-size: 0.94rem;
+    white-space: nowrap;
+    flex: none;
+  }
+  .ht-cleaner-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .ht-cleaner-card-feature {
+    padding: 17px;
+  }
+  .ht-cleaner-disclaimer {
+    padding-inline: 2px;
+    font-size: 0.78rem;
+    text-align: left;
+  }
+  .ht-cleaner-alert {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (hover: none) {
+  .ht-cleaner-dropzone:hover,
+  .ht-cleaner-btn--primary:hover,
+  .ht-cleaner-btn--secondary:hover {
+    transform: none;
+  }
+}
+
+.ht-cleaner-dropzone:focus-within,
+.ht-cleaner-btn:focus-visible,
+.ht-cleaner-back:focus-visible {
+  outline: 3px solid rgba(0, 210, 255, 0.72);
+  outline-offset: 3px;
+}
+
 [data-theme="light"] .ht-cleaner-card,
 [data-theme="light"] .ht-cleaner-card-feature {
   background: #ffffff;
@@ -495,6 +655,7 @@ author_profile: false
   const fileNameEl = document.getElementById('cleaner-file-name');
   const errorBox = document.getElementById('cleaner-error');
   const errorText = document.getElementById('cleaner-error-text');
+  const statusEl = document.getElementById('cleaner-status');
   const btnDownload = document.getElementById('cleaner-btn-download');
   const btnReset = document.getElementById('cleaner-btn-reset');
 
@@ -532,10 +693,206 @@ author_profile: false
     return 'jpg';
   }
 
+  function getImageType(file) {
+    const type = (file.type || '').toLowerCase();
+    if (allowedTypes.has(type)) return type;
+
+    const extension = file.name.split('.').pop().toLowerCase();
+    if (extension === 'jpg' || extension === 'jpeg') return 'image/jpeg';
+    if (extension === 'png') return 'image/png';
+    if (extension === 'webp') return 'image/webp';
+    return '';
+  }
+
+  function joinBytes(parts) {
+    const size = parts.reduce(function(total, part) { return total + part.length; }, 0);
+    const result = new Uint8Array(size);
+    let offset = 0;
+    parts.forEach(function(part) {
+      result.set(part, offset);
+      offset += part.length;
+    });
+    return result;
+  }
+
+  function readUint32BE(bytes, offset) {
+    return bytes[offset] * 0x1000000 + (bytes[offset + 1] << 16) + (bytes[offset + 2] << 8) + bytes[offset + 3];
+  }
+
+  function readUint32LE(bytes, offset) {
+    return bytes[offset] + (bytes[offset + 1] << 8) + (bytes[offset + 2] << 16) + bytes[offset + 3] * 0x1000000;
+  }
+
+  function writeUint32LE(bytes, offset, value) {
+    bytes[offset] = value & 0xff;
+    bytes[offset + 1] = (value >>> 8) & 0xff;
+    bytes[offset + 2] = (value >>> 16) & 0xff;
+    bytes[offset + 3] = (value >>> 24) & 0xff;
+  }
+
+  function readAscii(bytes, start, length) {
+    let value = '';
+    for (let i = start; i < start + length; i++) value += String.fromCharCode(bytes[i]);
+    return value;
+  }
+
+  function stripJpegMetadata(bytes) {
+    if (bytes.length < 4 || bytes[0] !== 0xff || bytes[1] !== 0xd8) {
+      throw new Error('The JPEG copy could not be verified.');
+    }
+
+    const parts = [bytes.subarray(0, 2)];
+    let offset = 2;
+    let foundImageData = false;
+
+    while (offset < bytes.length) {
+      const markerStart = offset;
+      if (bytes[offset] !== 0xff) throw new Error('The JPEG copy could not be verified.');
+      while (bytes[offset] === 0xff) offset++;
+      if (offset >= bytes.length) throw new Error('The JPEG copy could not be verified.');
+
+      const marker = bytes[offset++];
+      if (marker === 0xd9 || marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) {
+        parts.push(bytes.subarray(markerStart, offset));
+        if (marker === 0xd9) break;
+        continue;
+      }
+
+      if (offset + 2 > bytes.length) throw new Error('The JPEG copy could not be verified.');
+      const segmentLength = (bytes[offset] << 8) + bytes[offset + 1];
+      const segmentEnd = offset + segmentLength;
+      if (segmentLength < 2 || segmentEnd > bytes.length) throw new Error('The JPEG copy could not be verified.');
+
+      if (marker === 0xda) {
+        parts.push(bytes.subarray(markerStart, segmentEnd));
+        foundImageData = true;
+        let scanOffset = segmentEnd;
+        let scan = segmentEnd;
+
+        while (scan < bytes.length) {
+          if (bytes[scan] !== 0xff) {
+            scan++;
+            continue;
+          }
+
+          const markerStartInScan = scan;
+          let markerOffset = scan + 1;
+          while (bytes[markerOffset] === 0xff) markerOffset++;
+          if (markerOffset >= bytes.length) throw new Error('The JPEG copy could not be verified.');
+
+          const scanMarker = bytes[markerOffset];
+          if (scanMarker === 0x00 || (scanMarker >= 0xd0 && scanMarker <= 0xd7)) {
+            scan = markerOffset + 1;
+            continue;
+          }
+
+          parts.push(bytes.subarray(scanOffset, markerStartInScan));
+          offset = markerStartInScan;
+          break;
+        }
+
+        if (scan >= bytes.length) {
+          parts.push(bytes.subarray(scanOffset));
+          break;
+        }
+        continue;
+      }
+
+      const isMetadata = (marker >= 0xe0 && marker <= 0xef) || marker === 0xfe;
+      if (!isMetadata) parts.push(bytes.subarray(markerStart, segmentEnd));
+      offset = segmentEnd;
+    }
+
+    if (!foundImageData) throw new Error('The JPEG copy could not be verified.');
+    return joinBytes(parts);
+  }
+
+  function stripPngMetadata(bytes) {
+    const signature = [137, 80, 78, 71, 13, 10, 26, 10];
+    if (bytes.length < 20 || !signature.every(function(value, index) { return bytes[index] === value; })) {
+      throw new Error('The PNG copy could not be verified.');
+    }
+
+    const parts = [bytes.subarray(0, 8)];
+    let offset = 8;
+    let foundEnd = false;
+
+    while (offset + 12 <= bytes.length) {
+      const length = readUint32BE(bytes, offset);
+      const type = readAscii(bytes, offset + 4, 4);
+      const end = offset + 12 + length;
+      if (end > bytes.length) throw new Error('The PNG copy could not be verified.');
+
+      /* Keep critical image chunks and tRNS, which carries pixel transparency. */
+      const isCritical = type.charCodeAt(0) >= 65 && type.charCodeAt(0) <= 90;
+      if (isCritical || type === 'tRNS') parts.push(bytes.subarray(offset, end));
+      offset = end;
+      if (type === 'IEND') {
+        foundEnd = true;
+        break;
+      }
+    }
+
+    if (!foundEnd) throw new Error('The PNG copy could not be verified.');
+    return joinBytes(parts);
+  }
+
+  function stripWebpMetadata(bytes) {
+    if (bytes.length < 20 || readAscii(bytes, 0, 4) !== 'RIFF' || readAscii(bytes, 8, 4) !== 'WEBP') {
+      throw new Error('The WebP copy could not be verified.');
+    }
+
+    const riffEnd = readUint32LE(bytes, 4) + 8;
+    if (riffEnd > bytes.length || riffEnd < 12) throw new Error('The WebP copy could not be verified.');
+
+    const chunks = [];
+    let offset = 12;
+    while (offset + 8 <= riffEnd) {
+      const type = readAscii(bytes, offset, 4);
+      const size = readUint32LE(bytes, offset + 4);
+      const dataEnd = offset + 8 + size;
+      const chunkEnd = dataEnd + (size & 1);
+      if (chunkEnd > riffEnd) throw new Error('The WebP copy could not be verified.');
+
+      if (type === 'VP8X' || type === 'VP8 ' || type === 'VP8L' || type === 'ALPH') {
+        const chunk = bytes.slice(offset, chunkEnd);
+        if (type === 'VP8X') {
+          if (size < 10) throw new Error('The WebP copy could not be verified.');
+          /* Clear ICC, EXIF, XMP, and animation flags after dropping those chunks. */
+          chunk[8] = chunk[8] & ~0x2e;
+        }
+        chunks.push(chunk);
+      }
+      offset = chunkEnd;
+    }
+
+    if (!chunks.some(function(chunk) {
+      const type = readAscii(chunk, 0, 4);
+      return type === 'VP8 ' || type === 'VP8L';
+    })) throw new Error('The WebP copy could not be verified.');
+
+    const result = joinBytes([bytes.subarray(0, 12), ...chunks]);
+    writeUint32LE(result, 4, result.length - 8);
+    return result;
+  }
+
+  async function createMetadataFreeBlob(blob) {
+    const bytes = new Uint8Array(await blob.arrayBuffer());
+    let cleanBytes;
+    if (blob.type === 'image/jpeg') cleanBytes = stripJpegMetadata(bytes);
+    else if (blob.type === 'image/png') cleanBytes = stripPngMetadata(bytes);
+    else if (blob.type === 'image/webp') cleanBytes = stripWebpMetadata(bytes);
+    else throw new Error('This browser returned an unsupported image format.');
+
+    return new Blob([cleanBytes], { type: blob.type });
+  }
+
   function processImage(file) {
     hideError();
 
-    if (!allowedTypes.has(file.type)) {
+    const inputType = getImageType(file);
+
+    if (!inputType) {
       showError('Please choose a JPG, PNG, or WebP image file.');
       return;
     }
@@ -564,7 +921,7 @@ author_profile: false
         return;
       }
 
-      const outputType = (file.type === 'image/png' || file.type === 'image/webp') ? file.type : 'image/jpeg';
+      const outputType = inputType === 'image/png' || inputType === 'image/webp' ? inputType : 'image/jpeg';
 
       if (outputType === 'image/jpeg') {
         ctx.fillStyle = '#ffffff';
@@ -573,19 +930,27 @@ author_profile: false
 
       ctx.drawImage(img, 0, 0);
 
-      canvas.toBlob(function(blob) {
+      canvas.toBlob(async function(blob) {
         if (!blob) {
           showError('Failed to create cleaned copy. Try another image.');
           return;
         }
 
-        cleanedBlob = blob;
-        const cleanExt = getExt(blob.type);
-        const baseName = file.name.replace(/\.[^/.]+$/, '');
+        try {
+          cleanedBlob = await createMetadataFreeBlob(blob);
+        } catch (error) {
+          showError('The cleaned copy could not be verified. Please try another image or browser.');
+          return;
+        }
+
+        const cleanExt = getExt(cleanedBlob.type);
+        const baseName = file.name.replace(/\.[^/.]+$/, '') || 'image';
         cleanDownloadName = 'clean-' + baseName + '.' + cleanExt;
+        statusEl.textContent = '✓ Removed';
 
         fileNameEl.textContent = cleanDownloadName;
-        previewImg.src = URL.createObjectURL(blob);
+        fileNameEl.title = cleanDownloadName;
+        previewImg.src = URL.createObjectURL(cleanedBlob);
 
         processingEl.style.display = 'none';
         previewSection.style.display = 'flex';
