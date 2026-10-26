@@ -485,7 +485,7 @@ author_profile: false
 <script>
 (function() {
   const allowedTypes = new Set(['image/jpeg', 'image/png', 'image/webp']);
-  const maxBytes = 25 * 1024 * 1024; // 25 MB
+  const maxBytes = 25 * 1024 * 1024; /* 25 MB */
 
   const dropzone = document.getElementById('cleaner-dropzone');
   const fileInput = document.getElementById('cleaner-file-input');
@@ -600,7 +600,7 @@ author_profile: false
     img.src = objUrl;
   }
 
-  // Events
+  /* Events */
   fileInput.addEventListener('change', function(e) {
     const file = e.target.files && e.target.files[0];
     if (file) processImage(file);
