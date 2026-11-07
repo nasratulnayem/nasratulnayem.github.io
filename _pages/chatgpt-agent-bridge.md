@@ -353,44 +353,22 @@ author_profile: false
         </div>
 
         <!-- Terminal Quickstart -->
-        <div>
+        <div style="margin-bottom: 20px;">
           <span style="font-size: 0.8rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Run the Bridge Locally:</span>
-          <div class="ht-code-panel">
-            <div class="ht-code-panel__header">
-              <div class="ht-code-panel__dots">
-                <span class="ht-code-panel__dot ht-code-panel__dot--red"></span>
-                <span class="ht-code-panel__dot ht-code-panel__dot--yellow"></span>
-                <span class="ht-code-panel__dot ht-code-panel__dot--green"></span>
-              </div>
-              <span class="ht-code-panel__title">TERMINAL</span>
-              <button type="button" class="ht-code-copy-btn" onclick="navigator.clipboard.writeText('npx @codex.nayem/chatgpt-agent-bridge'); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);">Copy</button>
-            </div>
-            <pre class="ht-code-panel__body"><code><span class="ck-dim">$</span> <span class="ck-cmd">npx @codex.nayem/chatgpt-agent-bridge</span></code></pre>
-          </div>
+          <pre><code class="language-bash">npx @codex.nayem/chatgpt-agent-bridge</code></pre>
         </div>
 
-        <!-- MCP Config Box with Crisp Syntax Highlighting -->
-        <div style="margin-top: 14px;">
+        <!-- MCP Config Box -->
+        <div>
           <span style="font-size: 0.8rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Add to Antigravity / Claude Desktop MCP Config:</span>
-          <div class="ht-code-panel">
-            <div class="ht-code-panel__header">
-              <div class="ht-code-panel__dots">
-                <span class="ht-code-panel__dot ht-code-panel__dot--red"></span>
-                <span class="ht-code-panel__dot ht-code-panel__dot--yellow"></span>
-                <span class="ht-code-panel__dot ht-code-panel__dot--green"></span>
-              </div>
-              <span class="ht-code-panel__title">JSON CONFIG</span>
-              <button type="button" class="ht-code-copy-btn" onclick="navigator.clipboard.writeText('{\n  &quot;mcpServers&quot;: {\n    &quot;chatgpt-bridge&quot;: {\n      &quot;command&quot;: &quot;npx&quot;,\n      &quot;args&quot;: [&quot;-y&quot;, &quot;@codex.nayem/chatgpt-agent-bridge&quot;]\n    }\n  }\n}'); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);">Copy</button>
-            </div>
-            <pre class="ht-code-panel__body"><code>{
-  <span class="ck-key">"mcpServers"</span>: {
-    <span class="ck-key">"chatgpt-bridge"</span>: {
-      <span class="ck-key">"command"</span>: <span class="ck-str">"npx"</span>,
-      <span class="ck-key">"args"</span>: [<span class="ck-str">"-y"</span>, <span class="ck-str">"@codex.nayem/chatgpt-agent-bridge"</span>]
+          <pre><code class="language-json">{
+  "mcpServers": {
+    "chatgpt-bridge": {
+      "command": "npx",
+      "args": ["-y", "@codex.nayem/chatgpt-agent-bridge"]
     }
   }
 }</code></pre>
-          </div>
         </div>
 
         <!-- Global High-End Action Buttons -->
