@@ -36,6 +36,16 @@ author_profile: false
   .ht-bridge-hero {
     text-align: center;
     margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ht-bridge-hero .ht-eyebrow {
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  .ht-bridge-hero .ht-eyebrow::after {
+    display: none !important;
   }
   .ht-bridge-hero h1 {
     font-size: clamp(1.8rem, 3.2vw, 2.4rem);
