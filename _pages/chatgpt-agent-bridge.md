@@ -1,274 +1,160 @@
 ---
-layout: default
-title: "ChatGPT Agent Bridge — Autonomous Video Storyboard & Clip Generator"
-description: "Model Context Protocol (MCP) bridge connecting Antigravity Cortex and AI Agents directly to ChatGPT Web. Automate prompts, multi-frame storyboards, and video production pipelines."
+layout: post
+title: "Why I Built ChatGPT Agent Bridge: Ditching the Paid API for Direct Browser Automation"
+excerpt: "How I connected my local AI coding agents directly to my live ChatGPT web session. No API tokens, no manual copy-pasting, and full hands-off prompt execution and storyboard image downloads."
 permalink: /tools/chatgpt-agent-bridge/
-keywords: "chatgpt agent bridge, ai video storyboard generator, instagram reel automation, mcp server chatgpt, antigravity cortex, dalle video production"
+keywords: "chatgpt agent bridge, bypass chatgpt api, local mcp server, antigravity cortex, dalle web automation, ai agent browser bridge"
 author_profile: false
+date: 2026-11-07
 ---
 
-<div class="marketing-page plugin-page" style="padding-bottom: 4rem;">
+<style>
+  .story-callout {
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  .story-callout p {
+    margin: 0;
+    color: var(--ht-text-primary) !important;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .story-figure {
+    margin: 2.5rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--ht-border);
+    background: #080c12;
+  }
+  .story-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .story-figure figcaption {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    color: var(--ht-text-muted);
+    font-family: var(--ht-font-mono);
+    border-top: 1px solid var(--ht-border);
+    background: #0d121b;
+  }
+  .story-terminal {
+    background: #05070a;
+    border: 1px solid var(--ht-border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    font-family: var(--ht-font-mono);
+    font-size: 0.9rem;
+    color: #38bdf8;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .story-step-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  @media (max-width: 768px) {
+    .story-step-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .story-step-card {
+    background: var(--ht-bg-card);
+    border: 1px solid var(--ht-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .story-step-card h3 {
+    margin-top: 0 !important;
+    font-size: 1.15rem !important;
+    color: var(--ht-text-primary) !important;
+  }
+</style>
 
-  <!-- Page Header Hero -->
-  <header class="ht-page-hero">
-    <div class="ht-eyebrow">
-      <span class="ht-eyebrow-dot"></span>
-      <span>AUTONOMOUS AI VIDEO PRODUCTION</span>
-    </div>
-    <h1 class="ht-page-hero__title">ChatGPT Agent Bridge for Video Storyboards</h1>
-    <p class="ht-page-hero__desc">The bridge connecting <strong>Antigravity Cortex</strong> and autonomous AI agents directly to your live <strong>ChatGPT Web session</strong>. It orchestrates continuous character prompts, generates cinematic 9:16 frame sequences, and exports raw high-res storyboard assets directly for social reel and video workflows.</p>
-  </header>
+<div class="story-callout">
+  <p><strong>The Real Story:</strong> I was tired of paying per-token fees for OpenAI API credits every time my coding agents needed to generate an image or test a prompt—especially when I already pay for a ChatGPT Plus subscription every single month. So I built a direct bridge that turns my browser's active ChatGPT tab into an autonomous agent endpoint.</p>
+</div>
 
-  <!-- Section 1: Live Production UI Proof (Contained inside standard .ht-work-section) -->
-  <section class="ht-work-section" aria-labelledby="live-proof-heading">
-    <div class="ht-section-header">
-      <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>SYSTEM ARCHITECTURE &amp; TIMELINE</span></div>
-      <h2 id="live-proof-heading" class="ht-section-title">Automated Storyboard Engine in Action</h2>
-      <p class="ht-section-subtitle">Real Playwright capture showing the sequential timeline pipeline connected to ChatGPT Web over WebSocket port 3456.</p>
-    </div>
+## The Problem with the Official API
 
-    <div class="bento-card glow-card" style="padding: 1.25rem; overflow: hidden; border: 1.5px solid rgba(16, 185, 129, 0.3);">
-      <img src="{{ '/images/work/chatgpt-agent-bridge-production-ui.png' | relative_url }}" alt="ChatGPT Agent Bridge Autonomous Storyboard Production Timeline" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
-    </div>
-  </section>
+When building automated AI workflows (like generating a 16-frame video storyboard or testing iterative code prompts), developers usually face two bad options:
 
-  <!-- Section 2: Real Extension Companion Proof (Contained inside standard .ht-work-section) -->
-  <section class="ht-work-section">
-    <div class="ht-section-header">
-      <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>LIVE CHROME EXTENSION</span></div>
-      <h2 class="ht-section-title">Verified Active WebSocket Handshake</h2>
-      <p class="ht-section-subtitle">Live status popup maintaining real-time communication between Antigravity Cortex and the browser.</p>
-    </div>
+1. **Paying Expensive API Invoices:** You burn credits for every single image generation and long-context conversation, completely separate from your personal web subscription.
+2. **The Manual Copy-Paste Loop:** You open ChatGPT in Chrome, write the prompt, wait for it to generate, right-click and save the image to your downloads folder, rename it, and move it into your project folder. If you need 16 frames for a video reel, you waste hours repeating this tedious loop.
 
-    <article class="bento-card glow-card" style="padding: 1.75rem;">
-      <div class="ht-product-showcase__grid" style="align-items: center;">
-        <div class="ht-product-showcase__visual" style="max-height: 400px; display: flex; align-items: center; justify-content: center; background: #07090e; border: 1px solid rgba(255, 255, 255, 0.1);">
-          <img src="{{ '/images/work/chatgpt-agent-bridge-live-proof.png' | relative_url }}" alt="ChatGPT Agent Bridge Extension connected live to chatgpt.com" style="max-height: 380px; width: auto; object-fit: contain; border-radius: 8px;" loading="lazy">
-        </div>
-        <div class="ht-product-showcase__info">
-          <div class="bento-card__badge-row">
-            <span class="ht-badge ht-badge--green"><i class="fas fa-circle" style="font-size: 8px; margin-right: 5px;"></i> SYSTEM CONNECTED</span>
-            <span class="ht-badge">Port 3456</span>
-          </div>
-          <h3 style="font-size: 1.4rem; font-weight: 700; margin: 0.5rem 0 0.75rem; color: var(--ht-text-primary);">Autonomous Tab Supervision</h3>
-          <p style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">The companion extension continuously syncs with the local MCP daemon. When Antigravity Cortex requests a storyboard camera setup, the extension injects the character continuity prompt, watches render status, and downloads the original 100% raw-resolution PNG straight into your project folder.</p>
-          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a class="ht-btn-primary ht-btn--glow" href="https://github.com/nasratulnayem/chatgpt-agent-bridge" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i> View GitHub Repository ↗
-            </a>
-            <a class="ht-btn-secondary" href="https://www.instagram.com/nasratulnayem/" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-instagram"></i> Follow on Instagram ↗
-            </a>
-          </div>
-        </div>
-      </div>
-    </article>
-  </section>
+I wanted something different. I asked myself: **Why can't my local AI agents simply use the ChatGPT session I already have open in my browser?**
 
-  <!-- Section 3: Instagram Creative Showcase Card (Clean Native Card replacing broken third-party iframe) -->
-  <section class="ht-work-section" aria-labelledby="instagram-heading">
-    <div class="ht-section-header">
-      <div class="ht-eyebrow">
-        <span class="ht-eyebrow-dot"></span>
-        <span>PRODUCTION SHOWCASE</span>
-      </div>
-      <h2 id="instagram-heading" class="ht-section-title">Automated 9:16 Video Storyboards</h2>
-      <p class="ht-section-subtitle">Real cinematic sequences authored by Antigravity Cortex and published to social channels.</p>
-    </div>
+---
 
-    <div class="bento-card glow-card" style="padding: 2rem;">
-      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--ht-border); padding-bottom: 1.25rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
-        <div style="display: flex; align-items: center; gap: 14px;">
-          <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 24px; box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);">
-            <i class="fab fa-instagram"></i>
-          </div>
-          <div>
-            <h3 style="margin: 0; font-size: 1.2rem; color: var(--ht-text-primary);">@nasratulnayem on Instagram</h3>
-            <span style="font-size: 0.88rem; color: var(--ht-text-muted);">AI Automated Storyboards &bull; 9:16 Video Clips &bull; Developer Workflows</span>
-          </div>
-        </div>
-        <div>
-          <a class="ht-btn-primary ht-btn--glow" href="https://www.instagram.com/nasratulnayem/" target="_blank" rel="noopener noreferrer" style="font-size: 0.88rem; padding: 8px 18px;">
-            <i class="fab fa-instagram" style="margin-right: 6px;"></i> Visit Instagram Channel ↗
-          </a>
-        </div>
-      </div>
+## How I Built the Solution
 
-      <div class="ht-bento-grid" style="margin-top: 1rem;">
-        <div class="bento-card" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 1.25rem;">
-          <span class="ht-badge ht-badge--cyan" style="margin-bottom: 8px;">EPISODE SERIES</span>
-          <h4 style="color: var(--ht-text-primary); font-size: 1.05rem; margin: 4px 0 8px;">Aloo Bhai: Undercover Billionaire</h4>
-          <p style="color: var(--ht-text-secondary); font-size: 0.86rem; line-height: 1.6; margin: 0;">16 sequential storyboard frames produced autonomously with character rig continuity, cinematic lighting, and dynamic camera angles.</p>
-        </div>
+I designed **ChatGPT Agent Bridge** as a lightweight two-part architecture:
+- **A Chrome Extension** that connects to your active ChatGPT tab and listens for commands.
+- **A Local MCP Server (Model Context Protocol)** that communicates with your coding assistant (Google Antigravity Cortex, Claude Desktop, Cursor IDE, etc.) over an instant local WebSocket on port `3456`.
 
-        <div class="bento-card" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 1.25rem;">
-          <span class="ht-badge ht-badge--green" style="margin-bottom: 8px;">AUTOMATION PIPELINE</span>
-          <h4 style="color: var(--ht-text-primary); font-size: 1.05rem; margin: 4px 0 8px;">Zero Token Overhead</h4>
-          <p style="color: var(--ht-text-secondary); font-size: 0.86rem; line-height: 1.6; margin: 0;">Renders uncompressed raw PNG frames straight from active web sessions, completely bypassing per-token API cost restrictions.</p>
-        </div>
+<figure class="story-figure">
+  <img src="/images/work/chatgpt-bridge-real-chrome.png" alt="ChatGPT Agent Bridge Extension Handshake on Port 3456" loading="lazy">
+  <figcaption>Figure 1: The Chrome companion popup connected directly to the local daemon on port 3456 with zero external cloud relays.</figcaption>
+</figure>
 
-        <div class="bento-card" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 1.25rem;">
-          <span class="ht-badge ht-badge--purple" style="margin-bottom: 8px;">POST-PRODUCTION</span>
-          <h4 style="color: var(--ht-text-primary); font-size: 1.05rem; margin: 4px 0 8px;">Remotion Video Export</h4>
-          <p style="color: var(--ht-text-secondary); font-size: 0.86rem; line-height: 1.6; margin: 0;">Frames automatically organized by scene index on disk, immediately ready for video generation models and timeline compilers.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+### What It Does For Me Now:
 
-  <!-- Section 4: 4-Stage Autonomous Pipeline Architecture -->
-  <section class="ht-process-section">
-    <div class="ht-section-header">
-      <div class="ht-eyebrow">
-        <span class="ht-eyebrow-dot"></span>
-        <span>THE PIPELINE</span>
-      </div>
-      <h2 class="ht-section-title">How the Bridge Generates Video Storyboards</h2>
-      <p class="ht-section-subtitle">From master script breakdown to ready-to-animate clips without touching the browser manually.</p>
-    </div>
+Now, I never have to open ChatGPT manually just to feed prompts or download images:
+- **Hands-Off Execution:** My AI agent authors the prompts and pushes them into ChatGPT directly.
+- **Automatic Image Extraction:** When ChatGPT finishes rendering, the extension traps the full uncompressed raw PNG and downloads it straight into my local project directory.
+- **Self-Testing & Enhancement:** If a storyboard frame doesn't match the character continuity or visual style, the agent sees it, writes a corrective revision prompt, and triggers a clean re-generation.
+- **Zero API Bills:** It uses my normal web subscription. No API keys, no surprise credit card charges, and no rate limits.
 
-    <div class="ht-workflow-pipeline">
-      <div class="ht-wf-card glow-card">
-        <div class="ht-wf-card__header">
-          <div class="ht-wf-node">
-            <span class="ht-wf-node__num">01</span>
-            <div class="ht-wf-node__icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
-          </div>
-          <span class="ht-badge ht-badge--cyan">SCRIPT</span>
-        </div>
-        <div class="ht-wf-card__body">
-          <h3 class="ht-wf-card__title">Frame Prompt Breakdown</h3>
-          <p class="ht-wf-card__desc">The AI agent breaks down narrative scenes into 16 sequential camera setups with strict visual character continuity tags.</p>
-        </div>
-        <div class="ht-wf-card__footer">
-          <span class="ht-wf-signal"><i class="fas fa-check-circle" aria-hidden="true"></i> Sequence Mapped</span>
-        </div>
-      </div>
+---
 
-      <div class="ht-wf-connector" aria-hidden="true">
-        <div class="ht-wf-pulse"></div>
-      </div>
+## The Video Storyboard Workflow in Action
 
-      <div class="ht-wf-card glow-card">
-        <div class="ht-wf-card__header">
-          <div class="ht-wf-node">
-            <span class="ht-wf-node__num">02</span>
-            <div class="ht-wf-node__icon"><i class="fab fa-chrome" aria-hidden="true"></i></div>
-          </div>
-          <span class="ht-badge ht-badge--green">BRIDGE</span>
-        </div>
-        <div class="ht-wf-card__body">
-          <h3 class="ht-wf-card__title">WebSocket MCP Relay</h3>
-          <p class="ht-wf-card__desc">Each prompt is dispatched to the Chrome Extension on port 3456. The tab types prompts and triggers ChatGPT Web rendering.</p>
-        </div>
-        <div class="ht-wf-card__footer">
-          <span class="ht-wf-signal"><i class="fas fa-bolt" aria-hidden="true"></i> Zero API Latency</span>
-        </div>
-      </div>
+The primary reason I built this was for **autonomous 9:16 video reel creation**. Coordinating multiple camera setups while maintaining consistent character clothes, textures, and lighting used to take hours. 
 
-      <div class="ht-wf-connector" aria-hidden="true">
-        <div class="ht-wf-pulse"></div>
-      </div>
+With the bridge, I give my agent a single narrative brief (e.g. *Aloo Bhai: Undercover Billionaire*), and the agent handles all 16 frames sequentially through the browser:
 
-      <div class="ht-wf-card glow-card">
-        <div class="ht-wf-card__header">
-          <div class="ht-wf-node">
-            <span class="ht-wf-node__num">03</span>
-            <div class="ht-wf-node__icon"><i class="fas fa-image" aria-hidden="true"></i></div>
-          </div>
-          <span class="ht-badge ht-badge--purple">EXTRACT</span>
-        </div>
-        <div class="ht-wf-card__body">
-          <h3 class="ht-wf-card__title">Raw Asset Extraction</h3>
-          <p class="ht-wf-card__desc">The extension polls generation status, extracts the original uncompressed PNG, and downloads it directly to disk.</p>
-        </div>
-        <div class="ht-wf-card__footer">
-          <span class="ht-wf-signal"><i class="fas fa-download" aria-hidden="true"></i> 100% Raw Resolution</span>
-        </div>
-      </div>
+<figure class="story-figure">
+  <img src="/images/work/chatgpt-bridge-timeline-flow.png" alt="16-Frame Storyboard Pipeline Flow" loading="lazy">
+  <figcaption>Figure 2: The automated 16-frame sequence mapped and downloaded with character rig continuity.</figcaption>
+</figure>
 
-      <div class="ht-wf-connector" aria-hidden="true">
-        <div class="ht-wf-pulse"></div>
-      </div>
+Each frame is automatically indexed, saved to my local disk, and immediately ready to be animated with Remotion or video generation models.
 
-      <div class="ht-wf-card glow-card">
-        <div class="ht-wf-card__header">
-          <div class="ht-wf-node">
-            <span class="ht-wf-node__num">04</span>
-            <div class="ht-wf-node__icon"><i class="fas fa-film" aria-hidden="true"></i></div>
-          </div>
-          <span class="ht-badge ht-badge--cyan">RENDER</span>
-        </div>
-        <div class="ht-wf-card__body">
-          <h3 class="ht-wf-card__title">Video Animation Ready</h3>
-          <p class="ht-wf-card__desc">Sequenced frames are ingested into video animation pipelines (Remotion, Luma, Runway) to compile full clips.</p>
-        </div>
-        <div class="ht-wf-card__footer">
-          <span class="ht-wf-signal"><i class="fas fa-video" aria-hidden="true"></i> Production Clips</span>
-        </div>
-      </div>
-    </div>
-  </section>
+---
 
-  <!-- Section 5: Technical Capabilities -->
-  <section class="ht-work-section">
-    <div class="ht-section-header">
-      <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>CAPABILITIES</span></div>
-      <h2 class="ht-section-title">Built for Creative Autonomous Workflows</h2>
-      <p class="ht-section-subtitle">Why developers and content creators connect their agents to the web session.</p>
-    </div>
+## Try It Yourself (100% Free & Open Source)
 
-    <div class="ht-bento-grid">
-      <article class="bento-card glow-card">
-        <div class="bento-card__badge-row">
-          <span class="ht-badge ht-badge--green">UNLIMITED GENERATIONS</span>
-          <div class="bento-card__icon-box"><i class="fas fa-infinity"></i></div>
-        </div>
-        <h3 class="bento-card__title">Harness Existing Web Subscription</h3>
-        <p class="bento-card__desc">Generate dozens of storyboard iterations per video without API token caps or per-image billing by utilizing your active ChatGPT Plus session directly.</p>
-      </article>
+I packaged the entire system and published it to npm and GitHub so any developer or creator can use it freely.
 
-      <article class="bento-card glow-card">
-        <div class="bento-card__badge-row">
-          <span class="ht-badge ht-badge--cyan">AUTONOMOUS</span>
-          <div class="bento-card__icon-box"><i class="fas fa-robot"></i></div>
-        </div>
-        <h3 class="bento-card__title">Agent Direct Hands-Off Control</h3>
-        <p class="bento-card__desc">Antigravity Cortex reads your story, coordinates the prompt sequence, detects failures, and auto-regenerates frames until visual continuity matches.</p>
-      </article>
+<div class="story-step-grid">
+  <div class="story-step-card">
+    <span class="ht-badge ht-badge--green" style="margin-bottom: 8px;">STEP 01</span>
+    <h3>1. Run the MCP Bridge</h3>
+    <p style="font-size: 0.9rem; color: var(--ht-text-secondary); margin-bottom: 12px;">Launch the local server directly in your terminal without manual cloning:</p>
+    <div class="story-terminal">npx @codex.nayem/chatgpt-agent-bridge</div>
+  </div>
 
-      <article class="bento-card glow-card">
-        <div class="bento-card__badge-row">
-          <span class="ht-badge ht-badge--purple">STANDARD MCP</span>
-          <div class="bento-card__icon-box"><i class="fas fa-plug"></i></div>
-        </div>
-        <h3 class="bento-card__title">Model Context Protocol Standard</h3>
-        <p class="bento-card__desc">Compatible with Antigravity Cortex, Claude Desktop, Cursor IDE, or any autonomous tool supporting Anthropic's MCP specification.</p>
-      </article>
-    </div>
-  </section>
+  <div class="story-step-card">
+    <span class="ht-badge ht-badge--cyan" style="margin-bottom: 8px;">STEP 02</span>
+    <h3>2. Connect Your Agent</h3>
+    <p style="font-size: 0.9rem; color: var(--ht-text-secondary); margin-bottom: 12px;">Add this entry to your Antigravity Cortex or Claude Desktop configuration:</p>
+    <div class="story-terminal">"chatgpt-studio": {<br>&nbsp;&nbsp;"command": "npx",<br>&nbsp;&nbsp;"args": ["-y", "@codex.nayem/chatgpt-agent-bridge"]<br>}</div>
+  </div>
+</div>
 
-  <!-- Section 6: Quick Setup (Pure Informational) -->
-  <section class="ht-work-section">
-    <div class="ht-section-header">
-      <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>QUICK START</span></div>
-      <h2 class="ht-section-title">Get Started with the Bridge</h2>
-    </div>
+Load the extension into Chrome, open `chatgpt.com`, and let your AI agent do the rest.
 
-    <div class="bento-card glow-card" style="padding: 2rem;">
-      <p style="color: var(--ht-text-secondary); margin-bottom: 1.25rem; line-height: 1.6;">Run the bridge locally with <code>npx</code>, load the companion extension in Developer Mode, and connect Antigravity Cortex:</p>
-      <div style="background: rgba(0,0,0,0.5); padding: 1rem 1.25rem; border-radius: 8px; border: 1px solid var(--ht-border); font-family: var(--ht-font-mono); font-size: 0.9rem; color: #38bdf8; overflow-x: auto; margin-bottom: 1.5rem;">
-        <code>npx @codex.nayem/chatgpt-agent-bridge</code>
-      </div>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a class="ht-btn-primary ht-btn--glow" href="https://github.com/nasratulnayem/chatgpt-agent-bridge" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> Read Documentation &amp; Setup on GitHub
-        </a>
-        <a class="ht-btn-secondary" href="/contact/">
-          <i class="fas fa-envelope"></i> Contact for Video Inquiries
-        </a>
-      </div>
-    </div>
-  </section>
-
+<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; justify-content: center;">
+  <a class="ht-btn-primary ht-btn--glow" href="https://github.com/nasratulnayem/chatgpt-agent-bridge" target="_blank" rel="noopener noreferrer" style="padding: 12px 24px; font-size: 1rem;">
+    <i class="fab fa-github" style="margin-right: 8px;"></i> View Open Source Code on GitHub ↗
+  </a>
+  <a class="ht-btn-secondary" href="/contact/" style="padding: 12px 24px; font-size: 1rem;">
+    <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Talk About AI Video Automation
+  </a>
 </div>
