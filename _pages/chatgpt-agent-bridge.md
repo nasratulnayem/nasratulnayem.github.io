@@ -124,7 +124,69 @@ author_profile: false
     color: var(--ht-text-primary);
   }
 
-  /* High-Tech Global Buttons matching site system */
+  /* Crisp High-Contrast Terminal Styling */
+  .ht-bridge-tool-page .ht-code-wrapper {
+    margin: 6px 0 16px 0 !important;
+  }
+  .ht-bridge-tool-page .ht-code-wrapper pre code {
+    color: #38bdf8 !important;
+    font-size: 0.92rem !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    font-family: var(--ht-font-mono, monospace) !important;
+  }
+
+  /* Interactive Image Modal on Desktop */
+  .ht-bridge-diagram-wrap {
+    cursor: zoom-in;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .ht-bridge-diagram-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    cursor: zoom-out;
+  }
+  .ht-bridge-diagram-modal.is-active {
+    display: flex;
+  }
+  .ht-bridge-diagram-modal img {
+    max-width: 95vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 1px solid var(--ht-border);
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9);
+  }
+  .ht-bridge-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--ht-border);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .ht-bridge-modal-close:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
   .ht-bridge-actions {
     display: flex;
     gap: 12px;
@@ -273,8 +335,8 @@ author_profile: false
           So I built this bridge. Now, my agent types prompts into ChatGPT Web itself, verifies visual character continuity, and downloads the original raw PNGs straight into my project directory.
         </div>
 
-        <!-- Architecture Diagram: Desktop & Mobile Flow -->
-        <div class="ht-bridge-diagram-wrap" style="margin: 24px 0 20px 0;">
+        <!-- Architecture Diagram: Desktop & Mobile Flow with Fullscreen Zoom -->
+        <div class="ht-bridge-diagram-wrap" style="margin: 20px 0 18px 0;" onclick="if(window.innerWidth > 640) document.getElementById('htDiagramModal').classList.add('is-active');" title="Click to view full diagram">
           <picture>
             <source media="(max-width: 640px)" srcset="{{ '/images/work/chatgpt-agent-bridge-mobile-flow.png' | relative_url }}">
             <img src="{{ '/images/work/chatgpt-agent-bridge-architecture.png' | relative_url }}" alt="ChatGPT Agent Bridge MCP Architecture Diagram" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--ht-border); display: block;">
@@ -282,14 +344,14 @@ author_profile: false
         </div>
 
         <!-- Terminal Quickstart -->
-        <div style="margin-bottom: 20px;">
-          <span style="font-family: var(--ht-font-sans); font-size: 0.8rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Run the Bridge Locally:</span>
+        <div style="margin-bottom: 14px;">
+          <span style="font-family: var(--ht-font-sans); font-size: 0.78rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Run the Bridge Locally:</span>
           <pre><code class="language-bash">npx @codex.nayem/chatgpt-agent-bridge</code></pre>
         </div>
 
         <!-- MCP Config Box -->
         <div>
-          <span style="font-family: var(--ht-font-sans); font-size: 0.8rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Add to Antigravity / Claude Desktop MCP Config:</span>
+          <span style="font-family: var(--ht-font-sans); font-size: 0.78rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Add to Antigravity / Claude Desktop MCP Config:</span>
           <pre><code class="language-json">{
   "mcpServers": {
     "chatgpt-bridge": {
@@ -343,3 +405,10 @@ author_profile: false
 
   </div>
 </div>
+
+<!-- Desktop Fullscreen Modal for Architecture Diagram -->
+<div id="htDiagramModal" class="ht-bridge-diagram-modal" onclick="this.classList.remove('is-active');">
+  <button type="button" class="ht-bridge-modal-close" onclick="document.getElementById('htDiagramModal').classList.remove('is-active');">&times;</button>
+  <img src="{{ '/images/work/chatgpt-agent-bridge-architecture.png' | relative_url }}" alt="Full ChatGPT Agent Bridge Architecture Diagram">
+</div>
+
