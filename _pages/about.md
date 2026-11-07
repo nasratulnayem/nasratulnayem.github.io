@@ -7,58 +7,140 @@ author_profile: true
 keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automation engineer"
 ---
 
-<!-- Hero Section: Centered Luxury Developer Showcase (Single Column) -->
-<section class="ht-hero-centered" aria-labelledby="ht-hero-title">
-  <!-- Glowing Profile Avatar with Violet Radial Halo -->
-  <div class="ht-hero-avatar-halo">
-    <div class="ht-hero-avatar-ring">
-      <img src="{{ '/images/nasratul-nayem.jpg' | relative_url }}" alt="Nasratul Nayem" width="130" height="130" fetchpriority="high">
+<!-- Hero Section: Atmospheric Ambient Purple Lighting & Horizon -->
+<section class="portfolio-hero">
+
+  <!-- Atmospheric background -->
+  <div class="hero-background" aria-hidden="true">
+    <div class="hero-background__base"></div>
+    <div class="hero-background__ambient"></div>
+    <div class="hero-background__lower-light"></div>
+    <div class="hero-background__texture"></div>
+
+    <!-- Symmetrical horizon -->
+    <div class="hero-horizon">
+      <svg
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="horizon-stroke"
+            x1="0"
+            y1="0"
+            x2="1440"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.12"/>
+            <stop offset="20%" stop-color="#8B5CF6" stop-opacity="0.35"/>
+            <stop offset="50%" stop-color="#A78BFA" stop-opacity="0.75"/>
+            <stop offset="80%" stop-color="#8B5CF6" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.12"/>
+          </linearGradient>
+
+          <linearGradient
+            id="horizon-glow"
+            x1="0"
+            y1="0"
+            x2="0"
+            y2="320"
+          >
+            <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.20"/>
+            <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+          </linearGradient>
+
+          <filter id="soft-glow">
+            <feGaussianBlur stdDeviation="7"/>
+          </filter>
+        </defs>
+
+        <!-- Diffused light -->
+        <path
+          d="M0 280 Q720 -160 1440 280"
+          fill="none"
+          stroke="#8B5CF6"
+          stroke-width="14"
+          opacity="0.16"
+          filter="url(#soft-glow)"
+        />
+
+        <!-- Horizon line -->
+        <path
+          d="M0 280 Q720 -160 1440 280"
+          fill="none"
+          stroke="url(#horizon-stroke)"
+          stroke-width="1.2"
+        />
+      </svg>
     </div>
   </div>
 
-  <!-- Primary Centered Name & Role -->
-  <h1 id="ht-hero-title" class="ht-hero-centered__name">
-    Nasratul Nayem
-  </h1>
-  <p class="ht-hero-centered__role">
-    AI Automation Specialist &amp; Full-Stack Developer
-  </p>
+  <!-- Hero content -->
+  <div class="hero-content">
 
-  <!-- Accent Divider Line -->
-  <div class="ht-hero-centered__divider"></div>
+    <div class="hero-portrait">
+      <div class="hero-portrait__ring">
+        <div class="hero-portrait__inner">
+          <img src="{{ '/images/nasratul-nayem.jpg' | relative_url }}" alt="Nasratul Nayem" width="130" height="130" fetchpriority="high">
+        </div>
+      </div>
+    </div>
 
-  <!-- Focused Value Proposition / Bio -->
-  <p class="ht-hero-centered__lead">
-    I design and build AI-powered automation systems, intelligent agents, and custom integrations that help businesses reduce manual work, streamline operations, and scale efficiently.
-  </p>
+    <div class="hero-eyebrow">
+      <span class="eyebrow-line"></span>
+      AI AUTOMATION · FULL-STACK DEVELOPMENT
+      <span class="eyebrow-line"></span>
+    </div>
 
-  <!-- Skill Badges with Custom Icons -->
-  <div class="ht-hero-centered__badges">
-    <span class="ht-hero-pill-badge">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-      Automation &amp; AI
-    </span>
-    <span class="ht-hero-pill-badge">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Full-Stack Development
-    </span>
-    <span class="ht-hero-pill-badge">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-      Ecommerce Systems
-    </span>
+    <h1>
+      Nasratul Nayem
+    </h1>
+
+    <h2>
+      I Build Intelligent Systems
+      <span>That Scale.</span>
+    </h2>
+
+    <p class="hero-description">
+      I design and build AI-powered automation systems,
+      intelligent agents, and custom software that help
+      businesses eliminate repetitive work, streamline
+      operations, and scale efficiently.
+    </p>
+
+    <div class="hero-capabilities">
+      <div class="capability">
+        <span class="capability-icon">✳</span>
+        AI &amp; Automation
+      </div>
+
+      <div class="capability">
+        <span class="capability-icon">&lt;/&gt;</span>
+        Full-Stack Development
+      </div>
+
+      <div class="capability">
+        <span class="capability-icon">▱</span>
+        Ecommerce Systems
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="{{ '/contact/' | relative_url }}" class="hero-button hero-button--primary">
+        Start a Project
+        <span>↗</span>
+      </a>
+
+      <a href="{{ '/portfolio/' | relative_url }}" class="hero-button hero-button--secondary">
+        <span>▷</span>
+        View My Work
+      </a>
+    </div>
+
   </div>
 
-  <!-- Action CTAs -->
-  <div class="ht-hero-centered__actions">
-    <a class="ht-btn-hero-primary" href="{{ '/contact/' | relative_url }}">
-      <span>Start a Project</span>
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-    </a>
-    <a class="ht-btn-hero-secondary" href="{{ '/portfolio/' | relative_url }}">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-      <span>View My Work</span>
-    </a>
-  </div>
 </section>
 
 <!-- High-Tech Tech Stack Pill Grid -->
