@@ -9,6 +9,7 @@ author_profile: false
 
 <style>
   .ht-bridge-tool-page {
+    font-family: var(--ht-font-sans);
     padding: 32px 16px 64px 16px;
     min-height: calc(100vh - 200px);
   }
@@ -23,6 +24,7 @@ author_profile: false
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    font-family: var(--ht-font-sans);
     font-size: 0.88rem;
     color: var(--ht-text-secondary);
     text-decoration: none !important;
@@ -35,30 +37,33 @@ author_profile: false
   
   .ht-bridge-hero {
     text-align: center;
-    margin-bottom: 28px;
+    margin: 1.5rem auto 2.5rem auto;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .ht-bridge-hero .ht-eyebrow {
     justify-content: center !important;
-    margin: 0 auto !important;
+    margin: 0 auto 0.75rem auto !important;
   }
   .ht-bridge-hero .ht-eyebrow::after {
     display: none !important;
   }
   .ht-bridge-hero h1 {
-    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    font-family: var(--ht-font-heading);
+    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
     font-weight: 800;
+    letter-spacing: -0.025em;
     color: var(--ht-text-primary);
-    margin: 8px 0 10px;
-    letter-spacing: -0.02em;
+    margin: 0 0 1rem 0;
+    line-height: 1.15;
   }
   .ht-bridge-hero p {
-    font-size: 1.05rem;
+    font-family: var(--ht-font-sans);
+    font-size: 1.12rem;
     color: var(--ht-text-secondary);
-    line-height: 1.6;
-    max-width: 720px;
+    line-height: 1.65;
+    max-width: 680px;
     margin: 0 auto;
   }
 
@@ -86,28 +91,17 @@ author_profile: false
     background: rgba(255, 255, 255, 0.02);
   }
   .ht-bridge-card__title {
+    font-family: var(--ht-font-heading);
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--ht-text-primary);
     margin: 0 0 4px 0;
   }
   .ht-bridge-card__meta {
+    font-family: var(--ht-font-sans);
     font-size: 0.84rem;
     color: var(--ht-text-secondary);
     margin: 0;
-  }
-  .ht-bridge-card-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #34d399;
-    font-size: 0.78rem;
-    font-weight: 600;
-    font-family: var(--ht-font-mono, monospace);
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    padding: 4px 10px;
-    border-radius: var(--ht-radius-full, 9999px);
   }
   .ht-bridge-card__body {
     padding: 24px;
@@ -122,90 +116,13 @@ author_profile: false
     margin-bottom: 22px;
     line-height: 1.7;
     color: var(--ht-text-secondary);
-    font-size: 0.96rem;
+    font-family: var(--ht-font-sans);
+    font-size: 0.98rem;
   }
   .ht-bridge-story-box strong {
+    font-family: var(--ht-font-sans);
     color: var(--ht-text-primary);
   }
-
-  /* Code Terminal Display */
-  .ht-code-panel {
-    background: #0d1117;
-    border: 1px solid var(--ht-border);
-    border-radius: var(--ht-radius-md, 14px);
-    overflow: hidden;
-    margin: 10px 0 16px 0;
-    box-shadow: var(--ht-shadow-sm);
-  }
-  .ht-code-panel__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 14px;
-    background: rgba(255, 255, 255, 0.03);
-    border-bottom: 1px solid var(--ht-border);
-  }
-  .ht-code-panel__dots {
-    display: flex;
-    gap: 6px;
-  }
-  .ht-code-panel__dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-  .ht-code-panel__dot--red { background: #ff5f56; }
-  .ht-code-panel__dot--yellow { background: #ffbd2e; }
-  .ht-code-panel__dot--green { background: #27c93f; }
-  .ht-code-panel__title {
-    font-family: var(--ht-font-mono, monospace);
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--ht-text-muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .ht-code-copy-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 9px;
-    font-family: var(--ht-font-mono, monospace);
-    font-size: 0.72rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--ht-border);
-    border-radius: 6px;
-    color: var(--ht-text-secondary);
-    cursor: pointer;
-    transition: all 0.15s ease;
-  }
-  .ht-code-copy-btn:hover {
-    color: var(--ht-text-primary);
-    border-color: var(--ht-border-hover);
-    background: rgba(255, 255, 255, 0.1);
-  }
-  .ht-code-panel__body {
-    padding: 16px 18px;
-    margin: 0;
-    overflow-x: auto;
-    font-family: var(--ht-font-mono, 'JetBrains Mono', monospace);
-    font-size: 0.88rem;
-    line-height: 1.65;
-    color: #e2e8f0;
-  }
-  .ht-code-panel__body code {
-    background: transparent !important;
-    border: 0 !important;
-    padding: 0 !important;
-    color: inherit !important;
-    font-size: inherit !important;
-  }
-
-  /* Code Syntax Highlighting Spans */
-  .ck-key { color: #38bdf8; }
-  .ck-str { color: #a7f3d0; }
-  .ck-cmd { color: #f8fafc; font-weight: 600; }
-  .ck-dim { color: #64748b; }
 
   /* High-Tech Global Buttons matching site system */
   .ht-bridge-actions {
@@ -224,6 +141,7 @@ author_profile: false
     border-radius: var(--ht-radius-full, 9999px);
     background: #f8fafc;
     color: #09090b !important;
+    font-family: var(--ht-font-sans);
     font-weight: 700;
     font-size: 0.92rem;
     text-decoration: none !important;
@@ -247,6 +165,7 @@ author_profile: false
     background: var(--ht-bg-elevated, #242424);
     border: 1px solid var(--ht-border);
     color: var(--ht-text-primary) !important;
+    font-family: var(--ht-font-sans);
     font-weight: 600;
     font-size: 0.92rem;
     text-decoration: none !important;
@@ -299,13 +218,15 @@ author_profile: false
     color: var(--ht-text-primary);
   }
   .ht-bridge-feature-title {
-    font-size: 1.02rem;
+    font-family: var(--ht-font-heading);
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--ht-text-primary);
     margin: 0 0 8px 0;
   }
   .ht-bridge-feature-desc {
-    font-size: 0.88rem;
+    font-family: var(--ht-font-sans);
+    font-size: 0.9rem;
     color: var(--ht-text-secondary);
     line-height: 1.6;
     margin: 0;
@@ -362,13 +283,13 @@ author_profile: false
 
         <!-- Terminal Quickstart -->
         <div style="margin-bottom: 20px;">
-          <span style="font-size: 0.8rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Run the Bridge Locally:</span>
+          <span style="font-family: var(--ht-font-sans); font-size: 0.8rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Run the Bridge Locally:</span>
           <pre><code class="language-bash">npx @codex.nayem/chatgpt-agent-bridge</code></pre>
         </div>
 
         <!-- MCP Config Box -->
         <div>
-          <span style="font-size: 0.8rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Add to Antigravity / Claude Desktop MCP Config:</span>
+          <span style="font-family: var(--ht-font-sans); font-size: 0.8rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Add to Antigravity / Claude Desktop MCP Config:</span>
           <pre><code class="language-json">{
   "mcpServers": {
     "chatgpt-bridge": {
