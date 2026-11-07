@@ -32,15 +32,28 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     I design and build AI-powered automation systems, intelligent agents, and custom integrations that help businesses reduce manual work, streamline operations, and scale efficiently.
   </p>
 
-  <!-- Tech Stack Ribbon Badges with Icons -->
-  <div class="ht-hero-centered__badges ht-stack-ribbon__inner" style="margin-top: 1.5rem; margin-bottom: 2rem;">
-    <span class="ht-stack-pill"><i class="fab fa-wordpress" aria-hidden="true"></i> WordPress Core &amp; Custom Plugins</span>
-    <span class="ht-stack-pill"><i class="fab fa-shopify" aria-hidden="true"></i> Shopify Liquid &amp; Storefronts</span>
-    <span class="ht-stack-pill"><i class="fas fa-shopping-bag" aria-hidden="true"></i> WooCommerce Architecture</span>
-    <span class="ht-stack-pill"><i class="fab fa-python" aria-hidden="true"></i> Python Bots &amp; Scraping</span>
-    <span class="ht-stack-pill"><i class="fas fa-brain" aria-hidden="true"></i> AI &amp; LLM Automation Pipelines</span>
-    <span class="ht-stack-pill"><i class="fab fa-js" aria-hidden="true"></i> Vanilla JS / ES6+ &amp; REST APIs</span>
-    <span class="ht-stack-pill"><i class="fas fa-shield-alt" aria-hidden="true"></i> Freemius Software Monetization</span>
+  <!-- Tech Stack Infinite Marquee Ribbon Badges -->
+  <div class="ht-hero-marquee-wrap" aria-label="Key Technologies">
+    <div class="ht-hero-marquee-track">
+      <div class="ht-hero-marquee-group">
+        <span class="ht-stack-pill"><i class="fab fa-wordpress" aria-hidden="true"></i> WordPress Core &amp; Custom Plugins</span>
+        <span class="ht-stack-pill"><i class="fab fa-shopify" aria-hidden="true"></i> Shopify Liquid &amp; Storefronts</span>
+        <span class="ht-stack-pill"><i class="fas fa-shopping-bag" aria-hidden="true"></i> WooCommerce Architecture</span>
+        <span class="ht-stack-pill"><i class="fab fa-python" aria-hidden="true"></i> Python Bots &amp; Scraping</span>
+        <span class="ht-stack-pill"><i class="fas fa-brain" aria-hidden="true"></i> AI &amp; LLM Automation Pipelines</span>
+        <span class="ht-stack-pill"><i class="fab fa-js" aria-hidden="true"></i> Vanilla JS / ES6+ &amp; REST APIs</span>
+        <span class="ht-stack-pill"><i class="fas fa-shield-alt" aria-hidden="true"></i> Freemius Software Monetization</span>
+      </div>
+      <div class="ht-hero-marquee-group" aria-hidden="true">
+        <span class="ht-stack-pill"><i class="fab fa-wordpress" aria-hidden="true"></i> WordPress Core &amp; Custom Plugins</span>
+        <span class="ht-stack-pill"><i class="fab fa-shopify" aria-hidden="true"></i> Shopify Liquid &amp; Storefronts</span>
+        <span class="ht-stack-pill"><i class="fas fa-shopping-bag" aria-hidden="true"></i> WooCommerce Architecture</span>
+        <span class="ht-stack-pill"><i class="fab fa-python" aria-hidden="true"></i> Python Bots &amp; Scraping</span>
+        <span class="ht-stack-pill"><i class="fas fa-brain" aria-hidden="true"></i> AI &amp; LLM Automation Pipelines</span>
+        <span class="ht-stack-pill"><i class="fab fa-js" aria-hidden="true"></i> Vanilla JS / ES6+ &amp; REST APIs</span>
+        <span class="ht-stack-pill"><i class="fas fa-shield-alt" aria-hidden="true"></i> Freemius Software Monetization</span>
+      </div>
+    </div>
   </div>
 
   <!-- Action CTAs -->

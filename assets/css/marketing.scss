@@ -7747,3 +7747,59 @@ html:not([data-theme="dark"]) .ht-eyebrow > span:not(.ht-eyebrow-dot) {
   letter-spacing: normal !important;
   background: transparent !important;
 }
+
+
+/* ==========================================================================
+   HERO TECH STACK INFINITE SMOOTH MARQUEE (SINGLE LINE ACROSS ALL SCREENS)
+   ========================================================================== */
+.ht-hero-marquee-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 1.25rem auto 2.25rem auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.ht-hero-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: ht-hero-marquee-scroll 24s linear infinite;
+}
+
+.ht-hero-marquee-wrap:hover .ht-hero-marquee-track {
+  animation-play-state: paused;
+}
+
+.ht-hero-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 12px;
+  flex-shrink: 0;
+}
+
+@keyframes ht-hero-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .ht-hero-marquee-wrap {
+    max-width: 100vw;
+    margin: 1rem auto 1.75rem auto;
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  }
+  .ht-hero-marquee-track {
+    animation-duration: 18s;
+  }
+}
