@@ -7377,12 +7377,31 @@ html:not([data-theme="dark"]) .portfolio-badge:hover {
     margin: 2rem auto 3.5rem auto;
   }
   .ht-hero-centered__actions {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
   }
   .ht-btn-hero-primary,
   .ht-btn-hero-secondary {
-    width: 100%;
+    flex: 1 1 0% !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 40px !important;
+    padding: 0 10px !important;
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
+    letter-spacing: -0.01em !important;
+    gap: 5px !important;
+  }
+  .ht-btn-hero-primary svg,
+  .ht-btn-hero-secondary svg {
+    width: 13px !important;
+    height: 13px !important;
+    flex-shrink: 0 !important;
   }
 }
 
