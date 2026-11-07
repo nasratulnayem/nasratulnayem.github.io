@@ -55,11 +55,6 @@ freemius_pricings:
         </div>
         <h2 class="ht-product-title">{{ page.product_name }}</h2>
         <p class="ht-product-summary">I built Importon Bridge to solve a concrete operational bottleneck: copying supplier items one-by-one by hand. The extension inspects the active browser DOM, extracts galleries and attributes, and stages everything into your WordPress store via secure REST.</p>
-
-        <div class="ht-product-cta-group" style="margin-top: 1.5rem;">
-          <a class="ht-btn-primary" href="#" onclick="openTrialPopup(event)">Start 7-Day Trial ↗</a>
-          <a class="ht-btn-secondary" href="https://chromewebstore.google.com/detail/importon-bridge/mndmloooadnomopgelcfdlfnbhidbbdn" target="_blank" rel="noopener noreferrer"><i class="fab fa-chrome" aria-hidden="true" style="margin-right: 6px;"></i>Chrome Extension</a>
-        </div>
       </div>
     </div>
   </article>
