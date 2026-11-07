@@ -7181,9 +7181,7 @@ html:not([data-theme="dark"]) .portfolio-badge:hover {
   justify-content: center !important;
 }
 
-.ht-page-hero > .ht-eyebrow::after {
-  display: none !important;
-}
+/* page-hero eyebrow line handled symmetrically */
 
 
 
@@ -7443,9 +7441,7 @@ html:not([data-theme="dark"]) .portfolio-badge:hover {
   text-align: center !important;
 }
 
-.ht-eyebrow::after {
-  display: none !important;
-}
+/* eyebrow line handled symmetrically below */
 
 /* Headings across all section headers and page heroes */
 .ht-section-header .ht-section-title,
@@ -7484,361 +7480,6 @@ html:not([data-theme="dark"]) .portfolio-badge:hover {
 }
 
 
-/* =========================================================
-   PORTFOLIO HERO: ATMOSPHERIC AMBIENT PURPLE HORIZON
-   Uses site font variables & full responsive behavior
-   ========================================================= */
-
-.portfolio-hero {
-  position: relative;
-  isolation: isolate;
-  width: 100%;
-  min-height: 85vh;
-  min-height: 85svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #09090f;
-  margin-bottom: 2rem;
-}
-
-/* Background Atmospheric Lighting */
-.hero-background {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-  background: #09090f;
-}
-
-.hero-background__base {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      ellipse 65% 55% at 50% 43%,
-      rgba(40, 28, 65, 0.24) 0%,
-      rgba(25, 19, 40, 0.14) 38%,
-      rgba(13, 12, 20, 0.04) 68%,
-      transparent 100%
-    ),
-    linear-gradient(
-      180deg,
-      #0b0a11 0%,
-      #09090f 48%,
-      #0a0911 75%,
-      #0d0918 100%
-    );
-}
-
-.hero-background__ambient {
-  position: absolute;
-  width: min(1100px, 100vw);
-  height: 760px;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(104, 62, 170, 0.12) 0%,
-      rgba(82, 49, 137, 0.075) 26%,
-      rgba(54, 34, 95, 0.035) 48%,
-      transparent 72%
-    );
-  filter: blur(65px);
-}
-
-.hero-background__lower-light {
-  position: absolute;
-  width: 100%;
-  height: 520px;
-  left: 50%;
-  bottom: -100px;
-  transform: translateX(-50%);
-  background:
-    radial-gradient(
-      ellipse 55% 55% at 50% 100%,
-      rgba(111, 55, 220, 0.18) 0%,
-      rgba(95, 48, 185, 0.10) 28%,
-      rgba(65, 35, 125, 0.045) 52%,
-      transparent 75%
-    );
-  filter: blur(45px);
-}
-
-.hero-background__texture {
-  position: absolute;
-  inset: 0;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.5'/%3E%3C/svg%3E");
-  pointer-events: none;
-}
-
-/* Symmetrical Horizon Curve */
-.hero-horizon {
-  position: absolute;
-  width: 100%;
-  height: 320px;
-  left: 0;
-  bottom: 80px;
-  pointer-events: none;
-}
-
-.hero-horizon svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-/* Hero Content Wrapper */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: min(calc(100% - 48px), 1100px);
-  margin-inline: auto;
-  padding-top: 60px;
-  padding-bottom: 90px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Profile Portrait Ring & Photo */
-.hero-portrait {
-  position: relative;
-  margin-bottom: 26px;
-}
-
-.hero-portrait__ring {
-  position: relative;
-  width: 126px;
-  height: 126px;
-  padding: 4px;
-  border-radius: 50%;
-  background:
-    linear-gradient(
-      145deg,
-      #c4b5fd 0%,
-      #8b5cf6 35%,
-      #6d28d9 70%,
-      #a78bfa 100%
-    );
-  box-shadow:
-    0 0 14px rgba(139, 92, 246, 0.45),
-    0 0 45px rgba(139, 92, 246, 0.25),
-    0 0 100px rgba(109, 40, 217, 0.12);
-}
-
-.hero-portrait__inner {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  overflow: hidden;
-  background: radial-gradient(circle at 50% 30%, #302344, #15121e 70%);
-  border: 3px solid #100e17;
-}
-
-.hero-portrait__inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-}
-
-/* Eyebrow with Gradient Lines */
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin-bottom: 20px;
-  color: #a78bfa;
-  font-family: var(--ht-font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2.2px;
-  line-height: 1.5;
-}
-
-.eyebrow-line {
-  width: 26px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.6));
-}
-
-.eyebrow-line:last-child {
-  transform: rotate(180deg);
-}
-
-/* Typography matching site design tokens */
-.hero-content h1 {
-  margin: 0;
-  color: #fafafa;
-  font-family: var(--ht-font-heading);
-  font-size: clamp(38px, 5.5vw, 68px);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.035em;
-  text-wrap: balance;
-}
-
-.hero-content h2 {
-  max-width: 900px;
-  margin: 16px 0 0;
-  color: #f0eef7;
-  font-family: var(--ht-font-heading);
-  font-size: clamp(23px, 3.2vw, 38px);
-  font-weight: 500;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-}
-
-.hero-content h2 span {
-  color: #c4b5fd;
-}
-
-.hero-description {
-  max-width: 680px;
-  margin: 22px 0 0;
-  color: #aaa8b5;
-  font-family: var(--ht-font-sans);
-  font-size: clamp(15px, 1.3vw, 17px);
-  font-weight: 400;
-  line-height: 1.75;
-  text-wrap: pretty;
-}
-
-/* Capabilities Pill Badges */
-.hero-capabilities {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 32px;
-}
-
-.capability {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 20px;
-  border: 1px solid rgba(167, 139, 250, 0.16);
-  border-radius: 100px;
-  background: linear-gradient(135deg, rgba(35, 28, 51, 0.7), rgba(19, 17, 28, 0.65));
-  color: #d4d0df;
-  font-family: var(--ht-font-sans);
-  font-size: 13px;
-  font-weight: 500;
-  white-space: nowrap;
-  backdrop-filter: blur(8px);
-  transition: all 0.25s ease;
-}
-
-.capability:hover {
-  border-color: rgba(167, 139, 250, 0.4);
-  background: rgba(45, 32, 70, 0.75);
-  transform: translateY(-2px);
-  color: #ffffff;
-}
-
-.capability-icon {
-  color: #a78bfa;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-/* Action CTAs */
-.hero-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 36px;
-}
-
-.hero-button {
-  min-width: 190px;
-  min-height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 26px;
-  border-radius: 100px;
-  font-family: var(--ht-font-sans);
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none !important;
-  transition: all 0.25s ease;
-}
-
-.hero-button:hover {
-  transform: translateY(-3px);
-}
-
-.hero-button--primary {
-  background: #f7f6fb;
-  color: #111018 !important;
-  box-shadow: 0 3px 20px rgba(255, 255, 255, 0.05);
-}
-
-.hero-button--primary:hover {
-  background: #ffffff;
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.12);
-}
-
-.hero-button--secondary {
-  border: 1px solid rgba(213, 205, 235, 0.35);
-  background: rgba(14, 12, 22, 0.45);
-  color: #f1eff8 !important;
-}
-
-.hero-button--secondary:hover {
-  border-color: rgba(167, 139, 250, 0.75);
-  background: rgba(65, 42, 100, 0.22);
-}
-
-.hero-button span {
-  font-size: 17px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .portfolio-hero {
-    min-height: auto;
-  }
-  .hero-content {
-    padding-top: 40px;
-    padding-bottom: 70px;
-    width: calc(100% - 32px);
-  }
-  .hero-horizon {
-    height: 220px;
-    bottom: 20px;
-  }
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  .hero-button {
-    width: min(100%, 320px);
-  }
-}
-
-
 /* ==========================================================================
    SYMMETRICAL DUAL-SIDED HORIZONTAL DIVIDER LINES FOR ALL SECTION EYEBROWS
    ========================================================================== */
@@ -7868,21 +7509,27 @@ html:not([data-theme="dark"]) .ht-eyebrow::after {
   background: rgba(15, 23, 42, 0.12) !important;
 }
 
-/* Ensure inner pill stays tightly framed and distinct */
+/* Pure clean white badge pill with dark text across the entire site */
 .ht-eyebrow > span:not(.ht-eyebrow-dot) {
   display: inline-flex !important;
   align-items: center !important;
-  padding: 4px 12px !important;
+  padding: 3px 14px !important;
   border-radius: 9999px !important;
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace !important;
-  font-size: 0.72rem !important;
+  font-size: 0.74rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.08em !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
-  color: #f8fafc !important;
+  background: #e4e4e7 !important;
+  color: #09090b !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
   white-space: nowrap !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+}
+
+html:not([data-theme="dark"]) .ht-eyebrow > span:not(.ht-eyebrow-dot) {
+  background: #09090b !important;
+  color: #ffffff !important;
+  border-color: #09090b !important;
 }
 
 
