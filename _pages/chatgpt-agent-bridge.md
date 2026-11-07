@@ -124,17 +124,43 @@ author_profile: false
     color: var(--ht-text-primary);
   }
 
-  /* Crisp High-Contrast Terminal Styling */
+  /* Clean GitHub Dark Code Window & Typography */
   .ht-bridge-tool-page .ht-code-wrapper {
     margin: 6px 0 16px 0 !important;
+    background: #0d1117 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 8px !important;
+  }
+  .ht-bridge-tool-page .code-header-bar {
+    background: #161b22 !important;
+    border-bottom: 1px solid #30363d !important;
+    height: 34px !important;
+  }
+  .ht-bridge-tool-page .code-lang-label {
+    color: #8b949e !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+  }
+  .ht-bridge-tool-page .code-copy-btn {
+    color: #8b949e !important;
+  }
+  .ht-bridge-tool-page .code-copy-btn:hover {
+    color: #c9d1d9 !important;
+    background: rgba(255, 255, 255, 0.08) !important;
   }
   .ht-bridge-tool-page .ht-code-wrapper pre code {
-    color: #38bdf8 !important;
-    font-size: 0.92rem !important;
-    font-weight: 500 !important;
+    color: #e6edf3 !important;
+    font-size: 0.88rem !important;
+    font-weight: 400 !important;
     line-height: 1.6 !important;
-    font-family: var(--ht-font-mono, monospace) !important;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace !important;
   }
+  /* GitHub Dark syntax accents */
+  .ht-bridge-tool-page .code-syntax-cmd { color: #ff7b72; } /* keywords/commands e.g. npx */
+  .ht-bridge-tool-page .code-syntax-pkg { color: #a5d6ff; } /* package/argument */
+  .ht-bridge-tool-page .code-syntax-key { color: #7ee787; } /* json keys */
+  .ht-bridge-tool-page .code-syntax-str { color: #a5d6ff; } /* json strings */
+  .ht-bridge-tool-page .code-syntax-punct { color: #8b949e; } /* braces & colons */
 
   /* Interactive Image Modal on Desktop */
   .ht-bridge-diagram-wrap {
@@ -357,20 +383,20 @@ author_profile: false
         <!-- Terminal Quickstart -->
         <div style="margin-bottom: 14px;">
           <span style="font-family: var(--ht-font-sans); font-size: 0.78rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Run the Bridge Locally:</span>
-          <pre><code class="language-bash">npx @codex.nayem/chatgpt-agent-bridge</code></pre>
+          <pre><code class="language-bash"><span class="code-syntax-cmd">npx</span> <span class="code-syntax-pkg">@codex.nayem/chatgpt-agent-bridge</span></code></pre>
         </div>
 
         <!-- MCP Config Box -->
         <div>
           <span style="font-family: var(--ht-font-sans); font-size: 0.78rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Add to Antigravity / Claude Desktop MCP Config:</span>
-          <pre><code class="language-json">{
-  "mcpServers": {
-    "chatgpt-bridge": {
-      "command": "npx",
-      "args": ["-y", "@codex.nayem/chatgpt-agent-bridge"]
-    }
-  }
-}</code></pre>
+          <pre><code class="language-json"><span class="code-syntax-punct">{</span>
+  <span class="code-syntax-key">"mcpServers"</span><span class="code-syntax-punct">:</span> <span class="code-syntax-punct">{</span>
+    <span class="code-syntax-key">"chatgpt-bridge"</span><span class="code-syntax-punct">:</span> <span class="code-syntax-punct">{</span>
+      <span class="code-syntax-key">"command"</span><span class="code-syntax-punct">:</span> <span class="code-syntax-str">"npx"</span><span class="code-syntax-punct">,</span>
+      <span class="code-syntax-key">"args"</span><span class="code-syntax-punct">:</span> <span class="code-syntax-punct">[</span><span class="code-syntax-str">"-y"</span><span class="code-syntax-punct">,</span> <span class="code-syntax-str">"@codex.nayem/chatgpt-agent-bridge"</span><span class="code-syntax-punct">]</span>
+    <span class="code-syntax-punct">}</span>
+  <span class="code-syntax-punct">}</span>
+<span class="code-syntax-punct">}</span></code></pre>
         </div>
       </div>
     </section>
