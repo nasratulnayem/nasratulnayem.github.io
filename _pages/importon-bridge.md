@@ -31,10 +31,14 @@ freemius_pricings:
 <div class="ht-page-hero">
   <div class="ht-eyebrow">
     <span class="ht-eyebrow-dot"></span>
-    <span>MADE FOR DROPSHIPPERS</span>
+    <span>ECOMMERCE WORKFLOW ENGINE</span>
   </div>
-  <h1 class="ht-page-hero__title">Alibaba to WooCommerce Product Import</h1>
-  <p class="ht-page-hero__desc"><strong>Importon Bridge</strong> does 1-click <strong>Alibaba to WooCommerce</strong> product import for WordPress — move supplier details, galleries, attributes and variations into WooCommerce without copying by hand. <strong>7-day free trial</strong> — cancel anytime, auto-charges after trial.</p>
+  <h1 class="ht-page-hero__title">Importon Bridge</h1>
+  <p class="ht-page-hero__desc">Move complete product data from Alibaba into WooCommerce without repetitive manual copy-pasting. Captures titles, images, variations, and attributes directly into formatted drafts.</p>
+  <div class="ht-hero__actions" style="justify-content: center; margin-top: 1.5rem; margin-bottom: 0;">
+    <a class="ht-btn-primary" href="#" onclick="openTrialPopup(event)">Start 7-Day Trial ↗</a>
+    <a class="ht-btn-secondary" href="https://chromewebstore.google.com/detail/importon-bridge/mndmloooadnomopgelcfdlfnbhidbbdn" target="_blank" rel="noopener noreferrer"><i class="fab fa-chrome" aria-hidden="true" style="margin-right: 6px;"></i>Chrome Extension</a>
+  </div>
 </div>
 
 <!-- Flagship Showcase Bento Card -->
@@ -50,19 +54,11 @@ freemius_pricings:
           <span class="ht-badge">v0.2.2 Pro</span>
         </div>
         <h2 class="ht-product-title">{{ page.product_name }}</h2>
-        <p class="ht-product-summary">{{ page.description }}</p>
+        <p class="ht-product-summary">I built Importon Bridge to solve a concrete operational bottleneck: copying supplier items one-by-one by hand. The extension inspects the active browser DOM, extracts galleries and attributes, and stages everything into your WordPress store via secure REST.</p>
 
-        <div class="ht-product-pricing-bar">
-          <div class="ht-product-price">
-            <strong>$9.99</strong>
-            <span>/ month</span>
-            <small style="display:block;color:#64748b;font-size:11px;">$79/year (save 34%) · Growth $19.99/mo · Scale $39.99/mo — 7-day free trial</small>
-          </div>
-          <div class="ht-product-cta-group">
-            <a class="ht-btn-primary ht-btn--glow" href="#" onclick="openTrialPopup(event)">Start 7-Day Trial ↗</a>
-            <a class="ht-btn-secondary" href="https://chromewebstore.google.com/detail/importon-bridge/mndmloooadnomopgelcfdlfnbhidbbdn" target="_blank" rel="noopener noreferrer"><i class="fab fa-chrome" aria-hidden="true" style="margin-right: 6px;"></i>Chrome Extension</a>
-            <a class="ht-btn-secondary" href="{{ page.freemius_checkout_url }}" target="_blank" rel="nofollow noopener noreferrer">Buy Pro License</a>
-          </div>
+        <div class="ht-product-cta-group" style="margin-top: 1.5rem;">
+          <a class="ht-btn-primary" href="#" onclick="openTrialPopup(event)">Start 7-Day Trial ↗</a>
+          <a class="ht-btn-secondary" href="https://chromewebstore.google.com/detail/importon-bridge/mndmloooadnomopgelcfdlfnbhidbbdn" target="_blank" rel="noopener noreferrer"><i class="fab fa-chrome" aria-hidden="true" style="margin-right: 6px;"></i>Chrome Extension</a>
         </div>
       </div>
     </div>

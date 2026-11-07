@@ -352,6 +352,14 @@ author_profile: false
           So I built this bridge. Now, my agent types prompts into ChatGPT Web itself, verifies visual character continuity, and downloads the original raw PNGs straight into my project directory.
         </div>
 
+        <!-- Architecture Diagram: Desktop & Mobile Flow -->
+        <div class="ht-bridge-diagram-wrap" style="margin: 24px 0 20px 0;">
+          <picture>
+            <source media="(max-width: 640px)" srcset="{{ '/images/work/chatgpt-agent-bridge-mobile-flow.png' | relative_url }}">
+            <img src="{{ '/images/work/chatgpt-agent-bridge-architecture.png' | relative_url }}" alt="ChatGPT Agent Bridge MCP Architecture Diagram" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--ht-border); display: block;">
+          </picture>
+        </div>
+
         <!-- Terminal Quickstart -->
         <div style="margin-bottom: 20px;">
           <span style="font-size: 0.8rem; font-weight: 700; color: var(--ht-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Run the Bridge Locally:</span>
