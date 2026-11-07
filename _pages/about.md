@@ -140,174 +140,95 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
   <div class="ht-section-header">
     <div class="ht-eyebrow">
       <span class="ht-eyebrow-dot"></span>
-      <span>ENGINEERING CAPABILITIES &amp; PRODUCTS</span>
+      <span>WHAT I BUILD</span>
     </div>
-    <h2 id="bento-title" class="ht-section-title">Built with precision. Engineered for business impact.</h2>
-    <p class="ht-section-subtitle">No bloated page builders. No unnecessary complexity. Just clean code, fast interfaces, and automations that return hours to your week.</p>
+    <h2 id="bento-title" class="ht-section-title">Clean systems. Zero fluff. Tools that actually work.</h2>
+    <p class="ht-section-subtitle">No bloated page builders or unnecessary layers. Just fast code, direct interfaces, and automations that save real hours.</p>
   </div>
 
-  <div class="ht-bento-grid">
-    <!-- Bento 0: Flagship AI Agent Bridge (ChatGPT Agent Bridge) -->
-    <article class="bento-card bento-card--featured glow-card" style="margin-bottom: 24px; border: 1.5px solid #10b981;">
-      <div class="bento-card__badge-row">
-        <span class="ht-badge ht-badge--cyan">FLAGSHIP AI PRODUCT</span>
-        <span class="ht-badge ht-badge--green" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3);">v1.0.0 Pro</span>
+  <div class="ht-bento-grid" style="grid-template-columns: repeat(3, 1fr); gap: 18px;">
+    <!-- Card 1: ChatGPT Agent Bridge -->
+    <a class="bento-card glow-card" href="{{ '/tools/chatgpt-agent-bridge/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
+      <div class="bento-card__badge-row" style="margin-bottom: 10px;">
+        <span class="ht-badge ht-badge--cyan">AI AGENT MCP</span>
+        <span class="ht-badge ht-badge--green" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3);">Open Source</span>
       </div>
-      <div class="bento-card__header">
-        <h3 class="bento-card__title">ChatGPT Agent Bridge</h3>
-        <p class="bento-card__desc">Model Context Protocol (MCP) server and Chrome Extension bridge connecting Antigravity Cortex, Claude Desktop, and Cursor directly to ChatGPT Web for zero-token prompts, visual storyboards, and autonomous high-res downloads.</p>
+      <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">ChatGPT Agent Bridge</h3>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">MCP daemon and Chrome extension connecting Antigravity, Claude Desktop, and Cursor directly to your active ChatGPT Web tab. Zero API bills, autonomous prompt automation, and raw disk downloads.</p>
+      <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
+        <span>View tool</span>
+        <span aria-hidden="true">&rarr;</span>
       </div>
+    </a>
 
-      <div class="bento-card__visual-bridge">
-        <div class="ht-bridge-step">
-          <div class="ht-bridge-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
-          <span>AI Agent (Antigravity/Claude)</span>
-        </div>
-        <div class="ht-bridge-arrow">
-          <span class="ht-bridge-pulse"></span>
-          <span class="ht-bridge-label">MCP WebSocket (3456)</span>
-        </div>
-        <div class="ht-bridge-step">
-          <div class="ht-bridge-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
-          <span>ChatGPT Web &amp; DALL-E</span>
-        </div>
+    <!-- Card 2: Importon Bridge -->
+    <a class="bento-card glow-card" href="{{ '/tools/importon-bridge/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
+      <div class="bento-card__badge-row" style="margin-bottom: 10px;">
+        <span class="ht-badge ht-badge--cyan">WOOCOMMERCE</span>
+        <span class="ht-badge">v0.2.2 Pro</span>
       </div>
+      <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">Importon Bridge</h3>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Browser companion that pulls supplier items straight into WooCommerce. Captures titles, images, variations, and specs directly into staged drafts without copying field by field.</p>
+      <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
+        <span>View tool</span>
+        <span aria-hidden="true">&rarr;</span>
+      </div>
+    </a>
 
-      <div class="bento-card__highlights">
-        <span><i class="fas fa-check" aria-hidden="true"></i> Zero API token costs via Plus/Team subscription</span>
-        <span><i class="fas fa-check" aria-hidden="true"></i> Autonomous DALL-E 3 storyboard and art downloader</span>
-        <span><i class="fas fa-check" aria-hidden="true"></i> Fast npm/npx setup across any OS</span>
+    <!-- Card 3: Image Metadata Remover -->
+    <a class="bento-card glow-card" href="{{ '/tools/image-metadata-cleaner/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
+      <div class="bento-card__badge-row" style="margin-bottom: 10px;">
+        <span class="ht-badge ht-badge--cyan">BROWSER TOOL</span>
+        <span class="ht-badge ht-badge--green" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3);">100% Private</span>
       </div>
+      <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">Image Metadata Remover</h3>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Strips GPS coordinates, device data, and hidden EXIF tags from photos before sharing. Cleans everything client-side in your browser with zero server uploads.</p>
+      <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
+        <span>Open cleaner</span>
+        <span aria-hidden="true">&rarr;</span>
+      </div>
+    </a>
 
-      <div class="bento-card__actions">
-        <a class="ht-btn-primary" href="{{ '/tools/chatgpt-agent-bridge/' | relative_url }}">
-          <span>Explore Agent Bridge</span>
-          <span aria-hidden="true">&rarr;</span>
-        </a>
-        <a class="ht-btn-secondary" href="#" onclick="openTrialPopup(event)">
-          <span>Start 7-Day Free Trial</span>
-          <span aria-hidden="true">&nearr;</span>
-        </a>
+    <!-- Card 4: Web & WordPress Engineering -->
+    <a class="bento-card glow-card" href="{{ '/services/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
+      <div class="bento-card__badge-row" style="margin-bottom: 10px;">
+        <span class="ht-badge">CORE CMS</span>
       </div>
-    </article>
+      <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">High-Speed Web Systems</h3>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Custom WordPress plugins, clean PHP 8+ architecture, fast Liquid themes, and sub-second Core Web Vitals. Built strictly without visual builder bloat.</p>
+      <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
+        <span>Explore services</span>
+        <span aria-hidden="true">&rarr;</span>
+      </div>
+    </a>
 
-    <!-- Bento 1: Flagship SaaS Product (Importon Bridge) -->
-    <article class="bento-card bento-card--featured glow-card">
-      <div class="bento-card__badge-row">
-        <span class="ht-badge ht-badge--cyan">FLAGSHIP PRODUCT</span>
-        <span class="ht-badge ht-badge--green">v0.2.2 Pro</span>
+    <!-- Card 5: Automations & Bots -->
+    <a class="bento-card glow-card" href="{{ '/automation/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
+      <div class="bento-card__badge-row" style="margin-bottom: 10px;">
+        <span class="ht-badge">PYTHON &amp; AI</span>
       </div>
-      <div class="bento-card__header">
-        <h3 class="bento-card__title">Importon Bridge</h3>
-        <p class="bento-card__desc">A browser-assisted workflow engine that moves product data from supported web pages into WooCommerce without repetitive manual copy-pasting.</p>
+      <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">Automations That Cut Hours</h3>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Custom Playwright scrapers, scheduled background syncs, AI prompt pipelines, and webhook ETLs that handle repetitive work so you don't touch it manually.</p>
+      <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
+        <span>Explore automations</span>
+        <span aria-hidden="true">&rarr;</span>
       </div>
+    </a>
 
-      <div class="bento-card__visual-bridge">
-        <div class="ht-bridge-step">
-          <div class="ht-bridge-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
-          <span>Browser Page</span>
-        </div>
-        <div class="ht-bridge-arrow">
-          <span class="ht-bridge-pulse"></span>
-          <span class="ht-bridge-label">Secure REST</span>
-        </div>
-        <div class="ht-bridge-step">
-          <div class="ht-bridge-icon"><i class="fab fa-wordpress" aria-hidden="true"></i></div>
-          <span>WooCommerce Draft</span>
-        </div>
+    <!-- Card 6: Direct Access Partnership -->
+    <a class="bento-card glow-card" href="{{ '/contact/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
+      <div class="bento-card__badge-row" style="margin-bottom: 10px;">
+        <span class="ht-badge ht-badge--green" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3);">DIRECT ACCESS</span>
       </div>
-
-      <div class="bento-card__highlights">
-        <span><i class="fas fa-check" aria-hidden="true"></i> Chrome companion included</span>
-        <span><i class="fas fa-check" aria-hidden="true"></i> Freemius licensed updates</span>
-        <span><i class="fas fa-check" aria-hidden="true"></i> 14-day refund window</span>
+      <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">Work Directly With The Builder</h3>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">You talk straight with me — no account managers, no middle layers, and no guessing games. Every task is scoped transparently before any code is written.</p>
+      <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
+        <span>Get in touch</span>
+        <span aria-hidden="true">&rarr;</span>
       </div>
-
-      <div class="bento-card__actions">
-        <a class="ht-btn-primary" href="{{ '/tools/importon-bridge/' | relative_url }}">
-          <span>See How It Works</span>
-          <span aria-hidden="true">→</span>
-        </a>
-        <a class="ht-btn-secondary" href="#" onclick="openTrialPopup(event)">
-          <span>Start 7-Day Free Trial</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </article>
-
-    <!-- Bento 2: High-Speed Web & WordPress -->
-    <article class="bento-card glow-card">
-      <div class="bento-card__badge-row">
-        <div class="bento-card__icon-box">
-          <i class="fab fa-wordpress-simple" aria-hidden="true"></i>
-        </div>
-        <span class="ht-badge">WEB ENGINEERING</span>
-      </div>
-      <h3 class="bento-card__title">Websites That Feel Instant</h3>
-      <p class="bento-card__desc">Custom WordPress themes, clean PHP 8+ plugins, responsive frontend code, and high Core Web Vitals optimization.</p>
-      <ul class="bento-card__list">
-        <li>Custom plugin development &amp; hooks</li>
-        <li>Theme customizations &amp; PHP fixes</li>
-        <li>Speed &amp; Core Web Vitals tune-up</li>
-      </ul>
-      <a class="bento-card__link" href="{{ '/services/' | relative_url }}">Explore web services <span aria-hidden="true">→</span></a>
-    </article>
-
-    <!-- Bento 3: Ecommerce Growth -->
-    <article class="bento-card glow-card">
-      <div class="bento-card__badge-row">
-        <div class="bento-card__icon-box">
-          <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-        </div>
-        <span class="ht-badge">ECOMMERCE</span>
-      </div>
-      <h3 class="bento-card__title">Stores That Convert</h3>
-      <p class="bento-card__desc">Shopify Liquid section engineering and WooCommerce checkout optimization designed to reduce drop-offs and manage large catalogs.</p>
-      <ul class="bento-card__list">
-        <li>Shopify Liquid custom sections</li>
-        <li>WooCommerce product page galleries</li>
-        <li>Catalog import &amp; synchronization</li>
-      </ul>
-      <a class="bento-card__link" href="{{ '/ecommerce/' | relative_url }}">Explore ecommerce <span aria-hidden="true">→</span></a>
-    </article>
-
-    <!-- Bento 4: Autonomous Python & AI Automations -->
-    <article class="bento-card glow-card">
-      <div class="bento-card__badge-row">
-        <div class="bento-card__icon-box">
-          <i class="fas fa-robot" aria-hidden="true"></i>
-        </div>
-        <span class="ht-badge">AUTOMATION &amp; AI</span>
-      </div>
-      <h3 class="bento-card__title">Automations That Return Time</h3>
-      <p class="bento-card__desc">Custom Python bots, Playwright scrapers, scheduled syncs, and AI LLM integrations that do the repetitive heavy lifting.</p>
-      <ul class="bento-card__list">
-        <li>Data scraping &amp; structured cleanup</li>
-        <li>AI content generation &amp; categorization</li>
-        <li>CRM, Google Sheets &amp; Webhook pipelines</li>
-      </ul>
-      <a class="bento-card__link" href="{{ '/automation/' | relative_url }}">Explore automations <span aria-hidden="true">→</span></a>
-    </article>
-
-    <!-- Bento 5: Engineering SLA & Communication -->
-    <article class="bento-card glow-card">
-      <div class="bento-card__badge-row">
-        <div class="bento-card__icon-box">
-          <i class="fas fa-bolt" aria-hidden="true"></i>
-        </div>
-        <span class="ht-badge ht-badge--green">DIRECT ACCESS</span>
-      </div>
-      <h3 class="bento-card__title">Clear Engineering Partnership</h3>
-      <p class="bento-card__desc">Work directly with the builder. No bloated agency retainers, no account manager delays, and clear transparent scoping before any line of code is written.</p>
-      <div class="ht-sla-chip">
-        <span class="ht-status-pulse"></span>
-        <span>Guaranteed &lt; 24h Response SLA</span>
-      </div>
-      <a class="bento-card__link" href="{{ '/contact/' | relative_url }}">Discuss your project <span aria-hidden="true">→</span></a>
-    </article>
+    </a>
   </div>
 </section>
-
 <!-- Filterable Engineering Case Studies & Build Notes -->
 <section class="ht-work-section" aria-labelledby="work-title">
   <div class="ht-section-header ht-section-header--split">
