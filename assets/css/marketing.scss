@@ -5031,16 +5031,39 @@ html[data-theme="dark"] .marketing-page__content :not(pre) > code {
   }
 
   .hero-terminal__tabs {
-    flex-wrap: wrap;
-    gap: 2px;
-    padding: 6px;
-    overflow: visible;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    padding: 8px 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hero-terminal__tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .hero-terminal__tab-btn {
-    flex: 1 1 auto;
-    padding: 7px 8px;
-    font-size: 0.7rem;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 0.76rem;
+    font-weight: 500;
+    border-radius: var(--ht-radius-full, 9999px);
+    border: 1px solid var(--ht-border);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--ht-text-secondary);
+    white-space: nowrap;
+  }
+
+  .hero-terminal__tab-btn.is-active {
+    background: rgba(56, 189, 248, 0.12);
+    border-color: rgba(56, 189, 248, 0.4);
+    color: #38bdf8;
   }
 
   .hero-terminal__topbar {
