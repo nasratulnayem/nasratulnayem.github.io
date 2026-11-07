@@ -16,8 +16,6 @@ header:
 categories:
   - "PHP Snippets"
 ---
-sitemap: false
-
 {% raw %}
 <section class="codex-block">
   <p>Spam comments are one of those small WordPress problems that quickly become annoying. A few fake comments turn into hundreds of bot submissions, random links, pingbacks, moderation emails, and dashboard clutter.</p>

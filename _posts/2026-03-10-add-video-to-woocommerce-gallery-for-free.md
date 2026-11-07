@@ -16,8 +16,6 @@ header:
 categories:
   - "Custom Plugins"
 ---
-sitemap: false
-
 {% raw %}
 <p></p>
 <section class="codex-block">

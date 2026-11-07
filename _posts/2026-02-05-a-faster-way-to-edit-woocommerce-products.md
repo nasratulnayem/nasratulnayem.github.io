@@ -16,8 +16,6 @@ header:
 categories:
   - "PHP Snippets"
 ---
-sitemap: false
-
 {% raw %}
 <section class="codex-block">
   <h2>The problem with bulk editing</h2>

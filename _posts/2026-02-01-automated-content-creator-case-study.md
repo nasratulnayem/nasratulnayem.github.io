@@ -16,8 +16,6 @@ header:
 categories:
   - "Python Automations"
 ---
-sitemap: false
-
 {% raw %}
 <section class="codex-block">
   <p>I built this Python automation engine because creating short videos every day manually was taking too much time. The process was always the same: choose a topic, write a script, create visuals, generate voiceover, add captions, render the video, upload it, and then save the publishing details somewhere.</p>

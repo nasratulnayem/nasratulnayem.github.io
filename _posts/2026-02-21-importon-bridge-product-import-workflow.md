@@ -16,8 +16,6 @@ header:
 categories:
   - "Custom Plugins"
 ---
-sitemap: false
-
 {% raw %}
 <section class="codex-block">
   <p>Importon Bridge is a lightweight WordPress plugin that connects a browser companion with WooCommerce. It captures permitted product data from supported supplier pages and sends it directly into your WordPress store through a clean, authenticated workflow.</p>

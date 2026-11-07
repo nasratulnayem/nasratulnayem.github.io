@@ -7610,3 +7610,140 @@ html:not([data-theme="dark"]) .ht-eyebrow > span:not(.ht-eyebrow-dot) {
     box-sizing: border-box !important;
   }
 }
+
+
+/* ==========================================================================
+   BLOG / POST LAYOUT: CENTERED HEADERS & CLEAN GITHUB DARK CODE WINDOWS
+   Matches chatgpt-agent-bridge reference style perfectly
+   ========================================================================== */
+
+/* 1. Header Centering */
+.marketing-post__header {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  max-width: 860px !important;
+}
+
+.marketing-post__title {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.marketing-post__meta {
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.marketing-post__feature {
+  max-width: 860px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.marketing-post__content {
+  max-width: 860px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.marketing-post__footer {
+  max-width: 860px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 2. Reference Code Window Design (GitHub Dark Style from attachment) */
+.ht-code-wrapper {
+  margin: 1.5rem 0 1.75rem 0 !important;
+  background: #0d1117 !important;
+  border: 1px solid #30363d !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45) !important;
+  overflow: hidden !important;
+}
+
+.code-header-bar {
+  background: #161b22 !important;
+  border-bottom: 1px solid #30363d !important;
+  height: 36px !important;
+  padding: 0 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.code-dots {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.code-dots span {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+}
+
+.code-dots .dot-red { background: #ff5f56 !important; }
+.code-dots .dot-yellow { background: #ffbd2e !important; }
+.code-dots .dot-green { background: #27c93f !important; }
+
+.code-lang-label {
+  color: #8b949e !important;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+.code-copy-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  background: transparent !important;
+  border: 0 !important;
+  color: #8b949e !important;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace !important;
+  font-size: 0.74rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  padding: 3px 8px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.code-copy-btn:hover {
+  color: #c9d1d9 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.code-copy-btn.is-copied {
+  color: #3fb950 !important;
+}
+
+.ht-code-wrapper pre {
+  margin: 0 !important;
+  padding: 1.25rem 1.5rem !important;
+  background: #0d1117 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow-x: auto !important;
+}
+
+.ht-code-wrapper pre code {
+  color: #e6edf3 !important;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace !important;
+  font-size: 0.88rem !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  letter-spacing: normal !important;
+  background: transparent !important;
+}

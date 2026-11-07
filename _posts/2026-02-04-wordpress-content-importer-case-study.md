@@ -16,8 +16,6 @@ header:
 categories:
   - "Python Automations"
 ---
-sitemap: false
-
 {% raw %}
 <section class="codex-block">
   <h2>Why I started this project</h2>

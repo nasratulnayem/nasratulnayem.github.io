@@ -16,8 +16,6 @@ header:
 categories:
   - "Python Automations"
 ---
-sitemap: false
-
 {% raw %}
 <section class="codex-block">
     <h2>The manual design grind was killing me</h2>

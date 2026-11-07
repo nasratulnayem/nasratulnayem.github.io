@@ -16,8 +16,6 @@ header:
 categories:
   - "Custom Plugins"
 ---
-sitemap: false
-
 {% raw %}
 <section class="codex-block">
   <h2>The problem with default layouts</h2>
