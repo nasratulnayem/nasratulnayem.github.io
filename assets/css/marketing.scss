@@ -7931,3 +7931,500 @@ html:not([data-theme="dark"]) .ht-eyebrow > span:not(.ht-eyebrow-dot) {
     animation-duration: 18s;
   }
 }
+
+
+/* ==========================================================================
+   WORKFLOW CONSULTATION BOOKING & DIRECT CONTACT STYLES
+   Pixel-accurate matching of user specification & SaaS Dark Bento design
+   ========================================================================== */
+
+.ht-workflow-section {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  margin: 80px auto 60px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  font-family: var(--ht-font-sans, 'Plus Jakarta Sans', sans-serif);
+}
+
+.ht-workflow-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.ht-workflow-pill-wrap {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.ht-workflow-pill-wrap::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  right: -40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 0;
+}
+
+.ht-workflow-pill {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 20px;
+  background: #ffffff;
+  color: #121212;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.01em;
+}
+
+.ht-workflow-title {
+  font-family: var(--ht-font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  margin: 0 0 14px;
+  line-height: 1.15;
+}
+
+.ht-workflow-subtitle {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #a1a1aa;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Bento Booking Card */
+.ht-booking-card {
+  position: relative;
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+.ht-booking-step__header {
+  margin-bottom: 20px;
+}
+
+.ht-booking-step__header--split {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ht-booking-step__indicator {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #71717a;
+  margin-bottom: 6px;
+}
+
+.ht-booking-step__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.ht-booking-back-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a1a1aa;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ht-booking-back-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ht-booking-step__divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 22px;
+}
+
+.ht-booking-field {
+  margin-bottom: 20px;
+}
+
+.ht-booking-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e4e4e7;
+  margin-bottom: 10px;
+}
+
+.ht-booking-icon {
+  color: #a1a1aa;
+  flex-shrink: 0;
+}
+
+.ht-booking-input-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.ht-booking-input,
+.ht-booking-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: #121214;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.ht-booking-input[type="date"] {
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+.ht-booking-input:focus,
+.ht-booking-textarea:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+.ht-booking-textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.5;
+}
+
+/* Time Slots 4x2 Grid */
+.ht-booking-time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  .ht-booking-time-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ht-time-slot {
+  box-sizing: border-box;
+  background: #141416;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 6px;
+  color: #e4e4e7;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  user-select: none;
+  font-family: inherit;
+}
+
+.ht-time-slot:hover {
+  background: #1c1c20;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.ht-time-slot--selected {
+  background: #ffffff !important;
+  color: #121212 !important;
+  border-color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.ht-booking-timezone {
+  font-size: 0.76rem;
+  color: #71717a;
+  margin-top: 10px;
+}
+
+.ht-booking-timezone strong {
+  color: #a1a1aa;
+}
+
+.ht-booking-summary-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 7px 14px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  color: #38bdf8;
+  margin-bottom: 18px;
+}
+
+/* Actions */
+.ht-booking-action {
+  margin-top: 24px;
+}
+
+.ht-booking-action--row {
+  display: flex;
+  gap: 12px;
+}
+
+.ht-booking-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+  border: none;
+}
+
+.ht-booking-btn--continue,
+.ht-booking-btn--primary {
+  background: #ffffff;
+  color: #121212;
+}
+
+.ht-booking-btn--continue:hover,
+.ht-booking-btn--primary:hover {
+  background: #f4f4f5;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15);
+}
+
+.ht-booking-btn--secondary {
+  background: transparent;
+  color: #a1a1aa;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  width: auto;
+  min-width: 110px;
+}
+
+.ht-booking-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.ht-booking-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* Success Card */
+.ht-booking-success {
+  text-align: center;
+  padding: 24px 12px;
+}
+
+.ht-booking-success__icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ht-booking-success__title {
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.ht-booking-success__msg {
+  color: #a1a1aa;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 440px;
+  margin: 0 auto 24px;
+}
+
+/* Direct Message Section */
+.ht-direct-message-section {
+  margin-top: 48px;
+}
+
+.ht-direct-header {
+  margin-bottom: 20px;
+}
+
+.ht-direct-title {
+  font-family: var(--ht-font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+}
+
+.ht-direct-subtitle {
+  font-size: 0.92rem;
+  color: #a1a1aa;
+  margin: 0;
+}
+
+.ht-direct-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ht-direct-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+a.ht-direct-card:hover {
+  background: #202024;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.ht-direct-card__icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.ht-direct-card__content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ht-direct-card__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #71717a;
+  font-weight: 600;
+}
+
+.ht-direct-card__val {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.ht-direct-card__arrow {
+  color: #71717a;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+a.ht-direct-card:hover .ht-direct-card__arrow {
+  color: #ffffff;
+  transform: translate(2px, -2px);
+}
+
+/* Social Pills Row (GitHub, Facebook, WhatsApp - NO LinkedIn, NO Twitter) */
+.ht-social-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ht-social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e4e4e7;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.ht-social-pill:hover {
+  background: #222226;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.ht-social-pill svg {
+  color: #a1a1aa;
+  transition: color 0.2s ease;
+}
+
+.ht-social-pill:hover svg {
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .ht-social-pills-row {
+    justify-content: flex-start;
+  }
+  .ht-social-pill {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,214 @@
+<!-- ==========================================================================
+     WORKFLOW CONSULTATION BOOKING & DIRECT CONTACT COMPONENT
+     Matches exact layout: Step 1 (Date + Time Slots) -> Step 2 (Name, Email, Scope)
+     + Direct Message Bento Cards (Email, Location, Social Pills)
+     ========================================================================== -->
+
+<section class="ht-workflow-section" id="booking-section" aria-labelledby="workflow-title">
+  <div class="ht-workflow-header text-center">
+    <div class="ht-workflow-pill-wrap">
+      <span class="ht-workflow-pill">Contact</span>
+    </div>
+    <h2 id="workflow-title" class="ht-workflow-title">Let’s map the workflow</h2>
+    <p class="ht-workflow-subtitle">
+      Choose a consultation time and share the process you want to improve. The booking will appear in the existing admin dashboard.
+    </p>
+  </div>
+
+  <!-- Interactive Booking Bento Card -->
+  <div class="ht-booking-card" id="workflowBookingCard">
+    <form id="workflowBookingForm" class="ht-booking-form">
+      
+      <!-- STEP 1 OF 2: Choose a time -->
+      <div class="ht-booking-step ht-booking-step--active" id="bookingStep1">
+        <div class="ht-booking-step__header">
+          <span class="ht-booking-step__indicator">STEP 1 OF 2</span>
+          <h3 class="ht-booking-step__title">Choose a time</h3>
+        </div>
+
+        <div class="ht-booking-step__divider"></div>
+
+        <!-- Date Picker Field -->
+        <div class="ht-booking-field">
+          <label class="ht-booking-label" for="bookingDate">
+            <svg class="ht-booking-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Date</span>
+          </label>
+          <div class="ht-booking-input-wrap">
+            <input type="date" id="bookingDate" name="consultation_date" class="ht-booking-input" required>
+          </div>
+        </div>
+
+        <!-- Available Time Grid -->
+        <div class="ht-booking-field">
+          <label class="ht-booking-label">
+            <svg class="ht-booking-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>Available time</span>
+          </label>
+          <div class="ht-booking-time-grid" id="timeSlotsGrid">
+            <button type="button" class="ht-time-slot ht-time-slot--selected" data-time="09:00 AM">09:00 AM</button>
+            <button type="button" class="ht-time-slot" data-time="10:00 AM">10:00 AM</button>
+            <button type="button" class="ht-time-slot" data-time="11:00 AM">11:00 AM</button>
+            <button type="button" class="ht-time-slot" data-time="12:00 PM">12:00 PM</button>
+            <button type="button" class="ht-time-slot" data-time="02:00 PM">02:00 PM</button>
+            <button type="button" class="ht-time-slot" data-time="03:00 PM">03:00 PM</button>
+            <button type="button" class="ht-time-slot" data-time="04:00 PM">04:00 PM</button>
+            <button type="button" class="ht-time-slot" data-time="05:00 PM">05:00 PM</button>
+          </div>
+          <input type="hidden" id="selectedTimeInput" name="consultation_time" value="09:00 AM">
+          
+          <div class="ht-booking-timezone">
+            <span>Times use your timezone: <strong id="userDetectedTimezone">Asia/Dhaka</strong></span>
+          </div>
+        </div>
+
+        <!-- Continue CTA -->
+        <div class="ht-booking-action">
+          <button type="button" class="ht-booking-btn ht-booking-btn--continue" id="btnStep1Continue">
+            <span>Continue</span>
+            <span class="ht-booking-arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2 OF 2: Details & Process -->
+      <div class="ht-booking-step" id="bookingStep2" style="display: none;">
+        <div class="ht-booking-step__header ht-booking-step__header--split">
+          <div>
+            <span class="ht-booking-step__indicator">STEP 2 OF 2</span>
+            <h3 class="ht-booking-step__title">Share your workflow</h3>
+          </div>
+          <button type="button" class="ht-booking-back-btn" id="btnStep2Back">
+            ← Change time
+          </button>
+        </div>
+
+        <div class="ht-booking-step__divider"></div>
+
+        <div class="ht-booking-summary-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span id="bookingSummaryBadge">Selected: 09:00 AM on today</span>
+        </div>
+
+        <div class="ht-booking-field">
+          <label class="ht-booking-label" for="bookingName">Your Name</label>
+          <input type="text" id="bookingName" name="client_name" class="ht-booking-input" placeholder="e.g. Alex Miller" required>
+        </div>
+
+        <div class="ht-booking-field">
+          <label class="ht-booking-label" for="bookingEmail">Email Address</label>
+          <input type="email" id="bookingEmail" name="client_email" class="ht-booking-input" placeholder="e.g. alex@company.com" required>
+        </div>
+
+        <div class="ht-booking-field">
+          <label class="ht-booking-label" for="bookingWorkflow">Process / Bottleneck to Improve</label>
+          <textarea id="bookingWorkflow" name="workflow_details" class="ht-booking-textarea" rows="3" placeholder="Briefly describe the task, manual workflow, or custom tool you want to build or streamline..." required></textarea>
+        </div>
+
+        <div class="ht-booking-action ht-booking-action--row">
+          <button type="button" class="ht-booking-btn ht-booking-btn--secondary" id="btnStep2BackBottom">
+            ← Back
+          </button>
+          <button type="submit" class="ht-booking-btn ht-booking-btn--primary" id="btnSubmitBooking">
+            <span id="btnSubmitText">Confirm Booking</span>
+            <span class="ht-booking-arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Success State -->
+      <div class="ht-booking-success" id="bookingSuccessState" style="display: none;">
+        <div class="ht-booking-success__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3 class="ht-booking-success__title">Consultation Booked!</h3>
+        <p class="ht-booking-success__msg" id="bookingSuccessMsg">
+          Thanks! Your consultation slot has been reserved. A confirmation has been dispatched directly to devnayem30@gmail.com.
+        </p>
+        <button type="button" class="ht-booking-btn ht-booking-btn--secondary" id="btnResetBooking">
+          Book Another Slot
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Prefer a direct message? Section -->
+  <div class="ht-direct-message-section">
+    <div class="ht-direct-header">
+      <h3 class="ht-direct-title">Prefer a direct message?</h3>
+      <p class="ht-direct-subtitle">Email works too. I usually reply within one business day.</p>
+    </div>
+
+    <div class="ht-direct-cards">
+      <!-- Card 1: Email -->
+      <a href="mailto:devnayem30@gmail.com?subject=Workflow%20Consultation%20Inquiry" class="ht-direct-card" id="directEmailCard">
+        <div class="ht-direct-card__icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </div>
+        <div class="ht-direct-card__content">
+          <span class="ht-direct-card__label">Email</span>
+          <span class="ht-direct-card__val">devnayem30@gmail.com</span>
+        </div>
+        <div class="ht-direct-card__arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Card 2: Location -->
+      <div class="ht-direct-card ht-direct-card--static">
+        <div class="ht-direct-card__icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <div class="ht-direct-card__content">
+          <span class="ht-direct-card__label">Location</span>
+          <span class="ht-direct-card__val">Available Worldwide (Remote)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Pills Row: GitHub, Facebook, WhatsApp (NO LinkedIn, NO Twitter) -->
+    <div class="ht-social-pills-row">
+      <a href="https://github.com/nasratulnayem" target="_blank" rel="noopener noreferrer" class="ht-social-pill" aria-label="GitHub Profile">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+        <span>GitHub</span>
+      </a>
+
+      <a href="https://facebook.com/codex.nayem" target="_blank" rel="noopener noreferrer" class="ht-social-pill" aria-label="Facebook Profile">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+        <span>Facebook</span>
+      </a>
+
+      <a href="https://wa.me/8801962351470" target="_blank" rel="noopener noreferrer" class="ht-social-pill" aria-label="WhatsApp Chat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.507 14.307l-.009.075c-.236-.12-1.391-.687-1.606-.767-.217-.078-.374-.119-.533.12-.158.238-.614.77-.753.928-.139.16-.277.178-.513.06-.237-.12-.998-.368-1.902-1.173-.703-.627-1.178-1.402-1.317-1.639-.138-.239-.015-.368.104-.487.108-.107.237-.278.357-.417.118-.139.158-.238.238-.397.078-.16.039-.298-.02-.418-.06-.119-.533-1.288-.732-1.767-.193-.467-.39-.404-.533-.411-.138-.007-.297-.008-.456-.008-.16 0-.417.06-.635.298-.218.238-.832.813-.832 1.983 0 1.17.852 2.3 0.971 2.46.12.16 1.677 2.56 4.062 3.59.568.245 1.012.392 1.358.502.571.182 1.09.156 1.5.095.458-.068 1.391-.568 1.589-1.118.198-.55.198-1.02.139-1.118-.06-.098-.218-.158-.455-.278zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.174L2 22l4.98-1.405A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
