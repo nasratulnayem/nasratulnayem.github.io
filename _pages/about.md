@@ -32,20 +32,15 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     I design and build AI-powered automation systems, intelligent agents, and custom integrations that help businesses reduce manual work, streamline operations, and scale efficiently.
   </p>
 
-  <!-- Skill Badges with Custom Icons -->
-  <div class="ht-hero-centered__badges">
-    <span class="ht-hero-pill-badge">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-      Automation &amp; AI
-    </span>
-    <span class="ht-hero-pill-badge">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-      Full-Stack Development
-    </span>
-    <span class="ht-hero-pill-badge">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-      Ecommerce Systems
-    </span>
+  <!-- Tech Stack Ribbon Badges with Icons -->
+  <div class="ht-hero-centered__badges ht-stack-ribbon__inner" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+    <span class="ht-stack-pill"><i class="fab fa-wordpress" aria-hidden="true"></i> WordPress Core &amp; Custom Plugins</span>
+    <span class="ht-stack-pill"><i class="fab fa-shopify" aria-hidden="true"></i> Shopify Liquid &amp; Storefronts</span>
+    <span class="ht-stack-pill"><i class="fas fa-shopping-bag" aria-hidden="true"></i> WooCommerce Architecture</span>
+    <span class="ht-stack-pill"><i class="fab fa-python" aria-hidden="true"></i> Python Bots &amp; Scraping</span>
+    <span class="ht-stack-pill"><i class="fas fa-brain" aria-hidden="true"></i> AI &amp; LLM Automation Pipelines</span>
+    <span class="ht-stack-pill"><i class="fab fa-js" aria-hidden="true"></i> Vanilla JS / ES6+ &amp; REST APIs</span>
+    <span class="ht-stack-pill"><i class="fas fa-shield-alt" aria-hidden="true"></i> Freemius Software Monetization</span>
   </div>
 
   <!-- Action CTAs -->
@@ -58,19 +53,6 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       <span>View My Work</span>
     </a>
-  </div>
-</section>
-
-<!-- High-Tech Tech Stack Pill Grid -->
-<section class="ht-stack-ribbon" aria-label="Key Technologies">
-  <div class="ht-stack-ribbon__inner">
-    <span class="ht-stack-pill"><i class="fab fa-wordpress" aria-hidden="true"></i> WordPress Core &amp; Custom Plugins</span>
-    <span class="ht-stack-pill"><i class="fab fa-shopify" aria-hidden="true"></i> Shopify Liquid &amp; Storefronts</span>
-    <span class="ht-stack-pill"><i class="fas fa-shopping-bag" aria-hidden="true"></i> WooCommerce Architecture</span>
-    <span class="ht-stack-pill"><i class="fab fa-python" aria-hidden="true"></i> Python Bots &amp; Scraping</span>
-    <span class="ht-stack-pill"><i class="fas fa-brain" aria-hidden="true"></i> AI &amp; LLM Automation Pipelines</span>
-    <span class="ht-stack-pill"><i class="fab fa-js" aria-hidden="true"></i> Vanilla JS / ES6+ &amp; REST APIs</span>
-    <span class="ht-stack-pill"><i class="fas fa-shield-alt" aria-hidden="true"></i> Freemius Software Monetization</span>
   </div>
 </section>
 
