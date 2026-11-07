@@ -35,7 +35,25 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
   <!-- Tech Stack Infinite Marquee Ribbon Badges -->
   <div class="ht-hero-marquee-wrap" aria-label="Key Technologies">
     <div class="ht-hero-marquee-track">
-      <div class="ht-hero-marquee-group">
+      <div class="ht-hero-marquee-group" >
+        <span class="ht-stack-pill"><i class="fab fa-wordpress" ></i> WordPress Core &amp; Custom Plugins</span>
+        <span class="ht-stack-pill"><i class="fab fa-shopify" ></i> Shopify Liquid &amp; Storefronts</span>
+        <span class="ht-stack-pill"><i class="fas fa-shopping-bag" ></i> WooCommerce Architecture</span>
+        <span class="ht-stack-pill"><i class="fab fa-python" ></i> Python Bots &amp; Scraping</span>
+        <span class="ht-stack-pill"><i class="fas fa-brain" ></i> AI &amp; LLM Automation Pipelines</span>
+        <span class="ht-stack-pill"><i class="fab fa-js" ></i> Vanilla JS / ES6+ &amp; REST APIs</span>
+        <span class="ht-stack-pill"><i class="fas fa-shield-alt" ></i> Freemius Software Monetization</span>
+      </div>
+      <div class="ht-hero-marquee-group" aria-hidden="true">
+        <span class="ht-stack-pill"><i class="fab fa-wordpress" aria-hidden="true"></i> WordPress Core &amp; Custom Plugins</span>
+        <span class="ht-stack-pill"><i class="fab fa-shopify" aria-hidden="true"></i> Shopify Liquid &amp; Storefronts</span>
+        <span class="ht-stack-pill"><i class="fas fa-shopping-bag" aria-hidden="true"></i> WooCommerce Architecture</span>
+        <span class="ht-stack-pill"><i class="fab fa-python" aria-hidden="true"></i> Python Bots &amp; Scraping</span>
+        <span class="ht-stack-pill"><i class="fas fa-brain" aria-hidden="true"></i> AI &amp; LLM Automation Pipelines</span>
+        <span class="ht-stack-pill"><i class="fab fa-js" aria-hidden="true"></i> Vanilla JS / ES6+ &amp; REST APIs</span>
+        <span class="ht-stack-pill"><i class="fas fa-shield-alt" aria-hidden="true"></i> Freemius Software Monetization</span>
+      </div>
+      <div class="ht-hero-marquee-group" aria-hidden="true">
         <span class="ht-stack-pill"><i class="fab fa-wordpress" aria-hidden="true"></i> WordPress Core &amp; Custom Plugins</span>
         <span class="ht-stack-pill"><i class="fab fa-shopify" aria-hidden="true"></i> Shopify Liquid &amp; Storefronts</span>
         <span class="ht-stack-pill"><i class="fas fa-shopping-bag" aria-hidden="true"></i> WooCommerce Architecture</span>
