@@ -85,7 +85,7 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     <p class="ht-section-subtitle">No bloated page builders or unnecessary layers. Just fast code, direct interfaces, and automations that save real hours.</p>
   </div>
 
-  <div class="ht-bento-grid" style="grid-template-columns: repeat(3, 1fr); gap: 18px;">
+  <div class="ht-bento-grid">
     <!-- Card 1: ChatGPT Agent Bridge -->
     <a class="bento-card glow-card" href="{{ '/tools/chatgpt-agent-bridge/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
       <div class="bento-card__badge-row" style="margin-bottom: 10px;">

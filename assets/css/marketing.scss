@@ -7553,3 +7553,60 @@ html:not([data-theme="dark"]) .ht-eyebrow > span:not(.ht-eyebrow-dot) {
     pointer-events: all !important;
   }
 }
+
+
+/* ==========================================================================
+   MOBILE CAROUSEL: SINGLE CARD PER ROW, TOUCH-SWIPEABLE & AUTO-LOOP (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Bento Grid Mobile Slider */
+  .ht-bento-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important; /* Firefox */
+    gap: 16px !important;
+    padding-bottom: 12px !important;
+  }
+  .ht-bento-grid::-webkit-scrollbar {
+    display: none !important; /* Chrome / Safari */
+  }
+
+  .ht-bento-grid > .bento-card {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Engineering Logs / Case Studies Mobile Slider */
+  .home-build-carousel .home-build-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 16px !important;
+    padding-bottom: 12px !important;
+  }
+  .home-build-carousel .home-build-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .home-build-carousel .home-build-grid > .ht-card-item,
+  .home-build-carousel .home-build-grid > .grid__item {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    box-sizing: border-box !important;
+  }
+}
