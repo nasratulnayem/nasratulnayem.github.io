@@ -19,80 +19,104 @@ author_profile: false
     <p class="ht-page-hero__desc">The bridge connecting <strong>Antigravity Cortex</strong> and autonomous AI agents directly to your live <strong>ChatGPT Web session</strong>. It orchestrates continuous character prompts, generates cinematic 9:16 frame sequences, and exports raw high-res storyboard assets directly for social reel and video workflows.</p>
   </header>
 
-  <!-- Live Tool Screenshot Proof Bento Card -->
-  <div class="ht-catalog-grid">
-    <article class="bento-card bento-card--featured glow-card ht-product-showcase">
-      <div class="ht-product-showcase__grid">
-        <div class="ht-product-showcase__visual" style="border: 1px solid rgba(16, 185, 129, 0.3);">
-          <img src="{{ '/images/work/chatgpt-agent-bridge-live-proof.png' | relative_url }}" alt="Live ChatGPT Agent Bridge Extension popup in action with WebSocket port 3456" loading="lazy" style="width: 100%; height: auto; display: block;">
+  <!-- Section 1: Live Production UI Proof (Contained inside standard .ht-work-section) -->
+  <section class="ht-work-section" aria-labelledby="live-proof-heading">
+    <div class="ht-section-header">
+      <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>SYSTEM ARCHITECTURE &amp; TIMELINE</span></div>
+      <h2 id="live-proof-heading" class="ht-section-title">Automated Storyboard Engine in Action</h2>
+      <p class="ht-section-subtitle">Real Playwright capture showing the sequential timeline pipeline connected to ChatGPT Web over WebSocket port 3456.</p>
+    </div>
+
+    <div class="bento-card glow-card" style="padding: 1.25rem; overflow: hidden; border: 1.5px solid rgba(16, 185, 129, 0.3);">
+      <img src="{{ '/images/work/chatgpt-agent-bridge-production-ui.png' | relative_url }}" alt="ChatGPT Agent Bridge Autonomous Storyboard Production Timeline" style="width: 100%; height: auto; display: block; border-radius: 8px;" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Section 2: Real Extension Companion Proof (Contained inside standard .ht-work-section) -->
+  <section class="ht-work-section">
+    <div class="ht-section-header">
+      <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>LIVE CHROME EXTENSION</span></div>
+      <h2 class="ht-section-title">Verified Active WebSocket Handshake</h2>
+      <p class="ht-section-subtitle">Live status popup maintaining real-time communication between Antigravity Cortex and the browser.</p>
+    </div>
+
+    <article class="bento-card glow-card" style="padding: 1.75rem;">
+      <div class="ht-product-showcase__grid" style="align-items: center;">
+        <div class="ht-product-showcase__visual" style="max-height: 400px; display: flex; align-items: center; justify-content: center; background: #07090e; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <img src="{{ '/images/work/chatgpt-agent-bridge-live-proof.png' | relative_url }}" alt="ChatGPT Agent Bridge Extension connected live to chatgpt.com" style="max-height: 380px; width: auto; object-fit: contain; border-radius: 8px;" loading="lazy">
         </div>
         <div class="ht-product-showcase__info">
           <div class="bento-card__badge-row">
-            <span class="ht-badge ht-badge--green"><i class="fas fa-circle" style="font-size: 8px; margin-right: 5px;"></i> SYSTEM LIVE</span>
-            <span class="ht-badge">v1.0.0 Architecture</span>
+            <span class="ht-badge ht-badge--green"><i class="fas fa-circle" style="font-size: 8px; margin-right: 5px;"></i> SYSTEM CONNECTED</span>
+            <span class="ht-badge">Port 3456</span>
           </div>
-          <h2 class="ht-product-title">Live Chrome Bridge in Action</h2>
-          <p class="ht-product-summary">Actual running screenshot of the ChatGPT Agent Bridge companion popup connected to Antigravity Cortex over WebSocket port <code>3456</code>. When an agent requests a frame, the extension injects prompts, watches canvas generation, and extracts full-resolution PNG frames automatically.</p>
-
-          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;">
+          <h3 style="font-size: 1.4rem; font-weight: 700; margin: 0.5rem 0 0.75rem; color: var(--ht-text-primary);">Autonomous Tab Supervision</h3>
+          <p style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">The companion extension continuously syncs with the local MCP daemon. When Antigravity Cortex requests a storyboard camera setup, the extension injects the character continuity prompt, watches render status, and downloads the original 100% raw-resolution PNG straight into your project folder.</p>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
             <a class="ht-btn-primary ht-btn--glow" href="https://github.com/nasratulnayem/chatgpt-agent-bridge" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i> Explore Open Source Repo ↗
+              <i class="fab fa-github"></i> View GitHub Repository ↗
             </a>
-            <a class="ht-btn-secondary" href="#instagram-showcase">
-              <i class="fab fa-instagram"></i> View Video Productions ↓
+            <a class="ht-btn-secondary" href="https://www.instagram.com/nasratulnayem/" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i> Follow on Instagram ↗
             </a>
           </div>
         </div>
       </div>
     </article>
-  </div>
+  </section>
 
-  <!-- Real-Time Instagram Video Production Section -->
-  <section id="instagram-showcase" class="ht-work-section" aria-labelledby="instagram-heading">
+  <!-- Section 3: Instagram Creative Showcase Card (Clean Native Card replacing broken third-party iframe) -->
+  <section class="ht-work-section" aria-labelledby="instagram-heading">
     <div class="ht-section-header">
       <div class="ht-eyebrow">
         <span class="ht-eyebrow-dot"></span>
-        <span>REAL-WORLD RESULTS</span>
+        <span>PRODUCTION SHOWCASE</span>
       </div>
-      <h2 id="instagram-heading" class="ht-section-title">Created for High-Velocity Social Video</h2>
-      <p class="ht-section-subtitle">Real-time Instagram feed showcasing automated multi-frame storyboards transformed into viral video clips.</p>
+      <h2 id="instagram-heading" class="ht-section-title">Automated 9:16 Video Storyboards</h2>
+      <p class="ht-section-subtitle">Real cinematic sequences authored by Antigravity Cortex and published to social channels.</p>
     </div>
 
-    <!-- Responsive Instagram Embed Container -->
-    <div class="bento-card glow-card" style="padding: 1.5rem; max-width: 960px; margin: 0 auto;">
-      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--ht-border); padding-bottom: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px;">
+    <div class="bento-card glow-card" style="padding: 2rem;">
+      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--ht-border); padding-bottom: 1.25rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 24px; box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);">
             <i class="fab fa-instagram"></i>
           </div>
           <div>
-            <h3 style="margin: 0; font-size: 1.1rem; color: var(--ht-text-primary);">Nasratul Nayem Reels &amp; Production</h3>
-            <span style="font-size: 0.85rem; color: var(--ht-text-muted);">AI Automated Storyboards &bull; 9:16 Video Clips</span>
+            <h3 style="margin: 0; font-size: 1.2rem; color: var(--ht-text-primary);">@nasratulnayem on Instagram</h3>
+            <span style="font-size: 0.88rem; color: var(--ht-text-muted);">AI Automated Storyboards &bull; 9:16 Video Clips &bull; Developer Workflows</span>
           </div>
         </div>
         <div>
-          <a class="ht-btn-secondary" href="https://www.instagram.com/nasratulnayem/" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; padding: 6px 14px;">
-            Open Instagram Profile ↗
+          <a class="ht-btn-primary ht-btn--glow" href="https://www.instagram.com/nasratulnayem/" target="_blank" rel="noopener noreferrer" style="font-size: 0.88rem; padding: 8px 18px;">
+            <i class="fab fa-instagram" style="margin-right: 6px;"></i> Visit Instagram Channel ↗
           </a>
         </div>
       </div>
 
-      <!-- Live Embed Frame -->
-      <div style="display: flex; justify-content: center; width: 100%; overflow: hidden; border-radius: 12px;">
-        <iframe 
-          src="https://www.instagram.com/nasratulnayem/embed" 
-          width="100%" 
-          height="620" 
-          frameborder="0" 
-          scrolling="no" 
-          allowtransparency="true"
-          style="border: none; max-width: 640px; border-radius: 12px; background: rgba(0,0,0,0.2);">
-        </iframe>
+      <div class="ht-bento-grid" style="margin-top: 1rem;">
+        <div class="bento-card" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 1.25rem;">
+          <span class="ht-badge ht-badge--cyan" style="margin-bottom: 8px;">EPISODE SERIES</span>
+          <h4 style="color: var(--ht-text-primary); font-size: 1.05rem; margin: 4px 0 8px;">Aloo Bhai: Undercover Billionaire</h4>
+          <p style="color: var(--ht-text-secondary); font-size: 0.86rem; line-height: 1.6; margin: 0;">16 sequential storyboard frames produced autonomously with character rig continuity, cinematic lighting, and dynamic camera angles.</p>
+        </div>
+
+        <div class="bento-card" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 1.25rem;">
+          <span class="ht-badge ht-badge--green" style="margin-bottom: 8px;">AUTOMATION PIPELINE</span>
+          <h4 style="color: var(--ht-text-primary); font-size: 1.05rem; margin: 4px 0 8px;">Zero Token Overhead</h4>
+          <p style="color: var(--ht-text-secondary); font-size: 0.86rem; line-height: 1.6; margin: 0;">Renders uncompressed raw PNG frames straight from active web sessions, completely bypassing per-token API cost restrictions.</p>
+        </div>
+
+        <div class="bento-card" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 1.25rem;">
+          <span class="ht-badge ht-badge--purple" style="margin-bottom: 8px;">POST-PRODUCTION</span>
+          <h4 style="color: var(--ht-text-primary); font-size: 1.05rem; margin: 4px 0 8px;">Remotion Video Export</h4>
+          <p style="color: var(--ht-text-secondary); font-size: 0.86rem; line-height: 1.6; margin: 0;">Frames automatically organized by scene index on disk, immediately ready for video generation models and timeline compilers.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 4-Stage Autonomous Pipeline Architecture -->
+  <!-- Section 4: 4-Stage Autonomous Pipeline Architecture -->
   <section class="ht-process-section">
     <div class="ht-section-header">
       <div class="ht-eyebrow">
@@ -186,7 +210,7 @@ author_profile: false
     </div>
   </section>
 
-  <!-- Technical Capabilities Grid -->
+  <!-- Section 5: Technical Capabilities -->
   <section class="ht-work-section">
     <div class="ht-section-header">
       <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>CAPABILITIES</span></div>
@@ -224,15 +248,15 @@ author_profile: false
     </div>
   </section>
 
-  <!-- Quick Developer Integration (Informational Only) -->
+  <!-- Section 6: Quick Setup (Pure Informational) -->
   <section class="ht-work-section">
     <div class="ht-section-header">
-      <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>SETUP</span></div>
+      <div class="ht-eyebrow"><span class="ht-eyebrow-dot"></span><span>QUICK START</span></div>
       <h2 class="ht-section-title">Get Started with the Bridge</h2>
     </div>
 
     <div class="bento-card glow-card" style="padding: 2rem;">
-      <p style="color: var(--ht-text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">Run the bridge locally with <code>npx</code>, load the companion extension in Developer Mode, and connect Antigravity Cortex:</p>
+      <p style="color: var(--ht-text-secondary); margin-bottom: 1.25rem; line-height: 1.6;">Run the bridge locally with <code>npx</code>, load the companion extension in Developer Mode, and connect Antigravity Cortex:</p>
       <div style="background: rgba(0,0,0,0.5); padding: 1rem 1.25rem; border-radius: 8px; border: 1px solid var(--ht-border); font-family: var(--ht-font-mono); font-size: 0.9rem; color: #38bdf8; overflow-x: auto; margin-bottom: 1.5rem;">
         <code>npx @codex.nayem/chatgpt-agent-bridge</code>
       </div>
