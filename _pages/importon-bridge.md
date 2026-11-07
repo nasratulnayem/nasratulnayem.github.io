@@ -60,6 +60,7 @@ freemius_pricings:
           </div>
           <div class="ht-product-cta-group">
             <a class="ht-btn-primary ht-btn--glow" href="#" onclick="openTrialPopup(event)">Start 7-Day Trial ↗</a>
+            <a class="ht-btn-secondary" href="https://chromewebstore.google.com/detail/importon-bridge/mndmloooadnomopgelcfdlfnbhidbbdn" target="_blank" rel="noopener noreferrer"><i class="fab fa-chrome" aria-hidden="true" style="margin-right: 6px;"></i>Chrome Extension</a>
             <a class="ht-btn-secondary" href="{{ page.freemius_checkout_url }}" target="_blank" rel="nofollow noopener noreferrer">Buy Pro License</a>
           </div>
         </div>
@@ -181,7 +182,7 @@ freemius_pricings:
       </div>
       <div class="ht-wf-card__body">
         <h3 class="ht-wf-card__title">Install Both Parts</h3>
-        <p class="ht-wf-card__desc">Activate the WordPress plugin on your store and pin the companion extension to Chrome.</p>
+        <p class="ht-wf-card__desc">Activate the WordPress plugin on your store and install the free official <a href="https://chromewebstore.google.com/detail/importon-bridge/mndmloooadnomopgelcfdlfnbhidbbdn" target="_blank" rel="noopener noreferrer" style="color: var(--ht-cyan); text-decoration: underline;">Importon Chrome Extension</a>.</p>
       </div>
       <div class="ht-wf-card__footer">
         <span class="ht-wf-signal"><i class="fas fa-check-circle" aria-hidden="true"></i> Handshake Ready</span>
