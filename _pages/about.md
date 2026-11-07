@@ -7,79 +7,57 @@ author_profile: true
 keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automation engineer"
 ---
 
-<!-- Hero Section with Dual-Pane High-Tech Console -->
-<section class="ht-hero" aria-labelledby="ht-hero-title">
-  <div class="ht-hero__content">
-    <span class="ht-avail-pill">
-      <span class="ht-avail-pill__dot"></span>
-      Available for projects
-    </span>
-
-    <h1 id="ht-hero-title" class="ht-hero__headline">
-      Hi, I'm Nayem.
-    </h1>
-
-    <h2 class="ht-hero__subheadline">
-      AI Automation Specialist &amp; Founder | Building Intelligent Systems That Scale
-    </h2>
-
-    <p class="ht-hero__lead">
-      I design and build AI-powered automation systems, intelligent agents, and custom API integrations that help businesses reduce manual work, streamline operations, and scale efficiently. From n8n workflows and CRM automation to AI products and browser extensions, I turn complex ideas into practical, reliable solutions.
-    </p>
-
-    <div class="ht-hero__actions">
-      <a class="ht-btn-primary ht-btn--glow" href="{{ '/contact/' | relative_url }}">
-        <span>Start a Project</span>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-      </a>
-      <a class="ht-btn-secondary" href="{{ '/portfolio/' | relative_url }}">
-        <span>Explore Build Notes</span>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 12 12 14 14"></polyline></svg>
-      </a>
-      <button class="ht-btn-tertiary" type="button" data-copy-email title="1-Click Copy Email">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        <span>Copy Email</span>
-      </button>
+<!-- Hero Section: Centered Luxury Developer Showcase (Single Column) -->
+<section class="ht-hero-centered" aria-labelledby="ht-hero-title">
+  <!-- Glowing Profile Avatar with Violet Radial Halo -->
+  <div class="ht-hero-avatar-halo">
+    <div class="ht-hero-avatar-ring">
+      <img src="{{ '/images/nasratul-nayem.jpg' | relative_url }}" alt="Nasratul Nayem" width="130" height="130" fetchpriority="high">
     </div>
-
   </div>
 
-  <!-- Interactive Terminal Simulator -->
-  <div class="ht-hero__terminal-wrap">
-    <aside class="ht-hero__profile-card glow-card" aria-label="About Nasratul Nayem">
-      <div class="ht-hero__avatar-container">
-        <img class="ht-hero__profile-img" src="{{ '/images/nasratul-nayem.jpg' | relative_url }}" alt="Nasratul Nayem, web developer and automation engineer" width="400" height="400" fetchpriority="high">
-        <div class="ht-hero__avatar-badge">
-          <span class="ht-status-pulse"></span>
-          <span>Online &middot; Available</span>
-        </div>
-      </div>
+  <!-- Primary Centered Name & Role -->
+  <h1 id="ht-hero-title" class="ht-hero-centered__name">
+    Nasratul Nayem
+  </h1>
+  <p class="ht-hero-centered__role">
+    AI Automation Specialist &amp; Full-Stack Developer
+  </p>
 
-      <div class="ht-hero__profile-info">
-        <span class="ht-hero__profile-tag">BUILT IN BANGLADESH &middot; SERVING GLOBALLY</span>
-        <h3 class="ht-hero__profile-name">Nasratul Nayem</h3>
-        <p class="ht-hero__profile-role">Full-Stack Web &amp; Automation Engineer</p>
+  <!-- Accent Divider Line -->
+  <div class="ht-hero-centered__divider"></div>
 
-        <div class="ht-hero__profile-stats">
-          <div class="ht-hero__stat-item">
-            <strong>100%</strong>
-            <span>Direct Partner</span>
-          </div>
-          <div class="ht-hero__stat-item">
-            <strong>&lt; 24h</strong>
-            <span>Response SLA</span>
-          </div>
-          <div class="ht-hero__stat-item">
-            <strong>Zero</strong>
-            <span>Builder Bloat</span>
-          </div>
-        </div>
+  <!-- Focused Value Proposition / Bio -->
+  <p class="ht-hero-centered__lead">
+    I design and build AI-powered automation systems, intelligent agents, and custom integrations that help businesses reduce manual work, streamline operations, and scale efficiently.
+  </p>
 
-        <div class="ht-hero__profile-bio">
-          "I partner directly with founders and teams to solve real operational bottlenecks. Clean code, fast delivery, and automations that give hours back to your week."
-        </div>
-      </div>
-    </aside>
+  <!-- Skill Badges with Custom Icons -->
+  <div class="ht-hero-centered__badges">
+    <span class="ht-hero-pill-badge">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+      Automation &amp; AI
+    </span>
+    <span class="ht-hero-pill-badge">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+      Full-Stack Development
+    </span>
+    <span class="ht-hero-pill-badge">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+      Ecommerce Systems
+    </span>
+  </div>
+
+  <!-- Action CTAs -->
+  <div class="ht-hero-centered__actions">
+    <a class="ht-btn-hero-primary" href="{{ '/contact/' | relative_url }}">
+      <span>Start a Project</span>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+    <a class="ht-btn-hero-secondary" href="{{ '/portfolio/' | relative_url }}">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+      <span>View My Work</span>
+    </a>
   </div>
 </section>
 
