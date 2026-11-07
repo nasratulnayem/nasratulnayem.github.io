@@ -7557,3 +7557,98 @@ html:not([data-theme="dark"]) .portfolio-badge:hover {
     width: 100%;
   }
 }
+
+
+/* ==========================================================================
+   GLOBAL SECTION HEADERS & INNER PAGE HEROES: STRICT CENTER ALIGNMENT
+   ========================================================================== */
+.ht-section-header,
+.ht-page-hero,
+.ht-tools-hero,
+.ht-bridge-hero,
+.ht-blog-hero {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  max-width: 820px !important;
+}
+
+/* Ensure Split Section Headers (e.g. portfolio/builds with filter bars) center their titles & controls */
+.ht-section-header--split {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 1.75rem !important;
+}
+
+.ht-section-header--split > div:first-child {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.ht-work-controls {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* Eyebrows, Badges, Dots across all sections */
+.ht-section-header .ht-eyebrow,
+.ht-page-hero .ht-eyebrow,
+.ht-tools-hero .ht-eyebrow,
+.ht-bridge-hero .ht-eyebrow,
+.ht-blog-hero .ht-eyebrow,
+.ht-eyebrow {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.ht-eyebrow::after {
+  display: none !important;
+}
+
+/* Headings across all section headers and page heroes */
+.ht-section-header .ht-section-title,
+.ht-section-title,
+.ht-page-hero__title,
+.ht-tools-title,
+.ht-hero-centered__name {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Subtitles and Descriptions across all section headers and page heroes */
+.ht-section-header .ht-section-subtitle,
+.ht-section-subtitle,
+.ht-page-hero__desc,
+.ht-tools-desc,
+.ht-hero-centered__lead {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 680px !important;
+}
+
+/* Override standard layout desktop breakpoint resets */
+@media (min-width: 769px) {
+  #main.marketing-main--standard .ht-page-hero,
+  #main.marketing-main--home .ht-section-header,
+  #main.marketing-main--home .ht-section-header--split,
+  #main.marketing-main--archive .ht-page-hero {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-items: center !important;
+  }
+}
