@@ -43,11 +43,7 @@ author_profile: false
     align-items: center;
   }
   .ht-bridge-hero .ht-eyebrow {
-    justify-content: center !important;
-    margin: 0 auto 0.75rem auto !important;
-  }
-  .ht-bridge-hero .ht-eyebrow::after {
-    display: none !important;
+    margin: 0 auto 1.25rem auto !important;
   }
   .ht-bridge-hero h1 {
     font-family: var(--ht-font-heading);

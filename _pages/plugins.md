@@ -18,11 +18,7 @@ description: "Production software tools, browser bridges, and privacy utilities 
     margin: 1.5rem auto 3.5rem auto;
   }
   .ht-tools-hero .ht-eyebrow {
-    justify-content: center !important;
-    margin: 0 auto 0.75rem auto !important;
-  }
-  .ht-tools-hero .ht-eyebrow::after {
-    display: none !important;
+    margin: 0 auto 1.25rem auto !important;
   }
   .ht-tools-title {
     font-family: var(--ht-font-heading);
