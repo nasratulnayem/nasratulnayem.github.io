@@ -762,6 +762,12 @@
     const header = document.querySelector('.site-header.masthead.ht-masthead');
     if (!header) return;
 
+    // Apply only on homepage (body.is-home or window.location.pathname === '/')
+    const isHomePage = document.body.classList.contains('is-home') || 
+                       window.location.pathname === '/' || 
+                       window.location.pathname.endsWith('/index.html');
+    if (!isHomePage) return;
+
     function handleScroll() {
       if (window.innerWidth > 768) {
         header.classList.remove('is-hidden-mobile', 'is-scrolled-mobile');
