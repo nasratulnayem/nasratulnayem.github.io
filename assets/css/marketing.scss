@@ -7563,13 +7563,15 @@ html:not([data-theme="dark"]) .ht-eyebrow > span:not(.ht-eyebrow-dot) {
   .ht-bento-grid {
     display: flex !important;
     overflow-x: auto !important;
-    overflow-y: hidden !important;
+    overflow-y: visible !important;
     scroll-snap-type: x mandatory !important;
     scroll-behavior: smooth !important;
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: none !important; /* Firefox */
     gap: 16px !important;
-    padding-bottom: 12px !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    margin-top: -14px !important;
   }
   .ht-bento-grid::-webkit-scrollbar {
     display: none !important; /* Chrome / Safari */
@@ -7585,16 +7587,22 @@ html:not([data-theme="dark"]) .ht-eyebrow > span:not(.ht-eyebrow-dot) {
   }
 
   /* Engineering Logs / Case Studies Mobile Slider */
+  .home-build-carousel {
+    overflow: visible !important;
+  }
+
   .home-build-carousel .home-build-grid {
     display: flex !important;
     overflow-x: auto !important;
-    overflow-y: hidden !important;
+    overflow-y: visible !important;
     scroll-snap-type: x mandatory !important;
     scroll-behavior: smooth !important;
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: none !important;
     gap: 16px !important;
-    padding-bottom: 12px !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    margin-top: -14px !important;
   }
   .home-build-carousel .home-build-grid::-webkit-scrollbar {
     display: none !important;
@@ -7608,6 +7616,12 @@ html:not([data-theme="dark"]) .ht-eyebrow > span:not(.ht-eyebrow-dot) {
     scroll-snap-align: center !important;
     scroll-snap-stop: always !important;
     box-sizing: border-box !important;
+  }
+
+  /* Prevent transform clipping on mobile touch */
+  .bento-card:hover,
+  .ht-post-card--rich:hover {
+    transform: none !important;
   }
 }
 
