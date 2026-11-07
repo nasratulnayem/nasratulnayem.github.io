@@ -46,79 +46,40 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
 
   <!-- Interactive Terminal Simulator -->
   <div class="ht-hero__terminal-wrap">
-    <aside class="ht-hero__identity" aria-label="About Nasratul Nayem">
-      <img class="ht-hero__identity-photo" src="{{ '/images/nasratul-nayem.jpg' | relative_url }}" alt="Nasratul Nayem, web developer and automation expert" width="360" height="360">
-      <div class="ht-hero__identity-copy">
-        <span>BUILT IN BANGLADESH · WORKING WORLDWIDE</span>
-        <strong>Direct, thoughtful engineering.</strong>
-        <p>I listen closely to the business problem before I recommend or build a solution.</p>
+    <aside class="ht-hero__profile-card glow-card" aria-label="About Nasratul Nayem">
+      <div class="ht-hero__avatar-container">
+        <img class="ht-hero__profile-img" src="{{ '/images/nasratul-nayem.jpg' | relative_url }}" alt="Nasratul Nayem, web developer and automation engineer" width="400" height="400" fetchpriority="high">
+        <div class="ht-hero__avatar-badge">
+          <span class="ht-status-pulse"></span>
+          <span>Online &middot; Available</span>
+        </div>
+      </div>
+
+      <div class="ht-hero__profile-info">
+        <span class="ht-hero__profile-tag">BUILT IN BANGLADESH &middot; SERVING GLOBALLY</span>
+        <h3 class="ht-hero__profile-name">Nasratul Nayem</h3>
+        <p class="ht-hero__profile-role">Full-Stack Web &amp; Automation Engineer</p>
+
+        <div class="ht-hero__profile-stats">
+          <div class="ht-hero__stat-item">
+            <strong>100%</strong>
+            <span>Direct Partner</span>
+          </div>
+          <div class="ht-hero__stat-item">
+            <strong>&lt; 24h</strong>
+            <span>Response SLA</span>
+          </div>
+          <div class="ht-hero__stat-item">
+            <strong>Zero</strong>
+            <span>Builder Bloat</span>
+          </div>
+        </div>
+
+        <div class="ht-hero__profile-bio">
+          "I partner directly with founders and teams to solve real operational bottlenecks. Clean code, fast delivery, and automations that give hours back to your week."
+        </div>
       </div>
     </aside>
-
-    <div class="hero-terminal glow-card">
-      <div class="hero-terminal__topbar">
-        <div class="hero-terminal__dots">
-          <span class="dot-red"></span>
-          <span class="dot-yellow"></span>
-          <span class="dot-green"></span>
-        </div>
-        <div class="hero-terminal__title">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-          <span>nayem-runtime-v2.6.sh</span>
-        </div>
-        <div class="hero-terminal__status">
-          <span class="ht-status-pulse"></span>
-          <span>ONLINE</span>
-        </div>
-      </div>
-
-      <div class="hero-terminal__tabs">
-        <button class="hero-terminal__tab-btn is-active" data-view="stack" type="button">Stack</button>
-        <button class="hero-terminal__tab-btn" data-view="services" type="button">Services</button>
-        <button class="hero-terminal__tab-btn" data-view="flagship" type="button">Flagship</button>
-        <button class="hero-terminal__tab-btn" data-view="status" type="button">Status</button>
-        <button class="hero-terminal__tab-btn" data-view="contact" type="button">Contact</button>
-      </div>
-
-      <div class="hero-terminal__body" aria-live="polite">
-        <div class="hero-terminal__welcome">
-          <span class="ht-term-cyan">// Nasratul Nayem Developer Runtime [v2.6.0]</span><br>
-          <span class="ht-term-muted">// Status: Online &middot; Accepting contracts worldwide</span>
-        </div>
-        
-        <div class="hero-terminal__line">
-          <span class="hero-terminal__prompt">nayem@dev:~$</span>
-          <span class="hero-terminal__cmd">status</span>
-        </div>
-        <div class="hero-terminal__response hero-terminal__response--stack">
-          <div><span class="ht-term-green">● SYSTEM: ONLINE &amp; ACCEPTING PROJECTS</span></div>
-          <div>• <span class="ht-term-yellow">Location:</span> Bangladesh (Remote Worldwide)</div>
-          <div>• <span class="ht-term-yellow">Direct Contact:</span> devnayem30@gmail.com</div>
-          <div>• <span class="ht-term-yellow">Response Time:</span> Within 24 hours guaranteed</div>
-        </div>
-
-        <div class="hero-terminal__line">
-          <span class="hero-terminal__prompt">nayem@dev:~$</span>
-          <span class="hero-terminal__cmd">stack --summary</span>
-        </div>
-        <div class="hero-terminal__response hero-terminal__response--stack">
-          <div><span class="ht-term-cyan">Core Engineering Stack:</span></div>
-          <div>• <span class="ht-term-yellow">Web &amp; CMS:</span> WordPress Core, PHP 8+, Custom Plugins, WooCommerce, Shopify Liquid</div>
-          <div>• <span class="ht-term-yellow">Frontend:</span> Vanilla JS / ES6+, High Core Web Vitals, Modern CSS</div>
-          <div>• <span class="ht-term-yellow">Automation &amp; AI:</span> Python, Playwright, LLM Orchestration, REST APIs, CRON</div>
-        </div>
-
-        <div class="hero-terminal__line">
-          <span class="hero-terminal__prompt">nayem@dev:~$</span>
-          <span class="hero-terminal__cmd">flagship</span>
-        </div>
-        <div class="hero-terminal__response hero-terminal__response--stack">
-          <div><span class="ht-term-cyan">Flagship Software: Importon Bridge (v0.2.2 Pro)</span></div>
-          <div>• 1-Click browser-to-WooCommerce product importer</div>
-          <div>• WooCommerce workflow &middot; Freemius licensing &middot; documented product roadmap</div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 

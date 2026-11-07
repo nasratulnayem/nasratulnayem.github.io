@@ -938,11 +938,135 @@ body {
   font-size: 1.2rem;
 }
 
-/* 5. Interactive Live Terminal Simulator ------------------------------------ */
+/* 5. World-Class Hero Profile Showcase ------------------------------------ */
 .ht-hero__terminal-wrap {
   width: 100%;
+}
+
+.ht-hero__profile-card {
+  position: relative;
+  background: var(--ht-bg-card, #1c1c1c);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-lg, 24px);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: var(--ht-shadow-md);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ht-hero__profile-card:hover {
+  border-color: var(--ht-border-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--ht-shadow-md), 0 0 30px rgba(0, 245, 160, 0.05);
+}
+
+.ht-hero__avatar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.25rem;
+}
+
+.ht-hero__profile-img {
+  width: 104px;
+  height: 104px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.ht-hero__avatar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  border-radius: 9999px;
+  font-family: var(--ht-font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #34d399;
+}
+
+.ht-hero__profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ht-hero__profile-tag {
+  font-family: var(--ht-font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: #38bdf8;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.ht-hero__profile-name {
+  font-family: var(--ht-font-heading);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--ht-text-primary);
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.ht-hero__profile-role {
+  font-family: var(--ht-font-sans);
+  font-size: 0.95rem;
+  color: var(--ht-text-secondary);
+  margin: 0 0 1.25rem 0;
+  line-height: 1.4;
+}
+
+.ht-hero__profile-stats {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--ht-border);
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+}
+
+.ht-hero__stat-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.ht-hero__stat-item strong {
+  font-family: var(--ht-font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ht-text-primary);
+  line-height: 1.2;
+}
+
+.ht-hero__stat-item span {
+  font-family: var(--ht-font-sans);
+  font-size: 0.74rem;
+  color: var(--ht-text-muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.ht-hero__profile-bio {
+  font-family: var(--ht-font-sans);
+  font-size: 0.88rem;
+  color: var(--ht-text-secondary);
+  line-height: 1.6;
+  font-style: italic;
+  border-left: 2px solid var(--ht-cyan, #38bdf8);
+  padding-left: 12px;
+  margin: 0;
 }
 
 .ht-hero__identity {
@@ -1288,11 +1412,11 @@ html:not([data-theme="dark"]) .hero-terminal__body::-webkit-scrollbar-thumb {
 /* 6. High-Tech Tech Stack Pill Ribbon --------------------------------------- */
 .ht-stack-ribbon {
   width: 100%;
-  padding: 1rem 0;
-  background: var(--ht-bg-surface);
-  border-top: 1px solid var(--ht-border);
-  border-bottom: 1px solid var(--ht-border);
-  margin-bottom: 3.5rem;
+  padding: 1.5rem 0 2.5rem 0;
+  background: transparent !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  margin-bottom: 2rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
