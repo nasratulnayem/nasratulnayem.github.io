@@ -10,34 +10,17 @@ author_profile: false
 <style>
   .ht-bridge-tool-page {
     font-family: var(--ht-font-sans);
-    padding: 32px 16px 64px 16px;
+    padding: 0 16px 64px 16px;
     min-height: calc(100vh - 200px);
   }
   .ht-bridge-tool-container {
     max-width: 860px;
     margin: 0 auto;
   }
-  .ht-bridge-topbar {
-    margin-bottom: 24px;
-  }
-  .ht-bridge-back {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--ht-font-sans);
-    font-size: 0.88rem;
-    color: var(--ht-text-secondary);
-    text-decoration: none !important;
-    transition: all 0.2s ease;
-  }
-  .ht-bridge-back:hover {
-    color: var(--ht-text-primary);
-    transform: translateX(-3px);
-  }
   
   .ht-bridge-hero {
     text-align: center;
-    margin: 1.5rem auto 2.5rem auto;
+    margin: 0 auto 2.5rem auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -319,14 +302,6 @@ author_profile: false
 
 <div class="ht-bridge-tool-page">
   <div class="ht-bridge-tool-container">
-    
-    <!-- Top Back Link -->
-    <div class="ht-bridge-topbar">
-      <a class="ht-bridge-back" href="{{ '/tools/' | relative_url }}">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
-        <span>Back to tools</span>
-      </a>
-    </div>
 
     <!-- Header Hero -->
     <header class="ht-bridge-hero">

@@ -7376,17 +7376,27 @@ html:not([data-theme="dark"]) .portfolio-badge:hover {
   .ht-hero-centered {
     margin: 2rem auto 3.5rem auto;
   }
-  .ht-hero-centered__actions {
+  .ht-hero-centered__actions,
+  .ht-hero__actions,
+  .ht-bridge-actions {
+    display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     justify-content: center !important;
     gap: 8px !important;
     width: 100% !important;
     max-width: 360px !important;
-    margin: 0 auto !important;
+    margin: 1.25rem auto 0 auto !important;
   }
   .ht-btn-hero-primary,
-  .ht-btn-hero-secondary {
+  .ht-btn-hero-secondary,
+  .ht-hero__actions .ht-btn-primary,
+  .ht-hero__actions .ht-btn-secondary,
+  .ht-bridge-btn-primary,
+  .ht-bridge-btn-secondary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     flex: 1 1 0% !important;
     width: auto !important;
     min-width: 0 !important;
@@ -7396,12 +7406,20 @@ html:not([data-theme="dark"]) .portfolio-badge:hover {
     white-space: nowrap !important;
     letter-spacing: -0.01em !important;
     gap: 5px !important;
+    box-sizing: border-box !important;
   }
   .ht-btn-hero-primary svg,
-  .ht-btn-hero-secondary svg {
+  .ht-btn-hero-secondary svg,
+  .ht-hero__actions .ht-btn-primary svg,
+  .ht-hero__actions .ht-btn-secondary svg,
+  .ht-hero__actions .ht-btn-secondary i,
+  .ht-bridge-btn-primary svg,
+  .ht-bridge-btn-secondary svg {
     width: 13px !important;
     height: 13px !important;
+    font-size: 13px !important;
     flex-shrink: 0 !important;
+    margin: 0 !important;
   }
 }
 

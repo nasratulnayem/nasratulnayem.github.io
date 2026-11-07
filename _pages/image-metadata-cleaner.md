@@ -9,14 +9,6 @@ author_profile: false
 
 <div class="ht-cleaner-page">
   <div class="ht-cleaner-container">
-    
-    <!-- Top Back Link -->
-    <div class="ht-cleaner-topbar">
-      <a class="ht-cleaner-back" href="{{ '/tools/' | relative_url }}">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
-        <span>Back to tools</span>
-      </a>
-    </div>
 
     <!-- Page Hero Header -->
     <header class="ht-page-hero ht-cleaner-hero">
@@ -162,28 +154,12 @@ author_profile: false
 <style>
 /* Cleaner Page Styling - Perfectly aligned with Nasratul Nayem Design System */
 .ht-cleaner-page {
-  padding: 40px 16px 80px 16px;
+  padding: 0 16px 80px 16px;
   min-height: calc(100vh - 200px);
 }
 .ht-cleaner-container {
   max-width: 860px;
   margin: 0 auto;
-}
-.ht-cleaner-topbar {
-  margin-bottom: 24px;
-}
-.ht-cleaner-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.88rem;
-  color: var(--ht-text-secondary);
-  text-decoration: none !important;
-  transition: all 0.2s ease;
-}
-.ht-cleaner-back:hover {
-  color: var(--ht-text-primary);
-  transform: translateX(-3px);
 }
 .ht-cleaner-page .ht-cleaner-hero {
   width: 100%;
@@ -524,15 +500,12 @@ author_profile: false
 /* Keep the mobile tool calm, legible, and touch-friendly. */
 @media (max-width: 640px) {
   .ht-cleaner-page {
-    padding: 24px 14px calc(52px + env(safe-area-inset-bottom));
+    padding: 0 14px calc(52px + env(safe-area-inset-bottom));
     min-height: 0;
   }
   .ht-cleaner-container {
     width: 100%;
     max-width: 520px;
-  }
-  .ht-cleaner-topbar {
-    margin-bottom: 24px;
   }
   .ht-cleaner-page .ht-cleaner-hero {
     margin-bottom: 26px;
