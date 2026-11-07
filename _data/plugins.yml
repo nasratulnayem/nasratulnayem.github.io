@@ -2,23 +2,23 @@ products:
   - slug: chatgpt-agent-bridge
     name: ChatGPT Agent Bridge
     short_name: Agent Bridge
-    category: MCP Daemon & Chrome Extension Bridge
+    category: AI Agent · MCP Bridge
     url: /tools/chatgpt-agent-bridge/
     image: /images/work/chatgpt-agent-bridge-preview.jpg
-    summary: Connect Antigravity Cortex, Claude Desktop, and Cursor directly to ChatGPT Web. Automate prompts, image generation, and raw asset downloads without API token costs.
+    summary: Connects Antigravity, Claude Desktop, and Cursor straight to your active ChatGPT Web tab. Zero API bills, autonomous prompt automation, and raw disk downloads.
 
   - slug: importon-bridge
     name: Importon Bridge
     short_name: Importon Bridge
-    category: Alibaba to WooCommerce Product Importer
+    category: WooCommerce · Catalog Importer
     url: /tools/importon-bridge/
     image: /images/work/importon-bridge-card.png
-    summary: Import complete product data from Alibaba into WooCommerce without manual copy-pasting. Captures titles, images, variations, and attributes directly into drafts.
+    summary: Browser extension that pulls supplier items straight into WooCommerce. Captures galleries, variations, pricing, and specs directly into staged drafts.
 
   - slug: image-metadata-cleaner
     name: Image Metadata Remover
     short_name: Metadata Remover
-    category: Client-Side EXIF & Privacy Cleaner
+    category: Privacy · Client-Side Utility
     url: /tools/image-metadata-cleaner/
     image: /images/work/image-metadata-cleaner-card.png
-    summary: Strip GPS location, camera details, and hidden EXIF metadata from JPG, PNG, and WebP privately in your browser with zero server uploads.
+    summary: Strips GPS coordinates, device details, and hidden EXIF metadata from photos before sharing. Runs 100% in your browser with zero server uploads.

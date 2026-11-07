@@ -97,14 +97,19 @@ description: "Production software tools, browser bridges, and privacy utilities 
     flex-grow: 1;
   }
   .ht-tool-card__tag {
-    font-family: var(--ht-font-mono, monospace);
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--ht-cyan, #38bdf8);
-    margin-bottom: 8px;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 3px 9px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
   }
   .ht-tool-card__title {
     font-family: var(--ht-font-heading);
