@@ -7884,3 +7884,25 @@ html:not([data-theme="dark"]) .ht-eyebrow::after {
   white-space: nowrap !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
 }
+
+
+/* ==========================================================================
+   MOBILE HEADER: HIDE AT TOP, REVEAL ON SCROLL DOWN (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .site-header.masthead.ht-masthead {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, background-color 0.25s ease !important;
+  }
+
+  .site-header.masthead.ht-masthead.is-hidden-mobile {
+    transform: translateY(-120%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .site-header.masthead.ht-masthead.is-scrolled-mobile {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
+}

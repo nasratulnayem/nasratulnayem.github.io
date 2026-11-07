@@ -754,7 +754,37 @@
   /* ==========================================================================
      DOM Ready Initialization
      ========================================================================== */
+
+  /* ==========================================================================
+     11. Mobile Header Reveal On Scroll Down
+     ========================================================================== */
+  function initMobileScrollHeader() {
+    const header = document.querySelector('.site-header.masthead.ht-masthead');
+    if (!header) return;
+
+    function handleScroll() {
+      if (window.innerWidth > 768) {
+        header.classList.remove('is-hidden-mobile', 'is-scrolled-mobile');
+        return;
+      }
+
+      const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScrollY <= 60) {
+        header.classList.add('is-hidden-mobile');
+        header.classList.remove('is-scrolled-mobile');
+      } else {
+        header.classList.remove('is-hidden-mobile');
+        header.classList.add('is-scrolled-mobile');
+      }
+    }
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
+    initMobileScrollHeader();
     initParticleCanvas();
     initTerminal();
     initSpotlightGlow();
