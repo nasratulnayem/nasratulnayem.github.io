@@ -10,33 +10,66 @@ layout: default
   {% capture featured_image %}{{ page.header.image | prepend: "/images/" | prepend: base_path }}{% endcapture %}
 {% endif %}
 
-<main id="main" class="marketing-main marketing-main--post" role="main">
-  <article class="marketing-page marketing-post" itemscope itemtype="https://schema.org/BlogPosting">
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+<div class="ht-bridge-tool-page ht-blog-page-wrap">
+  <div class="ht-bridge-tool-container">
+    
+    <!-- Top Back Navigation -->
+    <div class="ht-bridge-topbar">
+      <a href="{{ base_path }}/portfolio/" class="ht-bridge-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to case studies &amp; notes
+      </a>
+    </div>
 
-    <header class="marketing-post__header">
+    <!-- Centered Hero Header -->
+    <header class="ht-bridge-hero ht-blog-hero">
       <div class="ht-eyebrow">
         <span class="ht-eyebrow-dot"></span>
         <span>BUILD NOTE · CASE STUDY</span>
       </div>
-      {% if page.title %}<h1 class="marketing-post__title" itemprop="headline">{{ page.title | strip_html | escape }}</h1>{% endif %}
-      <div class="marketing-post__meta">
-        {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}"><i class="fa fa-calendar" aria-hidden="true"></i> Published {{ page.date | date: "%B %d, %Y" }}</time>{% endif %}
-        {% if page.read_time %}<span><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</span>{% endif %}
+      {% if page.title %}
+        <h1>{{ page.title | strip_html | escape }}</h1>
+      {% endif %}
+      <div class="marketing-post__meta ht-blog-meta">
+        {% if page.date %}
+          <time datetime="{{ page.date | date_to_xmlschema }}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            Published {{ page.date | date: "%B %d, %Y" }}
+          </time>
+        {% endif %}
+        {% if page.read_time %}
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            {% include read-time.html %}
+          </span>
+        {% endif %}
       </div>
     </header>
 
-    {% if featured_image %}
-      <figure class="marketing-post__feature">
-        <img src="{{ featured_image }}" alt="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}" itemprop="image">
-      </figure>
-    {% endif %}
+    <!-- Main Content Boxed Card -->
+    <article class="ht-bridge-card ht-blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+      {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+      {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+      {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
 
-    <section class="marketing-post__content" itemprop="articleBody">{{ content }}</section>
+      {% if featured_image %}
+        <div class="ht-blog-feature-media">
+          <img src="{{ featured_image }}" alt="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}" itemprop="image">
+        </div>
+      {% endif %}
 
-    <footer class="marketing-post__footer">{% include page__taxonomy.html %}</footer>
+      <div class="ht-bridge-card__body ht-blog-card__body">
+        <section class="marketing-post__content ht-blog-content" itemprop="articleBody">
+          {{ content }}
+        </section>
+
+        <footer class="marketing-post__footer ht-blog-footer">
+          {% include page__taxonomy.html %}
+        </footer>
+      </div>
+    </article>
+
     {% include post_pagination.html %}
-  </article>
-</main>
+
+  </div>
+</div>
