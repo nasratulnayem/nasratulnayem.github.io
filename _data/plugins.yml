@@ -1,4 +1,36 @@
 products:
+  - slug: chatgpt-agent-bridge
+    name: ChatGPT Agent Bridge
+    short_name: Agent Bridge
+    status: Available now
+    category: MCP Daemon & Chrome Extension Bridge
+    url: /tools/chatgpt-agent-bridge/
+    image: /images/work/chatgpt-agent-bridge-preview.jpg
+    summary: Connect Antigravity Cortex, Claude Desktop, and Cursor directly to ChatGPT Web. Automate prompts, image generation, and raw asset downloads without API token costs.
+    price: "$19"
+    billing: / month
+    annual_price: "$149 / year"
+    plan: Pro
+    checkout_url: "https://checkout.freemius.com/plugin/28475/plan/46909/"
+    trial_url: "https://checkout.freemius.com/plugin/28475/plan/46909/?trial=paid"
+    pricings:
+      - name: Solo Dev — 1 Seat
+        monthly: "$19"
+        annual: "$149"
+        id: "83839"
+      - name: Agency Studio — 5 Seats
+        monthly: "$49"
+        annual: "$399"
+        id: "83837"
+      - name: Enterprise Team — Unlimited
+        monthly: "$99"
+        annual: "$799"
+        id: "83838"
+    highlights:
+      - "Zero API token costs — harnesses ChatGPT Plus/Team subscription"
+      - "Full DALL-E & GPT-4o image generation pipeline with auto-save"
+      - "Standard Model Context Protocol (MCP) server for Antigravity & Claude"
+
   - slug: importon-bridge
     name: Importon Bridge
     short_name: Importon Bridge

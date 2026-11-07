@@ -14,6 +14,9 @@ main:
   - title: "Tools"
     url: /tools/
     children:
+      - title: "ChatGPT Agent Bridge"
+        url: /tools/chatgpt-agent-bridge/
+        desc: "Connect AI Agents to ChatGPT Web & DALL-E"
       - title: "Importon Bridge"
         url: /tools/importon-bridge/
         desc: "Alibaba to WooCommerce Import Plugin"

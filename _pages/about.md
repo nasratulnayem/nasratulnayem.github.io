@@ -147,6 +147,50 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
   </div>
 
   <div class="ht-bento-grid">
+    <!-- Bento 0: Flagship AI Agent Bridge (ChatGPT Agent Bridge) -->
+    <article class="bento-card bento-card--featured glow-card" style="margin-bottom: 24px; border: 1.5px solid #10b981;">
+      <div class="bento-card__badge-row">
+        <span class="ht-badge ht-badge--cyan">FLAGSHIP AI PRODUCT</span>
+        <span class="ht-badge ht-badge--green" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3);">v1.0.0 Pro</span>
+      </div>
+      <div class="bento-card__header">
+        <h3 class="bento-card__title">ChatGPT Agent Bridge</h3>
+        <p class="bento-card__desc">Model Context Protocol (MCP) server and Chrome Extension bridge connecting Antigravity Cortex, Claude Desktop, and Cursor directly to ChatGPT Web for zero-token prompts, visual storyboards, and autonomous high-res downloads.</p>
+      </div>
+
+      <div class="bento-card__visual-bridge">
+        <div class="ht-bridge-step">
+          <div class="ht-bridge-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
+          <span>AI Agent (Antigravity/Claude)</span>
+        </div>
+        <div class="ht-bridge-arrow">
+          <span class="ht-bridge-pulse"></span>
+          <span class="ht-bridge-label">MCP WebSocket (3456)</span>
+        </div>
+        <div class="ht-bridge-step">
+          <div class="ht-bridge-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+          <span>ChatGPT Web &amp; DALL-E</span>
+        </div>
+      </div>
+
+      <div class="bento-card__highlights">
+        <span><i class="fas fa-check" aria-hidden="true"></i> Zero API token costs via Plus/Team subscription</span>
+        <span><i class="fas fa-check" aria-hidden="true"></i> Autonomous DALL-E 3 storyboard and art downloader</span>
+        <span><i class="fas fa-check" aria-hidden="true"></i> Fast npm/npx setup across any OS</span>
+      </div>
+
+      <div class="bento-card__actions">
+        <a class="ht-btn-primary" href="{{ '/tools/chatgpt-agent-bridge/' | relative_url }}">
+          <span>Explore Agent Bridge</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="ht-btn-secondary" href="#" onclick="openTrialPopup(event)">
+          <span>Start 7-Day Free Trial</span>
+          <span aria-hidden="true">&nearr;</span>
+        </a>
+      </div>
+    </article>
+
     <!-- Bento 1: Flagship SaaS Product (Importon Bridge) -->
     <article class="bento-card bento-card--featured glow-card">
       <div class="bento-card__badge-row">
