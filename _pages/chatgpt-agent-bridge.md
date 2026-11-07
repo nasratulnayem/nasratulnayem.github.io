@@ -328,11 +328,7 @@ author_profile: false
       <div class="ht-bridge-card__header">
         <div>
           <h2 class="ht-bridge-card__title">Direct Browser MCP Bridge</h2>
-          <p class="ht-bridge-card__meta">Local WebSocket on <code>127.0.0.1:3456</code> &bull; 100% Free &bull; Zero Cloud Relays</p>
-        </div>
-        <div class="ht-bridge-card-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
-          <span>100% Local &bull; Runs on your machine</span>
+          <p class="ht-bridge-card__meta">Zero Cloud Relays &bull; Open-Source Developer Companion</p>
         </div>
       </div>
 
