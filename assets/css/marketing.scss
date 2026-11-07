@@ -5923,58 +5923,55 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   }
 }
 
-/* Rich Post Cards — high-tech bento language, built from scratch */
+/* Rich Post Cards — high-tech luxury engineering card matching ChatGPT generated thumbnails */
 .ht-post-card--rich {
   display: flex;
   flex-direction: column;
-  background: var(--ht-bg-card);
+  background: var(--ht-bg-card, #1c1c1c);
   border: 1px solid var(--ht-border);
-  border-radius: 0;
+  border-radius: var(--ht-radius-lg, 18px);
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   text-decoration: none !important;
   color: inherit !important;
-  transition: border-color 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 }
 
-.ht-post-card--rich::before {
-  display: none;
-}
-
 .ht-post-card--rich:hover {
-  transform: none;
+  transform: translateY(-4px);
   border-color: var(--ht-border-hover);
-  box-shadow: none;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
 }
 
 .ht-post-card__media {
   position: relative;
-  aspect-ratio: auto;
+  aspect-ratio: 16 / 9;
+  width: 100%;
   overflow: hidden;
-  background: #080c12;
+  background: #0d1117;
   flex: 0 0 auto;
-  border-radius: 0;
+  border-bottom: 1px solid var(--ht-border);
+  margin: 0;
 }
 
 .ht-post-card--rich .ht-post-card__media {
-  margin: 0 0 1rem 0;
+  margin: 0;
   width: 100%;
-  border-radius: 0;
   border: none;
   border-bottom: 1px solid var(--ht-border);
 }
 
 .ht-post-card__media img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  transition: none;
+  transition: transform 0.4s ease;
 }
 
 .ht-post-card--rich:hover .ht-post-card__media img {
-  transform: none;
+  transform: scale(1.03);
 }
 
 .ht-post-card__ph {
@@ -5989,49 +5986,8 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   letter-spacing: 0.04em;
 }
 
-.ht-post-card__hash {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  padding: 4px 9px;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-  color: var(--ht-text-primary);
-  font-family: var(--ht-font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  z-index: 2;
-}
-
-.ht-post-card__badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 4px 9px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 999px;
-  color: #0f172a;
-  font-family: var(--ht-font-mono);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  z-index: 2;
-}
-
-[data-theme="dark"] .ht-post-card__badge,
-html[data-theme="dark"] .ht-post-card__badge {
-  background: rgba(15, 23, 42, 0.85);
-  color: #e2e8f0;
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
 .ht-post-card__body {
-  padding: 1.25rem 1.25rem 1.1rem 1.25rem;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -6042,27 +5998,18 @@ html[data-theme="dark"] .ht-post-card__badge {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 10px;
   flex-wrap: wrap;
-}
-
-.ht-post-card__meta {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  font-family: var(--ht-font-mono);
-  font-size: 0.72rem;
-  color: var(--ht-text-muted);
-  margin-bottom: 0.65rem;
 }
 
 .ht-post-card__title {
   font-family: var(--ht-font-heading);
-  font-size: 1.18rem;
-  font-weight: 800;
-  line-height: 1.28;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.32;
+  letter-spacing: -0.015em;
   color: var(--ht-text-primary);
-  margin: 0 0 0.55rem 0;
+  margin: 0 0 8px 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -6070,15 +6017,34 @@ html[data-theme="dark"] .ht-post-card__badge {
 }
 
 .ht-post-card__excerpt {
-  font-size: 0.88rem;
+  font-family: var(--ht-font-sans);
+  font-size: 0.9rem;
   color: var(--ht-text-secondary);
-  line-height: 1.58;
-  margin: 0 0 1rem 0;
+  line-height: 1.55;
+  margin: 0 0 16px 0;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex: 1;
+}
+
+.ht-post-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: auto;
+}
+
+.ht-post-card__meta {
+  display: flex;
+  align-items: center;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  color: var(--ht-text-muted);
+  margin: 0;
 }
 
 .ht-post-card__cta {
@@ -6086,14 +6052,19 @@ html[data-theme="dark"] .ht-post-card__badge {
   align-items: center;
   gap: 0.35rem;
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ht-text-primary);
   letter-spacing: 0.01em;
+  transition: color 0.2s ease;
 }
 
 .ht-post-card__cta i {
   font-size: 0.75rem;
   transition: transform 0.2s ease;
+}
+
+.ht-post-card--rich:hover .ht-post-card__cta {
+  color: #38bdf8;
 }
 
 .ht-post-card--rich:hover .ht-post-card__cta i {

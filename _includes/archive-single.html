@@ -30,13 +30,14 @@
           <span class="ht-badge ht-badge--cyan">#{{ first_cat | downcase | replace: ' ', '' }}</span>
           <span class="ht-badge">Case Study</span>
         </div>
-        <div class="ht-post-card__meta">
-          {% if post.date %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>{% endif %}
-          {% if post.read_time %}<span>{{ post.read_time }} min read</span>{% endif %}
-        </div>
         <h3 class="ht-post-card__title">{{ title }}</h3>
-        {% if post.excerpt %}<p class="ht-post-card__excerpt">{{ post.excerpt | strip_html | truncate: 135 }}</p>{% endif %}
-        <span class="ht-post-card__cta">Read build note <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        {% if post.excerpt %}<p class="ht-post-card__excerpt">{{ post.excerpt | strip_html | truncate: 130 }}</p>{% endif %}
+        <div class="ht-post-card__footer">
+          <div class="ht-post-card__meta">
+            {% if post.date %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>{% endif %}
+          </div>
+          <span class="ht-post-card__cta">Read build note <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
       </div>
     </a>
   {% else %}
