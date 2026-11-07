@@ -5923,19 +5923,22 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   }
 }
 
-/* Rich Post Cards — high-tech luxury engineering card matching ChatGPT generated thumbnails */
+/* Rich Post Cards — high-tech luxury engineering card matching Bento card architecture */
 .ht-post-card--rich {
   display: flex;
   flex-direction: column;
   background: var(--ht-bg-card, #1c1c1c);
   border: 1px solid var(--ht-border);
-  border-radius: var(--ht-radius-lg, 18px);
+  border-radius: var(--ht-radius-lg, 20px) !important;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   text-decoration: none !important;
   color: inherit !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: -webkit-radial-gradient(white, black);
+  isolation: isolate;
 }
 
 .ht-post-card--rich:hover {
@@ -5960,6 +5963,9 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--ht-border);
+  border-top-left-radius: var(--ht-radius-lg, 20px);
+  border-top-right-radius: var(--ht-radius-lg, 20px);
+  overflow: hidden;
 }
 
 .ht-post-card__media img {
@@ -5968,6 +5974,8 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+  border-top-left-radius: var(--ht-radius-lg, 20px);
+  border-top-right-radius: var(--ht-radius-lg, 20px);
 }
 
 .ht-post-card--rich:hover .ht-post-card__media img {
@@ -6164,21 +6172,27 @@ html:not([data-theme="light"]) .hero-terminal__tabs {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-/* Bento Cards in Dark Mode: Neutral Warm Dark (No neon blue glow) */
+/* Bento Cards & Rich Post Cards in Dark Mode: Neutral Warm Dark (No neon blue glow) */
 html[data-theme="dark"] .bento-card,
-html:not([data-theme="light"]) .bento-card {
+html:not([data-theme="light"]) .bento-card,
+html[data-theme="dark"] .ht-post-card--rich,
+html:not([data-theme="light"]) .ht-post-card--rich {
   background: #18181b !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
 }
 
 html[data-theme="dark"] .bento-card::after,
-html:not([data-theme="light"]) .bento-card::after {
+html:not([data-theme="light"]) .bento-card::after,
+html[data-theme="dark"] .ht-post-card--rich::after,
+html:not([data-theme="light"]) .ht-post-card--rich::after {
   display: none !important;
 }
 
 html[data-theme="dark"] .bento-card:hover,
-html:not([data-theme="light"]) .bento-card:hover {
+html:not([data-theme="light"]) .bento-card:hover,
+html[data-theme="dark"] .ht-post-card--rich:hover,
+html:not([data-theme="light"]) .ht-post-card--rich:hover {
   border-color: rgba(255, 255, 255, 0.2) !important;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6) !important;
   transform: translateY(-2px) !important;
@@ -6793,14 +6807,16 @@ html:not([data-theme="dark"]) .ht-stack-pill:hover {
   color: #09090b !important;
 }
 
-/* Bento Cards in Light Mode */
-html:not([data-theme="dark"]) .bento-card {
+/* Bento Cards & Rich Post Cards in Light Mode */
+html:not([data-theme="dark"]) .bento-card,
+html:not([data-theme="dark"]) .ht-post-card--rich {
   background: #ffffff !important;
   border: 1px solid rgba(15, 23, 42, 0.08) !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
 }
 
-html:not([data-theme="dark"]) .bento-card:hover {
+html:not([data-theme="dark"]) .bento-card:hover,
+html:not([data-theme="dark"]) .ht-post-card--rich:hover {
   border-color: rgba(15, 23, 42, 0.2) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
 }
