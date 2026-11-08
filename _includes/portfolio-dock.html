@@ -5,17 +5,7 @@
      ========================================================================== -->
 
 <nav aria-label="Portfolio navigation" class="portfolio-dock-container pointer-events-none fixed inset-x-0 bottom-3 z-40 px-3 sm:bottom-4">
-  <!-- Submenu Popover for Tools -->
-  <div id="dockToolsSubmenu" class="portfolio-dock-submenu" role="menu" aria-label="Tools Submenu">
-    <div class="portfolio-dock-submenu-inner">
-      <div class="portfolio-dock-submenu-header">Tools &amp; Utilities</div>
-      <a href="{{ base_path }}/tools/chatgpt-agent-bridge/" class="portfolio-dock-submenu-item" role="menuitem">
-        <svg class="size-4 shrink-0 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M4 11v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"/><rect width="16" height="8" x="4" y="6" rx="2"/></svg>
-        <div>
-          <div class="submenu-title">ChatGPT Agent Bridge</div>
-          <div class="submenu-desc">MCP server &amp; browser extension</div>
-        </div>
-      </a>
+</a>
       <a href="{{ base_path }}/tools/importon-bridge/" class="portfolio-dock-submenu-item" role="menuitem">
         <svg class="size-4 shrink-0 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
         <div>
@@ -80,12 +70,45 @@
       </svg>
     </a>
 
-    <!-- Tools with Submenu Button -->
+    <!-- Tools with Submenu Dropdown Wrapper -->
+    <div id="dockToolsWrapper" class="portfolio-dock-tools-wrapper relative">
+      <!-- Tools with Submenu Button -->
     <button type="button" id="dockToolsTrigger" aria-label="Tools &amp; Utilities" title="Tools" class="portfolio-dock-item portfolio-dock-tools-btn{% if page.url contains '/tools' %} portfolio-dock-item-active{% endif %}" data-tooltip="Tools">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench size-4.5">
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
       </svg>
     </button>
+      <!-- Submenu Popover for Tools -->
+      <div id="dockToolsSubmenu" class="portfolio-dock-submenu" role="menu" aria-label="Tools Submenu">
+        <div class="portfolio-dock-submenu-inner">
+          <div class="portfolio-dock-submenu-header">Tools &amp; Utilities</div>
+          <a href="{{ base_path }}/tools/chatgpt-agent-bridge/" class="portfolio-dock-submenu-item" role="menuitem">
+            <svg class="size-4 shrink-0 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M4 11v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"/><rect width="16" height="8" x="4" y="6" rx="2"/></svg>
+            <div>
+              <div class="submenu-title">ChatGPT Agent Bridge</div>
+              <div class="submenu-desc">MCP server &amp; browser extension</div>
+            </div>
+          </a>
+          <a href="{{ base_path }}/tools/importon-bridge/" class="portfolio-dock-submenu-item" role="menuitem">
+            <svg class="size-4 shrink-0 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+            <div>
+              <div class="submenu-title">Importon Bridge</div>
+              <div class="submenu-desc">Alibaba to WooCommerce import</div>
+            </div>
+          </a>
+          <a href="{{ base_path }}/tools/image-metadata-cleaner/" class="portfolio-dock-submenu-item" role="menuitem">
+            <svg class="size-4 shrink-0 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            <div>
+              <div class="submenu-title">Image Metadata Cleaner</div>
+              <div class="submenu-desc">Client-side pixel sanitization</div>
+            </div>
+          </a>
+          <a href="{{ base_path }}/tools/" class="portfolio-dock-submenu-all" role="menuitem">
+            View All Software Tools →
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- Work / Portfolio -->
     <a aria-label="Projects" title="Projects" class="portfolio-dock-item{% if page.url contains '/portfolio' %} portfolio-dock-item-active{% endif %}" href="{{ base_path }}/portfolio/" data-tooltip="Projects">
@@ -143,52 +166,64 @@
 <!-- Dock Interaction Script -->
 <script>
 (function() {
-  var trigger = document.getElementById('dockToolsTrigger');
-  var submenu = document.getElementById('dockToolsSubmenu');
-  var themeBtn = document.getElementById('dockThemeToggle');
+  function initDock() {
+    var trigger = document.getElementById('dockToolsTrigger');
+    var submenu = document.getElementById('dockToolsSubmenu');
+    var themeBtn = document.getElementById('dockThemeToggle');
 
-  // Submenu Toggle on Click / Tap
-  if (trigger && submenu) {
-    trigger.addEventListener('click', function(e) {
-      e.stopPropagation();
-      submenu.classList.toggle('is-open');
-    });
+    // Submenu Toggle on Click / Tap
+    if (trigger && submenu) {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        submenu.classList.toggle('is-open');
+      });
 
-    document.addEventListener('click', function(e) {
-      if (!submenu.contains(e.target) && e.target !== trigger) {
-        submenu.classList.remove('is-open');
-      }
-    });
-  }
-
-  // Live Theme Switching
-  if (themeBtn) {
-    var sunIcon = themeBtn.querySelector('.dock-icon-sun');
-    var moonIcon = themeBtn.querySelector('.dock-icon-moon');
-
-    function syncIcons(isDark) {
-      if (sunIcon && moonIcon) {
-        sunIcon.style.display = isDark ? 'inline-block' : 'none';
-        moonIcon.style.display = isDark ? 'none' : 'inline-block';
-      }
+      document.addEventListener('click', function(e) {
+        if (!submenu.contains(e.target) && !trigger.contains(e.target)) {
+          submenu.classList.remove('is-open');
+        }
+      });
     }
 
-    var isDarkInit = document.documentElement.getAttribute('data-theme') === 'dark' ||
-      (!document.documentElement.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    syncIcons(isDarkInit);
+    // Live Theme Switching
+    if (themeBtn) {
+      var sunIcon = themeBtn.querySelector('.dock-icon-sun');
+      var moonIcon = themeBtn.querySelector('.dock-icon-moon');
 
-    themeBtn.addEventListener('click', function() {
-      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      var nextTheme = isDark ? 'light' : 'dark';
-      
-      if (nextTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      } else {
-        document.documentElement.removeAttribute('data-theme');
+      function syncIcons(isDark) {
+        if (sunIcon && moonIcon) {
+          sunIcon.style.display = isDark ? 'inline-block' : 'none';
+          moonIcon.style.display = isDark ? 'none' : 'inline-block';
+        }
       }
-      localStorage.setItem('theme', nextTheme);
-      syncIcons(nextTheme === 'dark');
-    });
+
+      var current = document.documentElement.getAttribute('data-theme');
+      var isDarkInit = current === 'dark' || (!current && (!window.matchMedia || window.matchMedia('(prefers-color-scheme: dark)').matches));
+      syncIcons(isDarkInit);
+
+      themeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var curTheme = document.documentElement.getAttribute('data-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var nextTheme = curTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('theme', nextTheme);
+        syncIcons(nextTheme === 'dark');
+
+        // Also sync any other theme buttons or Plotly if present
+        if (typeof window.setTheme === 'function') {
+          window.setTheme(nextTheme);
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDock);
+  } else {
+    initDock();
   }
 })();
 </script>

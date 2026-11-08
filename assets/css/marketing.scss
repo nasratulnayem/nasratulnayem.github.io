@@ -6101,16 +6101,31 @@ html[data-theme="dark"] .whatsapp-chat__action:focus-visible {
 }
 
 /* Site Background with Subtle Grid Pattern like jisun.online */
-html[data-theme="dark"],
-html:not([data-theme="light"]) {
+html[data-theme="dark"] {
   background-color: #141414 !important;
   background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px) !important;
   background-size: 24px 24px !important;
 }
 
+/* Site Background in Light Mode */
+html:not([data-theme="dark"]),
+html[data-theme="light"] {
+  background-color: #f8fafc !important;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) body,
+html[data-theme="light"] body {
+  background-color: transparent !important;
+  color: #09090b !important;
+}
+
+
 /* Floating Masthead in Dark Mode */
 html[data-theme="dark"] .site-header.masthead.ht-masthead,
-html:not([data-theme="light"]) .site-header.masthead.ht-masthead {
+html[data-theme="dark"] .site-header.masthead.ht-masthead {
   background: rgba(24, 24, 27, 0.8) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5) !important;
@@ -6121,8 +6136,8 @@ html:not([data-theme="light"]) .site-header.masthead.ht-masthead {
 /* Primary CTA Button: Clean High-End Monochromatic Style (like jisun.online) */
 html[data-theme="dark"] .ht-btn-cta,
 html[data-theme="dark"] .ht-btn-primary,
-html:not([data-theme="light"]) .ht-btn-cta,
-html:not([data-theme="light"]) .ht-btn-primary {
+html[data-theme="dark"] .ht-btn-cta,
+html[data-theme="dark"] .ht-btn-primary {
   background: #f8fafc !important;
   color: #09090b !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
@@ -6131,8 +6146,8 @@ html:not([data-theme="light"]) .ht-btn-primary {
 
 html[data-theme="dark"] .ht-btn-cta:hover,
 html[data-theme="dark"] .ht-btn-primary:hover,
-html:not([data-theme="light"]) .ht-btn-cta:hover,
-html:not([data-theme="light"]) .ht-btn-primary:hover {
+html[data-theme="dark"] .ht-btn-cta:hover,
+html[data-theme="dark"] .ht-btn-primary:hover {
   background: #ffffff !important;
   box-shadow: 0 4px 18px rgba(255, 255, 255, 0.2) !important;
   transform: translateY(-1px) !important;
@@ -6140,59 +6155,59 @@ html:not([data-theme="light"]) .ht-btn-primary:hover {
 
 /* Secondary Button */
 html[data-theme="dark"] .ht-btn-secondary,
-html:not([data-theme="light"]) .ht-btn-secondary {
+html[data-theme="dark"] .ht-btn-secondary {
   background: rgba(255, 255, 255, 0.05) !important;
   border-color: rgba(255, 255, 255, 0.12) !important;
   color: #f8fafc !important;
 }
 
 html[data-theme="dark"] .ht-btn-secondary:hover,
-html:not([data-theme="light"]) .ht-btn-secondary:hover {
+html[data-theme="dark"] .ht-btn-secondary:hover {
   background: rgba(255, 255, 255, 0.1) !important;
   border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 /* Hero Terminal in Dark Mode: Clean Slate Black instead of Blue Cyber */
 html[data-theme="dark"] .hero-terminal,
-html:not([data-theme="light"]) .hero-terminal {
+html[data-theme="dark"] .hero-terminal {
   background: #18181b !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
 }
 
 html[data-theme="dark"] .hero-terminal__topbar,
-html:not([data-theme="light"]) .hero-terminal__topbar {
+html[data-theme="dark"] .hero-terminal__topbar {
   background: #141416 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 html[data-theme="dark"] .hero-terminal__tabs,
-html:not([data-theme="light"]) .hero-terminal__tabs {
+html[data-theme="dark"] .hero-terminal__tabs {
   background: #1c1c1f !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 /* Bento Cards & Rich Post Cards in Dark Mode: Neutral Warm Dark (No neon blue glow) */
 html[data-theme="dark"] .bento-card,
-html:not([data-theme="light"]) .bento-card,
+html[data-theme="dark"] .bento-card,
 html[data-theme="dark"] .ht-post-card--rich,
-html:not([data-theme="light"]) .ht-post-card--rich {
+html[data-theme="dark"] .ht-post-card--rich {
   background: #18181b !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
 }
 
 html[data-theme="dark"] .bento-card::after,
-html:not([data-theme="light"]) .bento-card::after,
+html[data-theme="dark"] .bento-card::after,
 html[data-theme="dark"] .ht-post-card--rich::after,
-html:not([data-theme="light"]) .ht-post-card--rich::after {
+html[data-theme="dark"] .ht-post-card--rich::after {
   display: none !important;
 }
 
 html[data-theme="dark"] .bento-card:hover,
-html:not([data-theme="light"]) .bento-card:hover,
+html[data-theme="dark"] .bento-card:hover,
 html[data-theme="dark"] .ht-post-card--rich:hover,
-html:not([data-theme="light"]) .ht-post-card--rich:hover {
+html[data-theme="dark"] .ht-post-card--rich:hover {
   border-color: rgba(255, 255, 255, 0.2) !important;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6) !important;
   transform: translateY(-2px) !important;
@@ -6200,27 +6215,27 @@ html:not([data-theme="light"]) .ht-post-card--rich:hover {
 
 /* Featured Bento Card */
 html[data-theme="dark"] .bento-card--featured,
-html:not([data-theme="light"]) .bento-card--featured {
+html[data-theme="dark"] .bento-card--featured {
   background: #18181b !important;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
 html[data-theme="dark"] .bento-card--featured .bento-card__visual-bridge,
-html:not([data-theme="light"]) .bento-card--featured .bento-card__visual-bridge {
+html[data-theme="dark"] .bento-card--featured .bento-card__visual-bridge {
   background: #121214 !important;
   border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 /* Navigation Links */
 html[data-theme="dark"] .ht-nav__link.is-active,
-html:not([data-theme="light"]) .ht-nav__link.is-active {
+html[data-theme="dark"] .ht-nav__link.is-active {
   color: #f8fafc !important;
   background: rgba(255, 255, 255, 0.08) !important;
 }
 
 /* Dropdown Menu */
 html[data-theme="dark"] .ht-nav__dropdown-inner,
-html:not([data-theme="light"]) .ht-nav__dropdown-inner {
+html[data-theme="dark"] .ht-nav__dropdown-inner {
   background: #18181b !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6) !important;
@@ -6236,7 +6251,7 @@ html:not([data-theme="light"]) .ht-nav__dropdown-inner {
 
 :root,
 [data-theme="dark"],
-html:not([data-theme="light"]) {
+html[data-theme="dark"] {
   --ht-cyan: #f8fafc !important;
   --ht-cyan-glow: rgba(255, 255, 255, 0.05) !important;
   --ht-border-hover: rgba(255, 255, 255, 0.25) !important;
@@ -6313,25 +6328,25 @@ html:not([data-theme="light"]) {
 /* Clean up WhatsApp widget colors */
 .whatsapp-chat__launcher,
 [data-theme="dark"] .whatsapp-chat__launcher,
-html:not([data-theme="light"]) .whatsapp-chat__launcher {
+html[data-theme="dark"] .whatsapp-chat__launcher {
   background: #18181b !important;
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
 }
 .whatsapp-chat__launcher:hover,
 [data-theme="dark"] .whatsapp-chat__launcher:hover,
-html:not([data-theme="light"]) .whatsapp-chat__launcher:hover {
+html[data-theme="dark"] .whatsapp-chat__launcher:hover {
   background: #242427 !important;
   border-color: rgba(255, 255, 255, 0.3) !important;
 }
 .whatsapp-chat__launcher svg,
 [data-theme="dark"] .whatsapp-chat__launcher svg,
-html:not([data-theme="light"]) .whatsapp-chat__launcher svg {
+html[data-theme="dark"] .whatsapp-chat__launcher svg {
   fill: #f8fafc !important;
 }
 .whatsapp-chat__header,
 [data-theme="dark"] .whatsapp-chat__header,
-html:not([data-theme="light"]) .whatsapp-chat__header {
+html[data-theme="dark"] .whatsapp-chat__header {
   background: #141416 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   box-shadow: none !important;
@@ -6341,32 +6356,32 @@ html:not([data-theme="light"]) .whatsapp-chat__header {
 }
 .whatsapp-chat__content,
 [data-theme="dark"] .whatsapp-chat__content,
-html:not([data-theme="light"]) .whatsapp-chat__content {
+html[data-theme="dark"] .whatsapp-chat__content {
   background: #18181b !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 .whatsapp-chat__message,
 [data-theme="dark"] .whatsapp-chat__message,
-html:not([data-theme="light"]) .whatsapp-chat__message {
+html[data-theme="dark"] .whatsapp-chat__message {
   background: #18181b !important;
 }
 .whatsapp-chat__message span,
 [data-theme="dark"] .whatsapp-chat__message span,
-html:not([data-theme="light"]) .whatsapp-chat__message span {
+html[data-theme="dark"] .whatsapp-chat__message span {
   background: #242427 !important;
   color: #f8fafc !important;
   box-shadow: none !important;
 }
 .whatsapp-chat__action,
 [data-theme="dark"] .whatsapp-chat__action,
-html:not([data-theme="light"]) .whatsapp-chat__action {
+html[data-theme="dark"] .whatsapp-chat__action {
   background: #f8fafc !important;
   color: #09090b !important;
   border: none !important;
 }
 .whatsapp-chat__action:hover,
 [data-theme="dark"] .whatsapp-chat__action:hover,
-html:not([data-theme="light"]) .whatsapp-chat__action:hover {
+html[data-theme="dark"] .whatsapp-chat__action:hover {
   background: #ffffff !important;
   color: #09090b !important;
 }
@@ -8731,6 +8746,13 @@ html:not([data-theme="dark"]) .portfolio-dock-item-active:hover {
 }
 
 /* Submenu Popover for Tools */
+.portfolio-dock-tools-wrapper {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 .portfolio-dock-submenu {
   position: absolute !important;
   bottom: calc(100% + 12px) !important;
