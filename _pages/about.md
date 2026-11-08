@@ -92,19 +92,20 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
       <span class="ht-eyebrow-dot"></span>
       <span>WHAT I BUILD</span>
     </div>
-    <h2 id="bento-title" class="ht-section-title">Clean systems. Zero fluff. Tools that actually work.</h2>
-    <p class="ht-section-subtitle">No bloated page builders or unnecessary layers. Just fast code, direct interfaces, and automations that save real hours.</p>
+    <h2 id="bento-title" class="ht-section-title">Built to solve problems. Not to look complicated.</h2>
+    <p class="ht-section-subtitle">I believe good technology should make work easier, not add another layer of complexity. These are tools and systems I’ve built to solve real problems, save time, and get things done.</p>
   </div>
 
   <div class="ht-bento-grid">
     <!-- Card 1: ChatGPT Agent Bridge -->
     <a class="bento-card glow-card" href="{{ '/tools/chatgpt-agent-bridge/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
       <div class="bento-card__badge-row" style="margin-bottom: 10px;">
-        <span class="ht-badge ht-badge--cyan">AI AGENT MCP</span>
-        <span class="ht-badge ht-badge--green" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3);">Open Source</span>
+        <span class="ht-badge ht-badge--cyan">AI AGENT</span>
+        <span class="ht-badge">MCP</span>
+        <span class="ht-badge ht-badge--green" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3);">OPEN SOURCE</span>
       </div>
       <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">ChatGPT Agent Bridge</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Connect Antigravity, Claude, and Cursor directly to your active ChatGPT Web tab. Zero API bills with direct prompt automation.</p>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Connect Antigravity, Claude, and Cursor directly to your active ChatGPT Web tab. Use the tools you already have without relying on separate API setups.</p>
       <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
         <span>View tool</span>
         <span aria-hidden="true">&rarr;</span>
@@ -115,10 +116,10 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     <a class="bento-card glow-card" href="{{ '/tools/importon-bridge/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
       <div class="bento-card__badge-row" style="margin-bottom: 10px;">
         <span class="ht-badge ht-badge--cyan">WOOCOMMERCE</span>
-        <span class="ht-badge">v0.2.2 Pro</span>
+        <span class="ht-badge">V0.2.2 PRO</span>
       </div>
       <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">Importon Bridge</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Pulls supplier products directly into WooCommerce. Captures galleries, variations, and specs straight into ready drafts.</p>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Import supplier products straight into WooCommerce, including images, galleries, variations, and product specifications. Less manual work, more time to focus on your store.</p>
       <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
         <span>View tool</span>
         <span aria-hidden="true">&rarr;</span>
@@ -129,10 +130,10 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     <a class="bento-card glow-card" href="{{ '/tools/image-metadata-cleaner/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
       <div class="bento-card__badge-row" style="margin-bottom: 10px;">
         <span class="ht-badge ht-badge--cyan">BROWSER TOOL</span>
-        <span class="ht-badge ht-badge--green" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3);">100% Private</span>
+        <span class="ht-badge ht-badge--green" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3);">100% PRIVATE</span>
       </div>
       <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">Image Metadata Remover</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Strips GPS coordinates and hidden EXIF tags from photos before sharing. 100% client-side with zero server uploads.</p>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Remove hidden image metadata, including GPS coordinates and EXIF data, before sharing your photos. Everything runs in your browser. Your files never leave your device.</p>
       <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
         <span>Open cleaner</span>
         <span aria-hidden="true">&rarr;</span>
@@ -142,10 +143,11 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     <!-- Card 4: Web & WordPress Engineering -->
     <a class="bento-card glow-card" href="{{ '/services/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
       <div class="bento-card__badge-row" style="margin-bottom: 10px;">
-        <span class="ht-badge">CORE CMS</span>
+        <span class="ht-badge">WEB DEVELOPMENT</span>
+        <span class="ht-badge">CUSTOM CMS</span>
       </div>
       <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">High-Speed Web Systems</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Custom plugins, clean PHP 8+ architecture, fast Liquid storefronts, and sub-second Core Web Vitals without builder bloat.</p>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">I build fast, flexible websites with clean code, custom plugins, and performance-focused architecture. No unnecessary page builders or bloated frameworks. Just web systems built to work.</p>
       <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
         <span>Explore services</span>
         <span aria-hidden="true">&rarr;</span>
@@ -155,10 +157,12 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     <!-- Card 5: Automations & Bots -->
     <a class="bento-card glow-card" href="{{ '/automation/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
       <div class="bento-card__badge-row" style="margin-bottom: 10px;">
-        <span class="ht-badge">PYTHON &amp; AI</span>
+        <span class="ht-badge">PYTHON</span>
+        <span class="ht-badge">AI</span>
+        <span class="ht-badge">WORKFLOW AUTOMATION</span>
       </div>
       <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">Automations That Cut Hours</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Playwright scrapers, background syncs, and AI prompt pipelines that eliminate repetitive manual workflows.</p>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">From browser automation and data scraping to AI-powered workflows and background syncs, I build systems that handle repetitive tasks so you don't have to.</p>
       <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
         <span>Explore automations</span>
         <span aria-hidden="true">&rarr;</span>
@@ -169,11 +173,12 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     <a class="bento-card glow-card" href="{{ '/contact/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; padding: 22px; grid-column: span 1;">
       <div class="bento-card__badge-row" style="margin-bottom: 10px;">
         <span class="ht-badge ht-badge--green" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3);">DIRECT ACCESS</span>
+        <span class="ht-badge">NO MIDDLE LAYERS</span>
       </div>
       <h3 class="bento-card__title" style="margin: 0 0 8px 0; font-size: 1.22rem; font-weight: 700; color: var(--ht-text-primary);">Work Directly With The Builder</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Direct communication without agency middle layers or account managers. Clear scoping before any code is written.</p>
+      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 16px 0;">Have an idea or a problem that needs solving? Work directly with me, from defining the scope to building the solution. Clear communication, practical decisions, and no unnecessary back-and-forth.</p>
       <div style="margin-top: auto; display: flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 600; color: var(--ht-cyan);">
-        <span>Get in touch</span>
+        <span>Let's talk</span>
         <span aria-hidden="true">&rarr;</span>
       </div>
     </a>
