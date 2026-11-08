@@ -8428,3 +8428,81 @@ a.ht-direct-card:hover .ht-direct-card__arrow {
     font-size: 0.8rem;
   }
 }
+
+
+/* ==========================================================================
+   Jisun-style Post / Project Card Design (Clean Luxury Minimalist Grid)
+   ========================================================================== */
+.portfolio-post-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  width: 100% !important;
+  border-radius: 0.75rem !important; /* rounded-xl */
+  border: 1px solid var(--ht-border, rgba(255, 255, 255, 0.08)) !important;
+  background-color: var(--ht-bg-card, #141417) !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+.portfolio-post-card:hover {
+  outline: 2px solid var(--ht-border-hover, rgba(255, 255, 255, 0.25)) !important;
+  outline-offset: -1px !important;
+  transform: translateY(-2px);
+}
+
+.portfolio-post-card .relative.h-48 {
+  position: relative !important;
+  height: 12rem !important; /* h-48 */
+  flex-shrink: 0 !important;
+  overflow: hidden !important;
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.portfolio-post-card img.object-cover {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.portfolio-post-card:hover img.object-cover {
+  transform: scale(1.03) !important;
+}
+
+.portfolio-post-card .backdrop-blur {
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.portfolio-post-card .line-clamp-3 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+/* Light Mode Overrides for Portfolio Post Card */
+html:not([data-theme="dark"]) .portfolio-post-card {
+  background-color: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not([data-theme="dark"]) .portfolio-post-card:hover {
+  outline-color: rgba(15, 23, 42, 0.2) !important;
+}
+
+html:not([data-theme="dark"]) .portfolio-post-card h3 {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .portfolio-post-card p {
+  color: #64748b !important;
+}
