@@ -16,7 +16,7 @@
 <div class="{{ include.type | default: "list" }}__item ht-card-item" data-category="{{ card_categories | escape }}">
   {% if include.type == "grid" and post.url %}
     <a class="portfolio-post-card group flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-card transition-all duration-200 hover:ring-2 hover:ring-muted" href="{{ base_path }}{{ post.url }}" aria-label="View {{ title | strip_html | escape_once }} details">
-      <div class="relative h-48 shrink-0 overflow-hidden bg-muted">
+      <div class="relative aspect-video w-full shrink-0 overflow-hidden bg-muted">
         {% if teaser %}
           <img src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | prepend: base_path }}{% endif %}" alt="{{ title | strip_html | escape_once }}" loading="lazy" class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]">
         {% else %}
