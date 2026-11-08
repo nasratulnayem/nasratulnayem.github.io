@@ -27,7 +27,7 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
 
   <!-- Focused Value Proposition / Bio -->
   <p class="ht-hero-centered__lead">
-    I build AI automation systems, intelligent agents, and custom API integrations that help businesses work smarter and spend less time on repetitive tasks. From n8n workflows and CRM automation to AI-powered tools and browser extensions, I focus on building practical solutions that solve real problems and make business operations more efficient.
+    I make AI work where it matters. I build automation systems, intelligent agents, and custom integrations that take care of repetitive work and solve real business problems. Whether it’s connecting APIs, automating workflows with n8n, or building AI-powered tools, I focus on creating solutions that are useful, reliable, and built to make a difference.
   </p>
 
   <!-- Tech Stack Infinite Marquee Ribbon Badges -->
