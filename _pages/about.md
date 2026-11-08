@@ -9,11 +9,12 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
 
 <!-- Hero Section: Centered Luxury Developer Showcase (Single Column) -->
 <section class="ht-hero-centered" aria-labelledby="ht-hero-title">
-  <!-- Glowing Profile Avatar with Violet Radial Halo -->
-  <div class="ht-hero-avatar-halo">
+  <!-- Minimalist Clean Avatar with Dark Border & Green Online Status Dot -->
+  <div class="ht-hero-avatar-wrapper">
     <div class="ht-hero-avatar-ring">
       <img src="{{ '/images/nasratul-nayem.jpg' | relative_url }}" alt="Nasratul Nayem" width="130" height="130" fetchpriority="high">
     </div>
+    <span class="ht-hero-avatar-status" title="Available for projects" aria-label="Available for projects"></span>
   </div>
 
   <!-- Primary Centered Name & Role -->
