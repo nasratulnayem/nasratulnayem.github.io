@@ -9031,3 +9031,83 @@ html:not([data-theme="dark"]) .ht-calmer-badge {
   color: #71717a !important;
   margin-top: 2rem !important;
 }
+
+/* ==========================================================================
+   GITHUB ACTIVITY GRAPH (KIBO-UI MATCH)
+   ========================================================================== */
+:root {
+  --github-level-0: 240 3.7% 15.9%;
+  --github-level-1: 240 3.7% 25%;
+  --github-level-2: 240 5% 45%;
+  --github-level-3: 240 5% 65%;
+  --github-level-4: 0 0% 98%;
+}
+
+html:not([data-theme="dark"]) {
+  --github-level-0: 220 13% 91%;
+  --github-level-1: 142 69% 58%;
+  --github-level-2: 142 71% 45%;
+  --github-level-3: 142 76% 36%;
+  --github-level-4: 142 72% 29%;
+}
+
+.bg-card {
+  background-color: var(--ht-bg-card, #141417) !important;
+}
+html:not([data-theme="dark"]) .bg-card {
+  background-color: #ffffff !important;
+}
+
+.border-border {
+  border-color: var(--ht-border, rgba(255, 255, 255, 0.08)) !important;
+}
+html:not([data-theme="dark"]) .border-border {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+.border-border\/60 {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+html:not([data-theme="dark"]) .border-border\/60 {
+  border-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+.bg-muted\/70 {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+html:not([data-theme="dark"]) .bg-muted\/70 {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+.hover\:bg-muted:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+html:not([data-theme="dark"]) .hover\:bg-muted:hover {
+  background-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.text-muted-foreground {
+  color: #a1a1aa !important;
+}
+html:not([data-theme="dark"]) .text-muted-foreground {
+  color: #64748b !important;
+}
+
+.text-foreground {
+  color: #f4f4f5 !important;
+}
+html:not([data-theme="dark"]) .text-foreground {
+  color: #09090b !important;
+}
+
+.bg-muted-foreground\/45 {
+  background-color: rgba(161, 161, 170, 0.45) !important;
+}
+
+.game-mode-active {
+  background-color: #22c55e !important;
+}
+.game-mode-active span {
+  transform: translateX(1rem) !important;
+}
+

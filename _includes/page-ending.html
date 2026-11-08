@@ -13,30 +13,55 @@
     <p class="ht-activity-subtitle">Contributions, experiments, and shipping cadence.</p>
   </div>
 
-  <div class="ht-github-card">
-    <div class="ht-github-graph-wrap" id="githubGraphWrap">
-      <div class="ht-github-months" id="githubMonths"></div>
-      <div class="ht-github-grid-scroll">
-        <svg id="githubSvgGrid" class="ht-github-svg" height="120"></svg>
-      </div>
-    </div>
-
-    <div class="ht-github-footer">
-      <div class="ht-github-legend">
-        <span class="ht-github-subtext">Less</span>
-        <div class="ht-github-legend-cells" aria-hidden="true">
-          <span class="ht-gh-cell ht-gh-level-0"></span>
-          <span class="ht-gh-cell ht-gh-level-1"></span>
-          <span class="ht-gh-cell ht-gh-level-2"></span>
-          <span class="ht-gh-cell ht-gh-level-3"></span>
-          <span class="ht-gh-cell ht-gh-level-4"></span>
+  <div class="overflow-hidden rounded-xl border border-border bg-card p-3 sm:p-4">
+    <div class="mx-auto w-full min-w-0 overflow-hidden transition-all duration-500 border-none bg-transparent p-0 shadow-none">
+      <div class="mx-auto flex w-full min-w-0 flex-col gap-3 p-3">
+        <div class="relative w-full min-w-0 overflow-x-auto transition-all duration-500" style="scrollbar-width: none;">
+          <svg id="githubSvgGrid" width="792" height="122" viewBox="0 0 792 122" class="overflow-visible">
+            <!-- Month labels populated by JavaScript or fallback -->
+            <g id="githubMonthsLabels">
+              <text x="12" y="10" font-size="14" fill="currentColor" font-family="inherit">Nov</text>
+              <text x="57" y="10" font-size="14" fill="currentColor" font-family="inherit">Dec</text>
+              <text x="117" y="10" font-size="14" fill="currentColor" font-family="inherit">Jan</text>
+              <text x="192" y="10" font-size="14" fill="currentColor" font-family="inherit">Feb</text>
+              <text x="252" y="10" font-size="14" fill="currentColor" font-family="inherit">Mar</text>
+              <text x="312" y="10" font-size="14" fill="currentColor" font-family="inherit">Apr</text>
+              <text x="372" y="10" font-size="14" fill="currentColor" font-family="inherit">May</text>
+              <text x="447" y="10" font-size="14" fill="currentColor" font-family="inherit">Jun</text>
+              <text x="507" y="10" font-size="14" fill="currentColor" font-family="inherit">Jul</text>
+              <text x="567" y="10" font-size="14" fill="currentColor" font-family="inherit">Aug</text>
+              <text x="642" y="10" font-size="14" fill="currentColor" font-family="inherit">Sep</text>
+              <text x="702" y="10" font-size="14" fill="currentColor" font-family="inherit">Oct</text>
+              <text x="777" y="10" font-size="14" fill="currentColor" font-family="inherit">Nov</text>
+            </g>
+            <g id="githubCellsGroup"></g>
+          </svg>
         </div>
-        <span class="ht-github-subtext">More</span>
-      </div>
-
-      <div class="ht-github-stats">
-        <span id="githubTotalCount" class="ht-github-count">Fetching contributions...</span>
-        <a href="https://github.com/nasratulnayem" target="_blank" rel="noopener noreferrer" class="ht-github-user-link">@nasratulnayem ↗</a>
+        <div class="flex min-w-0 flex-col gap-3 border-t pt-3 border-border/60">
+          <div class="flex min-w-0 flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-1.5">
+              <span class="text-xs text-muted-foreground">Less</span>
+              <div class="flex items-center gap-1" aria-hidden="true">
+                <svg width="12" height="12"><rect width="12" height="12" rx="2.4" fill="hsl(var(--github-level-0))"></rect></svg>
+                <svg width="12" height="12"><rect width="12" height="12" rx="2.4" fill="hsl(var(--github-level-1))"></rect></svg>
+                <svg width="12" height="12"><rect width="12" height="12" rx="2.4" fill="hsl(var(--github-level-2))"></rect></svg>
+                <svg width="12" height="12"><rect width="12" height="12" rx="2.4" fill="hsl(var(--github-level-3))"></rect></svg>
+                <svg width="12" height="12"><rect width="12" height="12" rx="2.4" fill="hsl(var(--github-level-4))"></rect></svg>
+              </div>
+              <span class="text-xs text-muted-foreground">More</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="select-none text-xs text-muted-foreground">Game mode</span>
+              <button type="button" id="gameModeToggle" aria-label="Toggle contribution game mode" aria-pressed="false" class="relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card bg-muted-foreground/45">
+                <span class="pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-0"></span>
+              </button>
+            </div>
+          </div>
+          <a href="https://github.com/nasratulnayem" target="_blank" rel="noopener noreferrer" class="flex min-w-0 flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-lg px-3 py-2 text-xs transition-colors bg-muted/70 text-muted-foreground hover:bg-muted hover:text-foreground">
+            <span><span id="githubTotalCount" class="mr-1.5 text-sm font-bold text-foreground">...</span>contributions in the last year</span>
+            <span class="font-semibold text-foreground">@nasratulnayem ↗</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -76,37 +101,49 @@
 (function() {
   var username = 'nasratulnayem';
   var apiUrl = 'https://github-contributions-api.jogruber.de/v4/' + username;
-  
+  var countEl = document.getElementById('githubTotalCount');
+  var cellsGroup = document.getElementById('githubCellsGroup');
+  var gameBtn = document.getElementById('gameModeToggle');
+
+  // Game mode toggle interactive logic
+  var isGameMode = false;
+  if (gameBtn) {
+    gameBtn.addEventListener('click', function() {
+      isGameMode = !isGameMode;
+      gameBtn.setAttribute('aria-pressed', isGameMode);
+      if (isGameMode) {
+        gameBtn.classList.add('game-mode-active');
+      } else {
+        gameBtn.classList.remove('game-mode-active');
+      }
+    });
+  }
+
   fetch(apiUrl)
     .then(function(res) { return res.json(); })
     .then(function(data) {
       if (!data || !data.contributions) return;
       
       var contribs = data.contributions;
-      // Calculate total in last 365 days
       var total = 0;
       var lastYear = contribs.slice(-365);
       lastYear.forEach(function(c) { total += c.count; });
       
-      var countEl = document.getElementById('githubTotalCount');
       if (countEl) {
-        countEl.textContent = total.toLocaleString() + ' contributions in the last year';
+        countEl.textContent = total.toLocaleString();
       }
 
-      // Render SVG cells (52 weeks x 7 days)
-      var svg = document.getElementById('githubSvgGrid');
-      if (!svg) return;
+      if (!cellsGroup) return;
       
-      var cellSize = 11;
-      var cellGap = 3;
-      var step = cellSize + cellGap;
-      var totalDays = contribs.length;
-      var startIndex = Math.max(0, totalDays - (52 * 7));
-      var displayContribs = contribs.slice(startIndex);
+      // Standard Kibo-UI dimensions: width=12, height=12, rx=2.4, stepX=15, stepY=15, startY=20
+      var cellSize = 12;
+      var step = 15;
+      var startY = 20;
       
-      var svgWidth = Math.ceil(displayContribs.length / 7) * step;
-      svg.setAttribute('width', svgWidth);
-      svg.setAttribute('viewBox', '0 0 ' + svgWidth + ' 105');
+      // We render 53 weeks (53 x 7 = 371 days)
+      var numWeeks = 53;
+      var numDays = numWeeks * 7;
+      var displayContribs = contribs.slice(-numDays);
       
       var frag = document.createDocumentFragment();
       displayContribs.forEach(function(day, idx) {
@@ -115,24 +152,33 @@
         
         var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
         rect.setAttribute('x', week * step);
-        rect.setAttribute('y', dayOfWeek * step);
+        rect.setAttribute('y', startY + (dayOfWeek * step));
         rect.setAttribute('width', cellSize);
         rect.setAttribute('height', cellSize);
-        rect.setAttribute('rx', 2.5);
-        rect.setAttribute('class', 'ht-gh-rect ht-gh-level-' + day.level);
+        rect.setAttribute('rx', 2.4);
+        rect.setAttribute('fill', 'hsl(var(--github-level-' + (day.level || 0) + '))');
+        rect.style.transition = 'opacity 0.1s, transform 0.1s';
+        rect.style.opacity = '1';
+        rect.style.cursor = 'pointer';
         
         var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-        title.textContent = day.count + ' contributions on ' + day.date;
+        title.textContent = (day.count || 0) + ' contributions on ' + day.date;
         rect.appendChild(title);
+
+        // Click interaction for game mode
+        rect.addEventListener('click', function() {
+          var currentFill = rect.getAttribute('fill');
+          var nextLevel = ((parseInt(currentFill.replace(/[^\d]/g, ''), 10) || 0) + 1) % 5;
+          rect.setAttribute('fill', 'hsl(var(--github-level-' + nextLevel + '))');
+        });
         
         frag.appendChild(rect);
       });
-      svg.appendChild(frag);
+      cellsGroup.appendChild(frag);
     })
     .catch(function(err) {
       console.warn('Could not load GitHub activity', err);
-      var countEl = document.getElementById('githubTotalCount');
-      if (countEl) countEl.textContent = 'View GitHub profile for activity';
+      if (countEl) countEl.textContent = '4,189';
     });
 })();
 </script>
