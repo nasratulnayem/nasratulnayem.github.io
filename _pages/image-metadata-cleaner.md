@@ -154,15 +154,16 @@ author_profile: false
 <style>
 /* Cleaner Page Styling - Perfectly aligned with Nasratul Nayem Design System */
 .ht-cleaner-page {
-  padding: 0 16px 80px 16px;
+  padding: clamp(2.75rem, 4vw, 3.5rem) 0 5.5rem 0;
   min-height: calc(100vh - 200px);
 }
 .ht-cleaner-container {
-  max-width: 860px;
+  width: var(--ht-container) !important;
+  max-width: 1120px !important;
   margin: 0 auto;
 }
 .ht-cleaner-page .ht-cleaner-hero {
-  width: 100%;
+  width: var(--ht-container);
   max-width: 820px;
   margin: 0 auto 32px;
 }
@@ -498,14 +499,20 @@ author_profile: false
 }
 
 /* Keep the mobile tool calm, legible, and touch-friendly. */
+@media (max-width: 768px) {
+  .ht-cleaner-page {
+    padding: 1.75rem 0 3.5rem 0;
+  }
+}
+
 @media (max-width: 640px) {
   .ht-cleaner-page {
-    padding: 0 14px calc(52px + env(safe-area-inset-bottom));
+    padding: 1.25rem 0 calc(52px + env(safe-area-inset-bottom)) 0;
     min-height: 0;
   }
   .ht-cleaner-container {
-    width: 100%;
-    max-width: 520px;
+    width: var(--ht-container) !important;
+    max-width: 100% !important;
   }
   .ht-cleaner-page .ht-cleaner-hero {
     margin-bottom: 26px;

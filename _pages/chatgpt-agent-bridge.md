@@ -10,15 +10,18 @@ author_profile: false
 <style>
   .ht-bridge-tool-page {
     font-family: var(--ht-font-sans);
-    padding: 0 16px 64px 16px;
+    padding: clamp(2.75rem, 4vw, 3.5rem) 0 5.5rem 0;
     min-height: calc(100vh - 200px);
   }
   .ht-bridge-tool-container {
-    max-width: 860px;
+    width: var(--ht-container) !important;
+    max-width: 1120px !important;
     margin: 0 auto;
   }
   
   .ht-bridge-hero {
+    width: var(--ht-container);
+    max-width: 820px;
     text-align: center;
     margin: 0 auto 2.5rem auto;
     display: flex;
@@ -30,20 +33,22 @@ author_profile: false
   }
   .ht-bridge-hero h1 {
     font-family: var(--ht-font-heading);
-    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
     font-weight: 800;
     letter-spacing: -0.025em;
     color: var(--ht-text-primary);
-    margin: 0 0 1rem 0;
+    margin: 0.5rem 0 1rem 0;
     line-height: 1.15;
+    text-align: center;
   }
   .ht-bridge-hero p {
     font-family: var(--ht-font-sans);
-    font-size: 1.12rem;
+    font-size: 1.15rem;
     color: var(--ht-text-secondary);
     line-height: 1.65;
     max-width: 680px;
     margin: 0 auto;
+    text-align: center;
   }
 
   /* Main Tool Box Card - Uses exact site variables and card elevation */
@@ -297,6 +302,35 @@ author_profile: false
     color: var(--ht-text-secondary);
     line-height: 1.6;
     margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .ht-bridge-tool-page {
+      padding: 1.75rem 0 3.5rem 0;
+    }
+    .ht-bridge-hero {
+      margin: 1.75rem auto 2rem auto;
+    }
+    .ht-bridge-hero h1 {
+      font-size: clamp(1.85rem, 6vw, 2.5rem);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ht-bridge-tool-page {
+      padding: 1.25rem 0 3rem 0;
+    }
+    .ht-bridge-hero {
+      margin: 1.25rem auto 1.75rem auto;
+    }
+    .ht-bridge-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    .ht-bridge-btn-primary,
+    .ht-bridge-btn-secondary {
+      width: 100%;
+    }
   }
 </style>
 
