@@ -8506,3 +8506,69 @@ html:not([data-theme="dark"]) .portfolio-post-card h3 {
 html:not([data-theme="dark"]) .portfolio-post-card p {
   color: #64748b !important;
 }
+
+
+/* Utility helper classes for portfolio cards */
+.portfolio-post-card .size-full {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.portfolio-post-card .flex {
+  display: flex !important;
+}
+
+.portfolio-post-card .flex-1 {
+  flex: 1 1 0% !important;
+}
+
+.portfolio-post-card .flex-col {
+  flex-direction: column !important;
+}
+
+.portfolio-post-card .gap-3 {
+  gap: 0.75rem !important;
+}
+
+.portfolio-post-card .p-5 {
+  padding: 1.25rem !important;
+}
+
+.portfolio-post-card .items-start {
+  align-items: flex-start !important;
+}
+
+.portfolio-post-card .justify-between {
+  justify-content: space-between !important;
+}
+
+.portfolio-post-card .font-semibold {
+  font-weight: 600 !important;
+  color: var(--ht-text-primary, #ffffff) !important;
+  margin: 0 !important;
+}
+
+.portfolio-post-card .text-muted-foreground {
+  color: var(--ht-text-secondary, #94a3b8) !important;
+}
+
+.portfolio-post-card .text-xs {
+  font-size: 0.75rem !important;
+}
+
+.portfolio-post-card .leading-5 {
+  line-height: 1.25rem !important;
+}
+
+.portfolio-post-card .flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.portfolio-post-card .gap-1 {
+  gap: 0.25rem !important;
+}
+
+.portfolio-post-card .size-4 {
+  width: 1rem !important;
+  height: 1rem !important;
+}
