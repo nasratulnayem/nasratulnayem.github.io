@@ -7271,17 +7271,13 @@ html:not([data-theme="dark"]) .portfolio-badge:hover {
   font-size: clamp(1.05rem, 1.8vw, 1.25rem);
   font-weight: 500;
   color: #a1a1aa;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.15rem 0;
   line-height: 1.4;
 }
 
 /* Accent Divider Line */
 .ht-hero-centered__divider {
-  width: 50px;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #a855f7, #6366f1);
-  margin: 0 auto 1.75rem auto;
+  display: none !important;
 }
 
 /* Focused Value Proposition / Bio */
