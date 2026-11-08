@@ -8572,3 +8572,462 @@ html:not([data-theme="dark"]) .portfolio-post-card p {
   width: 1rem !important;
   height: 1rem !important;
 }
+
+
+/* ==========================================================================
+   PORTFOLIO DOCK NAVIGATION & PAGE ENDING COMPONENT STYLES
+   ========================================================================== */
+
+/* Remove default masthead/header and footer styling */
+.masthead,
+.site-header,
+.site-footer,
+.page__footer,
+.site-footer-wrap {
+  display: none !important;
+}
+
+body.ht-app-body {
+  padding-top: 0 !important;
+  padding-bottom: 5.5rem !important; /* Spacing so content is never covered by bottom dock */
+}
+
+/* Floating Bottom Dock Container */
+.portfolio-dock-container {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0.75rem !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+}
+
+@media (min-width: 640px) {
+  .portfolio-dock-container {
+    bottom: 1rem !important;
+  }
+}
+
+.portfolio-dock {
+  pointer-events: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.25rem !important;
+  padding: 0.375rem !important;
+  background-color: rgba(20, 20, 24, 0.88) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45) !important;
+  width: fit-content !important;
+  max-width: calc(100vw - 1.5rem) !important;
+}
+
+@media (min-width: 640px) {
+  .portfolio-dock {
+    height: 3.5rem !important;
+    padding: 0.5rem !important;
+    gap: 0.375rem !important;
+  }
+}
+
+/* Light mode dock background */
+html:not([data-theme="dark"]) .portfolio-dock {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dock Item Button / Link */
+.portfolio-dock-item {
+  position: relative !important;
+  display: flex !important;
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  flex-shrink: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0.75rem !important;
+  border: 1px solid transparent !important;
+  background-color: transparent !important;
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 640px) {
+  .portfolio-dock-item {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+}
+
+.portfolio-dock-item .size-4\.5 {
+  width: 1.125rem !important;
+  height: 1.125rem !important;
+}
+
+.portfolio-dock-item:hover {
+  transform: translateY(-0.25rem) scale(1.1) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+html:not([data-theme="dark"]) .portfolio-dock-item {
+  color: #64748b !important;
+}
+
+html:not([data-theme="dark"]) .portfolio-dock-item:hover {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+  color: #0f172a !important;
+}
+
+/* Active Dock Item */
+.portfolio-dock-item-active,
+.portfolio-dock-item-active:hover {
+  background-color: #ffffff !important;
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .portfolio-dock-item-active,
+html:not([data-theme="dark"]) .portfolio-dock-item-active:hover {
+  background-color: #09090b !important;
+  color: #ffffff !important;
+}
+
+/* Hover Tooltip Popup above icon */
+.portfolio-dock-item[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 4px 8px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  z-index: 10000;
+}
+
+.portfolio-dock-item[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Submenu Popover for Tools */
+.portfolio-dock-submenu {
+  position: absolute !important;
+  bottom: calc(100% + 12px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) scale(0.95) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  z-index: 9999 !important;
+}
+
+.portfolio-dock-submenu.is-open {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateX(-50%) scale(1) !important;
+}
+
+.portfolio-dock-submenu-inner {
+  width: 280px !important;
+  background: rgba(24, 24, 27, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 14px !important;
+  padding: 8px !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+html:not([data-theme="dark"]) .portfolio-dock-submenu-inner {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.portfolio-dock-submenu-header {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #71717a !important;
+  padding: 6px 10px 4px 10px !important;
+}
+
+.portfolio-dock-submenu-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 8px 10px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  color: #e4e4e7 !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.portfolio-dock-submenu-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+html:not([data-theme="dark"]) .portfolio-dock-submenu-item {
+  color: #09090b !important;
+}
+
+html:not([data-theme="dark"]) .portfolio-dock-submenu-item:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.portfolio-dock-submenu-item .submenu-title {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+}
+
+.portfolio-dock-submenu-item .submenu-desc {
+  font-size: 11px !important;
+  color: #a1a1aa !important;
+  line-height: 1.2 !important;
+}
+
+.portfolio-dock-submenu-all {
+  display: block !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #38bdf8 !important;
+  text-align: center !important;
+  padding: 8px 10px 4px 10px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  margin-top: 4px !important;
+  text-decoration: none !important;
+}
+
+/* ==========================================================================
+   PAGE ENDING (GITHUB ACTIVITY & CALMER OPERATION SECTION)
+   ========================================================================== */
+
+.ht-activity-section {
+  max-width: 900px !important;
+  margin: 4rem auto 2.5rem auto !important;
+  padding: 0 1rem !important;
+}
+
+.ht-activity-header {
+  margin-bottom: 1rem !important;
+}
+
+.ht-activity-title {
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--ht-text-primary, #ffffff) !important;
+  margin: 0 !important;
+}
+
+.ht-activity-subtitle {
+  font-size: 0.85rem !important;
+  color: #94a3b8 !important;
+  margin: 0.25rem 0 0 0 !important;
+}
+
+.ht-github-card {
+  border-radius: 0.75rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background-color: #141417 !important;
+  padding: 1rem 1.25rem !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+html:not([data-theme="dark"]) .ht-github-card {
+  background-color: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+.ht-github-grid-scroll {
+  overflow-x: auto !important;
+  padding-bottom: 0.5rem !important;
+  scrollbar-width: thin !important;
+}
+
+.ht-github-svg {
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* GitHub Heatmap Color Levels */
+.ht-gh-rect.ht-gh-level-0 { fill: #27272a; }
+.ht-gh-rect.ht-gh-level-1 { fill: #3f3f46; }
+.ht-gh-rect.ht-gh-level-2 { fill: #71717a; }
+.ht-gh-rect.ht-gh-level-3 { fill: #a1a1aa; }
+.ht-gh-rect.ht-gh-level-4 { fill: #f4f4f5; }
+
+html:not([data-theme="dark"]) .ht-gh-rect.ht-gh-level-0 { fill: #ebedf0; }
+html:not([data-theme="dark"]) .ht-gh-rect.ht-gh-level-1 { fill: #9be9a8; }
+html:not([data-theme="dark"]) .ht-gh-rect.ht-gh-level-2 { fill: #40c463; }
+html:not([data-theme="dark"]) .ht-gh-rect.ht-gh-level-3 { fill: #30a14e; }
+html:not([data-theme="dark"]) .ht-gh-rect.ht-gh-level-4 { fill: #216e39; }
+
+.ht-github-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-top: 0.75rem !important;
+  margin-top: 0.5rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  font-size: 0.75rem !important;
+  color: #71717a !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
+}
+
+.ht-github-legend {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+}
+
+.ht-github-legend-cells {
+  display: flex !important;
+  gap: 2.5px !important;
+}
+
+.ht-gh-cell {
+  width: 9px !important;
+  height: 9px !important;
+  border-radius: 2px !important;
+  display: inline-block !important;
+}
+
+.ht-github-stats {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+.ht-github-user-link {
+  color: #e4e4e7 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.ht-github-user-link:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+/* Calmer Operation Section */
+.ht-calmer-section {
+  max-width: 900px !important;
+  margin: 0 auto 5rem auto !important;
+  padding: 0 1rem !important;
+}
+
+.ht-calmer-card {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 0.75rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background-color: #141417 !important;
+  padding: 2.5rem 1.5rem !important;
+  text-align: center !important;
+  box-shadow: 0 20px 60px -40px rgba(0, 0, 0, 0.8) !important;
+}
+
+@media (min-width: 640px) {
+  .ht-calmer-card {
+    padding: 3.5rem 2.5rem !important;
+  }
+}
+
+html:not([data-theme="dark"]) .ht-calmer-card {
+  background-color: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 20px 60px -40px rgba(0, 0, 0, 0.1) !important;
+}
+
+.ht-calmer-grid-bg {
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 50% !important;
+  pointer-events: none !important;
+}
+
+.ht-calmer-content {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+.ht-calmer-badge {
+  display: inline-flex !important;
+  border-radius: 0.75rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: #ffffff !important;
+  color: #09090b !important;
+  padding: 0.25rem 1rem !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+}
+
+html:not([data-theme="dark"]) .ht-calmer-badge {
+  background: #09090b !important;
+  color: #ffffff !important;
+}
+
+.ht-calmer-title {
+  font-size: 1.85rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--ht-text-primary, #ffffff) !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 640px) {
+  .ht-calmer-title {
+    font-size: 2.75rem !important;
+  }
+}
+
+.ht-calmer-desc {
+  max-width: 32rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  color: #94a3b8 !important;
+  margin: 0 !important;
+}
+
+.ht-calmer-buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  padding-top: 0.5rem !important;
+}
+
+.ht-minimal-copyright {
+  text-align: center !important;
+  font-size: 0.75rem !important;
+  color: #71717a !important;
+  margin-top: 2rem !important;
+}

@@ -16,15 +16,13 @@ layout: compress
     <canvas id="bg-mesh-canvas" class="bg-mesh-canvas" aria-hidden="true"></canvas>
 
     {% include browser-upgrade.html %}
-    {% include masthead.html %}
 
     <div class="site-shell">
       {{ content }}
     </div>
 
-    <footer class="page__footer site-footer-wrap">
-      {% include footer.html %}
-    </footer>
+    <!-- Sticky Floating Bottom Dock Navigation -->
+    {% include portfolio-dock.html %}
 
     {% include whatsapp-chat.html %}
 

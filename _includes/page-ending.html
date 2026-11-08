@@ -1,0 +1,138 @@
+{% include base_path %}
+<!-- ==========================================================================
+     JISUN-STYLE PAGE ENDING:
+     1. Live GitHub Activity Grid (with Toggle & Real Contributions)
+     2. "Build a calmer operation." Contact Bento Card
+     3. Minimal Copyright Row
+     ========================================================================== -->
+
+<!-- GitHub Activity Section -->
+<section id="activity" class="ht-activity-section" aria-labelledby="activity-heading">
+  <div class="ht-activity-header">
+    <h2 id="activity-heading" class="ht-activity-title">GitHub activity</h2>
+    <p class="ht-activity-subtitle">Contributions, experiments, and shipping cadence.</p>
+  </div>
+
+  <div class="ht-github-card">
+    <div class="ht-github-graph-wrap" id="githubGraphWrap">
+      <div class="ht-github-months" id="githubMonths"></div>
+      <div class="ht-github-grid-scroll">
+        <svg id="githubSvgGrid" class="ht-github-svg" height="120"></svg>
+      </div>
+    </div>
+
+    <div class="ht-github-footer">
+      <div class="ht-github-legend">
+        <span class="ht-github-subtext">Less</span>
+        <div class="ht-github-legend-cells" aria-hidden="true">
+          <span class="ht-gh-cell ht-gh-level-0"></span>
+          <span class="ht-gh-cell ht-gh-level-1"></span>
+          <span class="ht-gh-cell ht-gh-level-2"></span>
+          <span class="ht-gh-cell ht-gh-level-3"></span>
+          <span class="ht-gh-cell ht-gh-level-4"></span>
+        </div>
+        <span class="ht-github-subtext">More</span>
+      </div>
+
+      <div class="ht-github-stats">
+        <span id="githubTotalCount" class="ht-github-count">Fetching contributions...</span>
+        <a href="https://github.com/nasratulnayem" target="_blank" rel="noopener noreferrer" class="ht-github-user-link">@nasratulnayem ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- "Build a calmer operation." Contact Bento Card -->
+<section id="contact" class="ht-calmer-section" aria-labelledby="contact-heading">
+  <div class="portfolio-contact-card ht-calmer-card">
+    <div class="portfolio-grid ht-calmer-grid-bg" aria-hidden="true"></div>
+    <div class="ht-calmer-content">
+      <span class="ht-calmer-badge">Contact</span>
+      <h2 id="contact-heading" class="ht-calmer-title">Build a calmer operation.</h2>
+      <p class="ht-calmer-desc">
+        Tell me where your team is losing time. I'll help map the workflow and turn the repetitive parts into a dependable system.
+      </p>
+      <div class="ht-calmer-buttons">
+        <a href="{{ base_path }}/contact/" class="portfolio-button portfolio-button-primary">
+          <span>Book a consultation</span>
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+        <a href="mailto:devnayem30@gmail.com" class="portfolio-button">
+          Email me
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ht-minimal-copyright">
+    <span>© {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.</span>
+  </div>
+</section>
+
+<script>
+(function() {
+  var username = 'nasratulnayem';
+  var apiUrl = 'https://github-contributions-api.jogruber.de/v4/' + username;
+  
+  fetch(apiUrl)
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (!data || !data.contributions) return;
+      
+      var contribs = data.contributions;
+      // Calculate total in last 365 days
+      var total = 0;
+      var lastYear = contribs.slice(-365);
+      lastYear.forEach(function(c) { total += c.count; });
+      
+      var countEl = document.getElementById('githubTotalCount');
+      if (countEl) {
+        countEl.textContent = total.toLocaleString() + ' contributions in the last year';
+      }
+
+      // Render SVG cells (52 weeks x 7 days)
+      var svg = document.getElementById('githubSvgGrid');
+      if (!svg) return;
+      
+      var cellSize = 11;
+      var cellGap = 3;
+      var step = cellSize + cellGap;
+      var totalDays = contribs.length;
+      var startIndex = Math.max(0, totalDays - (52 * 7));
+      var displayContribs = contribs.slice(startIndex);
+      
+      var svgWidth = Math.ceil(displayContribs.length / 7) * step;
+      svg.setAttribute('width', svgWidth);
+      svg.setAttribute('viewBox', '0 0 ' + svgWidth + ' 105');
+      
+      var frag = document.createDocumentFragment();
+      displayContribs.forEach(function(day, idx) {
+        var week = Math.floor(idx / 7);
+        var dayOfWeek = idx % 7;
+        
+        var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('x', week * step);
+        rect.setAttribute('y', dayOfWeek * step);
+        rect.setAttribute('width', cellSize);
+        rect.setAttribute('height', cellSize);
+        rect.setAttribute('rx', 2.5);
+        rect.setAttribute('class', 'ht-gh-rect ht-gh-level-' + day.level);
+        
+        var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+        title.textContent = day.count + ' contributions on ' + day.date;
+        rect.appendChild(title);
+        
+        frag.appendChild(rect);
+      });
+      svg.appendChild(frag);
+    })
+    .catch(function(err) {
+      console.warn('Could not load GitHub activity', err);
+      var countEl = document.getElementById('githubTotalCount');
+      if (countEl) countEl.textContent = 'View GitHub profile for activity';
+    });
+})();
+</script>
