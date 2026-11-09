@@ -414,7 +414,7 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
       </div>
       
       <a href="https://github.com/nasratulnayem" target="_blank" rel="noopener noreferrer" class="ht-activity-meta-pill">
-        <span><span id="githubTotalCount" class="ht-meta-count">4,189</span>contributions in the last year</span>
+        <span><span id="githubTotalCount" class="ht-meta-count">{{ site.data.github_stats.total | default: 175 }}</span>contributions in the last year</span>
         <span class="ht-meta-author">@nasratulnayem ↗</span>
       </a>
     </div>
@@ -497,6 +497,15 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
       frag.appendChild(rect);
     });
     cellsGroup.appendChild(frag);
+  }
+
+  // Pre-seed with actual real GitHub contribution data for nasratulnayem
+  var embeddedStats = {{ site.data.github_stats | jsonify | default: 'null' }};
+  if (embeddedStats && embeddedStats.days && embeddedStats.days.length) {
+    var mappedDays = embeddedStats.days.map(function(d) {
+      return { level: d.l, count: d.c, date: d.d };
+    });
+    renderCells(mappedDays);
   }
 
   // Interactive Game mode toggle
