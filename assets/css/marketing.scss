@@ -9148,3 +9148,60 @@ html:not([data-theme="dark"]) .text-foreground {
   transform: translateX(1rem) !important;
 }
 
+
+
+/* --------------------------------------------------------------------------
+   CONTACT CARD & GITHUB ACTIVITY GLOBAL FIXES
+   -------------------------------------------------------------------------- */
+.portfolio-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+  padding: 0.55rem 1.15rem !important;
+  border-radius: 0.5rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  line-height: 1.25rem !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #f4f4f5 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+}
+
+.portfolio-button:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.portfolio-button-primary {
+  background: #ffffff !important;
+  color: #09090b !important;
+  border: 1px solid #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.portfolio-button-primary:hover {
+  background: #e4e4e7 !important;
+  color: #000000 !important;
+  border-color: #e4e4e7 !important;
+}
+
+.portfolio-button svg,
+.portfolio-button .size-4,
+.ht-calmer-buttons svg {
+  width: 15px !important;
+  height: 15px !important;
+  max-width: 15px !important;
+  max-height: 15px !important;
+  min-width: 15px !important;
+  min-height: 15px !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  stroke-width: 2.2 !important;
+  vertical-align: middle !important;
+}
