@@ -454,12 +454,10 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
 <script>
 (function() {
   var username = 'nasratulnayem';
-  var apiUrl = 'https://github-contributions-api.jogruber.de/v4/' + username;
   var countEl = document.getElementById('githubTotalCount');
   var cellsGroup = document.getElementById('githubCellsGroup');
   var gameBtn = document.getElementById('gameModeToggle');
 
-  // Build initial fallback grid immediately so it never shows empty!
   var cellSize = 12;
   var step = 15;
   var startY = 20;
@@ -501,15 +499,6 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
     cellsGroup.appendChild(frag);
   }
 
-  // Pre-populate with realistic activity pattern right away
-  var placeholderData = [];
-  for (var i = 0; i < 53 * 7; i++) {
-    var rand = Math.random();
-    var lvl = rand > 0.85 ? 4 : (rand > 0.7 ? 3 : (rand > 0.5 ? 2 : (rand > 0.3 ? 1 : 0)));
-    placeholderData.push({ level: lvl, count: lvl * 3, date: '' });
-  }
-  renderCells(placeholderData);
-
   // Interactive Game mode toggle
   var isGameMode = false;
   if (gameBtn) {
@@ -524,27 +513,59 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
     });
   }
 
-  // Fetch live contributions
-  fetch(apiUrl)
-    .then(function(res) { return res.json(); })
-    .then(function(data) {
-      if (!data || !data.contributions || !data.contributions.length) return;
-      
-      var contribs = data.contributions;
-      var total = 0;
-      var lastYear = contribs.slice(-365);
-      lastYear.forEach(function(c) { total += c.count; });
-      
-      if (countEl && total > 0) {
-        countEl.textContent = total.toLocaleString();
-      }
+  // Endpoints to fetch your REAL live stats
+  var endpoints = [
+    'https://github-contributions-api.deno.dev/' + username + '.json',
+    'https://github-contributions-api.jogruber.de/v4/' + username
+  ];
 
-      var numDays = 53 * 7;
-      var displayContribs = contribs.slice(-numDays);
-      renderCells(displayContribs);
-    })
-    .catch(function(err) {
-      console.warn('Using offline activity data', err);
-    });
+  function tryFetch(index) {
+    if (index >= endpoints.length) {
+      return;
+    }
+
+    fetch(endpoints[index], { cache: 'no-cache' })
+      .then(function(res) {
+        if (!res.ok) throw new Error('Status ' + res.status);
+        return res.json();
+      })
+      .then(function(data) {
+        var contribs = data.contributions || [];
+        var total = 0;
+
+        if (data.totalContributions) {
+          total = data.totalContributions;
+        } else if (data.total && typeof data.total === 'object') {
+          var keys = Object.keys(data.total);
+          keys.forEach(function(k) {
+            if (data.total[k] && typeof data.total[k] === 'number') {
+              total = Math.max(total, data.total[k]);
+            }
+          });
+        }
+
+        if (contribs.length) {
+          if (!total) {
+            var lastYearSlice = contribs.slice(-365);
+            lastYearSlice.forEach(function(c) { total += (c.count || 0); });
+          }
+
+          if (countEl) {
+            countEl.textContent = total.toLocaleString();
+          }
+
+          var numDays = 53 * 7;
+          var displayContribs = contribs.slice(-numDays);
+          renderCells(displayContribs);
+        } else {
+          tryFetch(index + 1);
+        }
+      })
+      .catch(function(err) {
+        tryFetch(index + 1);
+      });
+  }
+
+  tryFetch(0);
 })();
 </script>
