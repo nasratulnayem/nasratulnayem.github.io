@@ -62,20 +62,34 @@ html:not([data-theme="dark"]) {
 
 /* GitHub Activity Card Box */
 .ht-activity-card {
+  position: relative !important;
   background: #141417 !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 0.75rem !important;
   padding: 1.25rem !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.ht-activity-card.ht-game-active {
+  background: hsl(214 68% 8%) !important;
+  border-color: hsl(215 30% 24%) !important;
+  color: hsl(210 40% 96%) !important;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.15), 0 12px 32px rgba(0, 0, 0, 0.6) !important;
 }
 
 .ht-activity-svg-wrap {
+  position: relative !important;
   width: 100% !important;
   overflow-x: auto !important;
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
   padding-bottom: 0.5rem !important;
+  transition: padding-bottom 0.5s ease !important;
+}
+.ht-activity-card.ht-game-active .ht-activity-svg-wrap {
+  padding-bottom: 80px !important;
 }
 .ht-activity-svg-wrap::-webkit-scrollbar {
   display: none !important;
@@ -85,6 +99,60 @@ html:not([data-theme="dark"]) {
   display: block !important;
   max-width: none !important;
   height: 122px !important;
+  overflow: visible !important;
+}
+
+/* Tooltip - Exactly matching reference: centered above cell with arrow */
+.ht-gh-tooltip {
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: 50 !important;
+  border-radius: 0.375rem !important;
+  background: #24292e !important;
+  padding: 0.25rem 0.65rem !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  white-space: nowrap !important;
+  transform: translate(-50%, calc(-100% - 6px)) !important;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease !important;
+  display: none;
+}
+html[data-theme="dark"] .ht-gh-tooltip,
+body .ht-gh-tooltip {
+  background: #161b22 !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+.ht-gh-tooltip.ht-gh-tooltip-visible {
+  display: block !important;
+  opacity: 1 !important;
+}
+.ht-gh-tooltip-arrow {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 0 !important;
+  width: 6px !important;
+  height: 6px !important;
+  transform: translate(-50%, 50%) rotate(45deg) !important;
+  background: #161b22 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+/* Game canvas overlay */
+#githubGameCanvas {
+  display: none;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: auto !important;
+  z-index: 10 !important;
+  cursor: crosshair !important;
+}
+.ht-activity-card.ht-game-active #githubGameCanvas {
+  display: block !important;
 }
 
 .ht-activity-footer {
@@ -408,6 +476,11 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
           {% include github-cells-static.html %}
         </g>
       </svg>
+      <canvas id="githubGameCanvas"></canvas>
+      <div id="githubTooltip" class="ht-gh-tooltip" role="tooltip" aria-hidden="true">
+        <span id="githubTooltipText"></span>
+        <div class="ht-gh-tooltip-arrow"></div>
+      </div>
     </div>
     
     <div class="ht-activity-footer">
@@ -473,30 +546,86 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
 <script>
 (function() {
   var username = 'nasratulnayem';
+  var cardContainer = document.querySelector('.ht-activity-card');
   var countEl = document.getElementById('githubTotalCount');
   var cellsGroup = document.getElementById('githubCellsGroup');
   var gameBtn = document.getElementById('gameModeToggle');
+  var tooltip = document.getElementById('githubTooltip');
+  var tooltipText = document.getElementById('githubTooltipText');
+  var gameCanvas = document.getElementById('githubGameCanvas');
 
   var cellSize = 12;
   var step = 15;
   var startY = 20;
+
+  var monthsList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+  function formatTooltipDate(dStr) {
+    if (!dStr) return '';
+    var parts = dStr.split('-').map(Number);
+    if (parts.length < 3) return dStr;
+    var day = parts[2];
+    var suff = 'th';
+    if (day % 10 === 1 && day !== 11) suff = 'st';
+    else if (day % 10 === 2 && day !== 12) suff = 'nd';
+    else if (day % 10 === 3 && day !== 13) suff = 'rd';
+    return (monthsList[parts[1] - 1] || '') + ' ' + day + suff;
+  }
+
+  function showTooltip(x, y, count, dateStr) {
+    if (!tooltip || !tooltipText || isGameMode) return;
+    var formattedDate = formatTooltipDate(dateStr);
+    var countNum = parseInt(count, 10) || 0;
+    var msg = countNum === 0 
+      ? 'No contributions on ' + formattedDate + '.' 
+      : countNum + ' contribution' + (countNum !== 1 ? 's' : '') + ' on ' + formattedDate + '.';
+    tooltipText.textContent = msg;
+    tooltip.style.left = x + 'px';
+    tooltip.style.top = y + 'px';
+    tooltip.classList.add('ht-gh-tooltip-visible');
+  }
+
+  function hideTooltip() {
+    if (!tooltip) return;
+    tooltip.classList.remove('ht-gh-tooltip-visible');
+  }
 
   function bindCellEvents(container) {
     if (!container) return;
     var rects = container.querySelectorAll('rect');
     rects.forEach(function(rect) {
       rect.style.cursor = 'pointer';
+
+      // Remove default native SVG title tooltip so it does not block the cursor
+      var oldTitle = rect.querySelector('title');
+      if (oldTitle) rect.removeChild(oldTitle);
+
+      rect.addEventListener('mouseenter', function() {
+        if (isGameMode) return;
+        var x = parseFloat(rect.getAttribute('x')) + (cellSize / 2);
+        var y = parseFloat(rect.getAttribute('y'));
+        var count = rect.getAttribute('data-count') || 0;
+        var date = rect.getAttribute('data-date') || '';
+        showTooltip(x, y, count, date);
+      });
+
+      rect.addEventListener('mouseleave', function() {
+        hideTooltip();
+      });
+
       rect.addEventListener('click', function() {
+        if (isGameMode) return;
         var currentFill = rect.getAttribute('fill') || '';
         var match = currentFill.match(/--github-level-(\d)/);
         var currentLevel = match ? parseInt(match[1], 10) : 0;
         var nextLevel = (currentLevel + 1) % 5;
         rect.setAttribute('fill', 'hsl(var(--github-level-' + nextLevel + '))');
+        rect.setAttribute('data-level', nextLevel);
       });
     });
   }
 
-  /* Bind click listeners to pre-rendered static cells */
+  /* Bind tooltip and click listeners to pre-rendered static cells */
   bindCellEvents(cellsGroup);
 
   function renderCells(dataPoints) {
@@ -510,6 +639,9 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
       
       var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
       rect.setAttribute('class', 'ht-gh-cell');
+      rect.setAttribute('data-level', day.level || 0);
+      rect.setAttribute('data-count', day.count || 0);
+      rect.setAttribute('data-date', day.date || '');
       rect.setAttribute('x', week * step);
       rect.setAttribute('y', startY + (dayOfWeek * step));
       rect.setAttribute('width', cellSize);
@@ -519,31 +651,307 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
       rect.style.transition = 'opacity 0.1s, fill 0.2s';
       rect.style.cursor = 'pointer';
       
-      var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-      title.textContent = (day.count || 0) + ' contributions' + (day.date ? ' on ' + day.date : '');
-      rect.appendChild(title);
-
       frag.appendChild(rect);
     });
     cellsGroup.appendChild(frag);
     bindCellEvents(cellsGroup);
   }
 
-  /* Interactive Game mode toggle */
+  /* ==========================================================================
+     RETRO SPACE SHOOTER GAME MODE (Arcade Space Defender)
+     Active contribution cells become targets, canvas draws stars, laser bullets,
+     particle explosions and a glowing cyan spaceship.
+     ========================================================================== */
   var isGameMode = false;
+  var gameAnimId = null;
+
+  function stopGame() {
+    if (gameAnimId) {
+      cancelAnimationFrame(gameAnimId);
+      gameAnimId = null;
+    }
+    if (cardContainer) {
+      cardContainer.classList.remove('ht-game-active');
+    }
+    // Restore all cells to normal visibility
+    if (cellsGroup) {
+      var allCells = cellsGroup.querySelectorAll('rect');
+      allCells.forEach(function(rect) {
+        rect.style.opacity = '1';
+        rect.style.pointerEvents = 'auto';
+      });
+    }
+    hideTooltip();
+  }
+
+  function startGame() {
+    if (!gameCanvas || !cellsGroup) return;
+    hideTooltip();
+    if (cardContainer) {
+      cardContainer.classList.add('ht-game-active');
+    }
+
+    var ctx = gameCanvas.getContext('2d');
+    if (!ctx) return;
+
+    var svgGrid = document.getElementById('githubSvgGrid');
+    var svgWidth = svgGrid ? parseFloat(svgGrid.getAttribute('width')) || 792 : 792;
+    var svgHeight = svgGrid ? parseFloat(svgGrid.getAttribute('height')) || 122 : 122;
+
+    var canvasWidth = svgWidth;
+    var canvasHeight = svgHeight + 80;
+
+    gameCanvas.width = canvasWidth;
+    gameCanvas.height = canvasHeight;
+    gameCanvas.style.width = canvasWidth + 'px';
+    gameCanvas.style.height = canvasHeight + 'px';
+
+    // Build target cells map from visible cells
+    var cellTargets = [];
+    var cellRects = cellsGroup.querySelectorAll('rect');
+    cellRects.forEach(function(rect) {
+      var level = parseInt(rect.getAttribute('data-level'), 10) || 0;
+      var x = parseFloat(rect.getAttribute('x'));
+      var y = parseFloat(rect.getAttribute('y'));
+      if (level > 0) {
+        rect.style.opacity = '1';
+        rect.style.pointerEvents = 'none';
+        cellTargets.push({
+          el: rect,
+          x: x,
+          y: y,
+          level: level,
+          currentLevel: level
+        });
+      } else {
+        rect.style.opacity = '0';
+        rect.style.pointerEvents = 'none';
+      }
+    });
+
+    // Determine horizontal bounds of active contribution targets
+    var minTargetX = 0;
+    var maxTargetX = canvasWidth - 30;
+    if (cellTargets.length > 0) {
+      var allX = cellTargets.map(function(t) { return t.x; });
+      minTargetX = Math.max(0, Math.min.apply(null, allX) - 15);
+      maxTargetX = Math.min(canvasWidth - 30, Math.max.apply(null, allX) + 15);
+    }
+
+    // Spaceship player setup
+    var player = {
+      x: (minTargetX + maxTargetX) / 2,
+      y: canvasHeight - 26,
+      width: 26,
+      height: 18,
+      speed: 3.5,
+      direction: 1,
+      color: '#38bdf8'
+    };
+
+    // Starfield
+    var stars = [];
+    for (var i = 0; i < 110; i++) {
+      stars.push({
+        x: Math.random() * canvasWidth,
+        y: Math.random() * canvasHeight,
+        speed: Math.random() * 0.4 + 0.1,
+        size: Math.random() * 1.2 + 0.5,
+        alpha: Math.random() * 0.5 + 0.1
+      });
+    }
+
+    // Lasers and explosion particles
+    var bullets = [];
+    var particles = [];
+    var lastShootTime = 0;
+    var shootInterval = 140;
+
+    function createExplosion(px, py, color) {
+      for (var p = 0; p < 12; p++) {
+        var angle = Math.random() * Math.PI * 2;
+        var spd = Math.random() * 2.5 + 1.2;
+        particles.push({
+          x: px,
+          y: py,
+          vx: Math.cos(angle) * spd,
+          vy: Math.sin(angle) * spd,
+          color: color || '#fbbf24',
+          size: Math.random() * 2 + 1,
+          alpha: 1,
+          life: 0,
+          maxLife: Math.random() * 15 + 15
+        });
+      }
+    }
+
+    // Mouse movement to steer ship directly
+    gameCanvas.onmousemove = function(e) {
+      var rectBounds = gameCanvas.getBoundingClientRect();
+      var mouseX = (e.clientX - rectBounds.left) * (canvasWidth / rectBounds.width);
+      player.x = Math.max(0, Math.min(canvasWidth - player.width, mouseX - player.width / 2));
+    };
+
+    function gameLoop() {
+      // 1. Update player auto-patrol if not hovering
+      player.x += player.speed * player.direction;
+      if (player.x >= maxTargetX) {
+        player.x = maxTargetX;
+        player.direction = -1;
+      } else if (player.x <= minTargetX) {
+        player.x = minTargetX;
+        player.direction = 1;
+      }
+
+      // 2. Fire bullets
+      var now = Date.now();
+      if (now - lastShootTime >= shootInterval) {
+        bullets.push({
+          x: player.x + player.width / 2 - 1.5,
+          y: player.y - 4,
+          vy: -6,
+          width: 3,
+          height: 8,
+          color: '#fbbf24'
+        });
+        lastShootTime = now;
+      }
+
+      // 3. Update stars
+      stars.forEach(function(s) {
+        s.y += s.speed;
+        if (s.y > canvasHeight) {
+          s.y = 0;
+          s.x = Math.random() * canvasWidth;
+        }
+      });
+
+      // 4. Update bullets & check collision with targets
+      for (var b = bullets.length - 1; b >= 0; b--) {
+        var bullet = bullets[b];
+        bullet.y += bullet.vy;
+        if (bullet.y < 0) {
+          bullets.splice(b, 1);
+          continue;
+        }
+
+        for (var c = 0; c < cellTargets.length; c++) {
+          var target = cellTargets[c];
+          if (target.currentLevel <= 0) continue;
+
+          if (bullet.x < target.x + cellSize &&
+              bullet.x + bullet.width > target.x &&
+              bullet.y < target.y + cellSize &&
+              bullet.y + bullet.height > target.y) {
+            
+            bullets.splice(b, 1);
+            target.currentLevel -= 1;
+            
+            var targetColor = '#38bdf8';
+            if (target.currentLevel <= 0) {
+              target.el.style.opacity = '0';
+              targetColor = '#ffffff';
+            } else {
+              target.el.setAttribute('fill', 'hsl(var(--github-level-' + target.currentLevel + '))');
+              targetColor = '#fbbf24';
+            }
+
+            createExplosion(target.x + cellSize / 2, target.y + cellSize / 2, targetColor);
+            break;
+          }
+        }
+      }
+
+      // 5. Check if all targets destroyed -> respawn all targets for endless fun
+      var remaining = cellTargets.some(function(t) { return t.currentLevel > 0; });
+      if (!remaining && cellTargets.length > 0) {
+        cellTargets.forEach(function(t) {
+          t.currentLevel = t.level;
+          t.el.style.opacity = '1';
+          t.el.setAttribute('fill', 'hsl(var(--github-level-' + t.level + '))');
+        });
+      }
+
+      // 6. Update particles
+      for (var p = particles.length - 1; p >= 0; p--) {
+        var part = particles[p];
+        part.x += part.vx;
+        part.y += part.vy;
+        part.life++;
+        part.alpha = 1 - (part.life / part.maxLife);
+        if (part.life >= part.maxLife) {
+          particles.splice(p, 1);
+        }
+      }
+
+      // 7. Render Canvas
+      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+      // Render stars
+      stars.forEach(function(s) {
+        ctx.fillStyle = '#ffffff';
+        ctx.globalAlpha = s.alpha;
+        ctx.fillRect(s.x, s.y, s.size, s.size);
+      });
+      ctx.globalAlpha = 1;
+
+      // Render bullets
+      bullets.forEach(function(b) {
+        ctx.fillStyle = b.color;
+        ctx.shadowColor = b.color;
+        ctx.shadowBlur = 4;
+        ctx.fillRect(b.x, b.y, b.width, b.height);
+        ctx.shadowBlur = 0;
+      });
+
+      // Render explosion particles
+      particles.forEach(function(p) {
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = Math.max(0, p.alpha);
+        ctx.fillRect(p.x, p.y, p.size, p.size);
+      });
+      ctx.globalAlpha = 1;
+
+      // Render cyan spaceship player (triangle fighter jet matching reference)
+      ctx.fillStyle = player.color;
+      ctx.shadowColor = player.color;
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      ctx.moveTo(player.x + player.width / 2, player.y);
+      ctx.lineTo(player.x + player.width, player.y + player.height);
+      ctx.lineTo(player.x + player.width * 0.7, player.y + player.height * 0.75);
+      ctx.lineTo(player.x + player.width * 0.3, player.y + player.height * 0.75);
+      ctx.lineTo(player.x, player.y + player.height);
+      ctx.closePath();
+      ctx.fill();
+      ctx.shadowBlur = 0;
+
+      if (isGameMode) {
+        gameAnimId = requestAnimationFrame(gameLoop);
+      }
+    }
+
+    gameAnimId = requestAnimationFrame(gameLoop);
+  }
+
   if (gameBtn) {
     gameBtn.addEventListener('click', function() {
       isGameMode = !isGameMode;
       gameBtn.setAttribute('aria-pressed', isGameMode);
       if (isGameMode) {
         gameBtn.classList.add('game-mode-active');
+        startGame();
       } else {
         gameBtn.classList.remove('game-mode-active');
+        stopGame();
       }
     });
   }
 
-  /* Endpoints to fetch REAL live stats in background */
+  /* ==========================================================================
+     AUTOMATIC DAILY UPDATE: Real live GitHub Contributions Sync
+     Fetches latest live contributions on load to keep stats always up-to-date
+     ========================================================================== */
   var endpoints = [
     'https://github-contributions-api.jogruber.de/v4/' + username,
     'https://github-contributions-api.deno.dev/' + username + '.json'
