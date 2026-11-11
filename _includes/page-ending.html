@@ -404,7 +404,9 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
           <text x="702" y="10" font-size="14" fill="currentColor" font-family="inherit">Oct</text>
           <text x="777" y="10" font-size="14" fill="currentColor" font-family="inherit">Nov</text>
         </g>
-        <g id="githubCellsGroup"></g>
+        <g id="githubCellsGroup">
+          {% include github-cells-static.html %}
+        </g>
       </svg>
     </div>
     
@@ -478,8 +480,25 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
   var cellSize = 12;
   var step = 15;
   var startY = 20;
-  var numWeeks = 53;
-  
+
+  function bindCellEvents(container) {
+    if (!container) return;
+    var rects = container.querySelectorAll('rect');
+    rects.forEach(function(rect) {
+      rect.style.cursor = 'pointer';
+      rect.addEventListener('click', function() {
+        var currentFill = rect.getAttribute('fill') || '';
+        var match = currentFill.match(/--github-level-(\d)/);
+        var currentLevel = match ? parseInt(match[1], 10) : 0;
+        var nextLevel = (currentLevel + 1) % 5;
+        rect.setAttribute('fill', 'hsl(var(--github-level-' + nextLevel + '))');
+      });
+    });
+  }
+
+  /* Bind click listeners to pre-rendered static cells */
+  bindCellEvents(cellsGroup);
+
   function renderCells(dataPoints) {
     if (!cellsGroup) return;
     cellsGroup.innerHTML = '';
@@ -490,6 +509,7 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
       var dayOfWeek = idx % 7;
       
       var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      rect.setAttribute('class', 'ht-gh-cell');
       rect.setAttribute('x', week * step);
       rect.setAttribute('y', startY + (dayOfWeek * step));
       rect.setAttribute('width', cellSize);
@@ -503,26 +523,10 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
       title.textContent = (day.count || 0) + ' contributions' + (day.date ? ' on ' + day.date : '');
       rect.appendChild(title);
 
-      rect.addEventListener('click', function() {
-        var currentFill = rect.getAttribute('fill') || '';
-        var match = currentFill.match(/--github-level-(\d)/);
-        var currentLevel = match ? parseInt(match[1], 10) : 0;
-        var nextLevel = (currentLevel + 1) % 5;
-        rect.setAttribute('fill', 'hsl(var(--github-level-' + nextLevel + '))');
-      });
-      
       frag.appendChild(rect);
     });
     cellsGroup.appendChild(frag);
-  }
-
-  /* Pre-seed with actual real GitHub contribution data for nasratulnayem */
-  var embeddedStats = {{ site.data.github_stats | jsonify | default: 'null' }};
-  if (embeddedStats && embeddedStats.days && embeddedStats.days.length) {
-    var mappedDays = embeddedStats.days.map(function(d) {
-      return { level: d.l, count: d.c, date: d.d };
-    });
-    renderCells(mappedDays);
+    bindCellEvents(cellsGroup);
   }
 
   /* Interactive Game mode toggle */
@@ -539,16 +543,14 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
     });
   }
 
-  /* Endpoints to fetch your REAL live stats */
+  /* Endpoints to fetch REAL live stats in background */
   var endpoints = [
     'https://github-contributions-api.jogruber.de/v4/' + username,
     'https://github-contributions-api.deno.dev/' + username + '.json'
   ];
 
   function tryFetch(index) {
-    if (index >= endpoints.length) {
-      return;
-    }
+    if (index >= endpoints.length) return;
 
     fetch(endpoints[index], { cache: 'no-cache' })
       .then(function(res) {
@@ -571,18 +573,15 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
         }
 
         if (rawContribs.length) {
-          /* Sort chronologically ascending */
           var sorted = rawContribs.slice().sort(function(a, b) {
             return (a.date > b.date) ? 1 : ((a.date < b.date) ? -1 : 0);
           });
 
-          /* Build quick date-to-entry lookup map */
           var dateMap = {};
           sorted.forEach(function(c) {
             if (c.date) dateMap[c.date] = c;
           });
 
-          /* Calculate 53 full weeks (371 days) ending at today */
           var now = new Date();
           var displayContribs = [];
           var calculatedTotal = 0;
