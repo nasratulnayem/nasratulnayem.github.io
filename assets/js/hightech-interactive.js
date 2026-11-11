@@ -803,14 +803,14 @@
   });
 
   /* ==========================================================================
-     Ribbon Capability Cards "View all" / "Show less" Expand Toggle
+     Bento Capability Cards "View all" / "Show less" Expand Toggle
      ========================================================================== */
   function initBentoExpandToggle() {
     const btn = document.getElementById('btnToggleBentoCards');
     if (!btn) return;
 
     let expanded = false;
-    const extraCards = document.querySelectorAll('.ht-ribbon-extra');
+    const extraCards = document.querySelectorAll('.ht-bento-extra');
     const btnText = btn.querySelector('.ht-btn-text');
     const btnArrow = btn.querySelector('.ht-btn-arrow');
 
@@ -821,7 +821,7 @@
       extraCards.forEach(card => {
         if (expanded) {
           card.style.display = 'flex';
-          card.style.animation = 'ribbonFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+          card.style.animation = 'bentoFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards';
         } else {
           card.style.display = 'none';
         }
