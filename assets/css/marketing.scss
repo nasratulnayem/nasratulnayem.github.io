@@ -9212,14 +9212,16 @@ html:not([data-theme="dark"]) .text-foreground {
    ========================================================================== */
 
 .ht-ribbon-list {
-  width: min(100%, 58rem) !important;
+  width: min(100%, 54rem) !important;
+  max-width: 100% !important;
   overflow: visible !important;
   margin-inline: auto !important;
-  padding-inline: clamp(2.5rem, 8vw, 4.5rem) !important;
+  padding-inline: clamp(2rem, 6vw, 3.5rem) !important;
   list-style: none !important;
-  perspective: 1000px !important;
+  perspective: 1200px !important;
+  perspective-origin: center center !important;
   display: grid !important;
-  row-gap: 0.65rem !important;
+  row-gap: 0.75rem !important;
   box-sizing: border-box !important;
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
@@ -9227,12 +9229,16 @@ html:not([data-theme="dark"]) .text-foreground {
 
 .ht-ribbon-card {
   position: relative !important;
-  padding-block: 1.6rem !important;
+  padding-block: 1.75rem !important;
   padding-inline: 2rem !important;
-  background-color: var(--bg-color) !important;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.18), transparent) !important;
+  background-color: var(--bg-color, #18181b) !important;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.22) 0%, rgba(255, 255, 255, 0.02) 50%, rgba(0, 0, 0, 0.22) 100%) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: none !important;
+  border-right: none !important;
   transform-style: preserve-3d !important;
-  color: var(--color, #ececec) !important;
+  color: var(--color, #f4f4f5) !important;
   text-decoration: none !important;
   display: flex !important;
   flex-direction: column !important;
@@ -9241,40 +9247,43 @@ html:not([data-theme="dark"]) .text-foreground {
   row-gap: 0.55rem !important;
   cursor: pointer !important;
   box-sizing: border-box !important;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35) !important;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, filter 0.28s ease !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, filter 0.28s ease, border-color 0.28s ease !important;
 }
 
 .ht-ribbon-card:hover {
   transform: translateZ(16px) scale(1.015) !important;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55) !important;
-  filter: brightness(1.04) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 25px rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  filter: brightness(1.06) !important;
 }
 
 .ht-ribbon-card::before,
 .ht-ribbon-card::after {
-  --side-rotate: 60deg;
   content: "" !important;
   position: absolute !important;
   top: 0 !important;
   height: 100% !important;
-  width: 100% !important;
-  transform-origin: calc(50% - (50% * var(--ry))) 50% !important;
-  transform: rotateY(calc(var(--side-rotate) * var(--ry))) !important;
+  width: 50px !important;
   background-color: inherit !important;
-  background-image: linear-gradient(calc(90deg * var(--ry)), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.55)) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   pointer-events: none !important;
   z-index: -1 !important;
 }
 
 .ht-ribbon-card::before {
-  --ry: -1 !important;
   right: 100% !important;
+  transform-origin: 100% 50% !important;
+  transform: rotateY(-60deg) !important;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.62)) !important;
 }
 
 .ht-ribbon-card::after {
-  --ry: 1 !important;
   left: 100% !important;
+  transform-origin: 0% 50% !important;
+  transform: rotateY(60deg) !important;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.62)) !important;
 }
 
 .ht-ribbon-card .title {

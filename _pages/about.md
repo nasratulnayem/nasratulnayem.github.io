@@ -98,42 +98,42 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
 
   <ul class="ht-ribbon-list">
     <!-- Card 1: ChatGPT Agent Bridge -->
-    <li class="ht-ribbon-card" style="--color:#ececec; --bg-color:#E98B43;" onclick="location.href='{{ '/tools/chatgpt-agent-bridge/' | relative_url }}'">
+    <li class="ht-ribbon-card" style="--color:#f4f4f5; --bg-color:#18181b;" onclick="location.href='{{ '/tools/chatgpt-agent-bridge/' | relative_url }}'">
       <h3 class="title">ChatGPT Agent Bridge</h3>
       <div class="content">Connect Antigravity, Claude, and Cursor directly to your active ChatGPT Web tab. Use the tools you already have without relying on separate API setups.</div>
       <div><span class="cta-link">View tool &rarr;</span></div>
     </li>
 
     <!-- Card 2: Importon Bridge -->
-    <li class="ht-ribbon-card" style="--color:#ececec; --bg-color:#C23D2A;" onclick="location.href='{{ '/tools/importon-bridge/' | relative_url }}'">
+    <li class="ht-ribbon-card" style="--color:#f4f4f5; --bg-color:#18181b;" onclick="location.href='{{ '/tools/importon-bridge/' | relative_url }}'">
       <h3 class="title">Importon Bridge</h3>
       <div class="content">Import supplier products straight into WooCommerce, including images, galleries, variations, and product specifications. Less manual work, more time to focus on your store.</div>
       <div><span class="cta-link">View tool &rarr;</span></div>
     </li>
 
     <!-- Card 3: Image Metadata Remover -->
-    <li class="ht-ribbon-card" style="--color:#ececec; --bg-color:#842C2A;" onclick="location.href='{{ '/tools/image-metadata-cleaner/' | relative_url }}'">
+    <li class="ht-ribbon-card" style="--color:#f4f4f5; --bg-color:#18181b;" onclick="location.href='{{ '/tools/image-metadata-cleaner/' | relative_url }}'">
       <h3 class="title">Image Metadata Remover</h3>
       <div class="content">Remove hidden image metadata, including GPS coordinates and EXIF data, before sharing your photos. Everything runs in your browser. Your files never leave your device.</div>
       <div><span class="cta-link">Open cleaner &rarr;</span></div>
     </li>
 
     <!-- Card 4: High-Speed Web Systems (Hidden initially) -->
-    <li class="ht-ribbon-card ht-ribbon-extra" style="--color:#ececec; --bg-color:#022F46; display: none;" onclick="location.href='{{ '/services/' | relative_url }}'">
+    <li class="ht-ribbon-card ht-ribbon-extra" style="--color:#f4f4f5; --bg-color:#18181b; display: none;" onclick="location.href='{{ '/services/' | relative_url }}'">
       <h3 class="title">High-Speed Web Systems</h3>
       <div class="content">I build fast, flexible websites with clean code, custom plugins, and performance-focused architecture. No unnecessary page builders or bloated frameworks. Just web systems built to work.</div>
       <div><span class="cta-link">Explore services &rarr;</span></div>
     </li>
 
     <!-- Card 5: Automations That Cut Hours (Hidden initially) -->
-    <li class="ht-ribbon-card ht-ribbon-extra" style="--color:#ececec; --bg-color:#032437; display: none;" onclick="location.href='{{ '/automation/' | relative_url }}'">
+    <li class="ht-ribbon-card ht-ribbon-extra" style="--color:#f4f4f5; --bg-color:#18181b; display: none;" onclick="location.href='{{ '/automation/' | relative_url }}'">
       <h3 class="title">Automations That Cut Hours</h3>
       <div class="content">From browser automation and data scraping to AI-powered workflows and background syncs, I build systems that handle repetitive tasks so you don't have to.</div>
       <div><span class="cta-link">Explore automations &rarr;</span></div>
     </li>
 
     <!-- Card 6: Work Directly With The Builder (Hidden initially) -->
-    <li class="ht-ribbon-card ht-ribbon-extra" style="--color:#ececec; --bg-color:#1c2d37; display: none;" onclick="location.href='{{ '/contact/' | relative_url }}'">
+    <li class="ht-ribbon-card ht-ribbon-extra" style="--color:#f4f4f5; --bg-color:#18181b; display: none;" onclick="location.href='{{ '/contact/' | relative_url }}'">
       <h3 class="title">Work Directly With The Builder</h3>
       <div class="content">Have an idea or a problem that needs solving? Work directly with me, from defining the scope to building the solution. Clear communication, practical decisions, and no unnecessary back-and-forth.</div>
       <div><span class="cta-link">Let's talk &rarr;</span></div>
