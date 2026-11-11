@@ -9207,22 +9207,62 @@ html:not([data-theme="dark"]) .text-foreground {
 }
 
 /* ==========================================================================
-   BENTO CARDS REFINED STYLING: CENTERED TYPOGRAPHY & SMOOTH EXPAND
+   BENTO CARDS REFINED STYLING: CENTERED TYPOGRAPHY, 3D FOLDED RIBBON SHAPE & SMOOTH EXPAND
    ========================================================================== */
+.ht-bento-grid {
+  perspective: 1000px !important;
+  overflow: visible !important;
+}
+
 .ht-bento-grid .bento-card {
-  border-radius: 20px !important;
-  background: #18181b !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  position: relative !important;
+  border-radius: 0 !important;
+  background-color: #18181b !important;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: none !important;
+  border-right: none !important;
+  transform-style: preserve-3d !important;
   text-align: center !important;
   align-items: center !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, box-shadow 0.28s ease !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease !important;
+  overflow: visible !important;
+}
+
+.ht-bento-grid .bento-card::before,
+.ht-bento-grid .bento-card::after {
+  --side-rotate: 60deg;
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  transform-origin: calc(50% - (50% * var(--ry))) 50% !important;
+  transform: rotateY(calc(var(--side-rotate) * var(--ry))) !important;
+  background-color: inherit !important;
+  background-image: linear-gradient(calc(90deg * var(--ry)), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.65)) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+.ht-bento-grid .bento-card::before {
+  --ry: -1 !important;
+  right: 100% !important;
+}
+
+.ht-bento-grid .bento-card::after {
+  --ry: 1 !important;
+  left: 100% !important;
 }
 
 .ht-bento-grid .bento-card:hover {
-  transform: translateY(-4px) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 255, 255, 0.04) !important;
+  transform: translateY(-4px) translateZ(12px) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 255, 255, 0.04) !important;
 }
 
 .ht-bento-grid .bento-card__title {
