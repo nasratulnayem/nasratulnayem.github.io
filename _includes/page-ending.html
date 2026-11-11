@@ -43,6 +43,23 @@
   margin: 0 !important;
 }
 
+/* CSS Variables for GitHub Heatmap Levels */
+:root {
+  --github-level-0: 240 3.7% 15.9%;
+  --github-level-1: 240 3.7% 28%;
+  --github-level-2: 240 5% 48%;
+  --github-level-3: 240 5% 68%;
+  --github-level-4: 0 0% 98%;
+}
+
+html:not([data-theme="dark"]) {
+  --github-level-0: 220 13% 91%;
+  --github-level-1: 142 69% 58%;
+  --github-level-2: 142 71% 45%;
+  --github-level-3: 142 76% 36%;
+  --github-level-4: 142 72% 29%;
+}
+
 /* GitHub Activity Card Box */
 .ht-activity-card {
   background: #141417 !important;
@@ -524,8 +541,8 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
 
   // Endpoints to fetch your REAL live stats
   var endpoints = [
-    'https://github-contributions-api.deno.dev/' + username + '.json',
-    'https://github-contributions-api.jogruber.de/v4/' + username
+    'https://github-contributions-api.jogruber.de/v4/' + username,
+    'https://github-contributions-api.deno.dev/' + username + '.json'
   ];
 
   function tryFetch(index) {
@@ -539,7 +556,7 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
         return res.json();
       })
       .then(function(data) {
-        var contribs = data.contributions || [];
+        var rawContribs = data.contributions || [];
         var total = 0;
 
         if (data.totalContributions) {
@@ -553,18 +570,43 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
           });
         }
 
-        if (contribs.length) {
-          if (!total) {
-            var lastYearSlice = contribs.slice(-365);
-            lastYearSlice.forEach(function(c) { total += (c.count || 0); });
+        if (rawContribs.length) {
+          // Sort chronologically ascending
+          var sorted = rawContribs.slice().sort(function(a, b) {
+            return (a.date > b.date) ? 1 : ((a.date < b.date) ? -1 : 0);
+          });
+
+          // Build quick date-to-entry lookup map
+          var dateMap = {};
+          sorted.forEach(function(c) {
+            if (c.date) dateMap[c.date] = c;
+          });
+
+          // Calculate 53 full weeks (371 days) ending at today
+          var now = new Date();
+          var displayContribs = [];
+          var calculatedTotal = 0;
+
+          for (var i = 370; i >= 0; i--) {
+            var d = new Date(now.getTime() - (i * 24 * 60 * 60 * 1000));
+            var yyyy = d.getFullYear();
+            var mm = String(d.getMonth() + 1).padStart(2, '0');
+            var dd = String(d.getDate()).padStart(2, '0');
+            var dateStr = yyyy + '-' + mm + '-' + dd;
+
+            var match = dateMap[dateStr] || { date: dateStr, count: 0, level: 0 };
+            displayContribs.push(match);
+            calculatedTotal += (match.count || 0);
           }
 
-          if (countEl) {
+          if (calculatedTotal > 0 && (!total || total < calculatedTotal)) {
+            total = calculatedTotal;
+          }
+
+          if (countEl && total > 0) {
             countEl.textContent = total.toLocaleString();
           }
 
-          var numDays = 53 * 7;
-          var displayContribs = contribs.slice(-numDays);
           renderCells(displayContribs);
         } else {
           tryFetch(index + 1);
