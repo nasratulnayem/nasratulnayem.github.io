@@ -799,6 +799,49 @@
     initPortfolioFilter();
     initArticleEnhancements();
     initQuickCopyTriggers();
+    initBentoExpandToggle();
   });
+
+  /* ==========================================================================
+     Bento Grid "Read more" / "Show less" Expand Toggle
+     ========================================================================== */
+  function initBentoExpandToggle() {
+    const btn = document.getElementById('btnToggleBentoCards');
+    if (!btn) return;
+
+    let expanded = false;
+    const extraCards = document.querySelectorAll('.ht-bento-extra');
+    const btnText = btn.querySelector('.ht-btn-text');
+    const btnArrow = btn.querySelector('.ht-btn-arrow');
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      expanded = !expanded;
+
+      extraCards.forEach(card => {
+        if (expanded) {
+          card.style.display = 'flex';
+          card.style.animation = 'bentoFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (btnText) {
+        btnText.textContent = expanded ? 'Show less' : 'Read more';
+      }
+      if (btnArrow) {
+        btnArrow.style.transform = expanded ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+
+      // If Lenis smooth scroll is present, refresh dimensions
+      if (window.siteLenis && typeof window.siteLenis.resize === 'function') {
+        window.siteLenis.resize();
+      }
+
+      // Re-initialize spotlight glow so newly revealed cards track mouse
+      initSpotlightGlow();
+    });
+  }
 
 })();

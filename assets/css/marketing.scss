@@ -9207,159 +9207,44 @@ html:not([data-theme="dark"]) .text-foreground {
 }
 
 /* ==========================================================================
-   3D FOLDED RIBBON CAPABILITY CARDS
-   Perspective ribbon stack with 3D folded edge flaps
+   BENTO CARDS REFINED STYLING: CENTERED TYPOGRAPHY & SMOOTH EXPAND
    ========================================================================== */
-
-.ht-ribbon-list {
-  width: min(100%, 56rem);
-  overflow: hidden;
-  margin-inline: auto;
-  padding-inline: clamp(2.8rem, 13vw, 4.8rem);
-  list-style: none;
-  perspective: 1000px;
-  display: grid;
-  row-gap: 0.55rem;
-  box-sizing: border-box;
+.ht-bento-grid .bento-card {
+  border-radius: 20px !important;
+  background: #18181b !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  text-align: center !important;
+  align-items: center !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, box-shadow 0.28s ease !important;
 }
 
-.ht-ribbon-card {
-  position: relative;
-  padding-block: 1.15rem;
-  padding-inline: 1.25rem;
-  background-color: var(--bg-color);
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.22), transparent);
-  transform-style: preserve-3d;
-  color: var(--color, #ececec);
-  text-decoration: none !important;
-  display: grid;
-  grid-template: 'icon title' 'icon content';
-  grid-template-columns: auto 1fr;
-  row-gap: 0.3rem;
-  column-gap: 1.2rem;
-  align-items: center;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+.ht-bento-grid .bento-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 255, 255, 0.04) !important;
 }
 
-.ht-ribbon-card:hover {
-  transform: translateZ(14px) scale(1.015);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+.ht-bento-grid .bento-card__title {
+  text-align: center !important;
+  font-family: var(--ht-font-heading, 'Plus Jakarta Sans', sans-serif) !important;
+  letter-spacing: -0.015em !important;
 }
 
-.ht-ribbon-card::before,
-.ht-ribbon-card::after {
-  --side-rotate: 60deg;
-  content: "";
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  transform-origin: calc(50% - (50% * var(--ry))) 50%;
-  transform: rotateY(calc(var(--side-rotate) * var(--ry)));
-  background-color: inherit;
-  background-image: linear-gradient(calc(90deg * var(--ry)), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
-  pointer-events: none;
+.ht-bento-grid .bento-card__desc {
+  text-align: center !important;
+  max-width: 90% !important;
+  margin-inline: auto !important;
 }
 
-.ht-ribbon-card::before {
-  --ry: -1;
-  right: 100%;
-}
-
-.ht-ribbon-card::after {
-  --ry: 1;
-  left: 100%;
-}
-
-.ht-ribbon-card .icon {
-  grid-area: icon;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  flex-shrink: 0;
-}
-
-.ht-ribbon-card .icon i {
-  font-size: 1.45rem;
-  line-height: 1;
-}
-
-.ht-ribbon-card .title-wrap {
-  grid-area: title;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  align-items: flex-start;
-}
-
-.ht-ribbon-card .badge-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.ht-ribbon-badge {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--ht-font-mono, 'JetBrains Mono', monospace);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 2px 7px;
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.4);
-  color: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-}
-
-.ht-ribbon-card .title {
-  font-family: var(--ht-font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 1.12rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.015em;
-  text-align: left;
-}
-
-.ht-ribbon-card .content {
-  grid-area: content;
-  font-size: 0.82rem;
-  line-height: 1.48;
-  color: rgba(236, 236, 236, 0.92);
-  text-align: left;
-}
-
-.ht-ribbon-card .cta-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-top: 5px;
-  opacity: 0.95;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.ht-ribbon-card:hover .cta-link {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-@media (min-width: 32rem) {
-  .ht-ribbon-card {
-    padding-inline: 1.75rem;
-    column-gap: 1.5rem;
+@keyframes bentoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
