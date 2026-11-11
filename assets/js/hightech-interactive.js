@@ -803,14 +803,14 @@
   });
 
   /* ==========================================================================
-     Bento Grid "Read more" / "Show less" Expand Toggle
+     Ribbon Capability Cards "View all" / "Show less" Expand Toggle
      ========================================================================== */
   function initBentoExpandToggle() {
     const btn = document.getElementById('btnToggleBentoCards');
     if (!btn) return;
 
     let expanded = false;
-    const extraCards = document.querySelectorAll('.ht-bento-extra');
+    const extraCards = document.querySelectorAll('.ht-ribbon-extra');
     const btnText = btn.querySelector('.ht-btn-text');
     const btnArrow = btn.querySelector('.ht-btn-arrow');
 
@@ -821,14 +821,14 @@
       extraCards.forEach(card => {
         if (expanded) {
           card.style.display = 'flex';
-          card.style.animation = 'bentoFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+          card.style.animation = 'ribbonFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards';
         } else {
           card.style.display = 'none';
         }
       });
 
       if (btnText) {
-        btnText.textContent = expanded ? 'Show less' : 'Read more';
+        btnText.textContent = expanded ? 'Show less' : 'View all';
       }
       if (btnArrow) {
         btnArrow.style.transform = expanded ? 'rotate(180deg)' : 'rotate(0deg)';
@@ -838,9 +838,6 @@
       if (window.siteLenis && typeof window.siteLenis.resize === 'function') {
         window.siteLenis.resize();
       }
-
-      // Re-initialize spotlight glow so newly revealed cards track mouse
-      initSpotlightGlow();
     });
   }
 

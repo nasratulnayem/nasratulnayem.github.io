@@ -96,72 +96,54 @@ keywords: "Nasratul Nayem, web developer, WordPress expert, WooCommerce, automat
     <p class="ht-section-subtitle">I believe good technology should make work easier, not add another layer of complexity. These are tools and systems I’ve built to solve real problems, save time, and get things done.</p>
   </div>
 
-  <div class="ht-bento-grid">
+  <ul class="ht-ribbon-list">
     <!-- Card 1: ChatGPT Agent Bridge -->
-    <a class="bento-card glow-card" href="{{ '/tools/chatgpt-agent-bridge/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 28px 24px; grid-column: span 1;">
-      <h3 class="bento-card__title" style="margin: 0 0 10px 0; font-size: 1.25rem; font-weight: 700; color: var(--ht-text-primary); text-align: center;">ChatGPT Agent Bridge</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 18px 0; text-align: center;">Connect Antigravity, Claude, and Cursor directly to your active ChatGPT Web tab. Use the tools you already have without relying on separate API setups.</p>
-      <div style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.86rem; font-weight: 600; color: var(--ht-cyan);">
-        <span>View tool</span>
-        <span aria-hidden="true">&rarr;</span>
-      </div>
-    </a>
+    <li class="ht-ribbon-card" style="--color:#ececec; --bg-color:#E98B43;" onclick="location.href='{{ '/tools/chatgpt-agent-bridge/' | relative_url }}'">
+      <h3 class="title">ChatGPT Agent Bridge</h3>
+      <div class="content">Connect Antigravity, Claude, and Cursor directly to your active ChatGPT Web tab. Use the tools you already have without relying on separate API setups.</div>
+      <div><span class="cta-link">View tool &rarr;</span></div>
+    </li>
 
     <!-- Card 2: Importon Bridge -->
-    <a class="bento-card glow-card" href="{{ '/tools/importon-bridge/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 28px 24px; grid-column: span 1;">
-      <h3 class="bento-card__title" style="margin: 0 0 10px 0; font-size: 1.25rem; font-weight: 700; color: var(--ht-text-primary); text-align: center;">Importon Bridge</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 18px 0; text-align: center;">Import supplier products straight into WooCommerce, including images, galleries, variations, and product specifications. Less manual work, more time to focus on your store.</p>
-      <div style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.86rem; font-weight: 600; color: var(--ht-cyan);">
-        <span>View tool</span>
-        <span aria-hidden="true">&rarr;</span>
-      </div>
-    </a>
+    <li class="ht-ribbon-card" style="--color:#ececec; --bg-color:#C23D2A;" onclick="location.href='{{ '/tools/importon-bridge/' | relative_url }}'">
+      <h3 class="title">Importon Bridge</h3>
+      <div class="content">Import supplier products straight into WooCommerce, including images, galleries, variations, and product specifications. Less manual work, more time to focus on your store.</div>
+      <div><span class="cta-link">View tool &rarr;</span></div>
+    </li>
 
     <!-- Card 3: Image Metadata Remover -->
-    <a class="bento-card glow-card" href="{{ '/tools/image-metadata-cleaner/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 28px 24px; grid-column: span 1;">
-      <h3 class="bento-card__title" style="margin: 0 0 10px 0; font-size: 1.25rem; font-weight: 700; color: var(--ht-text-primary); text-align: center;">Image Metadata Remover</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 18px 0; text-align: center;">Remove hidden image metadata, including GPS coordinates and EXIF data, before sharing your photos. Everything runs in your browser. Your files never leave your device.</p>
-      <div style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.86rem; font-weight: 600; color: var(--ht-cyan);">
-        <span>Open cleaner</span>
-        <span aria-hidden="true">&rarr;</span>
-      </div>
-    </a>
+    <li class="ht-ribbon-card" style="--color:#ececec; --bg-color:#842C2A;" onclick="location.href='{{ '/tools/image-metadata-cleaner/' | relative_url }}'">
+      <h3 class="title">Image Metadata Remover</h3>
+      <div class="content">Remove hidden image metadata, including GPS coordinates and EXIF data, before sharing your photos. Everything runs in your browser. Your files never leave your device.</div>
+      <div><span class="cta-link">Open cleaner &rarr;</span></div>
+    </li>
 
-    <!-- Card 4: Web & WordPress Engineering (Hidden initially) -->
-    <a class="bento-card glow-card ht-bento-extra" href="{{ '/services/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: none; flex-direction: column; align-items: center; text-align: center; padding: 28px 24px; grid-column: span 1;">
-      <h3 class="bento-card__title" style="margin: 0 0 10px 0; font-size: 1.25rem; font-weight: 700; color: var(--ht-text-primary); text-align: center;">High-Speed Web Systems</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 18px 0; text-align: center;">I build fast, flexible websites with clean code, custom plugins, and performance-focused architecture. No unnecessary page builders or bloated frameworks. Just web systems built to work.</p>
-      <div style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.86rem; font-weight: 600; color: var(--ht-cyan);">
-        <span>Explore services</span>
-        <span aria-hidden="true">&rarr;</span>
-      </div>
-    </a>
+    <!-- Card 4: High-Speed Web Systems (Hidden initially) -->
+    <li class="ht-ribbon-card ht-ribbon-extra" style="--color:#ececec; --bg-color:#022F46; display: none;" onclick="location.href='{{ '/services/' | relative_url }}'">
+      <h3 class="title">High-Speed Web Systems</h3>
+      <div class="content">I build fast, flexible websites with clean code, custom plugins, and performance-focused architecture. No unnecessary page builders or bloated frameworks. Just web systems built to work.</div>
+      <div><span class="cta-link">Explore services &rarr;</span></div>
+    </li>
 
-    <!-- Card 5: Automations & Bots (Hidden initially) -->
-    <a class="bento-card glow-card ht-bento-extra" href="{{ '/automation/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: none; flex-direction: column; align-items: center; text-align: center; padding: 28px 24px; grid-column: span 1;">
-      <h3 class="bento-card__title" style="margin: 0 0 10px 0; font-size: 1.25rem; font-weight: 700; color: var(--ht-text-primary); text-align: center;">Automations That Cut Hours</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 18px 0; text-align: center;">From browser automation and data scraping to AI-powered workflows and background syncs, I build systems that handle repetitive tasks so you don't have to.</p>
-      <div style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.86rem; font-weight: 600; color: var(--ht-cyan);">
-        <span>Explore automations</span>
-        <span aria-hidden="true">&rarr;</span>
-      </div>
-    </a>
+    <!-- Card 5: Automations That Cut Hours (Hidden initially) -->
+    <li class="ht-ribbon-card ht-ribbon-extra" style="--color:#ececec; --bg-color:#032437; display: none;" onclick="location.href='{{ '/automation/' | relative_url }}'">
+      <h3 class="title">Automations That Cut Hours</h3>
+      <div class="content">From browser automation and data scraping to AI-powered workflows and background syncs, I build systems that handle repetitive tasks so you don't have to.</div>
+      <div><span class="cta-link">Explore automations &rarr;</span></div>
+    </li>
 
-    <!-- Card 6: Direct Access Partnership (Hidden initially) -->
-    <a class="bento-card glow-card ht-bento-extra" href="{{ '/contact/' | relative_url }}" style="text-decoration: none !important; color: inherit !important; display: none; flex-direction: column; align-items: center; text-align: center; padding: 28px 24px; grid-column: span 1;">
-      <h3 class="bento-card__title" style="margin: 0 0 10px 0; font-size: 1.25rem; font-weight: 700; color: var(--ht-text-primary); text-align: center;">Work Directly With The Builder</h3>
-      <p class="bento-card__desc" style="font-size: 0.92rem; color: var(--ht-text-secondary); line-height: 1.55; margin: 0 0 18px 0; text-align: center;">Have an idea or a problem that needs solving? Work directly with me, from defining the scope to building the solution. Clear communication, practical decisions, and no unnecessary back-and-forth.</p>
-      <div style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.86rem; font-weight: 600; color: var(--ht-cyan);">
-        <span>Let's talk</span>
-        <span aria-hidden="true">&rarr;</span>
-      </div>
-    </a>
-  </div>
+    <!-- Card 6: Work Directly With The Builder (Hidden initially) -->
+    <li class="ht-ribbon-card ht-ribbon-extra" style="--color:#ececec; --bg-color:#1c2d37; display: none;" onclick="location.href='{{ '/contact/' | relative_url }}'">
+      <h3 class="title">Work Directly With The Builder</h3>
+      <div class="content">Have an idea or a problem that needs solving? Work directly with me, from defining the scope to building the solution. Clear communication, practical decisions, and no unnecessary back-and-forth.</div>
+      <div><span class="cta-link">Let's talk &rarr;</span></div>
+    </li>
+  </ul>
 
-  <!-- Read More Toggle -->
-  <div class="ht-bento-more-wrap" style="text-align: center; margin-top: 1.75rem;">
+  <!-- View All Toggle -->
+  <div class="ht-bento-more-wrap" style="text-align: center; margin-top: 2rem;">
     <button type="button" id="btnToggleBentoCards" class="portfolio-button" style="display: inline-flex; align-items: center; gap: 8px; padding: 0.65rem 1.4rem; font-size: 0.88rem; font-weight: 600; border-radius: 9999px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); color: #ffffff; cursor: pointer; transition: all 0.25s ease;">
-      <span class="ht-btn-text">Read more</span>
+      <span class="ht-btn-text">View all</span>
       <svg class="ht-btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.25s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
     </button>
   </div>
