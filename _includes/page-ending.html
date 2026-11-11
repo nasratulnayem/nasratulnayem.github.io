@@ -516,7 +516,7 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
     cellsGroup.appendChild(frag);
   }
 
-  // Pre-seed with actual real GitHub contribution data for nasratulnayem
+  /* Pre-seed with actual real GitHub contribution data for nasratulnayem */
   var embeddedStats = {{ site.data.github_stats | jsonify | default: 'null' }};
   if (embeddedStats && embeddedStats.days && embeddedStats.days.length) {
     var mappedDays = embeddedStats.days.map(function(d) {
@@ -525,7 +525,7 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
     renderCells(mappedDays);
   }
 
-  // Interactive Game mode toggle
+  /* Interactive Game mode toggle */
   var isGameMode = false;
   if (gameBtn) {
     gameBtn.addEventListener('click', function() {
@@ -539,7 +539,7 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
     });
   }
 
-  // Endpoints to fetch your REAL live stats
+  /* Endpoints to fetch your REAL live stats */
   var endpoints = [
     'https://github-contributions-api.jogruber.de/v4/' + username,
     'https://github-contributions-api.deno.dev/' + username + '.json'
@@ -571,18 +571,18 @@ html:not([data-theme="dark"]) .ht-activity-meta-pill .ht-meta-author {
         }
 
         if (rawContribs.length) {
-          // Sort chronologically ascending
+          /* Sort chronologically ascending */
           var sorted = rawContribs.slice().sort(function(a, b) {
             return (a.date > b.date) ? 1 : ((a.date < b.date) ? -1 : 0);
           });
 
-          // Build quick date-to-entry lookup map
+          /* Build quick date-to-entry lookup map */
           var dateMap = {};
           sorted.forEach(function(c) {
             if (c.date) dateMap[c.date] = c;
           });
 
-          // Calculate 53 full weeks (371 days) ending at today
+          /* Calculate 53 full weeks (371 days) ending at today */
           var now = new Date();
           var displayContribs = [];
           var calculatedTotal = 0;
