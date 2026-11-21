@@ -94,3 +94,9 @@
     }
   }
 }
+
+/* Prevent flex child overflow for page__footer */
+.pagefooter-flex-safe {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
